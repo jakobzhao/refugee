@@ -1,15 +1,14 @@
-​																		Mapbox Community Team
-																			    740 15th Street NW
-																		       Washington, DC 20005
-																		community@mapbox.com
+																															Mapbox Community Team															740 15th Street NW      																Washington, DC 20005																		community@mapbox.com
 
 
 
 Bo Zhao
-College of Earth, Ocean, and Atmospheric Sciences
-Oregon State University
-Corvallis, OR 97331
 
+College of Earth, Ocean, and Atmospheric Sciences
+
+Oregon State University
+
+Corvallis, OR 97331
 
 October 22, 2018
 
@@ -27,6 +26,6 @@ Being promoted by National Geographic at a pivotal time in global awareness and 
 
 If your organization would like to participate as a technical sponsor, please contact me to discuss further details. Thank you for your time and consideration.
 
-
 Sincerely,
+
 Dr. Bo Zhao
