@@ -28,13 +28,12 @@
    
 
 
-1. Web Architecture 
+2. Web Architecture 
 
    Send screen shots of website options and inspiration
    
    Keep trying Mapbox and React templates and tests. 
 
-   ​
-
-2. Keep thinking on: 
+   
+3. Keep thinking on: 
    Product Goals, Values, Audience, Committee members
