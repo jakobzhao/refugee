@@ -25,12 +25,13 @@
    	Refugee interviews?
    
 
-
 2. Web Architecture 
 
    Send screen shots of website options and inspiration
    
    Keep trying Mapbox and React templates and tests. 
+   
+   IE support issue.
 
    
 3. Keep thinking on: 
