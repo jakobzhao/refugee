@@ -17,15 +17,21 @@
 
 1. Topics
    Will have the Chinese Burmese Rohingya refugees as a topic
+   
    Start collecting data: 
+   
    	general refugee, specific case studies
+      
    Start to form a committee to validate data and methods (Gio contact)
+   
    	Refugee interviews?
-   ​
+   
 
 
 1. Web Architecture 
+
    Send screen shots of website options and inspiration
+   
    Keep trying Mapbox and React templates and tests. 
 
    ​
