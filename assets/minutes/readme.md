@@ -8,12 +8,10 @@
 
 1. Go over the list
 2. Send the emails
-3. Topics
+3. Topics: scales, themes
 4. an template: dicussion
 
-
-
-# 20181226
+# 20181026
 
 1. Topics
    Will have the Chinese Burmese Rohingya refugees as a topic
@@ -37,3 +35,10 @@
    
 3. Keep thinking on: 
    Product Goals, Values, Audience, Committee members
+   
+# 20181029
+
+1. social media ads
+
+2. goal: What is an atlas? What should we visualize? What do we mean by visualization/making an atlas?
+
