@@ -46,6 +46,10 @@
 
 2. Goal: What is an atlas? What should we visualize? What do we mean by visualization/making an atlas?
 
+    - tools for refugee
+    - decision-making support
+    - Changing the percpetions. They are just like us.
+
 3. a report
    - goal: viz/communition, interaction.
    - stories: themes, scales
