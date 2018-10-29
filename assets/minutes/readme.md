@@ -39,7 +39,17 @@
    
 # 20181029
 
-1. social media ads
+0. Go over what we have been done during the previous week
 
-2. goal: What is an atlas? What should we visualize? What do we mean by visualization/making an atlas?
+
+1. Social media ads
+
+2. Goal: What is an atlas? What should we visualize? What do we mean by visualization/making an atlas?
+
+3. a report
+   - goal: viz/communition, interaction.
+   - stories: themes, scales
+   - tech: messege drafts, template,  react, storymap.js, webslides, mapbox.
+   - papers: 
+   - report:
 
