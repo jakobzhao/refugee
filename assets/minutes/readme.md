@@ -69,22 +69,31 @@
    - social media (inst, twitter, facebook and youtube)   Bo
    - Survey, interviews?  Jennifer?
    - UN documents Jamon
-5. Web Architecture
+   
+5. Stories
+   - themes
+   - scales
+   
+6. Web Architecture
    - Server: Github, Google Cloud Platform, or Digital Ocean, and Server at OSU
    - Services: Mapbox, GeoServer, OmniSci or CartoDB
    - Client: Open source mapping or virtual globe packages - leaflet, cesium
-6. Timeline
-   - implement plan
    
-7. Outcome:
+7. Timeline
+   - 11/1/2019: Preliminary Report 
+   - 4/14/2020: Final Report
+   - Prepayment Form
+   - Media Asset
+   
+8. Outcome:
    - Atlas
    - Report
    - Papers
 
-8. Evaluation
+9. Evaluation
    - Undergraduate students
    - Local communities
-9. Academic Committee (?)
+10. Academic Committee (?)
    - Stories
    - Data
    - Extending collaborations   
