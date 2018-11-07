@@ -86,5 +86,6 @@
    - Local communities
 9. Academic Committee (?)
    - Stories
-   - Extending collabrations   
+   - Data
+   - Extending collaborations   
  
