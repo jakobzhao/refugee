@@ -57,3 +57,34 @@
    - papers: 
    - report:
 
+# 20181107
+
+1. Revisit the proposal
+2. Github, https://github.com/jakobzhao/refugee/
+3. Objectives: What is an online atlas illustrating the global refugee issue? 
+   - visualization, communication
+   - message?
+4. Data sources:
+   - remote sensing  Jamon
+   - social media (inst, twitter, facebook and youtube)   Bo
+   - Survey, interviews?  Jennifer?
+   - UN documents Jamon
+5. Web Architecture
+   - Server: Github, Google Cloud Platform, or Digital Ocean, and Server at OSU
+   - Services: Mapbox, GeoServer, OmniSci or CartoDB
+   - Client: Open source mapping or virtual globe packages - leaflet, cesium
+6. Timeline
+   - implement plan
+   
+7. Outcome:
+   - Atlas
+   - Report
+   - Papers
+
+8. Evaluation
+   - Undergraduate students
+   - Local communities
+9. Academic Committee (?)
+   - Stories
+   - Extending collabrations   
+ 
