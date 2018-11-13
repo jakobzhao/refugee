@@ -98,3 +98,60 @@
    - Data
    - Extending collaborations   
  
+ 
+ #20181113
+1) To do: 
+   Confirming metrics of scales
+
+- Finding common features between scales
+- Using caution when mapping individuals
+- One narrative should show the experience of refugees- the life after exodus and resettlement
+
+ 
+
+**Goals**
+
+
+
+*Long-term:*
+
+ We will use multiple methodologies to display the data and share the stories. Continue to investigate, test, and find alternative options for visual templates. 
+
+*Short-term:*
+
+Following the objective line for narratives is a great start, but continue to develop the narratives based on the data available from the PIs and what we can resource otherwise. 
+
+Start with simple web development for the landing page and overall structure and then build the complexity. 
+
+Debug as you go, solving all small issues as they appear. 
+
+
+
+ 
+
+**Assignments:**
+
+1) Set up appointments with PIs (Gio)
+
+What data sources do you have?
+
+What stories do you have?
+
+2) IRB (Ginny)
+
+1. 1. Individual level- still to determine level of interaction and method of survey
+   2.  Visuals from established survey data
+   3. 1. How , who, currently collected data? What can we visualize?
+      2. Talk with refugee specialists for data
+
+3) Git hub management (Ginny)
+
+1. Meeting notes with entire sentences
+2. Invite Jamon and Jen
+3. Use the project task board 
+
+
+
+ Task over all: Make a report throughout the project
+
+	Document fully for easier report creation
