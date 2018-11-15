@@ -12,4 +12,7 @@ https://docs.google.com/spreadsheets/d/1L1yA3lLlZG0-uzUg3lBVjX-ALviTNEXAjJDVNSqN
 
 Data sorted by topics, linked to data pages. 
 
-![data_index_ex](C:\Workspace\refugee\assets\images\data_index_ex.PNG)![data_excel_page_ex](C:\Workspace\refugee\assets\images\data_excel_page_ex.PNG)
+![data_index_ex](\images\data_index_example.PNG)
+
+
+![data_excel_page_ex](\images\data_excel_page_ex.PNG)
