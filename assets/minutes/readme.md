@@ -162,6 +162,8 @@ What stories do you have?
 Gio and Ginny
 
 Confirm website structure 
+
+
 Confirm display of scales and narratives  
 
 We have begun to create the website structure with the motive of helping the viewer unify the scales related to the global refugee situation. Starting with the landing page, the viewer will be shown a globe and from there will be able to see some opening information about the broad image of the situation: the definition of a refugee and much of the global locations of conflict, movement, and camp locations.  
