@@ -187,3 +187,46 @@ Depending on the type and amount of data found for the camps and situations, dif
 
 
 ![Camps Page Draft 1](https://github.com/jakobzhao/refugee/blob/master/assets/images/camps_draft1.PNG)
+
+
+
+
+
+
+
+
+# 20190108
+
+Bo, Gio, Ginny 
+
+
+
+Check-in and Review structure of progress
+
+
+
+Suggestions:
+
+1. Start with skeleton of data	
+2. Think design second
+3. Create one specific story map as a template or base 
+
+
+ Carousel with SM images
+
+
+
+Data skeleton will be on Git hub: 
+
+- Story/Case folder
+  - readme.md
+  - assets
+
+Next to confirm: 
+
+1) Threshold of camps
+
+2) Which stories/cases to display based on available data
+
+
+
