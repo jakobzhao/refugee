@@ -174,4 +174,14 @@ The global data sets that we would like to include:
 From the landing page, the user may journey to view the global maps, or choose a camp or country by hovering over data points. By choosing a country, the user will trigger pop-ups of that country's refugee related data as the screen zooms into the country boundary.  By choosing a camp, the user will be presented with more camp and individual related data. We would like to make as many camps as possible into a story map format with the satellite imagery of the camp as the background. Each camp will have an illustration of camp growth over time and a narrative about the camp.  Individual/group level data stats related to the camp will also be displayed as well as a scrolling social media images related to that camp. For example, the gender ratio within the camp, the educational stats, health data, and social media images will be displayed with links for more information. 
 
 Depending on the type and amount of data found for the camps and situations, different data visual techniques will be used. However, it is the goal of this project to continually show the data in a humanistic way as to not reduce any of the refugee experiences in a dehumanizing way. Therefore, we are actively seeking ways that may illustrate the data and narratives. 
-![Landing Page Draft 1](assets\images\landing_draft1.png)
+
+
+
+
+![Landing Page Draft 1](https://github.com/jakobzhao/refugee/blob/master/assets/images/landing_draft1.PNG)
+
+
+
+
+
+![Camps Page Draft 1](https://github.com/jakobzhao/refugee/blob/master/assets/images/camps_draft1.PNG)
