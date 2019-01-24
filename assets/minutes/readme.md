@@ -230,3 +230,20 @@ Next to confirm:
 
 
 
+2019124
+
+Ginny and Giovanni
+
+The Rohingya template case is coming along with more defined structure: 
+
+The user will begin the experience with the welcome landing page featuring an interactive globe with data points of refugee "cases". The user may access a case by clicking it's geographic location or b selecting it from a side panel of refugee case options. 
+
+Once a case has been chosen (in this case, Rohingya), the first page will show the historical context of the refugee group. The page will scroll into a more detailed explanation of the actual "push" event. In the Rohingya case, this would be an illustration of the Mynmar military invading and committing ethnic cleansing. The user will be able to view and interact the illustration by clicking on different parts of the illustration that are linked to the interviews they illustrate. 
+
+From this page, the user will then scroll to the "journey" page that shows the map and swoopy arrows of people movement. They will be accompanied with contextual media (photos, interviews, and narrative etc.) in a side panel. In this view, the user will either click into the camps from their geographical markers or will scroll into the camp stories. 
+
+The camps are many, and stories are many. We decided to offer multiple stories in the form of scrolling story maps- ensuring to capture a mix of refugees (woman, man, and child). 
+
+
+
+
