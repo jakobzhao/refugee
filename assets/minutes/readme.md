@@ -236,13 +236,184 @@ Ginny and Giovanni
 
 The Rohingya template case is coming along with more defined structure: 
 
+
 The user will begin the experience with the welcome landing page featuring an interactive globe with data points of refugee "cases". The user may access a case by clicking it's geographic location or b selecting it from a side panel of refugee case options. 
+
+
 
 Once a case has been chosen (in this case, Rohingya), the first page will show the historical context of the refugee group. The page will scroll into a more detailed explanation of the actual "push" event. In the Rohingya case, this would be an illustration of the Mynmar military invading and committing ethnic cleansing. The user will be able to view and interact the illustration by clicking on different parts of the illustration that are linked to the interviews they illustrate. 
 
+
+
 From this page, the user will then scroll to the "journey" page that shows the map and swoopy arrows of people movement. They will be accompanied with contextual media (photos, interviews, and narrative etc.) in a side panel. In this view, the user will either click into the camps from their geographical markers or will scroll into the camp stories. 
 
+
+
 The camps are many, and stories are many. We decided to offer multiple stories in the form of scrolling story maps- ensuring to capture a mix of refugees (woman, man, and child). 
+
+
+
+# Critical review with Jamon 2.25.019
+
+
+
+Gio, Ginny, and Jamon
+
+Overall comments: 
+
+
+- Good so far but there is too much noise - cut straight to conditions and experiences
+  - Focus on connecting shared experiences and shared opportunities
+    
+    
+- Change the map theme-  not so dark
+
+- What is our unique factor? 
+
+- Approach this with an academic researchers perspective
+
+
+  - What are the big questions that the academic community might want to find here?
+
+
+1) Landing page needs some narration and context
+
+
+Define refugee and Atlas purpose
+
+
+Give global narrative and stats
+
+
+Maybe add a Instagram feed at the global level with #refugee
+
+
+define the 6ish common themes that can tie connectors between different refugee cases
+
+
+> 1. Camp Infrastructure
+> 2. Safety / gender based violence
+> 3. Environment
+> 4. Economics
+> 5. Energy
+> 6. Education
+> 7. Health
+> 8. W.A.S.H.
+> 9. Food 
+
+## Sub-topics that can be considered for themes
+
+Future of camps (Cities of the future)
+
+Warehousing / resettlement 
+
+Climate hazards in camps
+
+Further displacement after 1st camp
+
+Births in camps
+
+Religion
+
+activities
+
+Criticisms of government action
+
+Give the user instruction to scroll 
+
+Create icons for the themes
+
+2) Less text more data display
+
+let the map and the data displays do the talking
+
+Keep the text super short- snapshots
+
+This would be a great place to have the extra GRA help with the narrative snap shops
+
+
+
+## Data sources to checkout: 
+
+DAAR- refugee and war zone Architect analyst org
+Kiklas Camp Turkey 
+OSM query
+Jamon will send papers
+
+
+
+
+
+Terms: 
+permanent temporariness
+
+Stateless Nation
+
+
+
+Next: 
+
+Gio and Ginny to edit Rohingya story map with Jamon's suggestions
+
+-Identify the Case Studies
+-Identify themes
+
+
+
+# 20190412
+
+Bo, Jamon, Gioavnni, Ginny
+
+
+
+Updates to the Atlas include the discussed themes for the refugee camps. Next Steps would be to incorporate climate or other science data that offers the audience a deeper look into the situation. 
+
+Try to create more consistency between the historical contect and the camp atlas
+
+Get the user to the data sooner by having the mulitcoordinate view with data display be the first page with link to the historical context in the top. 
+
+
+
+
+
+## Tasks
+
+Reach out ot Nat Geo for media permissions
+
+Jamon to assist in satellite imagery- Ginny and Gio to observe and learn
+
+Bo and Gio to organize student volunteer assistance with Bo's class
+
+If additional man power needed based on Gio's discretion, Ginny and Jamon to organize crowd sourcing tasks with Jamon's class. 
+
+
+
+
+
+## Next Data sets 
+
+Representing the largest refugee groups with the most available data.
+
+Choose top 6 sites/ situations and corresponding data sets
+
+
+
+	https://www.worldvision.org/refugees-news-stories/forced-to-flee-top-countries-refugees-coming-from
+
+https://www.unhcr.org/figures-at-a-glance.html
+
+2.4 Million  South Sudanese refugees
+
+2.6 million Afghani refugees
+
+6.3 Million Syrian refugees
+
+Climate change data at camps 
+
+Satellite imagery - .jpeg or .mp4
+
+
+
 
 
 
