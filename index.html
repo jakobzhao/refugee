@@ -77,11 +77,11 @@
         </div>
         <div class='row labels'>
             <div class='label'>0</div>
-            <div class='label'>100</div>
-            <div class='label'>500</div>
-            <div class='label'>1000</div>
+            <div class='label'>2</div>
+            <div class='label'>150</div>
+            <div class='label'>5000</div>
             <div class='label'>10000</div>
-            <div class='label'>18000+</div>
+            <div class='label'>15000+</div>
         </div>
     </div>
     <!--Interactive Slider Bar-->
@@ -108,8 +108,9 @@
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/katzbr/cjtt21yjj2k3m1flkh1bym476',
-        center: [40.075242, 35.445000],
-        zoom: 6.96
+        center: [39.089598, 35.15],
+        zoom: 6.96,
+        maxZoom: 9
     });
     var months = [
         'Oct-2015',
