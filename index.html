@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <title>IDP Time Series</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, Sans-serif;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 20px;
+            line-height: 30px;
+        }
+
+        h2 {
+            font-size: 14px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2dc4b2;
+        }
+
+        #console {
+            position: absolute;
+            width: 380px;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: white;
+        }
+        .session {
+            margin-bottom: 20px;
+        }
+
+        .row {
+            height: 12px;
+            width: 100%;
+        }
+
+        .colors {
+            background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+            margin-bottom: 5px;
+        }
+
+        .label {
+            width: 15%;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id='map'></div>
+<!--Info Console-->
+<div id='console'>
+    <h1>Internally Displaced Person (IDP) Counts in Syria Oct 2015-Mar 2017</h1>
+    <p>Data: International Organization for Migration <a href='https://www.iom.int/'>(IOM)</a></p>
+    <!--Legend-->
+    <div class='session'>
+        <h2># IDPs</h2>
+        <div class='row colors'>
+        </div>
+        <div class='row labels'>
+            <div class='label'>0</div>
+            <div class='label'>100</div>
+            <div class='label'>500</div>
+            <div class='label'>1000</div>
+            <div class='label'>10000</div>
+            <div class='label'>18000+</div>
+        </div>
+    </div>
+    <!--Interactive Slider Bar-->
+    <div class='session' id='sliderbar'>
+        <h2>Month: <label id='active-step'>Oct-2015</label></h2>
+        <input id='slider' class='row' type='range' min='0' max='17' step='1' value='0' />
+    </div>
+    <!--Radio Button Group-->
+    <!--<div class='session'>-->
+        <!--<h2>Day of the week</h2>-->
+        <!--<div class='row' id='filters'>-->
+            <!--<input id='all' type='radio' name='toggle' value='all' checked='checked'>-->
+            <!--<label for='all'>All</label>-->
+            <!--<input id='weekday' type='radio' name='toggle' value='weekday'>-->
+            <!--<label for='weekday'>Weekday</label>-->
+            <!--<input id='weekend' type='radio' name='toggle' value='weekend'>-->
+            <!--<label for='weekend'>Weekend</label>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script>
+    // initialize map
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2F0emJyIiwiYSI6ImNqOHhmMnBucDIwZm4ycW8ya2d5cHF0cmsifQ.8rcjz0DyWs_ncWfOZ0VwKA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/katzbr/cjtt21yjj2k3m1flkh1bym476',
+        center: [40.075242, 35.445000],
+        zoom: 6.96
+    });
+    var months = [
+        'Oct-2015',
+        'Nov-2015',
+        'Dec-2015',
+        'Jan-2016',
+        'Feb-2016',
+        'Mar-2016',
+        'Apr-2016',
+        'May-2016',
+        'Jun-2016',
+        'Jul-2016',
+        'Aug-2016',
+        'Sep-2016',
+        'Oct-2016',
+        'Nov-2016',
+        'Dec-2016',
+        'Jan-2017',
+        'Feb-2017',
+        'Mar-2017'
+    ];
+    // add a data layer
+    map.on('load', function() {
+        var filterStep = ['==', ['number', ['get', 'step']], 0];
+        var filterMonth = ['!=', ['string', ['get', 'month']], 'placeholder'];
+        map.addLayer({
+            id: 'idp',
+            type: 'circle',
+            source: {
+                type: 'geojson',
+                data: './data/processed/RMDM_Oct2015-Mar2017_points_d.geojson'  // geojson path goes here
+            },
+            paint: {
+                'circle-radius': [
+                    'interpolate',
+                    ['linear'],
+                    ['number', ['get', 'ind']],
+                    2, 4,
+                    15000, 24
+                ],
+                'circle-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['number', ['get', 'ind']],
+                    0, '#2DC4B2',
+                    2, '#3BB3C3',
+                    150, '#669EC4',
+                    5000, '#8B88B6',
+                    10000, '#A2719B',
+                    15000, '#AA5E79'
+                ],
+                'circle-opacity': 0.8
+            },
+            filter: ['all', filterStep, filterMonth]  // add a map filter
+        });
+
+        // connect the slider interactivity to the map data
+        document.getElementById('slider').addEventListener('input', function(e) {
+            var step = parseInt(e.target.value);
+            // update the map
+            filterStep = ['==', ['number', ['get', 'step']], step];
+            map.setFilter('idp', ['all', filterStep, filterMonth]);
+
+            // converting 0-23 hour to AMPM format
+            // var ampm = hour >= 12 ? 'PM' : 'AM';
+            // var hour12 = hour % 12 ? hour % 12 : 12;
+
+            // update text in the UI
+            document.getElementById('active-step').innerText = months[step];
+            // document.getElementById('active-step').innerText = hour12 + ampm;
+        });
+
+        // create filter by day
+        document.getElementById('filters').addEventListener('change', function(e) {
+            var day = e.target.value;
+            if (day === 'all') {
+                // `null` would not work for combining filters
+                filterMonth = ['!=', ['string', ['get', 'month']], 'placeholder'];
+            }
+            /* the rest of the if statement */
+            map.setFilter('idp', ['all', filterStep, filterMonth]);
+        });
+    });
+</script>
+</body>
+</html>
