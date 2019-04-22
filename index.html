@@ -38,7 +38,7 @@
 
         #console {
             position: absolute;
-            width: 380px;
+            width: 420px;
             margin: 10px;
             padding: 10px 20px;
             background-color: white;
@@ -53,7 +53,7 @@
         }
 
         .colors {
-            background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.1), #ffffb2, #fecc5c, #fd8d3c, #f03b20, #bd0026);
             margin-bottom: 5px;
         }
 
@@ -68,7 +68,7 @@
 <div id='map'></div>
 <!--Info Console-->
 <div id='console'>
-    <h1>Internally Displaced Person (IDP) Counts in Syria Oct 2015-Mar 2017</h1>
+    <h1>Monthly Arrivals of Internally Displaced Persons (IDPs) in Syria Oct 2015-Mar 2017</h1>
     <p>Data: International Organization for Migration <a href='https://www.iom.int/'>(IOM)</a></p>
     <!--Legend-->
     <div class='session'>
@@ -76,8 +76,8 @@
         <div class='row colors'>
         </div>
         <div class='row labels'>
-            <div class='label'>0</div>
-            <div class='label'>2</div>
+            <div class='label'></div>
+            <div class='label'>5</div>
             <div class='label'>150</div>
             <div class='label'>5000</div>
             <div class='label'>10000</div>
@@ -148,19 +148,19 @@
                     'interpolate',
                     ['linear'],
                     ['number', ['get', 'ind']],
-                    2, 4,
-                    15000, 24
+                    2, 8,
+                    15000, 48
                 ],
                 'circle-color': [
                     'interpolate',
                     ['linear'],
                     ['number', ['get', 'ind']],
-                    0, '#2DC4B2',
-                    2, '#3BB3C3',
-                    150, '#669EC4',
-                    5000, '#8B88B6',
-                    10000, '#A2719B',
-                    15000, '#AA5E79'
+                    0, '#ffffff',
+                    5, '#ffffb2',
+                    150, '#fecc5c',
+                    5000, '#fd8d3c',
+                    10000, '#f03b20',
+                    15000, '#bd0026'
                 ],
                 'circle-opacity': 0.8
             },
