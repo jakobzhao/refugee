@@ -128,7 +128,6 @@
 
     var width = window.innerWidth,
       height = window.innerHeight,
-      radius = window.innerWidth / 3,
       sensitivity = 0.25,
       offsetX = width / 2,
       offsetY = height / 2,
@@ -136,6 +135,11 @@
       initRotation = [0, -30],
       scaleExtent = [1, 8],
       flyerAltitude = 80;
+
+    var radius = width / 3;
+    if (height < width) {
+      radius = height /3;
+    }
     var projection = d3
       .geoOrthographic()
       .scale(radius)
