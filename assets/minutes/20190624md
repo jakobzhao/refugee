@@ -1,0 +1,27 @@
+Participants: Bo Zhao, Gareth Baldrica-Franklin, Giovanni Svevo
+
+Following up on the 6/20 meeting between Bo, Jamon, Erik and Giovanni, in which some participants thought that the division of chapters on a geographic base would have led to artificially designed regions with hard borders which do not capture the essence of refugee experiences, we discussed a new approach.
+
+An alternative idea would be using as access point not a geographic region, but a theme. What are the situations that lead refugees to escape their country? What are they seeking refuge from? Four main topics are causing most of the refugee situations: Conflict (wars and civil wars, like Syria), Violence (ethnic or religious discrimination, like Rohingya), Environment (natural events like droughts or earthquake, for example Somalia and Haiti) and Economy (Venezuela).
+
+Using this approach, the first page of the Atlas will have these as main chapters (Conflict, Violence, Environment, Economy), plus maybe an introductory/global view. Then clicking on one theme, the following subdivision will have as chapters the situations that face that challenge (for example Violence will have Rohingya, South Sudan, Nigeria, etc.). Clicking on one of these situations, the visualization will focus on that specific area and allow the user to explore different themes as discussed in our previous meeting: demographics, refugee flows, refugee settlements, one or more featured camps to be analyzed in detail, social media coverage (for example instagram images) of that situation, storymaps or stripmaps describing a migration path, etc.
+
+Gareth described the advances he made in the past week on the website structure showing a functioning example. The main page has a virtual spinning globe and the list of chapters. The chapter view shows a division in sections better introducing each aspect. Finally he worked on the third level map, with a semi-transparent side bar for the content and a well designed topographic basemap. This structure can be applied also to the newly proposed thematic approach.
+
+The plan for this week is to work separately on different aspects. Gareth, with help from Bo, will work on a new virtual globe built using D3.js, Giovanni will work more thoroughly on the new structure, building a schematic tree reorganizing the data according to themes rather than geographic locations.
+
+Gareth, I added the raw maps I made to the refugee repository made by Bo. It is  under natgeo/maps.
+
+Best,
+
+Giovanni
+
+
+
+## fewer layers.
+
+## hosted countries
+
+## forest refugee in the future
+
+## climate induced refugees
