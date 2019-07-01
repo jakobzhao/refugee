@@ -64,3 +64,21 @@ https://observablehq.com/@ataylorg/assignment-3-interactive-visualization
 - cartogram - d3
 
 - network - d3
+
+- NatGeo Stylesheet
+
+## content
+
+- 50 years of refugee
+
+- globe refugee report: word cloud
+
+- social media tweets, pictures/videos : Bo
+
+- demographics: Gio
+
+- education
+
+- safety
+
+-
