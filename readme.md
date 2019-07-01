@@ -41,3 +41,26 @@ rotation and resize
 https://www.jasondavies.com/maps/raster/
 
 [10] https://onlivetest.wordpress.com/2015/01/16/rotate-a-shaded-d3-globe-with-moving-highlight/
+
+
+## D3 deck
+
+https://observablehq.com/@ataylorg/assignment-3-interactive-visualization
+
+======
+
+## geovisualization
+
+- 3d globe
+- reprojection solution: d3 reprojection, - -- openlayers, leaflet, mapbox,
+
+- satellite image on to 3d Globe
+
+
+- label voronoi
+
+- social madia function
+
+- cartogram - d3
+
+- network - d3
