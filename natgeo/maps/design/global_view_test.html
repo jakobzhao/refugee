@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Landing Page Globe</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <style>
+    html,
+    body,
+    svg {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+      font-family: 'Titillium Web', sans-serif;
+      overflow: auto;
+    }
+
+    .land {
+      fill: rgb(117, 87, 57);
+      stroke-opacity: 1;
+    }
+
+    .countries path {
+      stroke: rgba(0, 0, 0, .1);
+      stroke-linejoin: round;
+      stroke-width: .5;
+      fill-opacity: 0.5;
+    }
+
+    .countries path:hover {
+      stroke: rgba(0, 0, 0, .6);
+      fill-opacity: .3 !important;
+    }
+
+    .countryTooltip {
+      position: absolute;
+      display: none;
+      pointer-events: none;
+      background: #fff;
+      padding: 5px;
+      text-align: left;
+      border: solid #ccc 1px;
+      color: #666;
+      font-size: 14px;
+      font-family: sans-serif;
+      font-size:18px;
+      font-family: 'Lustria', serif;
+    }
+
+    .graticule {
+      fill: none;
+      stroke: black;
+      stroke-width: .5;
+      opacity: .2;
+    }
+
+    .labels {
+      font: 8px sans-serif;
+      fill: black;
+      opacity: .5;
+    }
+
+    .noclicks {
+      pointer-events: none;
+    }
+
+    .point {
+      opacity: .6;
+    }
+
+    .arcs {
+      opacity: .1;
+      stroke: gray;
+      stroke-width: 3;
+    }
+
+    .flyers {
+      stroke-width: 1;
+      opacity: .6;
+      stroke: darkred;
+    }
+
+    .arc,
+    .flyer {
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .arc {}
+
+    .flyer {}
+
+    .flyer:hover {}
+
+    button#but{
+        width:200px;
+        height:50px;
+        font-size:22px;
+        font-family: 'Hind Siliguri', sans-serif; 
+        font-variant: small-caps;
+        background:white;
+        display:block;
+    }
+
+    button#but:hover{
+        background:lightgray;
+    }
+    
+    div#infoPanel {
+        width:500px;
+        position:relative;
+        margin:auto;
+        z-index:10;
+        display:block
+    }
+
+    .dropbtn {
+      background-color: white;
+      color: black;
+      padding: 2px;
+      padding-left:10px;
+      width:250px;
+      font-size: 20px;
+      border: none;
+      font-family: 'Lustria', serif;
+      border:black solid 2px;
+      text-align:left;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      left:25%;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 250px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: 'Lustria', serif;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #f2f2f2;}
+
+    h1{
+        font-family: 'Hind Siliguri', sans-serif; 
+        font-variant: small-caps;
+        margin-bottom:0px;
+        font-size:55px;
+        text-align:center;
+    }
+    p{
+        font-family: 'Lustria', serif;
+        margin-top:25px;
+        text-align:justify;
+    }
+    h2{
+        font-family: 'Hind Siliguri', sans-serif; 
+        font-variant: small-caps;
+        margin-bottom:5px;
+        text-align:center;
+        line-height:30px;
+    }
+    div.legend{
+        width:350px;
+        height:35px;
+        margin-bottom:5px;
+        margin:auto;
+        border:#d9d9d9 solid 2px;
+    }    
+    div.legend_container{
+        margin:auto;
+        margin-top:0px;
+        right:100px;
+        top:calc(100% + 180px);
+        z-index:110;
+        width:340px;
+    }
+    p.legend_label{
+        font-size:20px;
+        display:inline;
+        text-align:left;
+        position:relative;
+        margin:0;
+        margin-left:5px;
+    }
+
+    div.topBar{
+        position:absolute;
+        top:0;
+        left:0;
+        height:40px;
+        width:100%;
+        background:black;
+        z-index:100;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topBar"></div>
+  <div id="infoPanel">
+    <h1>Demographics</h1> 
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p> 
+    <div class="dropdown" style="margin-top:50px; padding-bottom:0px;">
+      <button class="dropbtn">Select Map</button>
+      <div class="dropdown-content">
+        <a href="#"onclick="setHDI()">HDI</a>
+        <a href="#"onclick="setSchool()">Education</a>
+        <a href="#"onclick="setPoverty()">Poverty</a>
+      </div>
+    </div>
+    <div class="legend_container" id="HDI_legend">
+       <h2>Human Development Index</h2> 
+       <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #edf8e9 16%, #edf8e9 33%, #bae4b3 33%, #bae4b3 50%, #74c476 50%, #74c476 66%, #31a354 66%, #31a354 83%, #006d2c 83%);"></div>
+       <p class="legend_label" style="margin-left:50px;">0</p>
+       <p class="legend_label" style="margin-left:34px;">0.2</p>
+       <p class="legend_label" style="margin-left:27px;">0.4</p>
+       <p class="legend_label" style="margin-left:24px;">0.6</p>
+       <p class="legend_label" style="margin-left:26px;">0.8</p>
+    </div>
+    <div class="legend_container" id="school_legend" style="display:none;">
+      <h2>Years of School</h2> 
+      <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f2f0f7 16%, #f2f0f7 33%, #cbc9e2 33%, #cbc9e2 50%, #9e9ac8 50%, #9e9ac8 66%, #756bb1 66%, #756bb1 83%, #54278f 83%);"></div>
+      <p class="legend_label" style="margin-left:50px;">0</p>
+      <p class="legend_label" style="margin-left:43px;">6</p>
+      <p class="legend_label" style="margin-left:45px;">8</p>
+      <p class="legend_label" style="margin-left:40px;">10</p>
+      <p class="legend_label" style="margin-left:32px;">12</p>
+   </div>
+   <div class="legend_container" id="pov_legend" style="display:none;">
+      <h2>% Population in Poverty</h2> 
+      <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffd4 16%, #ffffd4 33%, #fed98e 33%, #fed98e 50%, #fe9929 50%, #fe9929 66%, #d95f0e 66%, #d95f0e 83%, #993404 83%);"></div>
+      <p class="legend_label" style="margin-left:50px;">0</p>
+      <p class="legend_label" style="margin-left:37px;">20</p>
+      <p class="legend_label" style="margin-left:34px;">40</p>
+      <p class="legend_label" style="margin-left:27px;">60</p>
+      <p class="legend_label" style="margin-left:32px;">80</p>
+ </div>
+  </div>
+  <svg>
+    <defs>
+      <radialGradient cx="75%" cy="25%" id="ocean_fill">
+        <stop offset="5%" stop-color="#ddf" />
+        <stop offset="100%" stop-color="#9ab" />
+      </radialGradient>
+      <radialGradient cx="75%" cy="25%" id="globe_highlight">
+        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="40%" id="globe_shading">
+        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
+        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="50%" id="drop_shadow">
+        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#000" stop-opacity="0" />
+      </radialGradient>
+      <filter id="glow">
+          <feColorMatrix type="matrix"
+              values=
+              "0.8 0 0 0 0
+               0 0.9 0 0 0
+               0 0 1 0 0
+               0 0 0 1 0"/>
+          <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
+          <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Use d3-fetch instead of d3-request in ES6 -->
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script>
+
+
+    const config = {
+      speed: 0.005,
+      verticalTilt: -30,
+      horizontalTilt: 0
+    };
+
+
+    var width = window.innerWidth,
+      height = window.innerHeight,
+      sensitivity = 0.25,
+      offsetX = width / 2,
+      offsetY = height / 2,
+      maxElevation = 45,
+      initRotation = [0, -30],
+      scaleExtent = [1, 8],
+      flyerAltitude = 80,
+      countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
+      countryById = {},
+      demographicsById = {},
+      schoolById = {},
+      povertyById = {},
+      countries,
+      countryCentroids = {};
+
+    var radius = width / 3;
+    if (height < width) {
+      radius = height /2.25;
+    }
+    var projection = d3
+      .geoOrthographic()
+      .scale(radius)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var skyProjection = d3
+      .geoOrthographic()
+      .scale(radius + flyerAltitude)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var path = d3
+      .geoPath()
+      .projection(projection)
+      .pointRadius(1.5);
+    var swoosh = d3.line()
+      .x(function(d) {
+        return d[0]
+      })
+      .y(function(d) {
+        return d[1]
+      })
+      .curve(d3.curveBasis);
+    var graticule = d3.geoGraticule();
+    var svg = d3
+      .select("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
+      .call(
+        d3
+        .drag()
+        .subject(function() {
+          var r = projection.rotate();
+          return {
+            x: r[0] / sensitivity,
+            y: -r[1] / sensitivity
+          };
+        })
+        .on("drag", dragged)
+      )
+      /*.call(
+        d3
+        .zoom()
+        .scaleExtent(scaleExtent)
+        .on("zoom", zoomed)
+      )*/
+      .on("dblclick.zoom", null);
+
+    var labels;
+
+    //legend labels
+    var hdiLegend = ["0 or no data","Less than 0.4","0.4 to 0.55","0.55 to 0.7","0.7 to 0.85","0.85+"];
+    var schoolLegend = ["0 or no data","Less than 6","6 to 8","8 to 10","10 to 12","12+"];
+    var povLegend = ["0 or no data","Less than 20","20 to 40","40 to 60","60 to 80","80+"];
+
+    // Data and color scale
+    var hdiColorScale = d3.scaleThreshold()
+        .domain([0.2, 0.4, 0.55, 0.7, 0.85])
+        .range(["#ffffff","#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"]);
+    var schoolColorScale = d3.scaleThreshold()
+        .domain([0.01,6, 8, 10, 12])
+        .range(["#ffffff","#f2f0f7","#cbc9e2","#9e9ac8","#756bb1","#54278f"]);
+    var povColorScale = d3.scaleThreshold()
+        .domain([0.01,20, 40, 60, 80])
+        .range(["#ffffff","#ffffd4","#fe9929","#d95f0e","#d95f0e","#993404"]);
+
+    d3.queue()
+      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
+      .defer(d3.json, "assets/places.json")
+      .defer(d3.json, "assets/links.json")
+      .defer(d3.csv, "assets/country_names.csv")
+      .defer(d3.csv, "assets/demographics.csv")
+      .await(ready);
+
+    function ready(error, world, places, links, countryNames, demographics) {
+
+      countries = topojson.feature(world, world.objects.countries).features;
+
+      countryNames.forEach(function(d) {
+        countryById[d.iso_n3] = d.name;
+      });
+
+      demographics.forEach(function(d) {
+        demographicsById[d.id] = d.HDI;
+        schoolById[d.id] = d.Years_school;
+        povertyById[d.id] = d.Pop_below_550_day;
+      });
+      
+      svg
+        .append("ellipse")
+        .attr("cx", offsetX - 40)
+        .attr("cy", offsetY + radius - 20)
+        .attr("rx", projection.scale() * 0.9)
+        .attr("ry", projection.scale() * 0.25)
+        .attr("class", "noclicks")
+        .style("fill", "url(#drop_shadow)");
+      svg
+        .append("circle")
+        .attr("cx", offsetX)
+        .attr("cy", offsetY)
+        .attr("r", projection.scale())
+        .attr("class", "noclicks")
+        .style("fill", "#eff3ff");
+      /*svg
+        .append("path")
+        .datum(topojson.feature(world, world.objects.land))
+        .attr("class", "land")
+        .attr("d", path);*/
+      svg
+        .append("path")
+        .datum(graticule)
+        .attr("class", "graticule noclicks")
+        .attr("d", path);
+      svg
+        .append("circle")
+        .attr("cx", offsetX)
+        .attr("cy", offsetY)
+        .attr("r", projection.scale())
+        .attr("class", "noclicks")
+        .style("fill", "url(#globe_highlight)");
+      svg
+        .append("circle")
+        .attr("cx", offsetX)
+        .attr("cy", offsetY)
+        .attr("r", projection.scale())
+        .attr("class", "noclicks")
+        .style("fill", "url(#globe_shading)");
+      svg
+        .append("g")
+        .attr("class", "countries")
+        .selectAll("path")
+        .data(countries, function(d){
+            countryCentroids[d.id] = d3.geoCentroid(d);
+        })
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("name",function(d){
+           return countryById[d.id];
+        })
+        .attr("fill", function (d) {
+            return hdiColorScale(parseFloat(demographicsById[d.id]));
+        })
+        .attr("box-shadow", 'inset 0 0 10px #000000')
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] + ':\n' + demographicsById[d.id])
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY + offsetY + 3) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+        })
+        .on("mouseout", function(d) {
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
+      position_labels();
+      //enableRotation();
+    }
+    
+    function resetType(){
+        svg.selectAll(".countries path")
+          .style("fill-opacity", 0)
+    }
+
+    function enableRotation() {
+      d3.timer(function(elapsed) {
+        projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+        svg.selectAll("path").attr("d", path);
+         position_labels();
+
+
+      });
+    }
+
+    function position_labels() {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      svg
+        .selectAll(".label")
+        .attr("text-anchor", function(d) {
+          var x = projection(d.geometry.coordinates)[0];
+          return x < offsetX - 20 ? "end" : x < offsetX + 20 ? "middle" : "start";
+        })
+        .attr("transform", function(d) {
+          var loc = projection(d.geometry.coordinates),
+            x = loc[0],
+            y = loc[1];
+          var offset = x < offsetX ? -5 : 5;
+          return "translate(" + (x + offset) + "," + (y - 2) + ")";
+        })
+        .style("display", function(d) {
+          var d = d3.geoDistance(d.geometry.coordinates, centerPos);
+          return d > 1.57 ? "none" : "inline";
+        });
+    }
+
+    function flying_arc(pts) {
+      var source = pts.geometry.coordinates[0],
+        target = pts.geometry.coordinates[1];
+      var mid1 = location_along_arc(source, target, .333);
+      var mid2 = location_along_arc(source, target, .667);
+      var result = [projection(source),
+        skyProjection(mid1),
+        skyProjection(mid2),
+        projection(target)
+      ]
+      // console.log(result);
+      return result;
+    }
+
+    function fade_at_edge(d) {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      start = d.geometry.coordinates[0];
+      end = d.geometry.coordinates[1];
+      var start_dist = 1.57 - d3.geoDistance(start, centerPos),
+        end_dist = 1.57 - d3.geoDistance(end, centerPos);
+      var fade = d3.scaleLinear().domain([-.1, 0]).range([0, .1])
+      var dist = start_dist < end_dist ? start_dist : end_dist;
+      return fade(dist)
+    }
+
+    function location_along_arc(start, end, loc) {
+      var interpolator = d3.geoInterpolate(start, end);
+      return interpolator(loc)
+    }
+
+    function dragged() {
+      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+      o1[1] =
+        o1[1] > maxElevation ?
+        maxElevation :
+        o1[1] < -maxElevation ?
+        -maxElevation :
+        o1[1];
+      projection.rotate(o1);
+      skyProjection.rotate(o1);
+      refresh();
+    }
+
+    function zoomed() {
+      if (d3.event) {
+        svg.attr("transform", "scale(" + d3.event.transform.k + ")");
+      }
+    }
+
+    function refresh() {
+      svg.selectAll(".land").attr("d", path);
+      svg.selectAll(".countries path").attr("d", path);
+      svg.selectAll(".graticule").attr("d", path);
+      refreshLandmarks();
+      refreshFlyers();
+    }
+
+    function refreshLandmarks() {
+      svg.selectAll(".point").attr("d", path);
+      position_labels();
+    }
+
+    function refreshFlyers() {
+      svg.selectAll(".arc").attr("d", path)
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+      svg.selectAll(".flyer")
+        .attr("d", function(d) {
+          return swoosh(flying_arc(d))
+        })
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+    }
+
+    function decodeHtml(html){
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
+    var legends = document.getElementsByClassName("legend_container");
+
+    function setHDI(){
+      svg
+        .selectAll("path")
+        .attr("fill", function (d) {
+          return hdiColorScale(parseFloat(demographicsById[d.id]));
+        })
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] + ':\n' + demographicsById[d.id])
+          .style("left", (d3.event.pageX + 7) + "px")
+          .style("top", (d3.event.pageY - 15) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+        })
+        .on("mouseout", function(d) {
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("HDI_legend").style.display = "block";
+    }
+    function setSchool(){
+      svg
+        .selectAll("path")
+        .attr("fill", function (d) {
+            return schoolColorScale(parseFloat(schoolById[d.id]));
+        })
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] + ':\n' + schoolById[d.id])
+          .style("left", (d3.event.pageX + 7) + "px")
+          .style("top", (d3.event.pageY - 15) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+        })
+        .on("mouseout", function(d) {
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("school_legend").style.display = "block";
+    }
+    function setPoverty(){
+      svg
+        .selectAll("path")
+        .attr("fill", function (d) {
+            return povColorScale(parseFloat(povertyById[d.id]));
+        })
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] + ':\n' + povertyById[d.id])
+          .style("left", (d3.event.pageX + 7) + "px")
+          .style("top", (d3.event.pageY - 15) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+        })
+        .on("mouseout", function(d) {
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("pov_legend").style.display = "block";
+    }
+
+  </script>
+</body>
+
+</html>
