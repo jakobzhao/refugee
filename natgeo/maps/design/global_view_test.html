@@ -20,7 +20,7 @@
     }
 
     .land {
-      fill: rgb(117, 87, 57);
+      fill: rgb(255, 255, 255);
       stroke-opacity: 1;
     }
 
@@ -401,7 +401,7 @@
         .range(["#ffffff","#ffffd4","#fe9929","#d95f0e","#d95f0e","#993404"]);
 
     d3.queue()
-      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
+      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
       .defer(d3.json, "assets/places.json")
       .defer(d3.json, "assets/links.json")
       .defer(d3.csv, "assets/country_names.csv")
@@ -409,6 +409,50 @@
       .await(ready);
 
     function ready(error, world, places, links, countryNames, demographics) {
+
+      
+    var defs = svg.append("defs");
+
+    var filter = svg.append("defs")
+      .append("filter")
+      .attr("id", "drop-shadow")
+      .attr("height", "110%");
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceAlpha")
+      .attr("stdDeviation", 0.5)
+      .attr("result", "blur");
+
+    filter.append("feOffset")
+      .attr("in", "blur")
+      .attr("dx", 1)
+      .attr("dy", 1)
+      .attr("result", "offsetBlur");
+    
+      var feMerge = filter.append("feMerge");
+
+    feMerge.append("feMergeNode")
+        .attr("in", "offsetBlur")
+    feMerge.append("feMergeNode")
+        .attr("in", "SourceGraphic");
+        
+    var gradient = svg.append("svg:defs")
+      .append("svg:linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "0%")
+        .attr("y1", "0%")
+        .attr("x2", "0%")
+        .attr("y2", "100%")
+        .attr("spreadMethod", "pad");
+
+    gradient.append("svg:stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#0F3871")
+        .attr("stop-opacity", 1);
+
+    gradient.append("svg:stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#175BA8")
+        .attr("stop-opacity", 1);
 
       countries = topojson.feature(world, world.objects.countries).features;
 
@@ -436,12 +480,13 @@
         .attr("cy", offsetY)
         .attr("r", projection.scale())
         .attr("class", "noclicks")
-        .style("fill", "#eff3ff");
-      /*svg
+        .style("fill", "#e6f2ff");
+      svg
         .append("path")
         .datum(topojson.feature(world, world.objects.land))
         .attr("class", "land")
-        .attr("d", path);*/
+        .attr("d", path)
+        .style("filter", "url(#drop-shadow)");;
       svg
         .append("path")
         .datum(graticule)
@@ -503,8 +548,6 @@
         projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
         svg.selectAll("path").attr("d", path);
          position_labels();
-
-
       });
     }
 
@@ -621,8 +664,8 @@
         })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + demographicsById[d.id])
-          .style("left", (d3.event.pageX + 7) + "px")
-          .style("top", (d3.event.pageY - 15) + "px")
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY + offsetY + 3) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
@@ -643,8 +686,8 @@
         })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + schoolById[d.id])
-          .style("left", (d3.event.pageX + 7) + "px")
-          .style("top", (d3.event.pageY - 15) + "px")
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY + offsetY + 3) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
@@ -665,8 +708,8 @@
         })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + povertyById[d.id])
-          .style("left", (d3.event.pageX + 7) + "px")
-          .style("top", (d3.event.pageY - 15) + "px")
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY + offsetY + 3) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
