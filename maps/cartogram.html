@@ -1,0 +1,44 @@
+<head>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.min.js"></script>
+    <script src="//unpkg.com/cartogram-chart"></script>
+    <script src="//d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+</head>
+<style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+            font: 10pt "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+    </style>
+<body>
+    <div id="world"></div>
+
+    <script>
+        d3.json('data/contributions2.json', (error, world) => {
+            if (error) throw error;
+
+            const colorScale = d3.scaleSequential(d3.interpolatePuBu)
+                .domain([0, Math.max(...world.objects.countries.geometries.map(ratio))]);
+
+            Cartogram()
+                .topoJson(world)
+                .topoObjectName('countries')
+                .iterations(100)
+                .value(({ properties }) =>  properties.Contributions)
+                .color(f => colorScale(ratio(f)))
+                .label(({ properties: p }) => `Contributions of ${p.NAME} (${p.ADM0_A3})`)
+                .units('')
+                .valFormatter(d3.format('$,.0f'))
+                (document.getElementById('world'));
+
+            //
+
+            function ratio({ properties: p }) {
+                return  p.Contributions / p.GDP_MD_EST;
+            }
+        });
+    </script>
+</body>
