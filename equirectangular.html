@@ -75,11 +75,11 @@
       fill: none;
     }
 
-    .arc {}
+    /* .arc {}
 
     .flyer {}
 
-    .flyer:hover {}
+    .flyer:hover {} */
   </style>
 </head>
 
@@ -132,24 +132,24 @@
       offsetX = width / 2,
       offsetY = height / 2,
       maxElevation = 45,
-      initRotation = [0, 0],
+      initRotation = [0, -30],
       scaleExtent = [1, 8],
       flyerAltitude = 80;
 
     var radius = width / 3;
     if (height < width) {
-      radius = height /4;
+      radius = height /3;
     }
     var projection = d3
-      .geoNaturalEarth1()
+      .geoEquirectangular()
       .scale(radius)
-      .rotate(initRotation)
+      // .rotate(initRotation)
       .translate([offsetX, offsetY])
       // .clipAngle(90);
     var skyProjection = d3
-      .geoNaturalEarth1()
+      .geoEquirectangular()
       .scale(radius + flyerAltitude)
-      .rotate(initRotation)
+      // .rotate(initRotation)
       .translate([offsetX, offsetY])
       .clipAngle(90);
     var path = d3
@@ -199,20 +199,19 @@
       .await(ready);
 
     function ready(error, world, places, links) {
-      svg
-        .append("ellipse")
-        .attr("cx", offsetX - 40)
-        .attr("cy", offsetY + radius - 20)
-        .attr("rx", projection.scale() * 0.9)
-        .attr("ry", projection.scale() * 0.25)
-        .attr("class", "noclicks")
-        .style("fill", "url(#drop_shadow)");
+      // svg
+      //   .append("rect")
+      //   .attr("cx", offsetX - 40)
+      //   .attr("cy", offsetY + radius - 20)
+      //   .attr("rx", projection.scale() * 0.9)
+      //   .attr("ry", projection.scale() * 0.25)
+      //   .attr("class", "noclicks")
+      //   .style("fill", "url(#drop_shadow)");
         svg
-        .append("ellipse")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("rx", projection.scale() * 2.75)
-        .attr("ry", projection.scale() * 1.81)
+        .append("rect")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("transform-origin", offsetX + "px " + offsetY + "px")
         .attr("class", "noclicks")
         .style("fill", "url(#ocean_fill)");
       svg
@@ -226,20 +225,18 @@
         .attr("class", "graticule noclicks")
         .attr("d", path);
         svg
-        .append("ellipse")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("rx", projection.scale() * 2.75)
-        .attr("ry", projection.scale() * 1.81)
+        .append("rect")
+        .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
         .attr("class", "noclicks")
         .style("fill", "url(#globe_highlight)");
 
       svg
-        .append("ellipse")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("rx", projection.scale() * 2.75)
-        .attr("ry", projection.scale() * 1.81)
+        .append("rect")
+        .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
         .attr("class", "noclicks")
         .style("fill", "url(#globe_shading)");
       svg
@@ -290,19 +287,19 @@
           return fade_at_edge(d)
         });
 
-      enableRotation();
+      // enableRotation();
 
     }
 
-    function enableRotation() {
-      d3.timer(function(elapsed) {
-        projection.rotate([config.speed * elapsed - 120]);
-        svg.selectAll("path").attr("d", path);
-         position_labels();
+    // function enableRotation() {
+    //   d3.timer(function(elapsed) {
+    //     projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+    //     svg.selectAll("path").attr("d", path);
+    //      position_labels();
 
 
-      });
-    }
+    //   });
+    // }
 
 
 
