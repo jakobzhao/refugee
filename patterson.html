@@ -74,6 +74,22 @@
       stroke-linejoin: round;
       fill: none;
     }
+
+    #globe {
+      position: fixed;
+      left: 8px; top: 225px;
+      z-index: 100;
+    }
+    #patterson {
+      position: fixed;
+      left: 8px; top: 290px;
+      z-index: 100;
+    }
+    #equi {
+      position: fixed;
+      left: 8px; top: 350px;
+      z-index: 100;
+    }
 /* 
     .arc {}
 
@@ -104,6 +120,9 @@
       </radialGradient>
     </defs>
   </svg>
+  <a href="index.html"><input type="image" id="globe" src="assets/globe.png" height="50px"/>
+  <a href="patterson.html"><input type="image" id="patterson" src="assets/patterson.png" height="40px" /></a>
+  <a href="equirectangular.html"><input type="image" id="equi" src="assets/equi.PNG" height="40px" width="60px" /></a>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Use d3-fetch instead of d3-request in ES6 -->
   <script src="https://d3js.org/d3-request.v1.min.js"></script>
