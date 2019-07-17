@@ -51,3 +51,9 @@ Disallow: /search/realtime
 Disallow: /search/users
 Disallow: /search/*/grid
 ```
+
+## Software
+
+Studio 3T
+IDE: PyCharm CE
+Ubuntu on windows
