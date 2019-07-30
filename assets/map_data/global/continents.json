@@ -1,0 +1,8 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-101.52604357279374,45.69568594975256]},"properties":{"id":null,"NAME":"North America"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-55.95288000071308,-9.181454426083782]},"properties":{"id":null,"NAME":"South America"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[10.121678072274904,23.725242479831202]},"properties":{"id":null,"NAME":"Africa"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[19.784755735123042,47.066798320832426]},"properties":{"id":null,"NAME":"Europe"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[89.3850313337448,39.88478113898592]},"properties":{"id":null,"NAME":"Asia"}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[131.95480590250787,-24.883955628211766]},"properties":{"id":null,"NAME":"Oceania"}}
+]}
