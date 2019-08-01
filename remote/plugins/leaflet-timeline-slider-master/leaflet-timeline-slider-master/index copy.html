@@ -1,0 +1,192 @@
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8" />
+    <title>Leaflet Timeline Slider</title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+    integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>
+
+    <script src="src/leaflet-timeline-slider.js"></script>
+    
+</head>
+<style>
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+    opacity: 0.5;
+}
+</style>
+    <body>
+        <div id="mapid" style="height: 100%;">
+        </div>
+
+
+        <script type="text/javascript">
+            data = {"type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "Day 1",
+                                    "content": "This is where some people moved to."
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -73.7949,
+                                        40.7282,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "The Next Day",
+                                    "content": "This is where some people grooved to."
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -74.3838,
+                                        40.9148,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "Amazing Event",
+                                    "content": "This is where they went to have fun."
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        4.899431,
+                                        52.379189,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "1776",
+                                    "content": "This where they went when the revolution had begun."
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -71.3489484,
+                                        42.4603719,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "1776",
+                                    "content": "This where they went when the revolution had begun."
+                                    
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -71.2272,
+                                        42.4473,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "1984",
+                                    "content": "So they all came here...and disappeared without a trace!"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -0.118092,
+                                        51.509865,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/22/63",
+                                    "content": "Now, this can be quite the scary place."
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        -70.2553259,
+                                        43.661471,
+                                        1
+                                    ]
+                                }
+                            },
+                        ]
+                    }
+
+            
+            var map = L.map('mapid')
+            
+            var open = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
+
+            var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            });
+            
+            getDataAddMarkers = function( {label, value, map, exclamation} ) {
+                map.eachLayer(function (layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);
+                        }
+                });
+
+                filteredData = data.features.filter(function (i, n) {
+                    return i.properties.title===label;
+                    });
+
+                var markerArray = [];
+                L.geoJson(filteredData, {
+                    onEachFeature: function onEachFeature(feature, layer) {
+                        content = `${exclamation} <br> ${feature.properties.content} <br> (${Math.round(value/6 * 100)}% done with story)`
+                        var popup = L.popup().setContent(content);
+                        layer.bindPopup(popup);
+                        markerArray.push(layer);
+                    }
+                }).addTo(map);
+                
+                var markerGroup = L.featureGroup(markerArray);
+                map.fitBounds(markerGroup.getBounds()).setZoom(12);
+            };
+
+            L.control.timelineSlider({
+                timelineItems: ["Day 1", "The Next Day", "Amazing Event", "1776", "12/22/63", "1984"], 
+                changeMap: getDataAddMarkers,
+                extraChangeMapParams: {exclamation: "Hello World!"} })
+            .addTo(map);             
+        </script>
+    </body>
+
+</html>

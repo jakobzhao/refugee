@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Satellite Imagery</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/L.Control.Sidebar.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+        }
+
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+        .leaflet-marker-icon,
+        .leaflet-marker-shadow {
+            opacity: 0;
+        }
+        #_2015 {
+            position: fixed;
+            top: 40px;
+            left: 30%;
+            font-size: 40px;
+            color: rgb(172, 172, 172);
+            z-index: 1000;
+        }
+        #_2018 {
+            position: fixed;
+            top: 40px;
+            right: 5%;
+            font-size: 40px;
+            color: rgb(172, 172, 172);
+            z-index: 900;
+        }        
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+      <div class="container">
+        <div class="row"><a href="index.html"><h4>Satellite Imagery</h4></a></div> <br>
+        <div class="row"><h5>Kutupalong</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="kut1.html"><img src="assets/data/img/kutupalong/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="kut2.html"><img src="assets/data/img/kutupalong/2.PNG", width="100%"  /></a>
+          </div>
+          <div class="col-sm">
+            <a href="kut3.html"><img src="assets/data/img/kutupalong/3.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        <br>
+        <div class="row"><h5>Mtendeli</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="met1.html"><img src="assets/data/img/mtendeli/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="#"><img src="assets/data/img/mtendeli/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        <br>
+        <div class="row"><h5>Nyaragosu</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="nya1.html"><img src="assets/data/img/nyaragosu/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="nya2.html"><img src="assets/data/img/nyaragosu/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        
+        <br>
+        <div class="row"><h5>Gado</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="gado1.html"><img src="assets/data/img/gado/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="gado2.html"><img src="assets/data/img/gado/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        <br>
+        <div class="row"><h5>Kyangwali</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="kya1.html"><img src="assets/data/img/kyangwali/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="kya2.html"><img src="assets/data/img/kyangwali/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+    </div>
+      </div>
+    </div>
+    <div id="_2015">2016</div>
+    <div id="_2018">2013</div>
+    <div id="map"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="assets/js/L.Control.Sidebar.js"></script>
+    <script src="assets/js/leaflet-side-by-side.js"></script>
+    <script src="assets/js/leaflet-timeline-slider.js"></script>
+
+    <script>
+        var map = L.map('map', {
+                minZoom: 13,
+                maxZoom: 19
+            });
+            map.setView([-3.425, 30.895], 15);
+
+        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            }).addTo(map);
+
+        var sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'left'
+        });
+        map.addControl(sidebar);
+
+        setTimeout(function () {
+            sidebar.show();
+        }, 500);
+
+        var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map);
+
+    L.control.sideBySide(esri_2015, google_2018).addTo(map);
+    </script>
+</body>
+</html>

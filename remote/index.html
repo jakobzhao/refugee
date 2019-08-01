@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Satellite Imagery</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/L.Control.Sidebar.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+        }
+
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div class="container">
+            <div class="row"><a href="index.html"><h4>Satellite Imagery</h4></a></div> <br>
+            <div class="row"><h5>Kutupalong</h5></div>
+            <div class="row">
+              <div class="col-sm">
+                <a onClick="kut1()" href="#"><img src="assets/data/img/kutupalong/1.PNG", width="100%" /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="kut2()" href="#"><img src="assets/data/img/kutupalong/2.PNG", width="100%"  /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="kut3()" href="#"><img src="assets/data/img/kutupalong/3.PNG", width="100%"  /></a>
+              </div>
+            </div>
+            <br>
+            <div class="row"><h5>Mtendeli</h5></div>
+            <div class="row">
+              <div class="col-sm">
+                <a onClick="met1()" href="#"><img src="assets/data/img/mtendeli/1.PNG", width="100%" /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="met2()" href="#"><img src="assets/data/img/mtendeli/2.PNG", width="100%"  /></a>
+              </div>
+            </div>
+            
+            <br>
+            <div class="row"><h5>Nyaragosu</h5></div>
+            <div class="row">
+              <div class="col-sm">
+                <a onClick="nya1()" href="#"><img src="assets/data/img/nyaragosu/1.PNG", width="100%" /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="nya2()" href="#"><img src="assets/data/img/nyaragosu/2.PNG", width="100%"  /></a>
+              </div>
+            </div>
+    
+            
+            <br>
+            <div class="row"><h5>Gado</h5></div>
+            <div class="row">
+              <div class="col-sm">
+                <a onClick="gado1()" href="#"><img src="assets/data/img/gado/1.PNG", width="100%" /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="gado2()" href="#"><img src="assets/data/img/gado/2.PNG", width="100%"  /></a>
+              </div>
+            </div>
+            <br>
+            <div class="row"><h5>Kyangwali</h5></div>
+            <div class="row">
+              <div class="col-sm">
+                <a onClick="kya1()" href="#"><img src="assets/data/img/kyangwali/1.PNG", width="100%" /></a>
+              </div>
+              <div class="col-sm">
+                <a onClick="kya2()" href="#"><img src="assets/data/img/kyangwali/2.PNG", width="100%"  /></a>
+              </div>
+            </div>
+          </div>
+    </div>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="assets/js/L.Control.Sidebar.js"></script>
+    <script src="assets/js/leaflet-side-by-side.js"></script>
+    <script src="assets/js/leaflet-timeline-slider.js"></script>
+
+     <div id="map"></div>
+    <script src="assets/data/exp_location.js"></script>
+    <script>
+        var map = L.map('map');
+        map.setView([20, 20], 3);
+
+        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            }).addTo(map);
+
+        var sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'left'
+        });
+        map.addControl(sidebar);
+
+        setTimeout(function () {
+            sidebar.show();
+        }, 500);
+
+		var locations = new L.geoJson(exp_location,{
+			pointToLayer: function (feature, latlng) {  
+				return L.circleMarker(latlng, {
+					radius: 5.0,
+					fillColor: '#ff1111',
+					color: '#fff000',
+					weight: 0.1,
+					//opacity: 1.0,
+					fillOpacity: 0.7
+				}).bindTooltip(feature.properties.label_exp);
+			}
+		});
+		
+		locations.addTo(map);
+
+
+        function kut1() {            		
+            map.flyTo([21.16, 92.15], 13),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kut2() {            		
+            map.flyTo([21.16, 92.15], 13),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kut3() {            		
+            map.flyTo([21.20, 92.15], 15),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut3.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function met1() {            		
+            map.flyTo([-3.43, 30.89], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "met1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function met2() {            		
+            map.flyTo([-3.43, 30.89], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "met2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function nya1() {            		
+            map.flyTo([-4.25, 30.4], 13),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "nya1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function nya2() {            		
+            map.flyTo([-4.25, 30.4], 13),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "nya2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function gado1() {            		
+            map.flyTo([5.748, 14.44], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "gado1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function gado2() {            		
+            map.flyTo([5.748, 14.44], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "gado2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kya1() {            		
+            map.flyTo([1.158, 30.77], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kya1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kya2() {            		
+            map.flyTo([1.158, 30.77], 14),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kya2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+
+    </script>
+</body>
+</html>

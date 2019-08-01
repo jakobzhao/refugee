@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui' />
+    <title>Leaflet Side-by-side</title>
+    <script src='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.js'></script>
+    <script src="leaflet-side-by-side.js"></script>
+    <link href='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.css' rel='stylesheet' />
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='map'></div>
+
+    <script>
+    var map = L.map('map').setView([21.505, 92.09], 13);
+
+    var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+    }).addTo(map);
+
+	var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+			attribution: '@Google'
+	}).addTo(map);
+
+    var f_2015 = L.tileLayer('https://storage.googleapis.com/geeovanni/kutu_s_false_2015-07-01_-12-30/{z}/{x}/{y}', {
+        
+    });
+
+    var f_2019 = L.tileLayer('https://storage.googleapis.com/geeovanni/kutu_s_false_2019-01-01_-03-30/{z}/{x}/{y}', {
+
+        minZoom: 1,
+        maxZoom: 16
+    });
+
+    L.control.sideBySide(esri_2015, google_2018).addTo(map);
+    </script>
+</body>
+</html>

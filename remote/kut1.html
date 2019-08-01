@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Satellite Imagery</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/L.Control.Sidebar.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body, #map {
+            height: 100%;
+        }
+
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+        .leaflet-marker-icon,
+        .leaflet-marker-shadow {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+      <div class="container">
+        <div class="row"><a href="index.html"><h4>Satellite Imagery</h4></a></div> <br>
+        <div class="row"><h5>Kutupalong</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="#"><img src="assets/data/img/kutupalong/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="kut2.html"><img src="assets/data/img/kutupalong/2.PNG", width="100%"  /></a>
+          </div>
+          <div class="col-sm">
+            <a href="kut3.html"><img src="assets/data/img/kutupalong/3.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        <br>
+        <div class="row"><h5>Mtendeli</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="met1.html"><img src="assets/data/img/mtendeli/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="met2.html"><img src="assets/data/img/mtendeli/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        <br>
+        <div class="row"><h5>Nyaragosu</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="nya1.html"><img src="assets/data/img/nyaragosu/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="nya2.html"><img src="assets/data/img/nyaragosu/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+        
+        <br>
+        <div class="row"><h5>Gado</h5></div>
+        <div class="row">
+          <div class="col-sm">
+            <a href="gado1.html"><img src="assets/data/img/gado/1.PNG", width="100%" /></a>
+          </div>
+          <div class="col-sm">
+            <a href="gado2.html"><img src="assets/data/img/gado/2.PNG", width="100%"  /></a>
+          </div>
+        </div>
+    
+    <br>
+    <div class="row"><h5>Kyangwali</h5></div>
+    <div class="row">
+      <div class="col-sm">
+        <a href="kya1.html"><img src="assets/data/img/kyangwali/1.PNG", width="100%" /></a>
+      </div>
+      <div class="col-sm">
+        <a href="kya2.html"><img src="assets/data/img/kyangwali/2.PNG", width="100%"  /></a>
+      </div>
+    </div>
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="assets/js/L.Control.Sidebar.js"></script>
+    <script src="assets/js/leaflet-side-by-side.js"></script>
+    <script src="assets/js/leaflet-timeline-slider.js"></script>
+
+    <script>
+        var map = L.map('map', {
+                minZoom: 13,
+                maxZoom: 18
+            });
+        map.setView([21.16, 92.15], 13);
+
+        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            }).addTo(map);
+
+        var sidebar = L.control.sidebar('sidebar', {
+            closeButton: true,
+            position: 'left'
+        });
+        map.addControl(sidebar);
+
+        setTimeout(function () {
+            sidebar.show();
+        }, 500);
+
+        function kut1() {            		
+            map.flyTo([21.16, 92.15], 15),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut1.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kut2() {            		
+            map.flyTo([21.20, 92.15], 15),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut2.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);}
+        function kut3() {            		
+            map.flyTo([21.20, 92.15], 15),
+                { duration: 3};
+            setTimeout(function () {
+                window.location.href = "kut3.html"; //will redirect to your blog page (an ex: blog.html)
+                }, 2700);
+            }
+            data = {"type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2015",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2015-07-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "06/2016",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2016-01-01_-06-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2016",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2016-07-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "06/2017",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2017-01-01_-06-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2017",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2017-07-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "06/2018",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2018-01-01_-06-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2018",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2018-07-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "06/2019",
+                                    "base": "https://storage.googleapis.com/geeovanni/kutu_s_false_2019-01-01_-03-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+
+                        ]
+                    }
+
+
+            getDataAddMarkers = function( {label, map, base} ) {
+                map.eachLayer(function (layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);                            
+                        }
+                });
+
+                filteredData = data.features.filter(function (i, n) {
+                    return i.properties.title===label;                   
+                    });
+
+                var markerArray = [];
+                L.geoJson(filteredData, {
+                    onEachFeature: function onEachFeature(feature, layer) { 
+                        var pippo = feature.properties.base
+                        L.tileLayer(pippo).addTo(map);                        
+                        markerArray.push(layer);
+                    }
+                }).addTo(map);
+                
+                var markerGroup = L.featureGroup(markerArray);
+                // map.fitBounds(markerGroup.getBounds()).setZoom(13);
+               
+            };
+
+            L.control.timelineSlider({
+                timelineItems: ["12/2015", "06/2016", "12/2016", "06/2017", "12/2017", "06/2018", "12/2018", "06/2019"], 
+                changeMap: getDataAddMarkers,
+                extraChangeMapParams: {} })
+            .addTo(map);  
+    </script>
+</body>
+</html>
