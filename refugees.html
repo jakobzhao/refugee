@@ -7,385 +7,358 @@
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
-    html,
-    body,
-    svg {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      background: #fff;
-      font-family: 'Titillium Web', sans-serif;
-      overflow: auto;
-    }
-
-    .land {
-      fill: #bae4b3;
-      stroke-opacity: 1;
-    }
-
-    .countries path {
-      stroke: rgba(0, 0, 0, .1);
-      stroke-linejoin: round;
-      stroke-width: .5;
-      fill-opacity: 0;
-    }
-
-    .countries path:hover {
-      stroke: rgba(0, 0, 0, .6);
-      fill-opacity: .1 !important;
-    }
-
-    .countryTooltip {
-      position: absolute;
-      display: none;
-      pointer-events: none;
-      background: #fff;
-      padding: 5px;
-      text-align: left;
-      border: solid #ccc 1px;
-      color: #666;
-      font-size: 14px;
-      font-family: sans-serif;
-      font-size:18px;
-      font-family: 'Lustria', serif;
-    }
-
-    .graticule {
-      fill: none;
-      stroke: black;
-      stroke-width: .5;
-      opacity: .2;
-    }
-
-    .labels {
-      font: 9px 'Hind Siliguri', sans-serif;
-      fill: black;
-      opacity: .5;
-    }
-
-    .noclicks {
-      pointer-events: none;
-    }
-
-    .point {
-      opacity: .6;
-      stroke-width: 1;
-      stroke:white;
-    }
-
-    .arcs {
-      opacity: .1;
-      stroke: gray;
-      stroke-width: 3;
-    }
-
-    .flyers {
-      stroke-width: 1;
-      opacity: .6;
-      stroke: darkred;
-    }
-
-    .arc,
-    .flyer {
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .arc {}
-
-    .flyer {}
-
-    .flyer:hover {}
-
-    .bar-chart{
-
-    }
-    svg.chart{
-       /* width:700px !important;
-        height:600px !important;*/
-    }
-
-    .axis {
-      font-size: 10px;
-      font-family: 'Hind Siliguri', sans-serif; 
-    }
-
-    button#but{
-        width:200px;
-        height:50px;
-        font-size:22px;
-        font-family: 'Hind Siliguri', sans-serif; 
-        font-variant: small-caps;
-        background:white;
-        display:block;
-    }
-
-    button#but:hover{
-        background:lightgray;
-    }
-    
-    div#infoPanel {
-        width:500px;
-        position:relative;
-        margin:auto;
-        z-index:10;
-        display:block
-    }
-
-    .dropbtn {
-      background-color: white;
-      color: black;
-      padding: 2px;
-      padding-left:10px;
-      width:250px;
-      font-size: 20px;
-      border: none;
-      font-family: 'Lustria', serif;
-      border:black solid 2px;
-      text-align:left;
-      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-    }
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      left:25%;
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      width: 250px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-family: 'Lustria', serif;
-    }
-
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {display: block;}
-
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown:hover .dropbtn {background-color: #f2f2f2;}
-
-    h1{
-        font-family: 'Hind Siliguri', sans-serif; 
-        font-variant: small-caps;
-        margin-bottom:0px;
-        font-size:55px;
-        text-align:center;
-    }
-    p{
-        font-family: 'Lustria', serif;
-        margin-top:10px;
-        text-align:justify;
-    }
-    h2{
-        font-family: 'Hind Siliguri', sans-serif; 
-        font-variant: small-caps;
-        margin-bottom:5px;
-        text-align:center;
-        line-height:30px;
-    }
-    div.legend{
-        width:350px;
-        height:35px;
-        margin-bottom:5px;
-        margin:auto;
-        border:#d9d9d9 solid 2px;
-    }    
-    div.legend_container{
-        margin:auto;
-        margin-top:0px;
-        right:100px;
-        top:calc(100% + 180px);
-        z-index:110;
-        width:340px;
-    }
-    p.legend_label{
-        font-size:20px;
-        display:inline;
-        text-align:left;
-        position:relative;
-        margin:0;
-        margin-left:5px;
-    }
-
-    div.topBar{
-        position:absolute;
-        top:0;
-        left:0;
-        height:40px;
-        width:100%;
-        background:black;
-        z-index:100;
-    }
-
-    .circle {
-      background: rgba(139, 0, 0,0.6);
-      border-radius: 50%;
-      border: 1px solid white;
-      display:inline;
-      position:absolute;
-      bottom:70px;
-      margin:auto;
-    }
-
-    img#ng{
-      margin:0 auto;
-      margin-top:3px;
-      display:block;
-      width:170px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
-  <div id="infoPanel">
-    <h1>Refugees</h1> 
-    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p> 
-    <div class="legend_container" id="HDI_legend">
-       <h2># of Refugees</h2> 
-       <div style="width:150px; height:120px; display:block; margin:auto;">
-        <div class="circle" style="width:5px; height:5px;"></div>
-        <div class="circle" style="width:70px; height:70px;"></div>
-        <div class="circle" style="width:125px; height:125px;"></div>
-      </div> 
-      <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
-    </div>
-  </div>
-  <svg class="chart" style="margin:auto; display:block;">
-
-  </svg>
-  <svg class="svg">
-    <defs>
-      <radialGradient cx="75%" cy="25%" id="ocean_fill">
-        <stop offset="5%" stop-color="#ddf" />
-        <stop offset="100%" stop-color="#9ab" />
-      </radialGradient>
-      <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="50%" id="drop_shadow">
-        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-        <stop offset="100%" stop-color="#000" stop-opacity="0" />
-      </radialGradient>
-      <filter id="glow">
-          <feColorMatrix type="matrix"
-              values=
-              "0.8 0 0 0 0
-               0 0.9 0 0 0
-               0 0 1 0 0
-               0 0 0 1 0"/>
-          <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
-          <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-      </filter>
-    </defs>
-  </svg>
-  <div class="legend_container" id="HDI_legend">
-      <h2>Refugee Flow</h2> 
-      <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
-  </div>
-  <svg class="svg1">
-    <defs>
-      <radialGradient cx="75%" cy="25%" id="ocean_fill">
-        <stop offset="5%" stop-color="#ddf" />
-        <stop offset="100%" stop-color="#9ab" />
-      </radialGradient>
-      <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="50%" id="drop_shadow">
-        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-        <stop offset="100%" stop-color="#000" stop-opacity="0" />
-      </radialGradient>
-      <filter id="glow">
-          <feColorMatrix type="matrix"
-              values=
-              "0.8 0 0 0 0
-               0 0.9 0 0 0
-               0 0 1 0 0
-               0 0 0 1 0"/>
-          <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
-          <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-      </filter>
-    </defs>
-  </svg>
-  <div class="legend_container" id="HDI_legend">
-    <h2>Refugee Settlements</h2> 
-    <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
-  </div>
-<svg class="svg2">
-  <defs>
-    <radialGradient cx="75%" cy="25%" id="ocean_fill">
-      <stop offset="5%" stop-color="#ddf" />
-      <stop offset="100%" stop-color="#9ab" />
-    </radialGradient>
-    <radialGradient cx="75%" cy="25%" id="globe_highlight">
-      <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
-    </radialGradient>
-    <radialGradient cx="50%" cy="40%" id="globe_shading">
-      <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-      <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
-    </radialGradient>
-    <radialGradient cx="50%" cy="50%" id="drop_shadow">
-      <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-      <stop offset="100%" stop-color="#000" stop-opacity="0" />
-    </radialGradient>
-    <filter id="glow">
-        <feColorMatrix type="matrix"
-            values=
-            "0.8 0 0 0 0
-             0 0.9 0 0 0
-             0 0 1 0 0
-             0 0 0 1 0"/>
-        <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
-        <feMerge>
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-    </filter>
-  </defs>
-</svg>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- Use d3-fetch instead of d3-request in ES6 -->
-  <script src="https://d3js.org/d3-request.v1.min.js"></script>
-  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
-  <script src="https://d3js.org/topojson.v3.min.js"></script>
-  <script>
-
+   
+    /* SVG styling */
+     html,
+     body,
+     svg {
+       position: fixed;
+       width: 100%;
+       height: 100vh;
+       margin: 0;
+       background-color:rgba(0,0,0,0.4);
+       overflow: hidden;
+       color:black;
+     }
+ 
+     body{
+       background-image: url("assets/img/topography.png");
+       background-repeat: repeat;
+     }
+ 
+     .land {
+       fill: rgb(255, 255, 255);
+       stroke-opacity: 1;
+     }
+ 
+     .countries path {
+       stroke: rgba(0, 0, 0, .2);
+       stroke-linejoin: round;
+       stroke-width: .5;
+       fill-opacity: 0.5;
+     }
+ 
+     .countries path:hover {
+       stroke: rgba(0, 0, 0, .6);
+       fill-opacity: .3 !important;
+     }
+ 
+     .countryTooltip {
+       position: absolute;
+       display: none;
+       pointer-events: none;
+       background: #fff;
+       padding: 5px;
+       text-align: left;
+       border: solid #ccc 1px;
+       color: #666;
+       font-size: 14px;
+       font-family: sans-serif;
+       font-size:18px;
+       font-family: 'Lustria', serif;
+     }
+ 
+     .graticule {
+       fill: none;
+       stroke: black;
+       stroke-width: .5;
+       opacity: .2;
+     }
+ 
+     .labels {
+       font: 9px 'Hind Siliguri', sans-serif;
+       fill: black;
+       opacity: .5;
+     }
+ 
+     .noclicks {
+       pointer-events: none;
+     }
+ 
+     .point {
+       opacity: .6;
+     }
+ 
+     .arcs {
+       opacity: .1;
+       stroke: gray;
+       stroke-width: 3;
+     }
+ 
+     .flyers {
+       stroke-width: 1;
+       opacity: .6;
+       stroke: darkred;
+     }
+ 
+     .arc,
+     .flyer {
+       stroke-linejoin: round;
+       fill: none;
+     }
+ 
+     .arc {}
+ 
+     .flyer {}
+ 
+     .flyer:hover {}
+     /* Dropdown styling */
+     button#but{
+         width:200px;
+         height:50px;
+         font-size:22px;
+         font-family: 'Lustria', serif; 
+         font-variant: small-caps;
+         background:white;
+         display:block;
+     }
+ 
+     button#but:hover{
+         background:lightgray;
+     }
+     
+     .dropbtn {
+       background-color: white;
+       color: black;
+       padding: 2px;
+       padding-left:10px;
+       width:250px;
+       font-size: 20px;
+       border: none;
+       font-family: 'Lustria', serif;
+       border:black solid 2px;
+       text-align:left;
+       box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+     }
+ 
+     /* The container <div> - needed to position the dropdown content */
+     .dropdown {
+       position: relative;
+       display: inline-block;
+       left:0;
+     }
+ 
+     /* Dropdown Content (Hidden by Default) */
+     .dropdown-content {
+       display: none;
+       position: absolute;
+       background-color: #f1f1f1;
+       width: 250px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+     }
+ 
+     /* Links inside the dropdown */
+     .dropdown-content a {
+       color: black;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       font-family: 'Lustria', serif;
+     }
+ 
+     /* Change color of dropdown links on hover */
+     .dropdown-content a:hover {background-color: #ddd;}
+ 
+     /* Show the dropdown menu on hover */
+     .dropdown:hover .dropdown-content {display: block;}
+ 
+     /* Change the background color of the dropdown button when the dropdown content is shown */
+     .dropdown:hover .dropbtn {background-color: #f2f2f2;}
+     /* Dropdown styling */
+ 
+     /*HTML styling*/
+     h1{
+         font-family: 'Lustria', serif; 
+         font-variant: small-caps;
+         margin-bottom:0px;
+         font-size:50px;
+         margin-top: 50px;
+         text-align:center;
+     }
+     p{
+         font-family: 'Lustria', serif;
+         margin-top:10px;
+         text-align:justify;
+     }
+     h2{
+         font-family: 'Lustria', serif; 
+         font-variant: small-caps;
+         margin-bottom:5px;
+         text-align:left;
+         line-height:30px;
+     }
+     div.legend{
+         width:280px;
+         height:35px;
+         margin-bottom:5px;
+         margin:auto;
+         border:#d9d9d9 solid 2px;
+     }    
+     div.legend_container{
+         left:0;
+         margin-top:0px;
+         top:calc(100% + 180px);
+         z-index:110;
+         width:280px;
+     }
+     p.legend_label{
+         font-size:18px;
+         display:inline;
+         text-align:left;
+         position:relative;
+         margin:0;
+         margin-left:5px;
+     }
+     /*div#infoContainer{
+       position:absolute;
+       z-index:10;
+       height:100%;
+       width:300px;
+       border-right:2px solid #666666;
+     }*/
+     div#infoPanel {
+       width:300px;
+       z-index:10;
+       height:50%;
+       position:absolute;
+       top:25px;
+       left:25px;
+       background:rgba(255,255,255,0.3);
+       border:2px solid #666666;
+       padding:25px;
+       overflow:hidden;
+     }
+     div#text{
+         position:relative;
+         height:calc(100% - 120px);
+     }
+     div.topBar{
+         position:absolute;
+         top:40px;
+         left:40px;
+         height:40px;
+         width:300px;
+         background:rgba(255,255,255,0);
+         z-index:100;
+     }
+     img#ng{
+       margin:0 auto;
+       margin-top:3px;
+       display:block;
+       width:170px;
+     }
+     div#projectionButtons{
+         position:absolute;
+         top:25px;
+         right:0px;
+         z-index:15;
+         width:200px;
+         height:50px;
+     }
+     div#projectionButtons button{
+         padding:0;
+         background:white;
+         border:black 2px solid;
+ 
+     }
+     div#projectionButtons button:hover{
+         background:#d9d9d9;
+     }
+   </style>
+ </head>
+ 
+ <body>
+   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+   <div id="infoPanel">
+       <h1>Refugees</h1> 
+       <div id="text">
+             <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+             <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+               <button class="dropbtn">Select Map</button>
+               <div class="dropdown-content">
+                 <a href="#"onclick="setRefugee()">Population</a>
+                 <a href="#"onclick="setFlow()">Flow</a>
+                 <a href="#"onclick="setSettlements()">Settlements</a>
+               </div>
+             </div>
+             <div class="legend_container" id="HDI_legend">
+               <h2>Human Development Index</h2> 
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #edf8e9 16%, #edf8e9 33%, #bae4b3 33%, #bae4b3 50%, #74c476 50%, #74c476 66%, #31a354 66%, #31a354 83%, #006d2c 83%);"></div>
+               <p class="legend_label" style="margin-left:38px;">0</p>
+               <p class="legend_label" style="margin-left:29px;">0.2</p>
+               <p class="legend_label" style="margin-left:18px;">0.4</p>
+               <p class="legend_label" style="margin-left:18px;">0.6</p>
+               <p class="legend_label" style="margin-left:18px;">0.8</p>
+               <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+             </div>
+             <div class="legend_container" id="school_legend" style="display:none;">
+               <h2>Years of School</h2> 
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f2f0f7 16%, #f2f0f7 33%, #cbc9e2 33%, #cbc9e2 50%, #9e9ac8 50%, #9e9ac8 66%, #756bb1 66%, #756bb1 83%, #54278f 83%);"></div>
+               <p class="legend_label" style="margin-left:50px;">0</p>
+               <p class="legend_label" style="margin-left:43px;">6</p>
+               <p class="legend_label" style="margin-left:45px;">8</p>
+               <p class="legend_label" style="margin-left:40px;">10</p>
+               <p class="legend_label" style="margin-left:32px;">12</p>
+               <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+           </div>
+           <div class="legend_container" id="pov_legend" style="display:none;">
+               <h2>% Population in Poverty</h2> 
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffd4 16%, #ffffd4 33%, #fed98e 33%, #fed98e 50%, #fe9929 50%, #fe9929 66%, #d95f0e 66%, #d95f0e 83%, #993404 83%);"></div>
+               <p class="legend_label" style="margin-left:50px;">0</p>
+               <p class="legend_label" style="margin-left:37px;">20</p>
+               <p class="legend_label" style="margin-left:34px;">40</p>
+               <p class="legend_label" style="margin-left:27px;">60</p>
+               <p class="legend_label" style="margin-left:32px;">80</p>
+               <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+         </div>
+       </div>
+   </div>
+   <div id="projectionButtons">
+     <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+     <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
+   </div>
+   <svg>
+     <defs>
+       <radialGradient cx="75%" cy="25%" id="ocean_fill">
+         <stop offset="5%" stop-color="#ddf" />
+         <stop offset="100%" stop-color="#9ab" />
+       </radialGradient>
+       <radialGradient cx="75%" cy="25%" id="globe_highlight">
+         <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
+         <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
+       </radialGradient>
+       <radialGradient cx="50%" cy="40%" id="globe_shading">
+         <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
+         <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
+       </radialGradient>
+       <radialGradient cx="50%" cy="50%" id="drop_shadow">
+         <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+         <stop offset="100%" stop-color="#000" stop-opacity="0" />
+       </radialGradient>
+       <filter id="glow">
+           <feColorMatrix type="matrix"
+               values=
+               "0.8 0 0 0 0
+                0 0.9 0 0 0
+                0 0 1 0 0
+                0 0 0 1 0"/>
+           <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
+           <feMerge>
+               <feMergeNode in="coloredBlur"/>
+               <feMergeNode in="SourceGraphic"/>
+           </feMerge>
+       </filter>
+     </defs>
+   </svg>
+   <script src="https://d3js.org/d3.v5.min.js"></script>
+   <!-- Use d3-fetch instead of d3-request in ES6 -->
+   <script src="https://d3js.org/d3-request.v1.min.js"></script>
+   <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+   <script src="https://d3js.org/topojson.v3.min.js"></script>
+   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+   <script src="js/perfect-scrollbar.js"></script>
+   <script>
     const config = {
       speed: 0.005,
       verticalTilt: -30,
@@ -399,7 +372,7 @@
     var width = window.innerWidth,
       height = window.innerHeight,
       sensitivity = 0.25,
-      offsetX = width / 2,
+      offsetX = width / 1.5,
       offsetY = height / 2,
       maxElevation = 45,
       initRotation = [0, -30],
@@ -414,24 +387,37 @@
       countries,
       countryCentroids = {},
       refByCountry = {},
-      svg = [];
+      svg = [],
+      isFlow = false,
+      data = 0;
 
     var radius = width / 3;
     if (height < width) {
       radius = height /2.25;
     }
-    var projection = d3
+    var projection1 = d3
       .geoOrthographic()
       .scale(radius)
       .rotate(initRotation)
       .translate([offsetX, offsetY])
       .clipAngle(90);
-    var skyProjection = d3
+    var projection2 = d3
+      .geoEquirectangular()
+      .scale(radius)
+      .translate([offsetX, offsetY]);
+    var skyProjection1 = d3
       .geoOrthographic()
       .scale(radius + flyerAltitude)
       .rotate(initRotation)
       .translate([offsetX, offsetY])
       .clipAngle(90);
+    var skyProjection2 = d3
+      .geoEquirectangular()
+      .scale(radius + flyerAltitude)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var projection = projection1,
+        skyProjection = skyProjection1;
     var path = d3
       .geoPath()
       .projection(projection)
@@ -445,35 +431,9 @@
       })
       .curve(d3.curveBasis);
     var graticule = d3.geoGraticule();
-    svg[0] = d3
-      .select("svg.svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("transform-origin", offsetX + "px " + offsetY + "px")
-      .call(
-        d3
-        .drag()
-        .subject(function() {
-          var r = projection.rotate();
-          return {
-            x: r[0] / sensitivity,
-            y: -r[1] / sensitivity
-          };
-        })
-        .on("drag", function(){
-            dragged(svg[0]);
-        })
-      )
-      /*.call(
-        d3
-        .zoom()
-        .scaleExtent(scaleExtent)
-        .on("zoom", zoomed)
-      )*/
-      .on("dblclick.zoom", null);
 
-    svg[1] = d3
-      .select("svg.svg1")
+    var svg = d3
+      .select("svg")
       .attr("width", width)
       .attr("height", height)
       .attr("transform-origin", offsetX + "px " + offsetY + "px")
@@ -487,43 +447,14 @@
             y: -r[1] / sensitivity
           };
         })
-        .on("drag", function(){
-            dragged(svg[1]);
-        })
+        .on("drag", dragged)
       )
-      /*.call(
-        d3
-        .zoom()
-        .scaleExtent(scaleExtent)
-        .on("zoom", zoomed)
-      )*/
-      .on("dblclick.zoom", null);
-
-    svg[2] = d3
-      .select("svg.svg2")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("transform-origin", offsetX + "px " + offsetY + "px")
       .call(
         d3
-        .drag()
-        .subject(function() {
-          var r = projection.rotate();
-          return {
-            x: r[0] / sensitivity,
-            y: -r[1] / sensitivity
-          };
-        })
-        .on("drag", function(){
-            dragged(svg[2]);
-        })
-      )
-      /*.call(
-        d3
         .zoom()
         .scaleExtent(scaleExtent)
         .on("zoom", zoomed)
-      )*/
+      )
       .on("dblclick.zoom", null);
 
     var chart = d3.select('svg.chart')   
@@ -534,7 +465,6 @@
           .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     var labels;
-
 
     var arcWidth = d3.scaleThreshold()
         .domain([100,1000, 2500, 10000, 100000])
@@ -563,134 +493,136 @@
         countryById[d.iso_n3] = d.name;
     });
     
-    function fillSvg(instance, isFlow){
+    var defs = svg.append("defs");
 
-      var defs = instance.append("defs");
+    var filter = svg.append("defs")
+      .append("filter")
+      .attr("id", "drop-shadow")
+      .attr("height", "110%");
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceAlpha")
+      .attr("stdDeviation", 0.5)
+      .attr("result", "blur");
 
-      var filter = instance.append("defs")
-        .append("filter")
-        .attr("id", "drop-shadow")
-        .attr("height", "110%");
-      filter.append("feGaussianBlur")
-        .attr("in", "SourceAlpha")
-        .attr("stdDeviation", 0.5)
-        .attr("result", "blur");
+    filter.append("feOffset")
+      .attr("in", "blur")
+      .attr("dx", 1)
+      .attr("dy", 1)
+      .attr("result", "offsetBlur");
+    
+      var feMerge = filter.append("feMerge");
 
-      filter.append("feOffset")
-        .attr("in", "blur")
-        .attr("dx", 1)
-        .attr("dy", 1)
-        .attr("result", "offsetBlur");
-      
-        var feMerge = filter.append("feMerge");
+    feMerge.append("feMergeNode")
+        .attr("in", "offsetBlur")
+    feMerge.append("feMergeNode")
+        .attr("in", "SourceGraphic");
+        
+    var gradient = svg.append("svg:defs")
+      .append("svg:linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "0%")
+        .attr("y1", "0%")
+        .attr("x2", "0%")
+        .attr("y2", "100%")
+        .attr("spreadMethod", "pad");
 
-      feMerge.append("feMergeNode")
-          .attr("in", "offsetBlur")
-      feMerge.append("feMergeNode")
-          .attr("in", "SourceGraphic");
-          
-      var gradient = instance.append("svg:defs")
-        .append("svg:linearGradient")
-          .attr("id", "gradient")
-          .attr("x1", "0%")
-          .attr("y1", "0%")
-          .attr("x2", "0%")
-          .attr("y2", "100%")
-          .attr("spreadMethod", "pad");
+    gradient.append("svg:stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#0F3871")
+        .attr("stop-opacity", 1);
 
-      gradient.append("svg:stop")
-          .attr("offset", "0%")
-          .attr("stop-color", "#0F3871")
-          .attr("stop-opacity", 1);
+    gradient.append("svg:stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#175BA8")
+        .attr("stop-opacity", 1);
 
-      gradient.append("svg:stop")
-          .attr("offset", "100%")
-          .attr("stop-color", "#175BA8")
-          .attr("stop-opacity", 1);
+    svg
+      .append("rect")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
+      .attr("class", "noclicks")
+      .style("fill", "#dae7f1")
+      .style("fill-opacity", 0);
 
-      instance
-        .append("ellipse")
-        .attr("cx", offsetX - 40)
-        .attr("cy", offsetY + radius - 20)
-        .attr("rx", projection.scale() * 0.9)
-        .attr("ry", projection.scale() * 0.25)
-        .attr("class", "noclicks")
-        .style("fill", "url(#drop_shadow)");
-      instance
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "#e6f2ff");
-      instance
-        .append("path")
-        .datum(topojson.feature(world, world.objects.land))
-        .attr("class", "land")
-        .attr("d", path)
-        .style("filter", "url(#drop-shadow)");;
-      instance
-        .append("path")
-        .datum(graticule)
-        .attr("class", "graticule noclicks")
-        .attr("d", path);
-      instance
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "url(#globe_highlight)");
-      instance
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "url(#globe_shading)");
-      instance
+    svg
+      .append("ellipse")
+      .attr("cx", offsetX - 40)
+      .attr("cy", offsetY + radius - 20)
+      .attr("rx", projection.scale() * 0.9)
+      .attr("ry", projection.scale() * 0.25)
+      .attr("class", "noclicks")
+      .style("fill", "url(#drop_shadow)");
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "#e6f2ff");
+    svg
+      .append("path")
+      .datum(topojson.feature(world, world.objects.land))
+      .attr("class", "land")
+      .attr("d", path)
+      .style("filter", "url(#drop-shadow)");;
+    svg
+      .append("path")
+      .datum(graticule)
+      .attr("class", "graticule noclicks")
+      .attr("d", path);
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "url(#globe_highlight)");
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "url(#globe_shading)");
+    svg
+      .append("g")
+      .attr("class", "countries")
+      .selectAll("path")
+      .data(countries, function(d){
+          countryCentroids[d.id] = d3.geoCentroid(d);
+      })
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("name",function(d){
+          return countryById[d.id];
+      })
+      .on("mouseover", function(d) {
+        if (data == 1)
+          addFlow(d.id);
+        countryTooltip.text(countryById[d.id])
+        .style("left", (d3.event.pageX ) + "px")
+        .style("top", (d3.event.pageY + offsetY + 3) + "px")
+        .style("display", "block")
+        .style("opacity", 1);
+      })
+      .on("mouseout", function(d) {
+        if (data == 1)
+          clearFlow(d.id);
+        countryTooltip.style("opacity", 0)
+        .style("display", "none");
+      });
+
+      svg
         .append("g")
-        .attr("class", "countries")
-        .selectAll("path")
-        .data(countries, function(d){
-            countryCentroids[d.id] = d3.geoCentroid(d);
-        })
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("name",function(d){
-           return countryById[d.id];
-        })
-        .on("mouseover", function(d) {
-          if (isFlow == true)
-            addFlow(d.id);
-          countryTooltip.text(countryById[d.id])
-          .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY + offsetY + 3) + "px")
-          .style("display", "block")
-          .style("opacity", 1);
-        })
-        .on("mouseout", function(d) {
-          if (isFlow == true)
-            clearFlow(d.id);
-          countryTooltip.style("opacity", 0)
-          .style("display", "none");
-        });
-      }
-
-      fillSvg(svg[0], false);
-      fillSvg(svg[1], true);
-      fillSvg(svg[2], false);
-
-      svg[0]
-        .append("g")
-        .attr("class", "points")
+        .attr("class", "points countries")
         .selectAll(".points")
         .data(hosts.features
             .sort(function(a){return a.properties.ref}))
         .enter()
         .append("path")
-        .attr("class", "point")
+        .attr("class", "point country")
         .attr("opacity", "point")
         .attr("fill", "darkred")
         .attr("d", path.pointRadius(function(d){ 
@@ -700,7 +632,7 @@
         );
 
       function addFlow(origin){
-        svg[1].append("g").attr("class", "arcs")
+        svg.append("g").attr("class", "arcs")
             .selectAll("path").data(flow.features)
             .enter().append("path")
             .filter(function(d){return d.properties.iso_n3 == origin})
@@ -709,7 +641,7 @@
             .attr("opacity", function(d) {
             return fade_at_edge(d)
             });
-        svg[1].append("g").attr("class", "flyers")
+        svg.append("g").attr("class", "flyers")
             .selectAll("path").data(flow.features)
             .enter().append("path")
             .filter(function(d){return d.properties.iso_n3 == origin})
@@ -726,13 +658,14 @@
       }
 
       function clearFlow (){
-        svg[1]
+        svg
             .selectAll(".arcs").remove();
-        svg[1]
+        svg
             .selectAll(".flyers").remove();
       }
-
-      svg[2]
+      
+      if (data == 2){
+      svg
         .append("g")
         .attr("class", "points camps")
         .selectAll(".points")
@@ -743,7 +676,7 @@
         .attr("opacity", "point")
         .attr("fill", "darkred")
         .attr("d", path.pointRadius(3));
-      svg[2]
+      svg
         .append("g")
         .attr("class", "points settlements")
         .selectAll(".points")
@@ -754,7 +687,7 @@
         .attr("opacity", "point")
         .attr("fill", "green")
         .attr("d", path.pointRadius(3));
-      svg[2]
+      svg
         .append("g")
         .attr("class", "points dispersed")
         .selectAll(".points")
@@ -765,8 +698,9 @@
         .attr("fill", "blue")
         .attr("opacity", "point")
         .attr("d", path.pointRadius(3));
+      }
 
-        //var dataset = ref_test.filter(function(d){return d.admin_id == '024';});
+        /*//var dataset = ref_test.filter(function(d){return d.admin_id == '024';});
         var data = ref_test;
         
         var elements = Object.keys(data[0])
@@ -838,6 +772,79 @@
       //position_labels();
     }
 
+    function toEquirectangular(){      
+      svg.selectAll("path").transition()
+      .attrTween("d", projectionTween(projection, projection2));
+
+      path = d3
+        .geoPath()
+        .projection(projection2);
+
+      projection = projection2;
+      skyProjection = skyProjection2;
+
+      svg
+          .selectAll("circle").style("fill-opacity", 0);
+      svg
+          .selectAll(".labels").style("fill-opacity", 0);
+      svg
+          .selectAll("ellipse").style("fill-opacity", 0);
+      svg
+          .selectAll("rect").style("fill-opacity", 1);
+
+      document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
+
+      proj = 1;
+      refresh();
+      position_labels();
+    }
+
+    function toOrthographic(){      
+      svg.selectAll("path").transition()
+      .attrTween("d", projectionTween(projection, projection1));
+
+      path = d3
+        .geoPath()
+        .projection(projection1);
+
+      projection = projection1;
+      skyProjection = skyProjection1;
+
+      svg
+          .selectAll("circle").style("fill-opacity", 1);
+      svg
+          .selectAll(".labels").style("fill-opacity", 1);
+      svg
+          .selectAll("ellipse").style("fill-opacity", 1);
+      svg
+          .selectAll("rect").style("fill-opacity", 0);
+
+      document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
+
+      proj = 1;x  
+      refresh();
+      position_labels();
+    }
+
+    function projectionTween(projection0, projection1) {
+      return function(d) {
+        var t = 0;
+        var projection = d3.geoProjection(project)
+            .scale(1)
+            .translate([width / 2, height / 2]);
+        var path = d3.geoPath(projection);
+        function project(λ, φ) {
+          λ *= 180 / Math.PI, φ *= 180 / Math.PI;
+          var p0 = projection0([λ, φ]), p1 = projection1([λ, φ]);
+          return [(1 - t) * p0[0] + t * p1[0], (1 - t) * -p0[1] + t * -p1[1]];
+        }
+        return function(_) {
+          t = _;
+          return path(d);
+        };
+      };
+    }
+
     function enableRotation() {
       d3.timer(function(elapsed) {
         projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
@@ -846,9 +853,9 @@
       });
     }
 
-    function position_labels(instance) {
+    function position_labels() {
       var centerPos = projection.invert([offsetX, offsetY]);
-      instance
+      svg
         .selectAll(".label")
         .attr("text-anchor", function(d) {
           var x = projection(d.geometry.coordinates)[0];
@@ -897,8 +904,8 @@
       return interpolator(loc)
     }
 
-    function dragged(instance) {
-      o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+    function dragged() {
+      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
       o1[1] =
         o1[1] > maxElevation ?
         maxElevation :
@@ -907,7 +914,7 @@
         o1[1];
       projection.rotate(o1);
       skyProjection.rotate(o1);
-      refresh(instance);
+      refresh();
     }
 
     function zoomed() {
@@ -916,25 +923,25 @@
       }
     }
 
-    function refresh(instance) {
-      instance.selectAll(".land").attr("d", path);
-      instance.selectAll(".countries path").attr("d", path);
-      instance.selectAll(".graticule").attr("d", path);
-      refreshLandmarks(instance);
-      refreshFlyers(instance);
+    function refresh() {
+      svg.selectAll(".land").attr("d", path);
+      svg.selectAll(".countries path").attr("d", path);
+      svg.selectAll(".graticule").attr("d", path);
+      refreshLandmarks();
+      refreshFlyers();
     }
 
-    function refreshLandmarks(instance) {
-      instance.selectAll(".point").attr("d", path);
-      position_labels(instance);
+    function refreshLandmarks() {
+      svg.selectAll(".point").attr("d", path);
+      position_labels();
     }
 
-    function refreshFlyers(instance) {
-    instance.selectAll(".arc").attr("d", path)
+    function refreshFlyers() {
+      svg.selectAll(".arc").attr("d", path)
         .attr("opacity", function(d) {
           return fade_at_edge(d)
         });
-    instance.selectAll(".flyer")
+      svg.selectAll(".flyer")
         .attr("d", function(d) {
           return swoosh(flying_arc(d))
         })
@@ -948,6 +955,40 @@
         txt.innerHTML = html;
         return txt.value;
     }
+
+    var legends = document.getElementsByClassName("legend_container");
+
+    function setRefugee(){
+        data = 0;
+
+        svg
+          .selectAll(".point").style("opacity", 0.6);
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("HDI_legend").style.display = "block";
+    }
+    function setFlow(){
+        data = 1;
+
+        svg
+          .selectAll(".point").style("opacity", 0);
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("school_legend").style.display = "block";
+    }
+    function setSettlement(){
+        data = 2;
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("pov_legend").style.display = "block";
+    }
+
 
   </script>
 </body>

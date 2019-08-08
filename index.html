@@ -3,419 +3,86 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Landing Page Globe</title>
-
+  <title>Global Refugee Atlas</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
-    html,
-    body,
-    svg {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      background: #fff;
-      font-family: 'Titillium Web', sans-serif;
-      overflow: hidden
+    body{
+        height:100%;
+        width:100%;
+    }
+    
+    a#but{
+        width:200px;
+        height:50px;
+        font-size:22px;
+        font-family: 'Lustria', serif;
+        font-variant: small-caps;
+        background:white;
+        border:none;
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration:none;
+        color:black;
+        text-align:center;
     }
 
-    .land {
-      fill: rgb(117, 87, 57);
-      stroke-opacity: 1;
+    a#but:hover{
+        background:lightgray;
     }
 
-    .countries path {
-      stroke: rgba(0, 0, 0, .1);
-      stroke-linejoin: round;
-      stroke-width: .5;
-      fill: transparent;
+    div#mainMenu{
+        position:absolute;
+        margin:auto;
+        display:inline-block;
+        width:500px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+  top: 50%;
+    }
+    
+    div#text{
+        height:400px;
+        width:300px;
+        position:relative;
+        overflow: hidden;
+        margin-left:50px;
     }
 
-    .countries path:hover {
-      stroke: rgba(0, 0, 0, .6);
-      fill-opacity: .3;
-      fill: white;
+    h1{
+        font-family: 'Lustria', serif;
+        font-variant: small-caps;
+        font-weight:bold;
+        font-size:64px;
+        width:400px;
+        text-align:center;
+        line-height:64px;
     }
 
-    .graticule {
-      fill: none;
-      stroke: black;
-      stroke-width: .5;
-      opacity: .2;
-    }
-
-    .labels {
-      font: 8px sans-serif;
-      fill: black;
-      opacity: .5;
-    }
-
-    .noclicks {
-      pointer-events: none;
-    }
-
-    .point {
-      opacity: .6;
-    }
-
-    .arcs {
-      opacity: .1;
-      stroke: gray;
-      stroke-width: 3;
-    }
-
-    .flyers {
-      stroke-width: 1;
-      opacity: .6;
-      stroke: darkred;
-    }
-
-    .arc,
-    .flyer {
-      stroke-linejoin: round;
-      fill: none;
-    }
-    #globe {
-      position: fixed;
-      left: 8px; top: 225px;
-      z-index: 100;
-    }
-    #patterson {
-      position: fixed;
-      left: 8px; top: 290px;
-      z-index: 100;
-    }
-    #equi {
-      position: fixed;
-      left: 8px; top: 350px;
-      z-index: 100;
-    }
-    /* .arc {}
-
-    .flyer {}
-
-    .flyer:hover {} */
   </style>
 </head>
 
 <body>
-  <svg>
-    <defs>
-      <radialGradient cx="75%" cy="25%" id="ocean_fill">
-        <stop offset="5%" stop-color="#ddf" />
-        <stop offset="100%" stop-color="#9ab" />
-      </radialGradient>
-      <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="50%" id="drop_shadow">
-        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-        <stop offset="100%" stop-color="#000" stop-opacity="0" />
-      </radialGradient>
-    </defs>
-  </svg>
-  <a href="index.html"><input type="image" id="globe" src="assets/globe.png" height="50px"/>
-  <a href="patterson.html"><input type="image" id="patterson" src="assets/patterson.png" height="40px" /></a>
-  <a href="equirectangular.html"><input type="image" id="equi" src="assets/equi.PNG" height="40px" width="60px" /></a>
+<div id ="mainMenu">
+    <h1>Global Refugee Atlas</h1>
+    <div id = "text">
+        <a href="global_menu.html" style="display:block;" id="but">Global</a>
+        <a href="journey_menu.html" id="but" style="display:block;">Journeys</a>
+        <a href="camp_menu.html" id="but" style="display:block;">Camps</a>
+    </div>
+</div> 
+ 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Use d3-fetch instead of d3-request in ES6 -->
   <script src="https://d3js.org/d3-request.v1.min.js"></script>
   <script src="https://d3js.org/d3-queue.v3.min.js"></script>
   <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
   <script>
-    // References:
-    // http://bl.ocks.org/dwtkns/4686432
-    // http://bl.ocks.org/dwtkns/4973620
-    // http://bl.ocks.org/KoGor/5994804
-    // https://medium.com/@xiaoyangzhao/drawing-curves-on-webgl-globe-using-three-js-and-d3-draft-7e782ffd7ab
-    // https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json
-    // var width = 960,
-    //   height = 500,
-
-    const config = {
-      speed: 0.005,
-      verticalTilt: -30,
-      horizontalTilt: 0
-    };
 
 
-    var width = window.innerWidth,
-      height = window.innerHeight,
-      sensitivity = 0.25,
-      offsetX = width / 2,
-      offsetY = height / 2,
-      maxElevation = 45,
-      initRotation = [0, -30],
-      scaleExtent = [1, 8],
-      flyerAltitude = 80;
-
-    var radius = width / 3;
-    if (height < width) {
-      radius = height /3;
-    }
-    var projection = d3
-      .geoOrthographic()
-      .scale(radius)
-      .rotate(initRotation)
-      .translate([offsetX, offsetY])
-      .clipAngle(90);
-    var skyProjection = d3
-      .geoOrthographic()
-      .scale(radius + flyerAltitude)
-      .rotate(initRotation)
-      .translate([offsetX, offsetY])
-      .clipAngle(90);
-    var path = d3
-      .geoPath()
-      .projection(projection)
-      .pointRadius(1.5);
-    var swoosh = d3.line()
-      .x(function(d) {
-        return d[0]
-      })
-      .y(function(d) {
-        return d[1]
-      })
-      .curve(d3.curveBasis);
-    var graticule = d3.geoGraticule();
-    var svg = d3
-      .select("svg")
-      .attr("width", width)
-      .attr("height", height)
-      .attr("transform-origin", offsetX + "px " + offsetY + "px")
-      .call(
-        d3
-        .drag()
-        .subject(function() {
-          var r = projection.rotate();
-          return {
-            x: r[0] / sensitivity,
-            y: -r[1] / sensitivity
-          };
-        })
-        .on("drag", dragged)
-      )
-      .call(
-        d3
-        .zoom()
-        .scaleExtent(scaleExtent)
-        .on("zoom", zoomed)
-      )
-      .on("dblclick.zoom", null);
-
-    var labels;
-
-    d3.queue()
-      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
-      .defer(d3.json, "assets/places.json")
-      .defer(d3.json, "assets/links.json")
-      .await(ready);
-
-    function ready(error, world, places, links) {
-      svg
-        .append("ellipse")
-        .attr("cx", offsetX - 40)
-        .attr("cy", offsetY + radius - 20)
-        .attr("rx", projection.scale() * 0.9)
-        .attr("ry", projection.scale() * 0.25)
-        .attr("class", "noclicks")
-        .style("fill", "url(#drop_shadow)");
-      svg
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "url(#ocean_fill)");
-      svg
-        .append("path")
-        .datum(topojson.feature(world, world.objects.land))
-        .attr("class", "land")
-        .attr("d", path);
-      svg
-        .append("path")
-        .datum(graticule)
-        .attr("class", "graticule noclicks")
-        .attr("d", path);
-      svg
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "url(#globe_highlight)");
-      svg
-        .append("circle")
-        .attr("cx", offsetX)
-        .attr("cy", offsetY)
-        .attr("r", projection.scale())
-        .attr("class", "noclicks")
-        .style("fill", "url(#globe_shading)");
-      svg
-        .append("g")
-        .attr("class", "points")
-        .selectAll(".point")
-        .data(places.features)
-        .enter()
-        .append("path")
-        .attr("class", "point")
-        .attr("d", path);
-      svg
-        .append("g")
-        .attr("class", "labels")
-        .selectAll(".label")
-        .data(places.features)
-        .enter()
-        .append("text")
-        .attr("class", "label")
-        .text(function(d) {
-          return d.properties.name;
-        });
-      svg
-        .append("g")
-        .attr("class", "countries")
-        .selectAll("path")
-        .data(topojson.feature(world, world.objects.countries).features)
-        .enter()
-        .append("path")
-        .attr("d", path);
-      position_labels();
-      svg.append("g").attr("class", "arcs")
-        .selectAll("path").data(links.features)
-        .enter().append("path")
-        .attr("class", "arc")
-        .attr("d", path)
-        .attr("opacity", function(d) {
-          return fade_at_edge(d)
-        });
-      svg.append("g").attr("class", "flyers")
-        .selectAll("path").data(links.features)
-        .enter().append("path")
-        .attr("class", "flyer")
-        .attr("d", function(d) {
-          return swoosh(flying_arc(d))
-        })
-        .attr("opacity", function(d) {
-          return fade_at_edge(d)
-        });
-
-      enableRotation();
-
-    }
-
-    function enableRotation() {
-      d3.timer(function(elapsed) {
-        projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
-        svg.selectAll("path").attr("d", path);
-         position_labels();
-
-
-      });
-    }
-
-
-
-
-    function position_labels() {
-      var centerPos = projection.invert([offsetX, offsetY]);
-      svg
-        .selectAll(".label")
-        .attr("text-anchor", function(d) {
-          var x = projection(d.geometry.coordinates)[0];
-          return x < offsetX - 20 ? "end" : x < offsetX + 20 ? "middle" : "start";
-        })
-        .attr("transform", function(d) {
-          var loc = projection(d.geometry.coordinates),
-            x = loc[0],
-            y = loc[1];
-          var offset = x < offsetX ? -5 : 5;
-          return "translate(" + (x + offset) + "," + (y - 2) + ")";
-        })
-        .style("display", function(d) {
-          var d = d3.geoDistance(d.geometry.coordinates, centerPos);
-          return d > 1.57 ? "none" : "inline";
-        });
-    }
-
-    function flying_arc(pts) {
-      var source = pts.geometry.coordinates[0],
-        target = pts.geometry.coordinates[1];
-      var mid1 = location_along_arc(source, target, .333);
-      var mid2 = location_along_arc(source, target, .667);
-      var result = [projection(source),
-        skyProjection(mid1),
-        skyProjection(mid2),
-        projection(target)
-      ]
-      // console.log(result);
-      return result;
-    }
-
-    function fade_at_edge(d) {
-      var centerPos = projection.invert([offsetX, offsetY]);
-      start = d.geometry.coordinates[0];
-      end = d.geometry.coordinates[1];
-      var start_dist = 1.57 - d3.geoDistance(start, centerPos),
-        end_dist = 1.57 - d3.geoDistance(end, centerPos);
-      var fade = d3.scaleLinear().domain([-.1, 0]).range([0, .1])
-      var dist = start_dist < end_dist ? start_dist : end_dist;
-      return fade(dist)
-    }
-
-    function location_along_arc(start, end, loc) {
-      var interpolator = d3.geoInterpolate(start, end);
-      return interpolator(loc)
-    }
-
-    function dragged() {
-      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
-      o1[1] =
-        o1[1] > maxElevation ?
-        maxElevation :
-        o1[1] < -maxElevation ?
-        -maxElevation :
-        o1[1];
-      projection.rotate(o1);
-      skyProjection.rotate(o1);
-      refresh();
-    }
-
-    function zoomed() {
-      if (d3.event) {
-        svg.attr("transform", "scale(" + d3.event.transform.k + ")");
-      }
-    }
-
-    function refresh() {
-      svg.selectAll(".land").attr("d", path);
-      svg.selectAll(".countries path").attr("d", path);
-      svg.selectAll(".graticule").attr("d", path);
-      refreshLandmarks();
-      refreshFlyers();
-    }
-
-    function refreshLandmarks() {
-      svg.selectAll(".point").attr("d", path);
-      position_labels();
-    }
-
-    function refreshFlyers() {
-      svg.selectAll(".arc").attr("d", path)
-        .attr("opacity", function(d) {
-          return fade_at_edge(d)
-        });
-      svg.selectAll(".flyer")
-        .attr("d", function(d) {
-          return swoosh(flying_arc(d))
-        })
-        .attr("opacity", function(d) {
-          return fade_at_edge(d)
-        });
-    }
   </script>
 </body>
 

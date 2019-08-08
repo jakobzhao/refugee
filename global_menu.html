@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Global</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">        
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <style>
+    html,
+    body,
+    svg {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      background: #fff;
+      overflow: hidden
+    }
+
+    .land {
+      fill: rgb(255, 255, 255);
+      stroke-opacity: 1;
+    }
+
+    .countries path {
+      stroke: rgba(0, 0, 0, .1);
+      stroke-linejoin: round;
+      stroke-width: .5;
+      fill-opacity: 0.5;
+    }
+
+    .countries path:hover {
+      stroke: rgba(0, 0, 0, .6);
+      fill-opacity: .3 !important;
+    }
+
+    .countryTooltip {
+      position: absolute;
+      display: none;
+      pointer-events: none;
+      background: #fff;
+      padding: 5px;
+      text-align: left;
+      border: solid #ccc 1px;
+      color: #666;
+      font-size: 14px;
+      font-family: sans-serif;
+      font-size:18px;
+      font-family: 'Lustria', serif;
+    }
+
+    .graticule {
+      fill: none;
+      stroke: black;
+      stroke-width: .5;
+      opacity: .2;
+    }
+
+    .labels {
+      font: 9px 'Hind Siliguri', sans-serif;
+      fill: black;
+      opacity: .5;
+    }
+
+    .noclicks {
+      pointer-events: none;
+    }
+
+    .point {
+      opacity: .6;
+    }
+
+    .arcs {
+      opacity: .1;
+      stroke: gray;
+      stroke-width: 3;
+    }
+
+    .flyers {
+      stroke-width: 1;
+      opacity: .6;
+      stroke: darkred;
+    }
+
+    .arc,
+    .flyer {
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .arc {}
+
+    .flyer {}
+
+    .flyer:hover {}
+
+    a#but{
+        width:200px;
+        height:50px;
+        font-size:22px;
+        font-family: 'Lustria', serif;
+        font-variant: small-caps;
+        background:white;
+        border:none;
+        margin:auto;
+        margin-bottom:15px;
+        text-decoration:none;
+        color:black;
+        text-align:center;
+    }
+
+    a#but:hover{
+        background:lightgray;
+    }
+
+    div#menuPanel{
+        position:absolute;
+        left:30px;
+        top:15px;
+        height:80%;
+        z-index:50;
+        width:50%;
+    }
+    
+    div#text{
+        height:400px;
+        width:300px;
+        position:relative;
+        overflow: hidden;
+        margin-left:50px;
+    }
+
+    h1{
+        font-family: 'Hind Siliguri', sans-serif; 
+        font-variant: small-caps;
+        font-weight:bold;
+        font-size:64px;
+        width:400px;
+        text-align:center;
+        line-height:64px;
+    }
+
+  </style>
+</head>
+
+<body>
+<div id ="menuPanel">
+    <h1>Global</h1>
+    <div id = "text">
+        <a href="demographics.html" style="display:block;" id="but">Demographics</a>
+        <a href="refugees.html" id="but" style="display:block;">Refugees</a>
+        <a href="convention.html" id="but" style="display:block;">Geopolitics</a>
+        <a href="finance.html" id="but" style="display:block;">Finance</a>
+    </div>
+</div> 
+  <svg>
+    <defs>
+      <radialGradient cx="75%" cy="25%" id="ocean_fill">
+        <stop offset="5%" stop-color="#ddf" />
+        <stop offset="100%" stop-color="#9ab" />
+      </radialGradient>
+      <radialGradient cx="75%" cy="25%" id="globe_highlight">
+        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="40%" id="globe_shading">
+        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
+        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="50%" id="drop_shadow">
+        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#000" stop-opacity="0" />
+      </radialGradient>
+    </defs>
+  </svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Use d3-fetch instead of d3-request in ES6 -->
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
+  <script>
+
+const config = {
+      speed: 0.005,
+      verticalTilt: -30,
+      horizontalTilt: 0
+    };
+
+    const ps = new PerfectScrollbar('#text', {
+      wheelSpeed: 2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+
+    var width = window.innerWidth,
+      height = window.innerHeight,
+      sensitivity = 0.25,
+      offsetX = width / 1.5,
+      offsetY = height / 2,
+      maxElevation = 45,
+      initRotation = [0, -30],
+      scaleExtent = [1, 8],
+      flyerAltitude = 80,
+      countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
+      countryById = {},
+      countries,
+      countryCentroids = {},
+      proj = 0;
+
+    var radius = width / 3;
+    if (height < width) {
+      radius = height /2.25;
+    }
+
+    var projection = d3
+      .geoOrthographic()
+      .scale(radius)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var skyProjection = d3
+      .geoOrthographic()
+      .scale(radius + flyerAltitude)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var path = d3
+      .geoPath()
+      .projection(projection)
+      .pointRadius(1.5);
+    var swoosh = d3.line()
+      .x(function(d) {
+        return d[0]
+      })
+      .y(function(d) {
+        return d[1]
+      })
+      .curve(d3.curveBasis);
+    var graticule = d3.geoGraticule();
+
+    var svg = d3
+      .select("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
+      .call(
+        d3
+        .drag()
+        .subject(function() {
+          var r = projection.rotate();
+          return {
+            x: r[0] / sensitivity,
+            y: -r[1] / sensitivity
+          };
+        })
+        .on("drag", dragged)
+      )
+      /*.call(
+        d3
+        .zoom()
+        .scaleExtent(scaleExtent)
+        .on("zoom", zoomed)
+      )*/
+      .on("dblclick.zoom", null);
+
+    var labels;
+
+    d3.queue()
+      .defer(d3.json, "assets/map_data/global/land.json")
+      .defer(d3.json, "assets/map_data/global/countries.json")
+      .defer(d3.json, "assets/map_data/global/cities.json")
+      .defer(d3.json, "assets/map_data/global/links.json")
+      .defer(d3.csv, "assets/map_data/global/country_names.csv")
+      .defer(d3.csv, "assets/map_data/global/demographics.csv")
+      .await(ready);
+
+      function ready(error, land, countryJson, places, links, countryNames, demographics) {
+
+      
+var defs = svg.append("defs");
+
+var filter = svg.append("defs")
+  .append("filter")
+  .attr("id", "drop-shadow")
+  .attr("height", "110%");
+filter.append("feGaussianBlur")
+  .attr("in", "SourceAlpha")
+  .attr("stdDeviation", 0.5)
+  .attr("result", "blur");
+
+filter.append("feOffset")
+  .attr("in", "blur")
+  .attr("dx", 1)
+  .attr("dy", 1)
+  .attr("result", "offsetBlur");
+
+  var feMerge = filter.append("feMerge");
+
+feMerge.append("feMergeNode")
+    .attr("in", "offsetBlur")
+feMerge.append("feMergeNode")
+    .attr("in", "SourceGraphic");
+    
+var gradient = svg.append("svg:defs")
+  .append("svg:linearGradient")
+    .attr("id", "gradient")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "0%")
+    .attr("y2", "100%")
+    .attr("spreadMethod", "pad");
+
+gradient.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#0F3871")
+    .attr("stop-opacity", 1);
+
+gradient.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#175BA8")
+    .attr("stop-opacity", 1);
+
+  countries = topojson.feature(countryJson, countryJson.objects.ne_50m_admin_0_countries).features;
+
+  countryNames.forEach(function(d) {
+    countryById[d.iso_n3] = d.name;
+  });
+
+  svg
+    .append("ellipse")
+    .attr("cx", offsetX - 40)
+    .attr("cy", offsetY + radius - 20)
+    .attr("rx", projection.scale() * 0.9)
+    .attr("ry", projection.scale() * 0.25)
+    .attr("class", "noclicks")
+    .style("fill", "url(#drop_shadow)");
+  svg
+    .append("circle")
+    .attr("cx", offsetX)
+    .attr("cy", offsetY)
+    .attr("r", projection.scale())
+    .attr("class", "noclicks")
+    .style("fill", "#e6f2ff");
+  svg
+    .append("path")
+    .datum(topojson.feature(land, land.objects.ne_50m_land))
+    .attr("class", "land")
+    .attr("d", path)
+    .style("filter", "url(#drop-shadow)");
+  svg
+    .append("path")
+    .datum(graticule)
+    .attr("class", "graticule noclicks")
+    .attr("d", path);
+  svg
+    .append("circle")
+    .attr("cx", offsetX)
+    .attr("cy", offsetY)
+    .attr("r", projection.scale())
+    .attr("class", "noclicks")
+    .style("fill", "url(#globe_highlight)");
+  svg
+    .append("circle")
+    .attr("cx", offsetX)
+    .attr("cy", offsetY)
+    .attr("r", projection.scale())
+    .attr("class", "noclicks")
+    .style("fill", "url(#globe_shading)");
+  svg
+    .append("g")
+    .attr("class", "countries")
+    .selectAll("path")
+    .data(countries, function(d){
+            countryCentroids[d.id] = d3.geoCentroid(d);
+        })
+    .enter()
+    .append("path")
+    .attr("d", path)
+    .attr("name",function(d){
+       return countryById[d.id];
+    })
+    .attr("fill", function (d) {
+        return "#79d279";
+    })
+    .attr("box-shadow", 'inset 0 0 10px #000000')
+    .on("mouseover", function(d) {
+      countryTooltip.text(countryById[d.iso_n3])
+      .style("left", (d3.event.pageX ) + "px")
+      .style("top", (d3.event.pageY + offsetY + 3) + "px")
+      .style("display", "block")
+      .style("opacity", 1);
+    })
+    .on("mouseout", function(d) {
+      countryTooltip.style("opacity", 0)
+      .style("display", "none");
+    });
+  svg
+    .append("g")
+    .attr("class", "points")
+    .selectAll(".point")
+    .data(places.features)
+    .enter()
+    .append("path")
+    .attr("class", "point")
+    .attr("opacity", "point")
+    .attr("d", path);
+  svg
+    .append("g")
+    .attr("class", "labels")
+    .selectAll(".label")
+    .data(places.features)
+    .enter()
+    .append("text")
+    .attr("class", "label")
+    .text(function(d) {
+      return d.properties.NAME;
+    });
+  position_labels();
+  enableRotation();
+}
+
+    function selectType(id){
+        var rotate = projection.rotate(),
+            focusedCountry = country(countries, id),
+            p = d3.geoCentroid(focusedCountry);
+
+        svg.selectAll(".countries path")
+          .filter(function(d) {
+            if (d.properties.iso_n3 == id)
+                return true;
+          })
+          .style("fill-opacity", 0.1)
+        svg.selectAll(".countries path")
+          .filter(function(d) {
+            if (d.properties.iso_n3 != id)
+                return true;
+          })
+          .style("fill-opacity", 0.5)
+          
+        svg.selectAll(".focused").classed("focused", focused = false);
+
+        (function transition() {
+          d3.transition()
+          .duration(2500)
+          .tween("rotate", function() {
+            var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+            return function(t) {
+              projection.rotate(r(t));
+              position_labels();
+              svg.selectAll("path").attr("d", path)
+              .classed("focused", function(d, i) { return d.iso_n3 == focusedCountry.iso_n3 ? focused = d : false; });
+            };
+          })
+          })();
+
+        function country(cnt, sel) { 
+          for(var i = 0, l = cnt.length; i < l; i++) {
+            if(cnt[i].properties.iso_n3 == sel) {return cnt[i];}
+          }
+        };
+    }
+    
+    function resetType(){
+        svg.selectAll(".countries path")
+          .style("fill-opacity", 0.5)
+    }
+
+    function enableRotation() {
+      d3.timer(function(elapsed) {
+        projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+        svg.selectAll("path").attr("d", path);
+         position_labels();
+      });
+    }
+
+    function endRotation() {
+
+    }
+
+    function position_labels() {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      svg
+        .selectAll(".label")
+        .attr("text-anchor", function(d) {
+          var x = projection(d.geometry.coordinates)[0];
+          return x < offsetX - 20 ? "end" : x < offsetX + 20 ? "middle" : "start";
+        })
+        .attr("transform", function(d) {
+          var loc = projection(d.geometry.coordinates),
+            x = loc[0],
+            y = loc[1];
+          var offset = x < offsetX ? -5 : 5;
+          return "translate(" + (x + offset) + "," + (y - 2) + ")";
+        })
+        .style("display", function(d) {
+          var d = d3.geoDistance(d.geometry.coordinates, centerPos);
+          return d > 1.57 ? "none" : "inline";
+        });
+    }
+
+    function flying_arc(pts) {
+      var source = pts.geometry.coordinates[0],
+        target = pts.geometry.coordinates[1];
+      var mid1 = location_along_arc(source, target, .333);
+      var mid2 = location_along_arc(source, target, .667);
+      var result = [projection(source),
+        skyProjection(mid1),
+        skyProjection(mid2),
+        projection(target)
+      ]
+      // console.log(result);
+      return result;
+    }
+
+    function fade_at_edge(d) {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      start = d.geometry.coordinates[0];
+      end = d.geometry.coordinates[1];
+      var start_dist = 1.57 - d3.geoDistance(start, centerPos),
+        end_dist = 1.57 - d3.geoDistance(end, centerPos);
+      var fade = d3.scaleLinear().domain([-.1, 0]).range([0, .1])
+      var dist = start_dist < end_dist ? start_dist : end_dist;
+      return fade(dist)
+    }
+
+    function location_along_arc(start, end, loc) {
+      var interpolator = d3.geoInterpolate(start, end);
+      return interpolator(loc)
+    }
+
+    function dragged() {
+      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+      o1[1] =
+        o1[1] > maxElevation ?
+        maxElevation :
+        o1[1] < -maxElevation ?
+        -maxElevation :
+        o1[1];
+      projection.rotate(o1);
+      skyProjection.rotate(o1);
+      refresh();
+    }
+
+    function zoomed() {
+      if (d3.event) {
+        svg.attr("transform", "scale(" + d3.event.transform.k + ")");
+      }
+    }
+
+    function refresh() {
+      svg.selectAll(".land").attr("d", path);
+      svg.selectAll(".countries path").attr("d", path);
+      svg.selectAll(".graticule").attr("d", path);
+      refreshLandmarks();
+      refreshFlyers();
+    }
+
+    function refreshLandmarks() {
+      svg.selectAll(".point").attr("d", path);
+      position_labels();
+    }
+
+    function refreshFlyers() {
+      svg.selectAll(".arc").attr("d", path)
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+      svg.selectAll(".flyer")
+        .attr("d", function(d) {
+          return swoosh(flying_arc(d))
+        })
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+    }
+  </script>
+</body>
+
+</html>

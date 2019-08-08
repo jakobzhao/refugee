@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kutupalong</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />   
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <style>
+   
+    /* Dropdown styling */
+    button#but{
+        width:200px;
+        height:50px;
+        font-size:22px;
+        font-family: 'Lustria', serif;
+        font-variant: small-caps;
+        background:white;
+        display:block;
+    }
+
+    button#but:hover{
+        background:lightgray;
+    }
+    
+    .dropbtn {
+      background-color: white;
+      color: black;
+      padding: 2px;
+      padding-left:10px;
+      width:300px;
+      font-size: 20px;
+      border: none;
+      font-family: 'Lustria', serif;
+      border:black solid 2px;
+      text-align:left;
+      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      left:0;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      width: 250px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: 'Lustria', serif;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #f2f2f2;}
+    /* Dropdown styling */
+
+    #map{
+        height:100%;
+        width:100%;
+        position:absolute;
+        outline:medium none currentcolor;
+        left:0;
+        top:0;
+        z-index:0;
+    }
+
+    /*HTML styling*/
+    h1{
+      font-family: 'Lustria', serif;
+        font-variant: small-caps;
+        margin-bottom:0px;
+        font-size:50px;
+        text-align:center;
+        margin-top:50px;
+    }
+    p{
+        font-family: 'Lustria', serif;
+        margin-top:10px;
+        text-align:justify;
+    }
+    h2{
+      font-family: 'Lustria', serif;
+        margin-bottom:5px;
+        text-align:left;
+        line-height:30px;
+        font-size:20px;
+    }
+    div.legend{
+        width:280px;
+        height:35px;
+        margin-bottom:5px;
+        margin:auto;
+        border:#d9d9d9 solid 2px;
+    }    
+    div.legend_container{
+        left:0;
+        margin-top:0px;
+        top:calc(100% + 180px);
+        z-index:110;
+        width:280px;
+    }
+    p.legend_label{
+        font-size:18px;
+        display:inline;
+        text-align:left;
+        position:relative;
+        margin:0;
+        margin-left:5px;
+    }
+    div#infoPanel {
+       width:300px;
+       z-index:10;
+       height:60%;
+       position:absolute;
+       top:25px;
+       left:25px;
+       background:rgba(255,255,255,0.3);
+       border:2px solid #666666;
+       padding:25px;
+       overflow:hidden;
+     }
+     div#text{
+         position:relative;
+         height:70%;
+     }
+     div.topBar{
+         position:absolute;
+         top:40px;
+         left:40px;
+         height:40px;
+         width:300px;
+         background:rgba(255,255,255,0);
+         z-index:100;
+     }
+     img#ng{
+       margin:0 auto;
+       margin-top:3px;
+       display:block;
+       width:170px;
+     }
+    .label_tooltip, .label_tooltip2{
+      font-family: 'Lustria', serif;
+      font-size:14px;
+      padding:10px;
+      margin:0px;
+      border:0px;
+      z-index:700;
+    }
+    .label_tooltip{
+      width:300px;
+    }
+    .label_tooltip2{
+      width:350px;
+    }
+
+    .circleChart{
+      padding-top:15px;
+      width:100px;;
+      display:inline-block;
+    }
+    b.circle{
+      background:black;
+      display:inline-block;
+      width:50px;
+      bottom:0;
+      position:absolute;
+      margin:auto;
+    }
+    #chartContainer1{
+      width:300px;
+    }
+    #chartContainer2{
+      width:350px;
+    }
+    img.icon{
+      display:block;
+    }
+    h2.iconLabel{
+        font-size:16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+  <div id="infoPanel">
+    <h1>Kutupalong</h1> 
+          <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+          <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+            <button class="dropbtn" id="dataType">Select Map</button>
+            <div class="dropdown-content">
+              <a href="#" id="but1" class="selection" style="background:rgba(242, 242, 242, 0.67);">Overview</a>
+              <a href="#" id="but2" class="selection">Population</a>
+              <a href="#" id="but3" class="selection">Health</a>
+              <a href="#" id="but4" class="selection">Sanitation</a>
+            </div>
+          </div>
+          <div id="text">
+            <div class="legend_container" id="leg_1">
+              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+              <div style="display:inline-block; width:150px; height:80px;">
+                <h2 class="iconLabel" style="margin-bottom:10px;">Medical Facilities</h2> 
+                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="assets/img/hospital-15.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Primary</p><br/>
+                <img class="icon" style="opacity:0.4; display:inline;" src="assets/img/hospital-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:0px; margin-bottom:5px;">Other</p>
+              </div>
+              <div style="display:inline-block; margin-left:5px; width:120px; height:80px;">
+                <h2 class="iconLabel">Schools</h2> 
+                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="assets/img/square-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Permanent</p>
+                <img class="icon" style="opacity:0.4; height:20px; display:inline;" src="assets/img/square-stroked-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Temporary</p>
+              </div>
+              <h2 class="iconLabel">Water</h2> 
+              <img class="icon" style="opacity:0.4; height:20px; display:inline;" src="assets/img/water-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Source</p></br>
+            </div>
+            <div class="legend_container" id="leg_2" style="display:none;">
+              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+              <h2>Population Density (Ind./Sq. Km)</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffd4, #ffffd4 25%, #fed98e 25%, #fed98e 50%, #fe9929 50%, #fe9929 75%, #cc4c02 75%);"></div>
+              <p class="legend_label" style="margin-left:55px;">100</p>
+              <p class="legend_label" style="margin-left:35px;">200</p>
+              <p class="legend_label" style="margin-left:35px;">300</p>
+            </div>
+            <div class="legend_container" id="leg_3" style="display:none;">
+              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+              <h2>Individuals Per Medical Facility</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #fee5d9, #fee5d9 25%, #fcae91 25%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 75%, #cb181d 75%);"></div>
+              <p class="legend_label" style="margin-left:50px;">3000</p>
+              <p class="legend_label" style="margin-left:25px;">6000</p>
+              <p class="legend_label" style="margin-left:22px;">9000</p>
+          </div>
+          <div class="legend_container" id="leg_4" style="display:none;">
+              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+              <h2>Indivduals Per Latrine</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #edf8fb, #edf8fb 25%, #b3cde3 25%, #b3cde3 50%, #8c96c6 50%, #8c96c6 75%, #88419d 75%);"></div>
+              <p class="legend_label" style="margin-left:62px;">15</p>
+              <p class="legend_label" style="margin-left:50px;">25</p>
+              <p class="legend_label" style="margin-left:50px;">35</p>
+        </div>
+    </div>
+  </div>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
+  <script src="js/clickFunction.js"></script>
+  <script src="js/Chart.bundle.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
+
+  <script>
+        const ps = new PerfectScrollbar('#text', {
+          wheelSpeed: 2,
+          wheelPropagation: true,
+          minScrollbarLength: 20
+        });
+
+        function removeElement(id) {
+            var elem = document.getElementById(id);
+            return elem.parentNode.removeChild(elem);
+        }   
+        
+        L.TopoJSON = L.GeoJSON.extend({  
+            addData: function(jsonData) {    
+                if (jsonData.type === 'Topology') {
+                    for (key in jsonData.objects) {
+                    geojson = topojson.feature(jsonData, jsonData.objects[key]);
+                    L.GeoJSON.prototype.addData.call(this, geojson);
+                }
+            }    
+            else {
+                L.GeoJSON.prototype.addData.call(this, jsonData);
+                }
+            }  
+        });  
+
+        var map = L.map('map', {center: [21.18190, 92.13], zoom: 13, minZoom:12, zoomControl:false, zoomControl:false});
+
+        map.createPane('label');
+	      map.getPane('label').style.zIndex = 600;
+        
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            maxZoom:17,
+            minZoom:12,
+            opacity:1
+        }).addTo(map);
+        
+        var basemap = L.tileLayer('https://api.mapbox.com/styles/v1/gbaldrica/cjz1wewrs2hx91crtom5ujg3v/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2JhbGRyaWNhIiwiYSI6ImNqZnlkeGtkbTRsYTEycXBvYWhvNHl6dHQifQ.gbIkzk7MVT9R9kPcPenRsA', {
+            attribution:'© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+            maxZoom: 17,
+            minZoom: 12,
+            opacity:0.8
+          }).addTo(map);
+
+        var basemap_labels = L.tileLayer('https://api.mapbox.com/styles/v1/gbaldrica/cjz1qvx786u881dp1n4b9utbr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZ2JhbGRyaWNhIiwiYSI6ImNqZnlkeGtkbTRsYTEycXBvYWhvNHl6dHQifQ.gbIkzk7MVT9R9kPcPenRsA', {
+            attribution:'© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+            maxZoom: 17,
+            minZoom: 12,
+            opacity:1,
+            pane:'label'
+          }).addTo(map);
+        
+       /* var Stamen_TonerBackground = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          subdomains: 'abcd',
+          minZoom: 12,
+          maxZoom: 15,
+          ext: 'png'
+        }).addTo(map);
+        
+        var Esri_WorldTerrain = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: USGS, Esri, TANA, DeLorme, and NPS',
+            maxZoom:15,
+            minZoom:12,
+            opacity:0.2
+        }).addTo(map);
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+            maxZoom:15,
+            minZoom:12,
+            opacity:0.2
+        }).addTo(map);
+        var CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+	        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	        subdomains: 'abcd',
+            maxZoom:15,
+            minZoom:12,
+            opacity:0.3
+        }).addTo(map);*/
+
+        document.getElementsByClassName("leaflet-control-attribution")[0].style.visibility = "hidden";
+        
+        var circleSize = 50;
+        /////////////////////////////population blocks////////////////////////////
+        const blocks = new L.TopoJSON(null, {
+            onEachFeature: function(feature, featureLayer){ 
+              featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">' + feature.properties.pop_dens + ' People per acre</p><canvas id="chartContainer1" style="margin-left:-5px;"></canvas><img style="width:50px; display:inline; margin-left:65px;" src="assets/img/shelter.png"><img style="width:50px; display:inline; margin-left:60px;" src="assets/img/families.png">', {className: 'label_tooltip', direction:'right'});
+              //featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">' + feature.properties.pop_dens + ' People per acre</p><div class="circleChart"><p style="text-align:right; padding-right:5px;"># of Shelters</p></div><div id="circleHolder" style="width:105px; display:inline-block;"><b class="circle" id="sheltCircle" style="position:relative; background:#fed98e;"></b><b class="circle" id="famCircle" style="position:relative; background:#fe9929;"></b></div><div class="circleChart"><br/><p># of Families</p></div>', {className: 'label_tooltip', direction:'right'});
+                }
+            });
+		
+        $.getJSON('assets/map_data/camp/kutupalong/blocks_WASH.json')
+            .done(blocksAddTopoData);
+
+        function blocksAddTopoData(topoData) {  
+            blocks.addData(topoData);
+            blocks.eachLayer(blockHandleLayer);
+        }
+
+        function blockHandleLayer(layer){
+            layer.setStyle({
+                    fillColor: popDens(layer.feature.properties.pop_dens),
+                    fillOpacity: 0.6,
+                    weight: 1,
+                    opacity: 0.5,
+                    dashArray:2,
+                    color: '#ffffff',
+            });
+            layer.on({
+              mouseover: blockHighlight,
+              mouseout: blockReset
+            });
+        }
+
+        function blockHighlight(){
+          
+          var ctx1 = document.getElementById("chartContainer1").getContext('2d');
+              chart1 = new Chart(ctx1, options1);
+              
+              chart1.data.datasets[0].data[0] = this.feature.properties.Numberofsh;
+              chart1.data.datasets[0].data[1] = this.feature.properties.Numberoffa;
+              chart1.update();
+
+
+          this.setStyle({
+            fillOpacity: 1,
+          });
+        }
+
+        function blockReset(){
+          removeElement("chartContainer1");
+          this.setStyle({
+            fillOpacity: 0.7,
+          });
+        }
+
+        function popDens(num){
+            return num > 300 ? "#cc4c02":
+                num > 200 ? "#fe9929":
+                num > 100 ? "#fed98e":
+                  "#ffffd4";
+        }
+
+        var options1 = {
+          type: 'bar',
+          data: {
+              labels: ['# of Shelters', '# of Families'],
+              datasets: [{
+                  backgroundColor: ['#fed98e','#fe9929'],
+                  borderColor: '#ffffff',
+                  data: [50,50]
+              }]
+          },
+          options: {
+            "hover": {
+            "animationDuration": 0
+            },  
+            "animation": {
+                "duration": 1,
+                "onComplete": function() {
+                  var chartInstance = this.chart,
+                    ctx = chartInstance.ctx;
+
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function(dataset, i) {
+                    var meta = chartInstance.controller.getDatasetMeta(i);
+                    meta.data.forEach(function(bar, index) {
+                      var data = dataset.data[index];
+                      ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                    });
+                  });
+                }
+              },
+              responsive: true,
+              scales: {
+                yAxes: [{
+                  display:false,
+                  ticks: {
+                    fontSize:14,
+                    max: 15000,
+                    beginAtZero: true
+                  }
+                }]
+              },
+              legend: {
+                display:false,
+              }
+          }
+        }
+        
+        /////////////////////////////health blocks////////////////////////////
+        const healthBlocks = new L.TopoJSON(null, {
+            onEachFeature: function(feature, featureLayer){ 
+              featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">Total Population: ' + feature.properties.Numberofin + '</p>People Per Medical Facility: ' + feature.properties.med_per_pe +'<br/>Primary Care Facilities: ' + feature.properties.primary + '</p>', {className: 'label_tooltip', direction:'right'});
+                }
+            });
+		
+        $.getJSON('assets/map_data/camp/kutupalong/blocks_WASH.json')
+            .done(healthBlocksAddTopoData);
+
+        function healthBlocksAddTopoData(topoData) {  
+            healthBlocks.addData(topoData);
+            healthBlocks.eachLayer(healthBlockHandleLayer);
+        }
+
+        function healthBlockHandleLayer(layer){
+            layer.setStyle({
+                    fillColor: healthColor(layer.feature.properties.med_per_pe),
+                    fillOpacity: 0.7,
+                    weight: 1.5,
+                    opacity: 0.5,
+                    dashArray:2,
+                    color: '#ffffff',
+            });
+            layer.on({
+              mouseover: healthBlockHighlight,
+              mouseout: healthBlockReset
+            });
+        }
+
+        function healthBlockHighlight(){
+          this.setStyle({
+            fillOpacity: 1,
+          });
+        }
+
+        function healthBlockReset(){
+          this.setStyle({
+            fillOpacity: 0.7,
+          });
+        }
+
+        function healthColor(num){
+            return num > 9000 ? "#cb181d":
+                num > 6000 ? "#fb6a4a":
+                num > 3000 ? "#fcae91":
+                  "#fee5d9";
+        }
+
+    var health_facilities = L.geoJson(null, {
+        	pointToLayer: function (feature, latlng) {
+    			return L.circleMarker(latlng, {
+    				color: '#ffffff',	
+    				fillColor: '#000000',
+    				radius: 2.5,
+    				opacity: 1,
+    				fillOpacity: 1,
+    				weight: 0.5
+    			});
+    		}
+      });
+        
+     $.getJSON("assets/map_data/camp/kutupalong/total_facilities.json", function(data) {
+        health_facilities.addData(data);
+    });
+
+    /////////////////////////////schools////////////////////////////
+    const eduBlocks = new L.TopoJSON(null, {interactive:false});
+		
+      $.getJSON('assets/map_data/camp/kutupalong/blocks_WASH.json')
+          .done(eduBlocksAddTopoData);
+
+      function eduBlocksAddTopoData(topoData) {  
+          eduBlocks.addData(topoData);
+          eduBlocks.addTo(map);
+          eduBlocks.eachLayer(eduBlockHandleLayer);
+      }
+
+      function eduBlockHandleLayer(layer){
+          layer.setStyle({
+                  fillColor: '#ffffff',
+                  fillOpacity: 0,
+                  weight: 0.75,
+                  opacity: 0.3,
+                  dashArray:2,
+                  color: '#000000',
+          });
+      }
+    
+      var schools = L.geoJson(null, {
+        	pointToLayer: function (feature, latlng) {
+    			return L.circleMarker(latlng, {
+    				color: '#ffffff',	
+            fillColor: schoolColor(feature.properties.Type),
+    				radius: 2.5,
+    				opacity: 1,
+    				fillOpacity: 1,
+    				weight: 0.5
+    			});
+    		}
+      });
+        
+      $.getJSON("assets/map_data/camp/kutupalong/schools.geojson", function(data) {
+         schools.addData(data);
+      });
+
+      function schoolColor(num){
+          return num == 'LEARNING CENTER' ? "#666699":
+              "#339966";
+      }
+    /////////////////////////////sanitation////////////////////////////
+    const washBlocks = new L.TopoJSON(null, {
+      onEachFeature: function(feature, featureLayer){ 
+            featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">Total Population: ' + feature.properties.Numberofin + '</br>' + feature.properties.ind_per_la + ' People per latrine</p><br/><canvas id="chartContainer2"></canvas><canvas id="chartContainer3"></canvas>', {className: 'label_tooltip2', direction:'right'});
+          }
+    });
+		
+    $.getJSON('assets/map_data/camp/kutupalong/blocks_WASH.json')
+        .done(washBlocksAddTopoData);
+
+    function washBlocksAddTopoData(topoData) {  
+        washBlocks.addData(topoData);
+        washBlocks.eachLayer(washBlocksHandleLayer);
+    }
+
+    function washBlocksHandleLayer(layer){
+        layer.setStyle({
+              fillColor: washColor(layer.feature.properties.ind_per_la),
+              fillOpacity: 0.7,
+              weight: 1.5,
+              opacity: 0.5,
+              dashArray:2,
+              color: '#ffffff',
+        });
+        layer.on({
+              mouseover: washBlockHighlight,
+              mouseout: washBlockReset
+            });
+      }
+
+    function washBlockHighlight(){
+      
+      var ctx2 = document.getElementById("chartContainer2").getContext('2d');
+          chart2 = new Chart(ctx2, options2);
+
+          chart2.data.datasets[0].data[0] = this.feature.properties.NumberofLa;
+          chart2.data.datasets[0].data[1] = this.feature.properties.Numberof_3;
+          chart2.data.datasets[0].data[2] = this.feature.properties.Numberof_5;
+          chart2.data.datasets[0].data[3] = this.feature.properties.Numberof_4;
+          chart2.data.datasets[1].data[0] = this.feature.properties.NumberofLa - this.feature.properties.NumberofLa;
+          chart2.data.datasets[1].data[1] = this.feature.properties.NumberofLa - this.feature.properties.Numberof_3;
+          chart2.data.datasets[1].data[2] = this.feature.properties.NumberofLa - this.feature.properties.Numberof_5;
+          chart2.data.datasets[1].data[3] = this.feature.properties.NumberofLa - this.feature.properties.Numberof_4;
+          chart2.update();
+
+      var ctx3 = document.getElementById("chartContainer3").getContext('2d');
+          chart3 = new Chart(ctx3, options3);
+
+          chart3.data.datasets[0].data[0] = this.feature.properties.NumberofWa;
+          chart3.data.datasets[0].data[1] = this.feature.properties.Numberof12;
+          chart3.data.datasets[0].data[2] = this.feature.properties.Numberof13;
+          chart3.data.datasets[1].data[0] = this.feature.properties.NumberofWa - this.feature.properties.NumberofWa;
+          chart3.data.datasets[1].data[1] = this.feature.properties.NumberofWa - this.feature.properties.Numberof12;
+          chart3.data.datasets[1].data[2] = this.feature.properties.NumberofWa - this.feature.properties.Numberof13;
+          chart3.update();
+      
+        this.setStyle({   
+          fillOpacity: 1,
+        });
+      }
+
+      function washBlockReset(){
+        removeElement("chartContainer2");
+        removeElement("chartContainer3");
+
+        this.setStyle({
+          fillOpacity: 0.7,
+        });
+      }
+
+
+    function washColor(num){
+      return num > 35 ? "#88419d":
+            num > 25 ? "#8c96c6":
+            num > 15 ? "#b3cde3":
+              "#edf8fb";
+    }
+
+    var options2 = {
+          type: 'bar',
+          data: {
+              labels: ['Latrines','w/Locks','w/Lights','Women Only'],
+              datasets: [{
+                  backgroundColor: ['#b3cde3','#b3cde3','#b3cde3','#b3cde3'],
+                  borderColor: '#ffffff',
+                  data: [50,50,50,50],
+                  stack:1
+              },
+              {
+                  backgroundColor: ['#ffffff','#ffffff','#ffffff','#ffffff'],
+                  borderColor: '#c7dbea',
+                  data: [100,100,100,100],
+                  stack:1,
+                  borderWidth: 1
+              }],
+              borderWidth: 0
+          },
+          options: {
+            "hover": {
+            "animationDuration": 0
+            },  
+            "animation": {
+                "duration": 1,
+                "onComplete": function() {
+                  var chartInstance = this.chart,
+                    ctx = chartInstance.ctx;
+
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function(dataset, i) {
+                    if (i == 0){
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function(bar, index) {
+                        var data = dataset.data[index];
+                        ctx.fillText(data, bar._model.x, bar._model.y);
+                      });
+                    }
+                  });
+                }
+              },
+              responsive: true,
+              scales: {
+                yAxes: [{
+                  display:false,
+                  stacked: true,
+                  ticks: {
+                    fontSize:14,
+                    max: 3000,
+                    beginAtZero: true,
+                  }
+                }],
+                xAxes: [{
+                  stacked: true,
+                  ticks: {
+                    fontSize:13,
+                  }
+                }]
+              },
+              legend: {
+                display:false,
+              }
+          }
+        }
+
+        var options3 = {
+          type: 'bar',
+          data: {
+              labels: ['Washrooms','w/Locks','Women Only'],
+              datasets: [{
+                  backgroundColor: ['#8c96c6','#8c96c6','#8c96c6'],
+                  borderColor: '#ffffff',
+                  data: [50,50,50],
+                  stack:1,
+                  borderWidth: 0
+              },
+              {
+                  backgroundColor: ['#ffffff','#ffffff','#ffffff'],
+                  borderColor: '#dde0ee',
+                  data: [100,100,100],
+                  stack:1,
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            "hover": {
+            "animationDuration": 0
+            },  
+            "animation": {
+                "duration": 1,
+                "onComplete": function() {
+                  var chartInstance = this.chart,
+                    ctx = chartInstance.ctx;
+
+                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'bottom';
+
+                  this.data.datasets.forEach(function(dataset, i) {
+                    if (i == 0){
+                      var meta = chartInstance.controller.getDatasetMeta(i);
+                      meta.data.forEach(function(bar, index) {
+                        var data = dataset.data[index];
+                        ctx.fillText(data, bar._model.x, bar._model.y);
+                      });
+                    }
+                  });
+                }
+              },
+              responsive: true,
+              scales: {
+                yAxes: [{
+                  display:false,
+                  stacked: true,
+                  ticks: {
+                    fontSize:14,
+                    max: 2000,
+                    beginAtZero: true
+                  }
+                }],
+                xAxes: [{
+                  stacked: true,
+                }]
+              },
+              legend: {
+                display:false,
+              }
+          }
+        }
+    /////////////////////click function////////////////////////    
+        
+    var buttonLabels = ['#but1','#but2','#but3','#but4'];//add button IDs here
+
+    var buttonFunctions = {
+      but1: {button:'but1',//button ID 
+          newLegend: 'leg_1', 
+          newLayers:[eduBlocks],
+          title:'Overview', //title to display in dropdown menu
+          variable:1 //update the 'data' variable
+        },
+      but2: {button:'but2',//button ID 
+          newLegend: 'leg_2', 
+          newLayers:[blocks],
+          title:'Population', //title to display in dropdown menu
+          variable:2 //update the 'data' variable
+        },
+      but3: {button:'but3', 
+        newLegend: 'leg_3', 
+        newLayers:[healthBlocks],
+        title:'Health', 
+        variable:3
+      },
+      but5: {button:'but4', 
+        newLegend: 'leg_4', 
+        newLayers:[washBlocks],
+        title:'Sanitation', 
+        variable:4
+      }
+    };
+	
+	$('.function').clickFunction({
+		buttonFunctions: buttonFunctions,
+		buttonLabels: buttonLabels,
+		selected:buttonFunctions.but1 //choose which button is initially selected
+	});
+
+  </script>
+</body>
+
+</html>

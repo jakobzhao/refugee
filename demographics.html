@@ -17,8 +17,14 @@
       width: 100%;
       height: 100vh;
       margin: 0;
-      background: #fff;
-      overflow: hidden
+      background-color:rgba(0,0,0,0.4);
+      overflow: hidden;
+      color:black;
+    }
+
+    body{
+      background-image: url("assets/img/topography.png");
+      background-repeat: repeat;
     }
 
     .land {
@@ -102,7 +108,7 @@
         width:200px;
         height:50px;
         font-size:22px;
-        font-family: 'Hind Siliguri', sans-serif; 
+        font-family: 'Lustria', serif; 
         font-variant: small-caps;
         background:white;
         display:block;
@@ -164,11 +170,12 @@
 
     /*HTML styling*/
     h1{
-        font-family: 'Hind Siliguri', sans-serif; 
+        font-family: 'Lustria', serif; 
         font-variant: small-caps;
         margin-bottom:0px;
         font-size:50px;
         text-align:center;
+        margin-top: 50px;
     }
     p{
         font-family: 'Lustria', serif;
@@ -176,7 +183,7 @@
         text-align:justify;
     }
     h2{
-        font-family: 'Hind Siliguri', sans-serif; 
+        font-family: 'Lustria', serif; 
         font-variant: small-caps;
         margin-bottom:5px;
         text-align:left;
@@ -204,14 +211,23 @@
         margin:0;
         margin-left:5px;
     }
+    /*div#infoContainer{
+      position:absolute;
+      z-index:10;
+      height:100%;
+      width:300px;
+      border-right:2px solid #666666;
+    }*/
     div#infoPanel {
       width:300px;
-      height:calc(100% - 140px);
-      position:absolute;
-      left:25px;
-      background:rgba(255,255,255,0.1);
       z-index:10;
-      padding:10px;
+      height:50%;
+      position:absolute;
+      top:25px;
+      left:25px;
+      background:rgba(255,255,255,0.3);
+      border:2px solid #666666;
+      padding:25px;
       overflow:hidden;
     }
     div#text{
@@ -220,11 +236,11 @@
     }
     div.topBar{
         position:absolute;
-        top:0;
-        left:0;
+        top:40px;
+        left:40px;
         height:40px;
-        width:100%;
-        background:rgba(0,0,0,1);
+        width:300px;
+        background:rgba(255,255,255,0);
         z-index:100;
     }
     img#ng{
@@ -233,66 +249,86 @@
       display:block;
       width:170px;
     }
+    div#projectionButtons{
+        position:absolute;
+        top:25px;
+        right:0px;
+        z-index:15;
+        width:200px;
+        height:50px;
+    }
+    div#projectionButtons button{
+        padding:0;
+        background:white;
+        border:black 2px solid;
+
+    }
+    div#projectionButtons button:hover{
+        background:#d9d9d9;
+    }
   </style>
 </head>
 
 <body>
   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
   <div id="infoPanel">
-    <h1>Demographics</h1> 
-    <button onclick="updateProjection()">Change Projection</button>
-    <div id="text">
-          <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-          <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
-            <button class="dropbtn">Select Map</button>
-            <div class="dropdown-content">
-              <a href="#"onclick="setHDI()">HDI</a>
-              <a href="#"onclick="setSchool()">Education</a>
-              <a href="#"onclick="setPoverty()">Poverty</a>
-              <a href="#"onclick="setEnvironment()">Environment</a>
+      <h1 style="font-size:44px;">Demographics</h1> 
+      <div id="text">
+            <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+            <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+              <button class="dropbtn">Select Map</button>
+              <div class="dropdown-content">
+                <a href="#"onclick="setHDI()">HDI</a>
+                <a href="#"onclick="setSchool()">Education</a>
+                <a href="#"onclick="setPoverty()">Poverty</a>
+                <a href="#"onclick="setEnvironment()">Environment</a>
+              </div>
             </div>
+            <div class="legend_container" id="HDI_legend">
+              <h2>Human Development Index</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #edf8e9 16%, #edf8e9 33%, #bae4b3 33%, #bae4b3 50%, #74c476 50%, #74c476 66%, #31a354 66%, #31a354 83%, #006d2c 83%);"></div>
+              <p class="legend_label" style="margin-left:38px;">0</p>
+              <p class="legend_label" style="margin-left:29px;">0.2</p>
+              <p class="legend_label" style="margin-left:18px;">0.4</p>
+              <p class="legend_label" style="margin-left:18px;">0.6</p>
+              <p class="legend_label" style="margin-left:18px;">0.8</p>
+              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+            </div>
+            <div class="legend_container" id="school_legend" style="display:none;">
+              <h2>Years of School</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f2f0f7 16%, #f2f0f7 33%, #cbc9e2 33%, #cbc9e2 50%, #9e9ac8 50%, #9e9ac8 66%, #756bb1 66%, #756bb1 83%, #54278f 83%);"></div>
+              <p class="legend_label" style="margin-left:50px;">0</p>
+              <p class="legend_label" style="margin-left:43px;">6</p>
+              <p class="legend_label" style="margin-left:45px;">8</p>
+              <p class="legend_label" style="margin-left:40px;">10</p>
+              <p class="legend_label" style="margin-left:32px;">12</p>
+              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
           </div>
-          <div class="legend_container" id="HDI_legend">
-            <h2>Human Development Index</h2> 
-            <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #edf8e9 16%, #edf8e9 33%, #bae4b3 33%, #bae4b3 50%, #74c476 50%, #74c476 66%, #31a354 66%, #31a354 83%, #006d2c 83%);"></div>
-            <p class="legend_label" style="margin-left:38px;">0</p>
-            <p class="legend_label" style="margin-left:29px;">0.2</p>
-            <p class="legend_label" style="margin-left:18px;">0.4</p>
-            <p class="legend_label" style="margin-left:18px;">0.6</p>
-            <p class="legend_label" style="margin-left:18px;">0.8</p>
-            <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
-          </div>
-          <div class="legend_container" id="school_legend" style="display:none;">
-            <h2>Years of School</h2> 
-            <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f2f0f7 16%, #f2f0f7 33%, #cbc9e2 33%, #cbc9e2 50%, #9e9ac8 50%, #9e9ac8 66%, #756bb1 66%, #756bb1 83%, #54278f 83%);"></div>
-            <p class="legend_label" style="margin-left:50px;">0</p>
-            <p class="legend_label" style="margin-left:43px;">6</p>
-            <p class="legend_label" style="margin-left:45px;">8</p>
-            <p class="legend_label" style="margin-left:40px;">10</p>
-            <p class="legend_label" style="margin-left:32px;">12</p>
-            <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+          <div class="legend_container" id="pov_legend" style="display:none;">
+              <h2>% Population in Poverty</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffd4 16%, #ffffd4 33%, #fed98e 33%, #fed98e 50%, #fe9929 50%, #fe9929 66%, #d95f0e 66%, #d95f0e 83%, #993404 83%);"></div>
+              <p class="legend_label" style="margin-left:50px;">0</p>
+              <p class="legend_label" style="margin-left:37px;">20</p>
+              <p class="legend_label" style="margin-left:34px;">40</p>
+              <p class="legend_label" style="margin-left:27px;">60</p>
+              <p class="legend_label" style="margin-left:32px;">80</p>
+              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
         </div>
-        <div class="legend_container" id="pov_legend" style="display:none;">
-            <h2>% Population in Poverty</h2> 
-            <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffd4 16%, #ffffd4 33%, #fed98e 33%, #fed98e 50%, #fe9929 50%, #fe9929 66%, #d95f0e 66%, #d95f0e 83%, #993404 83%);"></div>
-            <p class="legend_label" style="margin-left:50px;">0</p>
-            <p class="legend_label" style="margin-left:37px;">20</p>
-            <p class="legend_label" style="margin-left:34px;">40</p>
-            <p class="legend_label" style="margin-left:27px;">60</p>
-            <p class="legend_label" style="margin-left:32px;">80</p>
-            <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+        <div class="legend_container" id="env_legend" style="display:none;">
+          <h2>% Population at Risk of Natural Disaster</h2> 
+          <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #fee5d9 16%, #fee5d9 33%, #fcae91 33%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 66%, #de2d26 66%, #de2d26 83%, #a50f15 83%);"></div>
+          <p class="legend_label" style="margin-left:50px;">0</p>
+          <p class="legend_label" style="margin-left:37px;">20</p>
+          <p class="legend_label" style="margin-left:34px;">40</p>
+          <p class="legend_label" style="margin-left:27px;">60</p>
+          <p class="legend_label" style="margin-left:32px;">80</p>
+          <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+        </div>
       </div>
-      <div class="legend_container" id="env_legend" style="display:none;">
-        <h2>% Population at Risk of Natural Disaster</h2> 
-        <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #fee5d9 16%, #fee5d9 33%, #fcae91 33%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 66%, #de2d26 66%, #de2d26 83%, #a50f15 83%);"></div>
-        <p class="legend_label" style="margin-left:50px;">0</p>
-        <p class="legend_label" style="margin-left:37px;">20</p>
-        <p class="legend_label" style="margin-left:34px;">40</p>
-        <p class="legend_label" style="margin-left:27px;">60</p>
-        <p class="legend_label" style="margin-left:32px;">80</p>
-        <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
-      </div>
-    </div>
+  </div>
+  <div id="projectionButtons">
+    <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+    <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
   </div>
   <svg>
     <defs>
@@ -372,7 +408,8 @@
       radius = height /2.25;
     }
 
-    var projection = d3
+    
+    var projection1 = d3
       .geoOrthographic()
       .scale(radius)
       .rotate(initRotation)
@@ -382,7 +419,7 @@
       .geoEquirectangular()
       .scale(radius)
       .translate([offsetX, offsetY]);
-    var skyProjection = d3
+    var skyProjection1 = d3
       .geoOrthographic()
       .scale(radius + flyerAltitude)
       .rotate(initRotation)
@@ -393,6 +430,8 @@
       .scale(radius + flyerAltitude)
       .translate([offsetX, offsetY])
       .clipAngle(90);
+    var projection = projection1,
+        skyProjection = skyProjection1;
     var path = d3
       .geoPath()
       .projection(projection)
@@ -521,7 +560,7 @@
         .attr("height", height)
         .attr("transform-origin", offsetX + "px " + offsetY + "px")
         .attr("class", "noclicks")
-        .style("fill", "url(#ocean_fill)")
+        .style("fill", "#dae7f1")
         .style("fill-opacity", 0);
 
       svg
@@ -538,7 +577,7 @@
         .attr("cy", offsetY)
         .attr("r", projection.scale())
         .attr("class", "noclicks")
-        .style("fill", "#e6f2ff");
+        .style("fill", "#ffffff");
       svg
         .append("path")
         .datum(topojson.feature(world, world.objects.land))
@@ -614,13 +653,9 @@
       position_labels();
     }
 
-    function updateProjection(){      
+    function toEquirectangular(){      
       svg.selectAll("path").transition()
       .attrTween("d", projectionTween(projection, projection2));
-      //.attrTween("d", projectionTween(skyProjection, skyProjection2));
-      
-      //projection = projection2;
-      //skyProjection = skyProjection2;
 
       path = d3
         .geoPath()
@@ -631,15 +666,45 @@
       skyProjection = skyProjection2;
 
       svg
-          .selectAll("circle").remove();
+          .selectAll("circle").style("fill-opacity", 0);
       svg
-          .selectAll(".labels").remove();
+          .selectAll(".labels").style("fill-opacity", 0);
       svg
-          .selectAll("ellipse").remove();
+          .selectAll("ellipse").style("fill-opacity", 0);
       svg
           .selectAll("rect").style("fill-opacity", 1);
 
+      document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
+
       proj = 1;
+      refresh();
+      position_labels();
+    }
+
+    function toOrthographic(){      
+      svg.selectAll("path").transition()
+      .attrTween("d", projectionTween(projection, projection1));
+
+      path = d3
+        .geoPath()
+        .projection(projection1)
+        .pointRadius(1.5);
+
+      projection = projection1;
+      skyProjection = skyProjection1;
+
+      svg
+          .selectAll("circle").style("fill-opacity", 1);
+      svg
+          .selectAll(".labels").style("fill-opacity", 1);
+      svg
+          .selectAll("ellipse").style("fill-opacity", 1);
+      svg
+          .selectAll("rect").style("fill-opacity", 0);
+
+      document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
+
+      proj = 1;x  
       refresh();
       position_labels();
     }
