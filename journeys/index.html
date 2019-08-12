@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Escaping Burundi</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+<link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
+<style>
+body { 
+    margin:0; 
+    padding:0; 
+    font-family: 'Lustria', serif;
+    }
+h1 {
+    padding:  25px 10px 0px 0px;
+    font-size: 42px;
+    font-family: 'Lustria', serif;
+    font-variant: small-caps;
+    border: none;
+    margin: auto;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: #fafafa;
+}
+h3 { 
+    padding:  1px 20px 0px 20px;
+    font-family: 'Lustria', serif;
+    font-variant: small-caps;
+    border: none;
+    margin: auto;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: #fafafa;
+}
+h4 {
+    text-align: center;
+}
+h5 {
+    text-align: center;
+}
+img {
+    width: 90%;
+    
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+#map { 
+    top:0; 
+    bottom:0;  
+    position: fixed;
+    width:60%;
+    }
+#features {
+    width: 40%;
+    margin-left: 60%;
+    font-family: 'Lustria', serif;
+    overflow-y: none;
+    background-color: #fafafa;
+    }
+small{
+    padding: 10%;
+    text-align: center;
+}
+section {
+    padding:  150px 50px 25px 50px;
+    /* line-height: 25px;
+    border-bottom: 1px solid #ddd; */
+    opacity: 0.25;
+    font-size: 13px;
+    overflow-y: none;
+    }
+section#intro {
+    padding:  30px 50px 25px 50px;
+    opacity: 1;
+    }
+section#final {
+    padding:  150px 50px 250px 50px;
+    opacity: 1;
+    }
+section.active {
+    opacity: 1;
+    }
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 200px;
+    }
+.right {
+  text-align: right;
+}
+
+iframe {
+    height: 1200px;
+    font-family: 'Lustria', serif;
+    overflow-y: none;
+    background-color: #fafafa;
+    }
+iframe.mahama {
+    height: 500px;
+    font-family: 'Lustria', serif;
+    overflow-y: none;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+
+/* Mapbox Popup */
+.mapboxgl-popup {
+  max-width: 400px;
+          
+  }
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Lustria', serif;
+    
+    box-shadow: 3px 3px 2px rgb(255, 255, 255, 0);
+    text-shadow: rgba(0, 0, 0, 0.95) 0px 0px 6px; 
+    background-color: hsl(0, 100%, 50%,0);
+    top: -1px;
+    left: 12px;
+    }
+    .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+        .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+            border-top-color: rgb(255, 0, 0, 0);
+            }
+</style>
+</head>
+<body> 
+<div id='map'></div>
+<div id='info'></div>
+<div id='features'>
+    <h1>Three Mothers Lead a Daring Escape from Burundi</h1>   
+    <h3>Fleeing pre-election violence, three families catch a bus, ride bicycles <br>and finally scramble on foot to reach safety in Rwanda.</h3><h5>
+            Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
+    </h5><br><br>
+    <img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/05062015_Featured_ThreeMothers21.jpg" width="100%"></img>
+<section id='intro' class='active'>
+<p>“I fled because there is a conflict between the ruling party and the opposition party,” says Jeanne, 34. “The ruling party wants the President to go for a third term. His term is over but he still wants to be a President. I think this will be a war, and that’s why I fled.”</p><p>
+
+Jeanne and her children are among some 25,000 people who have fled pre-election violence in Burundi and arrived in Rwanda in the last several weeks.</p>
+        
+“The Imbonerakure would come and paint our houses,” she says, describing threats by the youth wing of the ruling party. “They painted mine. They painted red on my house at night, and when we opened the door the next morning we saw that the house was painted. I don’t remember the exact date, but I think it was in March, perhaps the 23rd.”</p>
+
+
+</section>
+<section id='bujumbura'>
+<h3>In Bujumbura</h3>
+<p>Back in Bujumbura, Burundi's capital, Jeanne and two of her neighbours, Félicité and Brigitte, had good jobs. Félicité was attending medical school and working at the hospital, while Brigitte had a small stall at the market and Jeanne ran a restaurant. But as the political climate worsened, they began to fear for their lives. A month later, together with their 10 children, they fled.</p>
+<p>“We knew that on Saturday the President would say if he would run again,” recalls Brigitte, 36. “The Imbonerakure had said that they would rape us if we would not support the party. This is not something that I just say. They had put it in practice and we saw it. They would come and kill people, maybe in the evening. They came to kill my brother, but he was at university. They did not find him.”
+
+One morning at 6 a.m., the three women and their children began their journey to Rwanda. They left Bujumbura by bus, but encountered many problems along the way.</p>
+<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/P26B7879.jpg" width="100%"></img><p><small>Jeanne, Brigitte and Félicité were neighbours back in Bujumbura. UNHCR/Kate Holt</small></p>
+<br><br><br>
+</section>
+<section id='kirundo'>
+<h3>On the bus to Kirundo</h3>
+<p>“When the Imbonerakure saw us they wanted to beat us,” says 24-year-old Félicité. “We bribed them with money. In total, we gave them 50,000 Burundian Francs [about US $31]. Every time we left a place, we were hearing that in that place they were searching for us. We were very scared. The leader of Kirundo Province had given an order that morning that no one should cross the Province.”</p>
+<p>The journey was also traumatic for the three women’s children.
+
+Charles, Jeanne’s 12-year-old son, is the eldest of them all. “When I got back from school on Wednesday, my mum told me that we would leave to go to Rwanda,” he recalls sadly. “The next day, I was going to take the national exam” at school.
+    
+Even now, the memory of their journey to Burundi is fresh in Charles’ mind.</p>   
+<p>
+“We were in the bus and it was very cold,” he says. “I covered myself and I went to sleep. I dreamt that there was a war, that people were killing each other and that there were gunshots. When we reached Kirundo, we stayed there for an hour. We boarded a mini-bus, but we were stopped by the police. They asked for our ID’s [identity cards]. My mum gave them hers. The other women also did. They also asked for money. It was a lot, but we gave the money. There was a young man who saved us. If it was not for him, we would have been killed. He talked to the police and they let us go. He was a man from Kirundo. That young man talked to the police for a long time and gave them money. He then took us to his home for an hour.”</p>
+<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/P26B7853.jpg" width="100%"></img>
+</section>
+<section id='bycicle'>
+<h3>“We asked the man to bring us bicycles”</h3>
+
+<p>But the women and children still had to find a way to reach Rwanda.</p><p>
+<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-809B7179.jpg" width="100%"></img></p><br><p>
+“We asked the man to bring us bicycles,” continues young Charles. “So we rode bicycles, but on the way we were stopped again. We gave them money but they refused it. Then they told my mother to get off her bike, or they would cut us. My mum got off the bike and she ran. The road was full of stones and she cut herself. I was very scared that she would not arrive, but they let us go and we continued the journey. I met my mother on the other side of the border.”</p><br>
+</section>
+<section id='bugesera'>
+<h3>Bugesera</h3>
+<p>Upon reaching the transit centre at Bugesera, where UNHCR is coordinating the emergency response, the three families were given shelter, sleeping mats, blankets, mosquito nets, jerrycans and drinking water.
+Finally, they are safe. But happiness still feels far away. </p>
+<p><img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-P26B7207.jpg" width="100%"></img></p>
+<p>
+Jeanne left a husband and two other children behind in Bujumbura, and has had no news of them since. “Two of my children stayed with their dad,” she explains. “They wanted to come with their mother, but I did not have enough money to take them with me.”</p>
+<p>Brigitte also left her husband and brother behind in Bujumbura, and worries because she hasn’t heard anything. “I last talked to my husband on 26 April, and I last talked to my brother when I still was in Burundi,” she says. “It hurts me because I haven’t heard from him. We were orphans. He was like our father and now I don’t know if he is still alive. I am deeply hurt. The kids keep asking where is their dad, and I don’t reply to the question. I don’t know if he is still alive.”</p>
+</section>
+<section id='mahama'>
+<h3>Towards a Safe Place</h3>
+<p>Their stay at Bugesera transit centre will be a short one. Tomorrow, Brigitte, Félicité, Jeanne and their children will move to the new Mahama refugee camp, further away from the border. They are glad to have found a safe place, but sad to leave the centre without their husbands and rest of their families.
+“We feel bad because we are going far away from our people,” says Brigitte. “We don’t know if we will see them again.”</p>
+<p class="right">
+        Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
+</p><br><br>
+<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-809B7347.jpg" width="100%"></img>
+</section>
+<section id='arrived'>
+<h3>Mahama Refugee Camp</h3>
+<p> Mahama Refugee Camp is located in the Eastern Province of Rwanda, and in only four months since its opening in April 2015 has become the country’s largest camp. After an initial rapid assessment of the Mahama site, allocated by the Government of Rwanda, UNHCR and partners were quick to map out the site, develop a site plan, and mobilize staff to erect tents and hangars, temporary WASH and health facilities, to begin accommodating thousands of refugees streaming over the border from Burundi. The Government of Rwanda has  allocated an additional 50 hectares for a total of 100 hectares to accommodate the large number of Burundian refugees. Now that the refugee influx has stabilized, UNHCR is working to transition from emergency facilities to more durable shelters and services.</p>
+<p>
+As of October 2018, there are some 69,000 Burundian refugees registered in Rwanda. Of these, 58,000 reside in
+Mahama camp, which consists of two sites. Another 11,000 live in urban areas, mostly in Kigali and Huye. There are
+four reception centres to receive new arrivals who are recognised as refugees on a prima facie basis.</p>
+<img src="https://www.unhcr.org/rw/wp-content/uploads/sites/4/2016/09/1-62-894x504.jpg" width="100%"></img>
+<p><small>Construction of semi-permanent shelters in Mahama Refugee camp [<a href="https://www.unhcr.org/rw/559-559.html" target="_blank">&copy;UNHCR – Shaban Masengesho]</a></small></p>
+
+<h4>Mahama camp growth from satellite images</h4>
+<p>
+    <iframe frameborder="0" width="90%" class="mahama" src="remote/mahama.html" ></iframe>
+</p>
+<p><small>Move the slider to explore the growth of Mahama camp through the years. Images <a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2" target="_blank">&copy; ESA</a>, <a href="https://www.nasa.gov/mission_pages/landsat/main/index.html" target="_blank" >&copy; NASA</a></small></p>
+</section>
+<section id='final'>
+<h3>Situation of the Burundian Refugees</h3>
+<p>
+The political crisis and related security and humanitarian conditions in Burundi have led to the outflow since April
+2015 of more than 400,000 Burundian refugees to neighbouring countries and beyond over the past two and a half years.
+</p>
+
+<p>
+        The political situation in Burundi remains unresolved,
+        with external mediation efforts in deadlock, including the
+        Inter-Burundian Dialogue convened under the auspices
+        of the East African Community (EAC) and its appointed
+        facilitator, former Tanzanian president Benjamin Mkapa.
+        The human rights situation remains of significant
+        concern, with the most recent report of the UN
+        Commission of Inquiry on Burundi finding reasonable
+        grounds to believe that crimes against humanity have
+        been committed in Burundi. Recent refugee arrivals
+        report facing pressure and violent harassment from local
+        level officials to join and contribute financially to the
+        ruling party, as well as continued surveillance by
+        Imbonerakure militia of exit routes out of the country
+</p>
+<p>
+    More information on the situation of Burundian refugees <a href='https://data2.unhcr.org/en/situations/burundi' target="_blank">here</a>
+</p>
+<p>
+    <iframe frameborder="0" width="100%" src="charts/burundi.html" ></iframe>
+</p>
+</section>
+</div>
+<script>
+//mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vkcm94NzQiLCJhIjoiY2plM2YzNGZhNjV4NTJ3cXA5b3dpMWQydiJ9.RpG_G_SIxLEVu7ZNSAVPXg';
+ 
+var map = new mapboxgl.Map({
+container: 'map', // container id
+style: {
+        "version": 8,
+        "sources": {
+            "simple-tiles": {
+                "type": "raster",
+                // point to our third-party tiles. Note that some examples
+                // show a "url" property. This only applies to tilesets with
+                // corresponding TileJSON (such as mapbox tiles). 
+                "tiles": [
+                    "http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+                    "http://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+                ],
+                "tileSize": 256,
+                // "attribution":'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+            }
+        },
+        "layers": [{
+            "id": "simple-tiles",
+            "type": "raster",
+            "source": "simple-tiles",
+            "minzoom": 0,
+            "maxzoom": 22
+        }]
+},
+center: [29.36, -3.37], // starting position
+zoom: 6 // starting zoom
+});
+var popup = new mapboxgl.Popup({
+        closeButton: false,
+        closeOnClick: false
+    });
+
+    map.on('mousemove', 'refugees', function (e) {
+        map.getCanvas().style.cursor = 'pointer';
+        var feature = e.features[0];
+        var population = '<div style="font-size: 1.3rem; color:orange;text-shadow: 1px 1px #1e1e1e">' + e.features[0].properties.country + ', <br> ' + e.features[0].properties.refugees.toLocaleString() + ' refugees ';
+        popup.setLngLat(e.lngLat)
+            .setHTML(population)
+            .addTo(map);
+    });
+
+    map.on('mouseleave', 'refugees', function () {
+        map.getCanvas().style.cursor = '';
+        popup.remove();
+    });
+
+var chapters = {
+'intro': {
+bearing: 0,
+pitch: 0,
+center: [ 29.36, -3.37],
+zoom: 6,
+},
+'bujumbura': {
+duration: 3000,
+center: [ 29.36, -3.37],
+bearing: 0,
+zoom: 12,
+pitch: 0
+},
+'kirundo': {
+duration: 5000,
+bearing: 30,
+center: [ 29.62, -3.09],
+zoom: 9.1,
+speed: 0.6,
+pitch: 27
+},
+'bycicle': {
+duration: 5000,
+bearing: 0,
+center: [ 30.20, -2.32],
+zoom: 9.3,
+pitch: 20
+},
+'bugesera': {
+duration: 2000,
+bearing: 0,
+center: [30.24, -2.21],
+zoom: 15,
+pitch: 15,
+speed: 0.5
+},
+'mahama': {
+duration: 5000,
+bearing: 320,
+center: [30.64, -2.27],
+zoom: 9.8,
+pitch: 35,
+speed: 0.5
+},
+'arrived': {
+duration: 5000,
+bearing: 40,
+center: [30.84, -2.31],
+zoom: 15,
+pitch: 15
+},
+'final': {
+duration: 5000,
+bearing: 10,
+center: [30, -2.31],
+zoom: 5.8,
+pitch: 90
+}
+};
+ 
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+var chapterNames = Object.keys(chapters);
+for (var i = 0; i < chapterNames.length; i++) {
+var chapterName = chapterNames[i];
+if (isElementOnScreen(chapterName)) {
+setActiveChapter(chapterName);
+break;
+}
+}
+};
+ 
+var activeChapterName = 'intro';
+function setActiveChapter(chapterName) {
+if (chapterName === activeChapterName) return;
+ 
+map.flyTo(chapters[chapterName]);
+ 
+document.getElementById(chapterName).setAttribute('class', 'active');
+document.getElementById(activeChapterName).setAttribute('class', '');
+ 
+activeChapterName = chapterName;
+}
+ 
+function isElementOnScreen(id) {
+var element = document.getElementById(id);
+var bounds = element.getBoundingClientRect();
+return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+map.on('load', function() {
+    map.addSource('satellite',{
+        'type': 'raster',
+        'tiles': ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}.png'],
+        'tileSize': 150
+    })
+
+    map.addLayer({
+            'id': 'satellite',
+            'type': 'raster',
+            'source': 'satellite',
+            'paint': {
+            'raster-opacity': 1},
+            'minzoom': 14,
+            'maxzoom': 16
+        })
+
+        map.addSource("burundi", {
+            type: "geojson",
+            data: 'assets/data/burundi.geojson'
+        })
+
+        map.addLayer({
+            'id': 'burundi',
+            'type': 'fill',
+            'source': 'burundi',
+            'layout': {
+            },
+            'paint': {
+            'fill-color': '#ff0000',
+            
+            'fill-opacity': .4},
+            'minzoom': 1,
+            'maxzoom': 8.5
+        });
+
+
+    map.addSource("route1", {
+            type: "geojson",
+            data: 'assets/data/route1.geojson'
+        })
+        map.addLayer({
+            'id': 'route1-shadow',
+            'type': 'line',
+            'source': 'route1',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#404040',
+            'line-width': 10,
+            "line-blur": 20,
+            'line-opacity': .8},
+            'minzoom':8,
+            'maxzoom': 10
+        });
+        map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route1',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#ff0000',
+            'line-width': 5,
+            'line-opacity': .8},
+            'minzoom': 8,
+            'maxzoom': 10
+        });
+
+    
+    map.addSource("route2", {
+            type: "geojson",
+            data: 'assets/data/route2.geojson'
+        })
+        map.addLayer({
+            'id': 'route2-shadow',
+            'type': 'line',
+            'source': 'route2',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#404040',
+            'line-width': 10,
+            "line-blur": 20,
+            'line-opacity': .8},
+            'minzoom':9.2,
+            'maxzoom': 16
+        });
+        map.addLayer({
+            'id': 'route2',
+            'type': 'line',
+            'source': 'route2',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#ff0000',
+            'line-width': 5,
+            'line-opacity': .8},
+            'minzoom': 9.2,
+            'maxzoom': 16
+        });
+
+
+    map.addSource("route3", {
+            type: "geojson",
+            data: 'assets/data/route3.geojson'
+        })
+        map.addLayer({
+            'id': 'route3-shadow',
+            'type': 'line',
+            'source': 'route3',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#404040',
+            'line-width': 15,
+            "line-blur": 30,
+            'line-opacity': .8},
+            'minzoom':9.5,
+            'maxzoom': 10
+        });
+        map.addLayer({
+            'id': 'route3',
+            'type': 'line',
+            'source': 'route3',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#ff0000',
+            'line-width': 5,
+            'line-opacity': .8},
+            'minzoom':9.5,
+            'maxzoom': 10
+        });
+
+    map.addSource("camps", {
+            type: "geojson",
+            data: 'assets/data/camps.geojson'
+        })
+        map.loadImage('assets/data/unhcr.png', function (error, image) {
+            if (error) throw error;
+            map.addImage('camps', image);
+            map.addLayer({
+                "id": "camps",
+                "type": "symbol",
+                "source": "camps",
+                "layout": {
+                    "icon-image": "camps",
+                    "icon-allow-overlap": true,
+                    "icon-size": 0.6
+                },
+                'minzoom': 14.8,
+                'maxzoom': 15.2
+            });
+            map.addLayer({
+                "id": "camps2",
+                "type": "symbol",
+                "source": "camps",
+                "layout": {
+                    "icon-image": "camps",
+                    "icon-allow-overlap": true,
+                    "icon-size": 0.51
+                },
+                'minzoom': 9.2,
+                'maxzoom': 10
+            });
+        });
+        map.addSource("refugees", {
+            type: "geojson",
+            data: 'assets/data/refugees.geojson'
+        })
+
+        map.addLayer({
+            'id': 'refugees',
+            'type': 'fill-extrusion',
+            'source': 'refugees',
+            'paint': {
+                'fill-extrusion-color': 'orange',
+                'fill-extrusion-height': ["get", "refugees"],
+                'fill-extrusion-base': 0,
+                'fill-extrusion-opacity': 0.5
+            },
+            'minzoom': 5,
+            'maxzoom': 5.9
+        });
+
+});
+map.scrollZoom.disable();
+</script> 
+</body>
+</html>

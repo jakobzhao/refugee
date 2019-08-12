@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Population</title>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="utils.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div style="width: 75%" >
+		<canvas id="canvas"></canvas>
+	</div>
+	<script>
+// 		var items = []
+//         $.getJSON( "https://data2.unhcr.org/api/population/get/demography?widget_id=128539&sv_id=13&population_collection=12", function( json ) { 
+// 				items.push(Number(json.data[0].male_04))
+// 				items.push(Number(json.data[0].male_511))
+// 				items.push(Number(json.data[0].male_1217))
+// 				items.push(Number(json.data[0].male_1859))
+// 				items.push(Number(json.data[0].male_60))           
+//                console.log(items)                
+//             });
+        
+// let jsondata = null    
+// fetch("https://data2.unhcr.org/api/population/get/demography?widget_id=128539&sv_id=13&population_collection=12").then(
+//         function(u){ return u.json();}
+//       ).then(
+//         function(json){
+// 		var jsondata = [Number(json.data[0].male_04), Number(json.data[0].male_511), Number(json.data[0].male_1217), Number(json.data[0].male_1859), Number(json.data[0].male_60)]
+// 		console.log(jsondata) 
+//         })               
+	    
+        var male = [
+                4116,
+                4611,
+                3327,
+                8545,
+                262
+				]
+        var female = [
+                -3994,
+                -4482,
+                -3098,
+                -9604,
+                -447
+				]
+
+		var barChartData = {
+			labels: ['0-4', '5-11', '12-17', '18-59', '60+'],
+			datasets: [{
+				label: 'Female',
+				backgroundColor: window.chartColors.red,
+				stack: 'Stack 0',
+				data: female
+			}, {
+				label: 'Male',
+				backgroundColor: window.chartColors.blue,
+				stack: 'Stack 0',
+				data: male
+			}]
+
+		};
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'horizontalBar',
+				data: barChartData,
+				options: {
+					title: {
+						display: true,
+						text: 'Refugees from Burundi - Demographic Breakdownn'
+					},
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 10,
+                            bottom: 10
+                        }
+                    },
+					tooltips: {
+						mode: 'index',
+						intersect: true
+					},
+					responsive: true,
+					scales: {
+  xAxes: [
+    {
+      ticks: {
+						min: this.min,
+						max: this.sum,// Your absolute max value
+						callback: function (value) {
+						return (value / this.max * 100).toFixed(0) + '%'; // convert it to percentage
+						},
+						// reverse: true
+					},
+					scaleLabel: {
+						display: true,
+						labelString: 'Percentage',
+					},
+					},
+				],
+				},
+				}
+			});
+		};
+
+	</script>
+</body>
+
+</html>

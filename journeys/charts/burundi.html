@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>area > boundaries | Chart.js sample</title>
+	<link href="css/flag-icon.css" rel="stylesheet">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="utils.js"></script>
+<style>
+#chart-0{
+	background-image: url("flags/cd.svg");
+	background-size: cover;
+}
+#chart-1{
+	background-image: url("flags/rw.svg"); 
+	background-size: cover;
+}
+#chart-2{
+	background-image: url("flags/tz.svg"); 
+	background-size: cover;
+}
+#chart-3{
+	background-image: url("flags/ug.svg"); 
+	background-size: cover;
+}
+#canvas{
+	/* background-image: url("flags/cd.svg"); */
+	background-size: cover;
+	/* width:100%; */
+
+}
+#middle { 
+    font-size: 12px;
+	font-family: 'Lustria', serif;
+	font-weight: bold;
+	text-align: center;
+	}
+	
+.content {
+	max-width: 800px;
+	margin: auto;
+	/* padding: 16px 32px; */
+}
+
+.wrapper {
+	min-height: 400px;
+	padding: 16px 0;
+	position: relative;
+}
+
+.wrapper.col-2 {
+	display: inline-block;
+	min-height: 200px;
+	width: 49%;
+}
+
+@media (max-width: 400px) {
+	.wrapper.col-2 {
+		width: 100%
+	}
+}
+
+.wrapper canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+</style>
+
+
+</head>
+<body>
+		
+	<canvas id="canvas"></canvas>
+	<p id="middle">Distribution of Burundian refugees in neighbouring countries</p>
+	<div class="content">
+		<div class="wrapper col-2"><canvas id="chart-0"></canvas></div>
+		<div class="wrapper col-2"><canvas id="chart-1"></canvas></div>
+		<div class="wrapper col-2"><canvas id="chart-2"></canvas></div>
+		<div class="wrapper col-2"><canvas id="chart-3"></canvas></div>
+	</div>
+
+	<script>
+		var presets = window.chartColors;
+		var utils = Samples.utils;
+        var male = [
+                9.7,
+                10.9,
+                7.8,
+                20.1,
+                0.6
+				]
+        var female = [
+                -9.4,
+                -10.5,
+                -7.3,
+                -22.6,
+                -1.1
+				]
+
+		var barChartData = {
+			labels: ['0-4', '5-11', '12-17', '18-59', '60+'],
+			datasets: [{
+				label: 'Female',
+				backgroundColor: window.chartColors.red,
+				stack: 'Stack 0',
+				data: female
+			}, {
+				label: 'Male',
+				backgroundColor: window.chartColors.blue,
+				stack: 'Stack 0',
+				data: male
+			}]
+
+		};
+		window.onload = function() {
+			var ctx = document.getElementById('canvas').getContext('2d');
+			window.myBar = new Chart(ctx, {
+				type: 'horizontalBar',
+				data: barChartData,
+				options: {
+					title: {
+						display: true,
+						text: 'Refugees from Burundi - Demographic Breakdownn',
+						fontFamily: "'Lustria', serif",
+					},
+					legend: {
+							display: true,
+							labels: {
+								fontFamily: "'Lustria', serif",
+							}
+        },
+                    layout: {
+                        padding: {
+                            left: 10,
+                            right: 10,
+                            top: 10,
+                            bottom: 10
+                        },
+					
+                    },
+					tooltips: {
+						mode: 'index',
+						intersect: true
+					},
+					responsive: true,
+					scales: {
+				xAxes: [
+					{
+					ticks: {
+								min: this.min,
+								max: this.max,// Your absolute max value
+								callback: function (value) {
+								return value + '%'; // convert it to percentage
+								},
+								// reverse: true
+							},
+								scaleLabel: {
+									display: true,
+									labelString: 'Percentage',
+									fontFamily: "'Lustria', serif",
+								},
+							},
+						],
+				},
+				}
+			});
+		};
+
+		var options = {
+			maintainAspectRatio: false,
+			spanGaps: false,
+			elements: {
+				line: {
+					tension: 0.000001
+				}
+			},
+			plugins: {
+				filler: {
+					propagate: false
+				}
+			},
+			scales: {
+				xAxes: [{
+					ticks: {
+						autoSkip: false,
+						maxRotation: 0
+					}
+				}]
+			}
+		};		
+		var labels = [2014, 2015, 2016, 2017, 2018, 2019]
+
+		var DRC = [0,16750,30747,45342,41931, 43837]
+		var Rwanda = [0, 72126, 83699, 88752, 70209, 71376]
+		var Tanzania = [0, 124698, 211804, 235087, 200688, 186156]
+		var Uganda = [0,0,0,0,35467,42334]
+
+
+			new Chart('chart-0' , {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						backgroundColor: utils.transparentize(presets.blue),
+						borderColor: presets.blue,
+						data: DRC,
+						label: 'Refugees',
+						fill: 'start'
+					}]
+				},
+				options: Chart.helpers.merge(options, {
+					title: {
+						text: 'DRC' ,
+						fontFamily: "'Lustria', serif",
+						// fontColor: 'red',
+						display: true
+					},
+					legend: {						
+						display: false
+					},
+					scales: {
+				xAxes: [{
+					display: true,
+				}],
+				yAxes: [{
+					display: true,
+					type: 'linear',
+					ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 250000
+                }
+				}]
+			}
+				})
+			});
+			new Chart('chart-1' , {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						backgroundColor: utils.transparentize(presets.blue),
+						borderColor: presets.blue,
+						data: Rwanda,
+						label: 'Refugees',
+						fill: 'start'
+					}]
+				},
+				options: Chart.helpers.merge(options, {
+					title: {
+						text: 'Rwanda' ,
+						fontFamily: "'Lustria', serif",
+						display: true
+					},
+					legend: {						
+						display: false
+					}
+				})
+			});
+			new Chart('chart-2' , {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						backgroundColor: utils.transparentize(presets.blue),
+						borderColor: presets.blue,
+						data: Tanzania,
+						label: 'Refugees',
+						fill: 'start'
+					}]
+				},
+				options: Chart.helpers.merge(options, {
+					title: {
+						text: 'Tanzania' ,
+						fontFamily: "'Lustria', serif",
+						display: true
+					},
+					legend: {						
+						display: false
+					}
+				})
+			});
+			new Chart('chart-3' , {
+				type: 'line',
+				data: {
+					labels: labels,
+					datasets: [{
+						backgroundColor: utils.transparentize(presets.blue),
+						borderColor: presets.blue,
+						data: Uganda,
+						label: 'Refugees',
+						fill: 'start'
+					}]
+				},
+				options: Chart.helpers.merge(options, {
+					title: {
+						text: 'Uganda' ,
+						fontFamily: "'Lustria', serif",
+						display: true
+					},
+					legend: {						
+						display: false
+					}
+				})
+			});
+
+
+
+
+
+	</script>
+</body>
+</html>
