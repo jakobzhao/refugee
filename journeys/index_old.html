@@ -253,48 +253,31 @@ The political crisis and related security and humanitarian conditions in Burundi
 //mapboxgl.accessToken = 'pk.eyJ1IjoiY2Vkcm94NzQiLCJhIjoiY2plM2YzNGZhNjV4NTJ3cXA5b3dpMWQydiJ9.RpG_G_SIxLEVu7ZNSAVPXg';
  
 var map = new mapboxgl.Map({
-container: 'map', // container id
-// style: {
-//         "version": 8,
-//         "sources": {
-//             "simple-tiles": {
-//                 "type": "raster",
-//                 // point to our third-party tiles. Note that some examples
-//                 // show a "url" property. This only applies to tilesets with
-//                 // corresponding TileJSON (such as mapbox tiles). 
-//                 "tiles": [
-//                     "http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
-//                     "http://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
-//                 ],
-//                 "tileSize": 256,
-//                 // "attribution":'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-//             }
-//         },
-//         "layers": [{
-//             "id": "simple-tiles",
-//             "type": "raster",
-//             "source": "simple-tiles",
-//             "minzoom": 0,
-//             "maxzoom": 22
-//         }]
-// },
+container: 'map',
+interactive: false,
 style: {
-    "version": 8,
-    "sources": {
-    "raster-tiles": {
-    "type": "raster",
-    "tiles": ["https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"],
-    "tileSize": 256,
-    "attribution": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-    }
-    },
-    "layers": [{
-    "id": "simple-tiles",
-    "type": "raster",
-    "source": "raster-tiles",
-    "minzoom": 0,
-    "maxzoom": 22
-}]
+        "version": 8,
+        "sources": {
+            "simple-tiles": {
+                "type": "raster",
+                // point to our third-party tiles. Note that some examples
+                // show a "url" property. This only applies to tilesets with
+                // corresponding TileJSON (such as mapbox tiles). 
+                "tiles": [
+                    "https://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png",
+                    "https://b.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+                ],
+                "tileSize": 256,
+                // "attribution":'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+            }
+        },
+        "layers": [{
+            "id": "simple-tiles",
+            "type": "raster",
+            "source": "simple-tiles",
+            "minzoom": 0,
+            "maxzoom": 22
+        }]
 },
 center: [29.36, -3.37], // starting position
 zoom: 6 // starting zoom
@@ -440,27 +423,12 @@ map.on('load', function() {
             'paint': {
             'fill-color': '#ff0000',
             
-            'fill-opacity': .1},
+            'fill-opacity': .4},
             'minzoom': 1,
             'maxzoom': 8.5
         });
 
-        map.addLayer({
-            'id': 'burundi1',
-            'type': 'line',
-            'source': 'burundi',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#0000ff',
-            "line-dasharray": [1, 3],
-            'line-width': 2,
-            'line-opacity': .5},
-            'minzoom': 8,
-            'maxzoom': 10
-        });
+
     map.addSource("route1", {
             type: "geojson",
             data: 'assets/data/route1.geojson'
