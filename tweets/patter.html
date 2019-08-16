@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>My map</title>
+<script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+<style>
+.continent {
+	fill: #f0e4dd;
+	stroke: #e0cabc;
+	stroke-width: 0.5;
+}
+</style>
+</head>
+<body>
+    <div id="container" class="svg-container"></div>
+	<script type="text/javascript">
+    var w = 1400;
+    var h = 700;
+    var svg = d3.select("div#container").append("svg").attr("preserveAspectRatio", "xMinYMin meet").style("background-color","#ffffff")
+    .attr("viewBox", "0 0 " + w + " " + h)
+    .classed("svg-content", true);
+    var projection = d3.geoNaturalEarth1().translate([w/2, h/2]).scale(200).center([0,0]);
+    var path = d3.geoPath().projection(projection);
+        
+  // load data  
+var worldmap = d3.json("assets/continents.geojson");
+   
+Promise.all([worldmap]).then(function(values){    
+ // draw map
+    svg.selectAll("path")
+        .data(values[0].features)
+        .enter()
+        .append("path")
+        .attr("class","continent")
+        .attr("d", path)
+        .on("mouseover", function(d) {
+  d3.select(this).attr("r", 10).style("fill", "#f554dd");
+})                  
+.on("mouseout", function(d) {
+  d3.select(this).attr("r", 5.5).style("fill", "#f0e4dd");
+});
+        
+    }); 
+
+</script>
+</body>
+</html>
