@@ -3,7 +3,7 @@ d3.select(window).on("resize", sizeChange);
     var svg = d3.select("div#container").append("svg").attr("width", "100%").append("g");
     var projection = d3.geoNaturalEarth1().scale(190).center([10,40]);
     var path = d3.geoPath().projection(projection);
-    var worldmap = d3.json("../assets/continents.geojson");
+    var worldmap = d3.json("assets/continents.geojson");
    
 Promise.all([worldmap]).then(function(values){    
  // draw map
