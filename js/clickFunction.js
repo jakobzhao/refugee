@@ -68,8 +68,8 @@
 			
 			//highlight selected button
 			if (settings.button){
-				document.getElementById(funcSettings.selected.button).style.background = "rgba(242, 242, 242, 0.2)";
-				document.getElementById(settings.button).style.background = "rgba(242, 242, 242, 1)";
+				document.getElementById(funcSettings.selected.button).style.background = "white";
+				document.getElementById(settings.button).style.background = "#ddd";
 			}
 			//update dropdown menu title
 			if (settings.title){
