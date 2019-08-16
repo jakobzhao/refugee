@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nduta</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../css/master.css" />
+    <link rel="stylesheet" href="../css/Control.MiniMap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+        .leaflet-marker-icon,
+        .leaflet-marker-shadow {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
+    <div id="infoPanel" style="background:rgba(255,255,255,0.5);">
+        <h1>Nduta</h1> 
+                <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+                <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+                <button class="dropbtn" id="dataType">Select Map</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="but1" class="selection" style="background:#ddd;" onclick="addTimeline()">Timeline</a>
+                        <a href="#" id="but2" class="selection" onclick="addSlider()">Comparison</a>
+                    </div>
+                </div>
+            <div id="text">
+                <div class="legend_container" id="leg_1">
+                    <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+                    <p>Population: 10,000</p>
+                    <p>National Origin Graph?</p>
+                </div>
+            </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="../js/L.Control.Sidebar.js"></script>
+    <script src="../js/leaflet-side-by-side.js"></script>
+    <script src="../js/leaflet-timeline-slider.js"></script>
+    <script src="../js/Control.MiniMap.js"></script>
+
+    <script>
+        var map = L.map('map', {
+                minZoom: 12,
+                maxZoom: 17,
+                zoomControl:false
+            });
+        map.setView([-3.688, 30.789], 12);
+        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            }).addTo(map);
+
+        data = {"type": "FeatureCollection",
+                "features": [
+                    
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2014",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_l_2014-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2015",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2015-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2016",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2016-01-01_-06-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2016",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2016-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2017",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2017-01-01_-06-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2017",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2017-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2018",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2018-01-01_-06-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2018",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2018-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "title": "12/2019",
+                            "base": "https://storage.googleapis.com/geeovanni/nduta/nduta_s_2019-01-01_-12-30/{z}/{x}/{y}"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [
+                                92.15,
+                                21.20,
+                                1
+                            ]
+                        }
+                    },
+                ]
+            }
+            getDataAddMarkers = function( {label, map, base} ) {
+                map.eachLayer(function (layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);                            
+                        }
+                });
+                filteredData = data.features.filter(function (i, n) {
+                    return i.properties.title===label;                   
+                    });
+                var markerArray = [];
+                L.geoJson(filteredData, {
+                    onEachFeature: function onEachFeature(feature, layer) { 
+                        var pippo = feature.properties.base
+                        L.tileLayer(pippo).addTo(map);                        
+                        markerArray.push(layer);
+                    }
+                }).addTo(map);
+                
+                var markerGroup = L.featureGroup(markerArray);
+                // map.fitBounds(markerGroup.getBounds()).setZoom(13);
+               
+            };
+
+            //center timelineslider
+
+            function addControlPlaceholders(map) {
+                var corners = map._controlCorners,
+                    l = 'leaflet-',
+                    container = map._controlContainer;
+
+                function createCorner(vSide, hSide) {
+                    var className = l + vSide + ' ' + l + hSide;
+
+                    corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+                }
+
+                createCorner('verticalcenter', 'left');
+                createCorner('verticalcenter', 'right');
+            }
+
+            addControlPlaceholders(map);
+
+            var timeline = L.control.timelineSlider({
+                position:"verticalcenterright",
+                timelineItems: ["12/2014","12/2015",  "12/2016", "12/2017", "12/2018", "12/2019"], 
+                changeMap: getDataAddMarkers,
+                extraChangeMapParams: {} })
+            .addTo(map);  
+
+            new L.Control.Zoom({ position: 'topright' }).addTo(map);
+
+            var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                attribution: '@Google'
+            });
+            var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
+
+            var slider = L.control.sideBySide(esri_2015, google_2018);
+
+            function addTimeline(){
+                google_2018.remove(map);
+                esri_2015.remove(map);
+                slider.remove(map);
+                timeline.addTo(map);
+
+                $('#dataType').html("Timeline");
+                $('#but1').css("background","#ddd");
+                $('#but2').css("background","white");
+            }
+            function addSlider(){
+                google_2018.addTo(map);
+                esri_2015.addTo(map);
+                slider.addTo(map);
+                timeline.remove(map);
+
+                $('#dataType').html("Comparison");
+
+                $('#but2').css("background","#ddd");
+                $('#but1').css("background","white");
+            }
+
+            document.getElementsByClassName("leaflet-control-attribution")[0].style.visibility = "hidden";
+
+            var miniMap = new L.Control.MiniMap(google_2018, {
+                zoomLevelOffset: -12
+            }).addTo(map);
+
+    </script>
+</body>
+</html>
