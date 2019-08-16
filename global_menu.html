@@ -15,7 +15,7 @@
       width: 100%;
       height: 100vh;
       margin: 0;
-      background: #fff;
+      background-color:#ffffff;
       overflow: hidden
     }
 
@@ -29,11 +29,6 @@
       stroke-linejoin: round;
       stroke-width: .5;
       fill-opacity: 0.5;
-    }
-
-    .countries path:hover {
-      stroke: rgba(0, 0, 0, .6);
-      fill-opacity: .3 !important;
     }
 
     .countryTooltip {
@@ -102,7 +97,7 @@
         font-size:22px;
         font-family: 'Lustria', serif;
         font-variant: small-caps;
-        background:white;
+        background:rgba(255,255,255,0);
         border:none;
         margin:auto;
         margin-bottom:15px;
@@ -112,7 +107,7 @@
     }
 
     a#but:hover{
-        background:lightgray;
+      background:rgba(255,255,255,0.2);
     }
 
     div#menuPanel{
@@ -133,7 +128,7 @@
     }
 
     h1{
-        font-family: 'Hind Siliguri', sans-serif; 
+      font-family: 'Lustria', serif;
         font-variant: small-caps;
         font-weight:bold;
         font-size:64px;
@@ -162,12 +157,12 @@
         <stop offset="100%" stop-color="#9ab" />
       </radialGradient>
       <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
+        <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
       </radialGradient>
       <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
+        <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
       </radialGradient>
       <radialGradient cx="50%" cy="50%" id="drop_shadow">
         <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
@@ -184,7 +179,7 @@
   <script src="js/perfect-scrollbar.js"></script>
   <script>
 
-const config = {
+    const config = {
       speed: 0.005,
       verticalTilt: -30,
       horizontalTilt: 0
@@ -197,24 +192,25 @@ const config = {
     });
 
     var width = window.innerWidth,
-      height = window.innerHeight,
-      sensitivity = 0.25,
-      offsetX = width / 1.5,
-      offsetY = height / 2,
-      maxElevation = 45,
-      initRotation = [0, -30],
-      scaleExtent = [1, 8],
-      flyerAltitude = 80,
-      countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
-      countryById = {},
-      countries,
-      countryCentroids = {},
-      proj = 0;
+    height = window.innerHeight,
+    sensitivity = 0.25,
+    offsetX = width / 1.3,
+    offsetY = height / 2,
+    maxElevation = 45,
+    initRotation = [0, -30],
+    scaleExtent = [1, 2],
+    flyerAltitude = 80,
+    countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
+    countryById = {},
+    countries,
+    campPoints,
+    pointCentroids = {},
+    proj = 0;
 
-    var radius = width / 3;
-    if (height < width) {
-      radius = height /2.25;
-    }
+  var radius = width / 3;
+  if (height < width) {
+    radius = height /1.3;
+  }
 
     var projection = d3
       .geoOrthographic()
@@ -270,15 +266,14 @@ const config = {
     var labels;
 
     d3.queue()
-      .defer(d3.json, "assets/map_data/global/land.json")
-      .defer(d3.json, "assets/map_data/global/countries.json")
+      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
       .defer(d3.json, "assets/map_data/global/cities.json")
       .defer(d3.json, "assets/map_data/global/links.json")
       .defer(d3.csv, "assets/map_data/global/country_names.csv")
       .defer(d3.csv, "assets/map_data/global/demographics.csv")
       .await(ready);
 
-      function ready(error, land, countryJson, places, links, countryNames, demographics) {
+      function ready(error, world, places, links, countryNames, demographics) {
 
       
 var defs = svg.append("defs");
@@ -316,15 +311,15 @@ var gradient = svg.append("svg:defs")
 
 gradient.append("svg:stop")
     .attr("offset", "0%")
-    .attr("stop-color", "#0F3871")
+    .attr("stop-color", "#d9d9d9")
     .attr("stop-opacity", 1);
 
 gradient.append("svg:stop")
     .attr("offset", "100%")
-    .attr("stop-color", "#175BA8")
+    .attr("stop-color", "#b3b3b3")
     .attr("stop-opacity", 1);
 
-  countries = topojson.feature(countryJson, countryJson.objects.ne_50m_admin_0_countries).features;
+  countries = topojson.feature(world, world.objects.countries).features;
 
   countryNames.forEach(function(d) {
     countryById[d.iso_n3] = d.name;
@@ -344,10 +339,10 @@ gradient.append("svg:stop")
     .attr("cy", offsetY)
     .attr("r", projection.scale())
     .attr("class", "noclicks")
-    .style("fill", "#e6f2ff");
+    .style("fill", "#ffffff");
   svg
     .append("path")
-    .datum(topojson.feature(land, land.objects.ne_50m_land))
+    .datum(topojson.feature(world, world.objects.land))
     .attr("class", "land")
     .attr("d", path)
     .style("filter", "url(#drop-shadow)");
@@ -375,7 +370,7 @@ gradient.append("svg:stop")
     .attr("class", "countries")
     .selectAll("path")
     .data(countries, function(d){
-            countryCentroids[d.id] = d3.geoCentroid(d);
+            //countryCentroids[d.id] = d3.geoCentroid(d);
         })
     .enter()
     .append("path")
@@ -384,20 +379,9 @@ gradient.append("svg:stop")
        return countryById[d.id];
     })
     .attr("fill", function (d) {
-        return "#79d279";
+        return "#53c653";
     })
-    .attr("box-shadow", 'inset 0 0 10px #000000')
-    .on("mouseover", function(d) {
-      countryTooltip.text(countryById[d.iso_n3])
-      .style("left", (d3.event.pageX ) + "px")
-      .style("top", (d3.event.pageY + offsetY + 3) + "px")
-      .style("display", "block")
-      .style("opacity", 1);
-    })
-    .on("mouseout", function(d) {
-      countryTooltip.style("opacity", 0)
-      .style("display", "none");
-    });
+    .attr("box-shadow", 'inset 0 0 10px #000000');
   svg
     .append("g")
     .attr("class", "points")

@@ -17,13 +17,13 @@
       width: 100%;
       height: 100vh;
       margin: 0;
-      background-color:rgba(0,0,0,0.4);
+      background-color:#b9bdc6;
       overflow: hidden;
       color:black;
     }
 
     body{
-      background-image: url("assets/img/topography.png");
+      /*background-image: url("assets/img/topography.png");*/
       background-repeat: repeat;
     }
 
@@ -33,10 +33,10 @@
     }
 
     .countries path {
-      stroke: rgba(0, 0, 0, .1);
+      /*stroke: rgba(15, 112, 52, .3);*/
       stroke-linejoin: round;
       stroke-width: .5;
-      fill-opacity: 0.5;
+      fill-opacity: 0.8;
     }
 
     .countries path:hover {
@@ -194,7 +194,7 @@
         height:35px;
         margin-bottom:5px;
         margin:auto;
-        border:#d9d9d9 solid 2px;
+        border:#000000 solid 2px;
     }    
     div.legend_container{
         left:0;
@@ -221,7 +221,7 @@
     div#infoPanel {
       width:300px;
       z-index:10;
-      height:50%;
+      height:80%;
       position:absolute;
       top:25px;
       left:25px;
@@ -286,43 +286,40 @@
             </div>
             <div class="legend_container" id="HDI_legend">
               <h2>Human Development Index</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #edf8e9 16%, #edf8e9 33%, #bae4b3 33%, #bae4b3 50%, #74c476 50%, #74c476 66%, #31a354 66%, #31a354 83%, #006d2c 83%);"></div>
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #cbe9ce 33%, #cbe9ce 50%, #9cd8a5 50%, #9cd8a5 66%, #68c67c 66%, #68c67c 83%, #18b453 83%);"></div>
               <p class="legend_label" style="margin-left:38px;">0</p>
               <p class="legend_label" style="margin-left:29px;">0.2</p>
               <p class="legend_label" style="margin-left:18px;">0.4</p>
               <p class="legend_label" style="margin-left:18px;">0.6</p>
               <p class="legend_label" style="margin-left:18px;">0.8</p>
-              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+              <!---<p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> -->
             </div>
             <div class="legend_container" id="school_legend" style="display:none;">
-              <h2>Years of School</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f2f0f7 16%, #f2f0f7 33%, #cbc9e2 33%, #cbc9e2 50%, #9e9ac8 50%, #9e9ac8 66%, #756bb1 66%, #756bb1 83%, #54278f 83%);"></div>
-              <p class="legend_label" style="margin-left:50px;">0</p>
-              <p class="legend_label" style="margin-left:43px;">6</p>
-              <p class="legend_label" style="margin-left:45px;">8</p>
-              <p class="legend_label" style="margin-left:40px;">10</p>
-              <p class="legend_label" style="margin-left:32px;">12</p>
-              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+              <h2>Avg. Years of School</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #f9cec7 33%, #f9cec7 50%, #f8a298 50%, #f8a298 66%, #ee756b 66%, #ee756b 83%, #e04040 83%);"></div>
+              <p class="legend_label" style="margin-left:40px;">0</p>
+              <p class="legend_label" style="margin-left:32px;">6</p>
+              <p class="legend_label" style="margin-left:36px;">8</p>
+              <p class="legend_label" style="margin-left:28px;">10</p>
+              <p class="legend_label" style="margin-left:26px;">12</p>
           </div>
           <div class="legend_container" id="pov_legend" style="display:none;">
-              <h2>% Population in Poverty</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffd4 16%, #ffffd4 33%, #fed98e 33%, #fed98e 50%, #fe9929 50%, #fe9929 66%, #d95f0e 66%, #d95f0e 83%, #993404 83%);"></div>
-              <p class="legend_label" style="margin-left:50px;">0</p>
-              <p class="legend_label" style="margin-left:37px;">20</p>
-              <p class="legend_label" style="margin-left:34px;">40</p>
-              <p class="legend_label" style="margin-left:27px;">60</p>
-              <p class="legend_label" style="margin-left:32px;">80</p>
-              <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+              <h2>% Population Living Under $5.50 a day</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #feedde 16%, #feedde 33%, #fdbe85 33%, #fdbe85 50%, #fd8d3c 50%, #fd8d3c 66%, #e6550d 66%, #e6550d 83%, #a63603 83%);"></div>
+              <p class="legend_label" style="margin-left:40px;">0</p>
+              <p class="legend_label" style="margin-left:30px;">40</p>
+              <p class="legend_label" style="margin-left:25px;">55</p>
+              <p class="legend_label" style="margin-left:25px;">70</p>
+              <p class="legend_label" style="margin-left:23px;">85</p>
         </div>
         <div class="legend_container" id="env_legend" style="display:none;">
           <h2>% Population at Risk of Natural Disaster</h2> 
-          <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #fee5d9 16%, #fee5d9 33%, #fcae91 33%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 66%, #de2d26 66%, #de2d26 83%, #a50f15 83%);"></div>
-          <p class="legend_label" style="margin-left:50px;">0</p>
-          <p class="legend_label" style="margin-left:37px;">20</p>
-          <p class="legend_label" style="margin-left:34px;">40</p>
-          <p class="legend_label" style="margin-left:27px;">60</p>
-          <p class="legend_label" style="margin-left:32px;">80</p>
-          <p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> 
+          <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e8e3ce 16%, #e8e3ce 33%, #d6cea3 33%, #d6cea3 50%, #c2ba7a 50%, #c2ba7a 66%, #aea651 66%, #aea651 83%, #989222 83%);"></div>
+          <p class="legend_label" style="margin-left:41px;">0</p>
+          <p class="legend_label" style="margin-left:25px;">20</p>
+          <p class="legend_label" style="margin-left:25px;">40</p>
+          <p class="legend_label" style="margin-left:20px;">60</p>
+          <p class="legend_label" style="margin-left:23px;">80</p>
         </div>
       </div>
   </div>
@@ -332,22 +329,22 @@
   </div>
   <svg>
     <defs>
-      <radialGradient cx="75%" cy="25%" id="ocean_fill">
-        <stop offset="5%" stop-color="#ddf" />
-        <stop offset="100%" stop-color="#9ab" />
-      </radialGradient>
-      <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#ffd" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#ba9" stop-opacity="0.2" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#9ab" stop-opacity="0" />
-        <stop offset="100%" stop-color="#3e6184" stop-opacity="0.3" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="50%" id="drop_shadow">
-        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-        <stop offset="100%" stop-color="#000" stop-opacity="0" />
-      </radialGradient>
+        <radialGradient cx="75%" cy="25%" id="ocean_fill">
+          <stop offset="5%" stop-color="#ddf" />
+          <stop offset="100%" stop-color="#9ab" />
+        </radialGradient>
+        <radialGradient cx="75%" cy="25%" id="globe_highlight">
+          <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+          <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
+        </radialGradient>
+        <radialGradient cx="50%" cy="40%" id="globe_shading">
+          <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+          <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
+        </radialGradient>
+        <radialGradient cx="50%" cy="50%" id="drop_shadow">
+          <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+          <stop offset="100%" stop-color="#000" stop-opacity="0" />
+        </radialGradient>
       <filter id="glow">
           <feColorMatrix type="matrix"
               values=
@@ -476,16 +473,16 @@
     // Data and color scale
     var hdiColorScale = d3.scaleThreshold()
         .domain([0.2, 0.4, 0.55, 0.7, 0.85])
-        .range(["#ffffff","#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"]);
+        .range(["#ffffff","#f9f9f9","#cbe9ce","#9cd8a5","#68c67c","#18b453"]);
     var schoolColorScale = d3.scaleThreshold()
         .domain([0.01,6, 8, 10, 12])
-        .range(["#ffffff","#f2f0f7","#cbc9e2","#9e9ac8","#756bb1","#54278f"]);
+        .range(["#ffffff","#f9f9f9","#f9cec7","#f8a298","#ee756b","#e04040"]);
     var povColorScale = d3.scaleThreshold()
-        .domain([0.01,20, 40, 60, 80])
-        .range(["#ffffff","#ffffd4","#fe9929","#d95f0e","#d95f0e","#993404"]);
+        .domain([0.01,40, 55, 70, 85])
+        .range(["#ffffff","#feedde","#fdbe85","#fd8d3c","#e6550d","#a63603"]);
     var environmentColorScale = d3.scaleThreshold()
         .domain([0.01,2.5, 4, 5.5, 7])
-        .range(["#ffffff","#fee5d9","#fcae91","#fb6a4a","#de2d26","#a50f15"]);
+        .range(["#ffffff","#e8e3ce","#d6cea3","#c2ba7a","#aea651","#989222"]);
 
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
@@ -497,7 +494,6 @@
 
     function ready(error, world, places, links, countryNames, demographics) {
 
-      
     var defs = svg.append("defs");
 
     var filter = svg.append("defs")
@@ -560,7 +556,7 @@
         .attr("height", height)
         .attr("transform-origin", offsetX + "px " + offsetY + "px")
         .attr("class", "noclicks")
-        .style("fill", "#dae7f1")
+        .style("fill", "#e3e4e8")
         .style("fill-opacity", 0);
 
       svg
@@ -612,10 +608,14 @@
         .append("path")
         .attr("d", path)
         .attr("name",function(d){
-           return countryById[d.id];
+          console.log(d); 
+          return countryById[d.id];
         })
         .attr("fill", function (d) {
             return hdiColorScale(parseFloat(demographicsById[d.id]));
+        })
+        .attr("stroke", function (d) {
+            return 'rgba(15, 112, 52, .3)';
         })
         .attr("box-shadow", 'inset 0 0 10px #000000')
         .on("mouseover", function(d) {
@@ -674,7 +674,7 @@
       svg
           .selectAll("rect").style("fill-opacity", 1);
 
-      document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
+      //document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
 
       proj = 1;
       refresh();
@@ -702,9 +702,9 @@
       svg
           .selectAll("rect").style("fill-opacity", 0);
 
-      document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
+      //document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
 
-      proj = 1;x  
+      proj = 1;
       refresh();
       position_labels();
     }
@@ -847,10 +847,13 @@
         .attr("fill", function (d) {
           return hdiColorScale(parseFloat(demographicsById[d.id]));
         })
+        .attr("stroke", function (d) {
+            return 'rgba(15, 112, 52, .3)';
+        })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + demographicsById[d.id])
           .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY + offsetY + 3) + "px")
+          .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
@@ -869,10 +872,13 @@
         .attr("fill", function (d) {
             return schoolColorScale(parseFloat(schoolById[d.id]));
         })
+        .attr("stroke", function (d) {
+            return 'rgba(154, 25, 25, .3)';
+        })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + schoolById[d.id])
           .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY + offsetY + 3) + "px")
+          .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
@@ -891,10 +897,13 @@
         .attr("fill", function (d) {
             return povColorScale(parseFloat(povertyById[d.id]));
         })
+        .attr("stroke", function (d) {
+            return 'rgba(74, 25, 2, .3)';
+        })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + povertyById[d.id])
           .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY + offsetY + 3) + "px")
+          .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
@@ -913,10 +922,13 @@
         .attr("fill", function (d) {
             return environmentColorScale(parseFloat(environmentById[d.id]));
         })
+        .attr("stroke", function (d) {
+            return 'rgba(104, 100, 24, .3)';
+        })
         .on("mouseover", function(d) {
           countryTooltip.text(countryById[d.id] + ':\n' + environmentById[d.id])
           .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY + offsetY + 3) + "px")
+          .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
           .style("opacity", 1);
         })
