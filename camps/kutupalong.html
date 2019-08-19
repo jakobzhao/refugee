@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Kutupalong</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/master.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />   
   <link href="../css/perfect-scrollbar.css" rel="stylesheet">    
@@ -12,13 +13,27 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="../css/Control.MiniMap.css" />
-
+  <style>
+    /* SVG styling */
+    html {
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+     font-weight: 400;
+     }
+ 
+     @-moz-document url-prefix() {
+         body {
+             font-weight: lighter !important;
+         }
+     }
+   </style>
 </head>
 
 <body>
   <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
   <div id="infoPanel">
-    <h1>Kutupalong</h1> 
+    <h1>KUTUPALONG</h1> 
           <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
           <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
             <button class="dropbtn" id="dataType">Select Map</button>
@@ -39,7 +54,7 @@
               </div>
               <div style="display:inline-block; margin-left:5px; width:120px; height:80px;">
                 <h2 class="iconLabel">Schools</h2> 
-                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="../assets/img/square-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Permanent</p>
+                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="../assets/img/square-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Permanent</p><br/>
                 <img class="icon" style="opacity:0.4; height:20px; display:inline;" src="../assets/img/square-stroked-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Temporary</p>
               </div>
               <h2 class="iconLabel">Water</h2> 
@@ -636,13 +651,6 @@
 		selected:buttonFunctions.but1 //choose which button is initially selected
   });
 
-  var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                attribution: '@Google'
-            });
-  
-  var miniMap = new L.Control.MiniMap(google_2018, {
-                zoomLevelOffset: -12
-            }).addTo(map);
 
   </script>
 </body>
