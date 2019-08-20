@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Oceania</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/nglogo.png" type="image/x-icon">
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <!-- Custom styles for this template-->
+  
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+<style>
+  body { 
+            margin:0; 
+            padding:0; 
+            font-family: 'Lustria', serif;
+            font-variant: small-caps;
+        }
+  .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+  .right {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+        }
+  .buffer { 
+            margin-top:20px; 
+            margin-bottom:20px; 
+        }
+  .padding { 
+            padding-left:20px; 
+            padding-right:20px; 
+        }
+</style>
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+          <!-- Page Heading -->
+          <div class="row buffer">
+            <div class="col-4"><a href="index.html"><img src="assets/twitter.png" height="60px" class="right"></a></img></div><div class="col-8"><h1><b>Tweets with  Hashtag #refugees - South America</b></h1></div>
+          </div>
+
+
+          <!-- Content Row -->
+
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Latest Images with # refugees</h6>
+              </div>
+              <div class="card-body">
+                <div id="photocols"></div>       
+                <script src="js/jquery.photocols.js"></script>
+                <script src="js/main.js"></script>
+              </div>
+              </div>
+            </div>
+            <!-- Area Chart -->
+            <div class="col-lg-8 mb-4">
+              <div class="row">
+                <div class="col">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Geographic Location</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div id="container" class="svg-container"></div>
+                </div>
+              </div>
+                </div>
+                <div class="col">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Word Cloud</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <img src="assets/cloud_2019-08-14.png" width="100%" class="center"></img>
+                </div>
+              </div>
+                </div>
+              </div>
+              <div class="row">
+
+                  <!-- Content Column -->
+                  <div class="col-lg-5 mb-4">
+      
+                    <!-- Project Card Example -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Text Analysis</h6>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="canvas"style="display: block; width: 50%; height: 50%;"><script src="js/chart1.js"></script></canvas>
+                      </div>
+                    </div>
+      
+                    <!-- Color System -->
+      
+      
+                  </div>
+      
+                  <div class="col-lg-7 mb-4">
+      
+                    <!-- Illustrations -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Sentiment Analysis</h6>
+                      </div>
+                      <div class="card-body">
+                        <canvas id="canvas2"style="display: block; width: 50%; height: 50%;"><script src="js/chart2.js"></script></canvas>
+                      </div>
+                    </div>
+      
+                    <!-- Approach -->
+      
+      
+                  </div>
+                </div>
+            </div>
+
+            <!-- Pie Chart -->
+ 
+          </div>
+
+          <!-- Content Row -->
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  
+  <!-- Bootstrap core JavaScript-->
+  
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ 
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <!-- <script src="js/demo/chart-area-demo.js"></script> -->
+ 
+  <script src="js/map.js"></script>
+</body>
+
+</html>
