@@ -1,0 +1,22 @@
+var tweets = []
+
+$.getJSON("assets/asia/pics.json", function() {
+  
+}).then(function(data) {
+
+  $.each( data, function(i) {
+    tweets.push(data[i]);
+    });
+(function ( $ ) {
+
+  $('#photocols').photocols({
+    colswidth : 180,
+    height : 800,
+    bgcolor : '#fff',
+    opacity: 0.3,
+    gap: 2,
+    data: tweets
+  });
+
+}( jQuery ))
+});
