@@ -4,6 +4,10 @@
         "weight": 12
     },
     {
+        "text": "world",
+        "weight": 10
+    },
+    {
         "text": "people",
         "weight": 10
     },
@@ -16,10 +20,6 @@
         "weight": 9
     },
     {
-        "text": "world",
-        "weight": 8
-    },
-    {
         "text": "venezuelan",
         "weight": 8
     },
@@ -29,6 +29,10 @@
     },
     {
         "text": "crisis",
+        "weight": 7
+    },
+    {
+        "text": "please",
         "weight": 7
     },
     {
@@ -44,7 +48,11 @@
         "weight": 6
     },
     {
-        "text": "please",
+        "text": "humanitarian",
+        "weight": 6
+    },
+    {
+        "text": "today",
         "weight": 6
     }
 ]

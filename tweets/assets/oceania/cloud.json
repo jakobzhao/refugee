@@ -1,27 +1,27 @@
 [
     {
         "text": "australia",
-        "weight": 22
+        "weight": 23
+    },
+    {
+        "text": "want",
+        "weight": 20
     },
     {
         "text": "unhcr",
         "weight": 20
     },
     {
-        "text": "want",
-        "weight": 15
+        "text": "helpinindonesia",
+        "weight": 20
+    },
+    {
+        "text": "resettlement4single",
+        "weight": 18
     },
     {
         "text": "migrants",
         "weight": 15
-    },
-    {
-        "text": "helpinindonesia",
-        "weight": 14
-    },
-    {
-        "text": "resettlement4single",
-        "weight": 13
     },
     {
         "text": "migrantcrisis",
@@ -34,6 +34,10 @@
     {
         "text": "libyscheküstenwache",
         "weight": 13
+    },
+    {
+        "text": "human",
+        "weight": 12
     },
     {
         "text": "frontex",
@@ -52,7 +56,7 @@
         "weight": 11
     },
     {
-        "text": "human",
+        "text": "please",
         "weight": 10
     },
     {
@@ -80,6 +84,14 @@
         "weight": 9
     },
     {
+        "text": "indonesia",
+        "weight": 9
+    },
+    {
+        "text": "life",
+        "weight": 9
+    },
+    {
         "text": "world",
         "weight": 9
     },
@@ -89,10 +101,6 @@
     },
     {
         "text": "free",
-        "weight": 8
-    },
-    {
-        "text": "life",
         "weight": 8
     },
     {
@@ -112,7 +120,11 @@
         "weight": 8
     },
     {
-        "text": "please",
+        "text": "intrudeau",
+        "weight": 7
+    },
+    {
+        "text": "help",
         "weight": 7
     },
     {
@@ -134,10 +146,6 @@
     {
         "text": "first",
         "weight": 7
-    },
-    {
-        "text": "help",
-        "weight": 6
     },
     {
         "text": "last",
