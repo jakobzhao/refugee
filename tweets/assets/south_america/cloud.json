@@ -1,34 +1,50 @@
 [
     {
         "text": "country",
-        "weight": 10
+        "weight": 12
     },
     {
         "text": "people",
+        "weight": 10
+    },
+    {
+        "text": "home",
         "weight": 9
+    },
+    {
+        "text": "t",
+        "weight": 9
+    },
+    {
+        "text": "world",
+        "weight": 8
     },
     {
         "text": "venezuelan",
         "weight": 8
     },
     {
-        "text": "home",
-        "weight": 7
+        "text": "help",
+        "weight": 8
     },
     {
-        "text": "world",
+        "text": "crisis",
         "weight": 7
     },
     {
         "text": "immigrants",
+        "weight": 7
+    },
+    {
+        "text": "know",
         "weight": 6
     },
     {
-        "text": "crisis",
+        "text": "other",
         "weight": 6
     },
     {
-        "text": "countries",
+        "text": "please",
         "weight": 6
     }
 ]

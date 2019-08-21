@@ -44,11 +44,19 @@
         "weight": 9
     },
     {
+        "text": "help",
+        "weight": 9
+    },
+    {
         "text": "immigrant",
         "weight": 9
     },
     {
         "text": "take",
+        "weight": 8
+    },
+    {
+        "text": "countries",
         "weight": 8
     },
     {
@@ -73,10 +81,6 @@
     },
     {
         "text": "palestinian",
-        "weight": 8
-    },
-    {
-        "text": "help",
         "weight": 8
     },
     {
@@ -109,10 +113,6 @@
     },
     {
         "text": "home",
-        "weight": 6
-    },
-    {
-        "text": "countries",
         "weight": 6
     },
     {
