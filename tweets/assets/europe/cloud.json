@@ -1,86 +1,338 @@
 [
     {
         "text": "iraqi",
-        "weight": 30
-    },
-    {
-        "text": "resettlement",
-        "weight": 27
+        "weight": 84
     },
     {
         "text": "asylum",
-        "weight": 23
+        "weight": 68
+    },
+    {
+        "text": "resettlement",
+        "weight": 68
     },
     {
         "text": "seekers",
-        "weight": 21
+        "weight": 64
     },
     {
         "text": "standiraqi",
-        "weight": 20
-    },
-    {
-        "text": "waiting",
-        "weight": 19
-    },
-    {
-        "text": "long",
-        "weight": 18
-    },
-    {
-        "text": "years",
-        "weight": 18
-    },
-    {
-        "text": "world",
-        "weight": 17
+        "weight": 64
     },
     {
         "text": "countries",
-        "weight": 13
+        "weight": 50
     },
     {
-        "text": "solution",
-        "weight": 13
+        "text": "long",
+        "weight": 46
+    },
+    {
+        "text": "years",
+        "weight": 43
+    },
+    {
+        "text": "waiting",
+        "weight": 43
+    },
+    {
+        "text": "world",
+        "weight": 42
     },
     {
         "text": "suffering",
-        "weight": 12
-    },
-    {
-        "text": "wait",
-        "weight": 11
-    },
-    {
-        "text": "please",
-        "weight": 10
-    },
-    {
-        "text": "rescue",
-        "weight": 10
+        "weight": 39
     },
     {
         "text": "host",
-        "weight": 9
+        "weight": 35
+    },
+    {
+        "text": "turkey",
+        "weight": 34
+    },
+    {
+        "text": "rescue",
+        "weight": 28
+    },
+    {
+        "text": "wait",
+        "weight": 28
     },
     {
         "text": "help",
-        "weight": 9
+        "weight": 27
     },
     {
-        "text": "live",
-        "weight": 8
+        "text": "solution",
+        "weight": 27
     },
     {
-        "text": "camp",
-        "weight": 7
+        "text": "children",
+        "weight": 24
+    },
+    {
+        "text": "please",
+        "weight": 23
+    },
+    {
+        "text": "reach",
+        "weight": 19
+    },
+    {
+        "text": "whole",
+        "weight": 19
+    },
+    {
+        "text": "legal",
+        "weight": 18
     },
     {
         "text": "because",
-        "weight": 7
+        "weight": 17
+    },
+    {
+        "text": "live",
+        "weight": 17
     },
     {
         "text": "people",
+        "weight": 16
+    },
+    {
+        "text": "lost",
+        "weight": 16
+    },
+    {
+        "text": "after",
+        "weight": 15
+    },
+    {
+        "text": "home",
+        "weight": 15
+    },
+    {
+        "text": "every",
+        "weight": 14
+    },
+    {
+        "text": "crises",
+        "weight": 14
+    },
+    {
+        "text": "camp",
+        "weight": 13
+    },
+    {
+        "text": "files",
+        "weight": 13
+    },
+    {
+        "text": "life",
+        "weight": 13
+    },
+    {
+        "text": "country",
+        "weight": 13
+    },
+    {
+        "text": "waited",
+        "weight": 13
+    },
+    {
+        "text": "time",
+        "weight": 13
+    },
+    {
+        "text": "since",
+        "weight": 11
+    },
+    {
+        "text": "find",
+        "weight": 11
+    },
+    {
+        "text": "future",
+        "weight": 11
+    },
+    {
+        "text": "want",
+        "weight": 11
+    },
+    {
+        "text": "hope",
+        "weight": 11
+    },
+    {
+        "text": "leaving",
+        "weight": 11
+    },
+    {
+        "text": "rights",
+        "weight": 11
+    },
+    {
+        "text": "need",
+        "weight": 11
+    },
+    {
+        "text": "humanitarian",
+        "weight": 11
+    },
+    {
+        "text": "million",
+        "weight": 10
+    },
+    {
+        "text": "living",
+        "weight": 10
+    },
+    {
+        "text": "homeland",
+        "weight": 10
+    },
+    {
+        "text": "like",
+        "weight": 10
+    },
+    {
+        "text": "harsh",
+        "weight": 10
+    },
+    {
+        "text": "human",
+        "weight": 10
+    },
+    {
+        "text": "hundreds",
+        "weight": 9
+    },
+    {
+        "text": "left",
+        "weight": 9
+    },
+    {
+        "text": "welcome",
+        "weight": 9
+    },
+    {
+        "text": "victims",
+        "weight": 9
+    },
+    {
+        "text": "camps",
+        "weight": 9
+    },
+    {
+        "text": "today",
+        "weight": 9
+    },
+    {
+        "text": "became",
+        "weight": 9
+    },
+    {
+        "text": "know",
+        "weight": 8
+    },
+    {
+        "text": "migrants",
+        "weight": 8
+    },
+    {
+        "text": "which",
+        "weight": 8
+    },
+    {
+        "text": "last",
+        "weight": 8
+    },
+    {
+        "text": "support",
+        "weight": 8
+    },
+    {
+        "text": "during",
+        "weight": 8
+    },
+    {
+        "text": "exhausted",
+        "weight": 8
+    },
+    {
+        "text": "illegal",
+        "weight": 8
+    },
+    {
+        "text": "make",
+        "weight": 8
+    },
+    {
+        "text": "think",
+        "weight": 8
+    },
+    {
+        "text": "solidarity",
+        "weight": 8
+    },
+    {
+        "text": "migration",
+        "weight": 7
+    },
+    {
+        "text": "t",
+        "weight": 7
+    },
+    {
+        "text": "k",
+        "weight": 7
+    },
+    {
+        "text": "death",
+        "weight": 7
+    },
+    {
+        "text": "made",
+        "weight": 7
+    },
+    {
+        "text": "family",
+        "weight": 7
+    },
+    {
+        "text": "save",
+        "weight": 7
+    },
+    {
+        "text": "everything",
+        "weight": 7
+    },
+    {
+        "text": "speed",
+        "weight": 7
+    },
+    {
+        "text": "processing",
+        "weight": 7
+    },
+    {
+        "text": "work",
+        "weight": 7
+    },
+    {
+        "text": "right",
+        "weight": 7
+    },
+    {
+        "text": "safe",
+        "weight": 7
+    },
+    {
+        "text": "lives",
+        "weight": 7
+    },
+    {
+        "text": "very",
         "weight": 7
     },
     {
@@ -88,43 +340,47 @@
         "weight": 7
     },
     {
-        "text": "turkey",
+        "text": "humanity",
         "weight": 7
     },
     {
-        "text": "after",
+        "text": "year",
+        "weight": 7
+    },
+    {
+        "text": "should",
         "weight": 6
     },
     {
-        "text": "t",
+        "text": "also",
         "weight": 6
     },
     {
-        "text": "humanitarian",
+        "text": "everyone",
         "weight": 6
     },
     {
-        "text": "exhausted",
+        "text": "share",
         "weight": 6
     },
     {
-        "text": "children",
+        "text": "iraq",
         "weight": 6
     },
     {
-        "text": "future",
+        "text": "escape",
         "weight": 6
     },
     {
-        "text": "family",
+        "text": "stuck",
         "weight": 6
     },
     {
-        "text": "like",
+        "text": "easy",
         "weight": 6
     },
     {
-        "text": "work",
+        "text": "smugglers",
         "weight": 6
     }
 ]
