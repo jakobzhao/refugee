@@ -9,8 +9,22 @@
 	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
 	<link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <script src="utils.js"></script>
 <style>
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
+    }
+
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
+    }
+
 #chart-0{
 	background-image: url("flags/cd.svg");
 	background-size: cover;
@@ -34,10 +48,11 @@
 
 }
 #middle { 
-    font-size: 12px;
-	font-family: 'Lustria', serif;
+    font-size: 22px;
+	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: bold;
 	text-align: center;
+	color:white;
 	}
 	
 .content {
@@ -126,12 +141,16 @@
 					title: {
 						display: true,
 						text: 'Refugees from Burundi - Demographic Breakdownn',
-						fontFamily: "'Lustria', serif",
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:22
 					},
 					legend: {
 							display: true,
 							labels: {
-								fontFamily: "'Lustria', serif",
+								fontFamily:"'Roboto Condensed','sans-serif'",
+								fontColor:'#ffffff',
+								fontSize:16
 							}
         },
                     layout: {
@@ -152,20 +171,33 @@
 				xAxes: [
 					{
 					ticks: {
-								min: this.min,
+							fontFamily:"'Roboto Condensed','sans-serif'",
+							fontColor:'#ffffff',
+							fontSize:16,
+							min: this.min,
 								max: this.max,// Your absolute max value
 								callback: function (value) {
 								return value + '%'; // convert it to percentage
 								},
 								// reverse: true
 							},
-								scaleLabel: {
+					caleLabel: {
 									display: true,
 									labelString: 'Percentage',
-									fontFamily: "'Lustria', serif",
+									fontFamily:"'Roboto Condensed','sans-serif'",
+									fontColor:'#ffffff'
 								},
 							},
 						],
+				yAxes: [
+					{
+							ticks: {
+									fontFamily:"'Roboto Condensed','sans-serif'",
+									fontColor:'#ffffff',
+									fontSize:16
+							}
+						}	
+					]
 				},
 				}
 			});
@@ -216,7 +248,9 @@
 				options: Chart.helpers.merge(options, {
 					title: {
 						text: 'DRC' ,
-						fontFamily: "'Lustria', serif",
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:22,
 						// fontColor: 'red',
 						display: true
 					},
@@ -226,13 +260,21 @@
 					scales: {
 				xAxes: [{
 					display: true,
+					ticks: {
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
+					}
 				}],
 				yAxes: [{
 					display: true,
 					type: 'linear',
 					ticks: {
-                    suggestedMin: 0,
-                    suggestedMax: 250000
+                    	suggestedMin: 0,
+						suggestedMax: 250000,
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
                 }
 				}]
 			}
@@ -253,11 +295,23 @@
 				options: Chart.helpers.merge(options, {
 					title: {
 						text: 'Rwanda' ,
-						fontFamily: "'Lustria', serif",
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:22,
 						display: true
 					},
 					legend: {						
 						display: false
+					},
+					xAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
+					},
+					yAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
 					}
 				})
 			});
@@ -276,11 +330,23 @@
 				options: Chart.helpers.merge(options, {
 					title: {
 						text: 'Tanzania' ,
-						fontFamily: "'Lustria', serif",
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:22,
 						display: true
 					},
 					legend: {						
 						display: false
+					},
+					xAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
+					},
+					yAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
 					}
 				})
 			});
@@ -299,11 +365,23 @@
 				options: Chart.helpers.merge(options, {
 					title: {
 						text: 'Uganda' ,
-						fontFamily: "'Lustria', serif",
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:22,
 						display: true
 					},
 					legend: {						
 						display: false
+					},
+					xAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
+					},
+					yAxes:{
+						fontFamily:"'Roboto Condensed','sans-serif'",
+						fontColor:'#ffffff',
+						fontSize:16
 					}
 				})
 			});
