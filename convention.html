@@ -4,262 +4,24 @@
 <head>
   <meta charset="utf-8">
   <title>Geopolitics</title>
-  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">   
-  <link href="css/perfect-scrollbar.css" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+
+  <link href="css/globe_master.css" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
-   
    /* SVG styling */
-    html,
-    body,
-    svg {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      background-color:#b9bdc6;
-      overflow: hidden;
-      color:black;
+   html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
     }
 
-    .land {
-      fill: rgb(255, 255, 255);
-      stroke-opacity: 1;
-    }
-
-    .countries path {
-      stroke: rgba(255, 255, 255, .5);
-      stroke-linejoin: round;
-      stroke-width: .5;
-      fill-opacity: 0.8;
-    }
-
-    .countries path:hover {
-      stroke: rgba(0, 0, 0, .6);
-      fill-opacity: .3 !important;
-    }
-
-    .countryTooltip {
-      position: absolute;
-      display: none;
-      pointer-events: none;
-      background: #fff;
-      padding: 5px;
-      text-align: left;
-      border: solid #ccc 1px;
-      color: #666;
-      font-size: 14px;
-      font-family: sans-serif;
-      font-size:18px;
-      font-family: 'Lustria', serif;
-    }
-
-    .graticule {
-      fill: none;
-      stroke: black;
-      stroke-width: .5;
-      opacity: .2;
-    }
-
-    .labels {
-      font: 9px 'Hind Siliguri', sans-serif;
-      fill: black;
-      opacity: .5;
-    }
-
-    .noclicks {
-      pointer-events: none;
-    }
-
-    .point {
-      opacity: .6;
-    }
-
-    .arcs {
-      opacity: .1;
-      stroke: gray;
-      stroke-width: 3;
-    }
-
-    .flyers {
-      stroke-width: 1;
-      opacity: .6;
-      stroke: darkred;
-    }
-
-    .arc,
-    .flyer {
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .arc {}
-
-    .flyer {}
-
-    .flyer:hover {}
-    /* Dropdown styling */
-    button#but{
-        width:200px;
-        height:50px;
-        font-size:22px;
-        font-family: 'Lustria', serif; 
-        font-variant: small-caps;
-        background:white;
-        display:block;
-    }
-
-    button#but:hover{
-        background:lightgray;
-    }
-    
-    .dropbtn {
-      background-color: white;
-      color: black;
-      padding: 2px;
-      padding-left:10px;
-      width:250px;
-      font-size: 20px;
-      border: none;
-      font-family: 'Lustria', serif;
-      border:black solid 2px;
-      text-align:left;
-      box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-    }
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-      position: relative;
-      display: inline-block;
-      left:0;
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      width: 250px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-    }
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-family: 'Lustria', serif;
-    }
-
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {display: block;}
-
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown:hover .dropbtn {background-color: #f2f2f2;}
-    /* Dropdown styling */
-
-    /*HTML styling*/
-    h1{
-        font-family: 'Lustria', serif; 
-        font-variant: small-caps;
-        margin-bottom:0px;
-        font-size:50px;
-        text-align:center;
-        margin-top: 50px;
-    }
-    p{
-        font-family: 'Lustria', serif;
-        margin-top:10px;
-        text-align:justify;
-    }
-    h2{
-        font-family: 'Lustria', serif; 
-        font-variant: small-caps;
-        margin-bottom:5px;
-        text-align:left;
-        line-height:30px;
-    }
-    div.legend{
-        width:280px;
-        height:35px;
-        margin-bottom:5px;
-        margin:auto;
-        border:#000000 solid 2px;
-    }    
-    div.legend_container{
-        left:0;
-        margin-top:0px;
-        top:calc(100% + 180px);
-        z-index:110;
-        width:280px;
-    }
-    p.legend_label{
-        font-size:18px;
-        display:inline;
-        text-align:left;
-        position:relative;
-        margin:0;
-        margin-left:5px;
-    }
-    /*div#infoContainer{
-      position:absolute;
-      z-index:10;
-      height:100%;
-      width:300px;
-      border-right:2px solid #666666;
-    }*/
-    div#infoPanel {
-      width:300px;
-      z-index:10;
-      height:70%;
-      position:absolute;
-      top:25px;
-      left:25px;
-      background:rgba(255,255,255,0.3);
-      border:2px solid #666666;
-      padding:25px;
-      overflow:hidden;
-    }
-    div#text{
-        position:relative;
-        height:calc(100% - 120px);
-    }
-    div.topBar{
-        position:absolute;
-        top:40px;
-        left:40px;
-        height:40px;
-        width:300px;
-        background:rgba(255,255,255,0);
-        z-index:100;
-    }
-    img#ng{
-      margin:0 auto;
-      margin-top:3px;
-      display:block;
-      width:170px;
-    }
-    div#projectionButtons{
-        position:absolute;
-        top:25px;
-        right:0px;
-        z-index:15;
-        width:200px;
-        height:50px;
-    }
-    div#projectionButtons button{
-        padding:0;
-        background:white;
-        border:black 2px solid;
-
-    }
-    div#projectionButtons button:hover{
-        background:#d9d9d9;
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
     }
   </style>
 </head>
@@ -267,7 +29,7 @@
 <body>
   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
   <div id="infoPanel">
-      <h1 style="font-size:44px;">Geopolitics</h1> 
+      <h1 style="font-size:44px;">GEOPOLITICS</h1> 
       <div id="text">
             <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
             <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
@@ -559,8 +321,9 @@
         .data(topojson.feature(convention, convention.objects.convention).features)
         .enter()
         .append("path")
-        .attr("class", "country")
+        .attr("stroke", "white")
         .attr("d", path)
+        .attr("class", "country")
         .attr("fill", function(d){
             return convention_color(d.properties.Signed)
           })
@@ -594,6 +357,7 @@
         .enter()
         .append("text")
         .attr("class", "label")
+        .attr("id", "city-label")
         .text(function(d) {
           return d.properties.NAME;
         });

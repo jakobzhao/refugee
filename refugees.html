@@ -5,273 +5,33 @@
   <meta charset="utf-8">
   <title>Refugees</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+  <link href="css/globe_master.css" rel="stylesheet"> 
   <link href="css/perfect-scrollbar.css" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
    
    /* SVG styling */
-   html,
-    body,
-    svg {
-      position: fixed;
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      background-color:#b9bdc6;
-      overflow: hidden;
-      color:black;
+   html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
     }
 
-    body{
-      background-repeat: repeat;
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
     }
-
-    .land {
-      fill: rgb(255, 255, 255);
-      stroke-opacity: 1;
-    }
-
-    .countries path {
-      stroke-linejoin: round;
-      stroke-width: .5;
-      fill-opacity: 0.8;
-    }
-
-    .countries path:hover {
-      stroke: rgba(0, 0, 0, .6);
-      fill-opacity: .3 !important;
-    }
-
-    .countryTooltip {
-      position: absolute;
-      display: none;
-      pointer-events: none;
-      background: #fff;
-      padding: 5px;
-      text-align: left;
-      border: solid #ccc 1px;
-      color: #666;
-      font-size: 14px;
-      font-family: sans-serif;
-      font-size:18px;
-      font-family: 'Lustria', serif;
-    }
-
-    .graticule {
-      fill: none;
-      stroke: black;
-      stroke-width: .5;
-      opacity: .2;
-    }
-
-    .labels {
-      font: 9px 'Hind Siliguri', sans-serif;
-      fill: black;
-      opacity: .5;
-    }
-
-    .noclicks {
-      pointer-events: none;
-    }
-
-    .point {
-      opacity: .6;
-    }
-
-    .arcs {
-      opacity: .1;
-      stroke: white;
-      stroke-width: 3;
-    }
-
-    .flyers {
-      stroke-width: 1;
-      opacity: .6;
-      stroke: #000000;
-    }
-
-    .arc,
-    .flyer {
-      stroke-linejoin: round;
-      fill: none;
-    }
-
-    .arc {}
-
-    .flyer {}
-
-    .flyer:hover {}
-    /* Dropdown styling */
-     /* Dropdown styling */
-     button#but{
-         width:200px;
-         height:50px;
-         font-size:22px;
-         font-family: 'Lustria', serif; 
-         font-variant: small-caps;
-         background:white;
-         display:block;
-     }
- 
-     button#but:hover{
-         background:lightgray;
-     }
-     
-     .dropbtn {
-       background-color: white;
-       color: black;
-       padding: 2px;
-       padding-left:10px;
-       width:250px;
-       font-size: 20px;
-       border: none;
-       font-family: 'Lustria', serif;
-       border:black solid 2px;
-       text-align:left;
-       box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-     }
- 
-     /* The container <div> - needed to position the dropdown content */
-     .dropdown {
-       position: relative;
-       display: inline-block;
-       left:0;
-     }
- 
-     /* Dropdown Content (Hidden by Default) */
-     .dropdown-content {
-       display: none;
-       position: absolute;
-       background-color: #f1f1f1;
-       width: 250px;
-       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-       z-index: 1;
-     }
- 
-     /* Links inside the dropdown */
-     .dropdown-content a {
-       color: black;
-       padding: 12px 16px;
-       text-decoration: none;
-       display: block;
-       font-family: 'Lustria', serif;
-     }
- 
-     /* Change color of dropdown links on hover */
-     .dropdown-content a:hover {background-color: #ddd;}
- 
-     /* Show the dropdown menu on hover */
-     .dropdown:hover .dropdown-content {display: block;}
- 
-     /* Change the background color of the dropdown button when the dropdown content is shown */
-     .dropdown:hover .dropbtn {background-color: #f2f2f2;}
-     /* Dropdown styling */
- 
-     /*HTML styling*/
-     h1{
-         font-family: 'Lustria', serif; 
-         font-variant: small-caps;
-         margin-bottom:0px;
-         font-size:50px;
-         margin-top: 50px;
-         text-align:center;
-     }
-     p{
-         font-family: 'Lustria', serif;
-         margin-top:10px;
-         text-align:justify;
-     }
-     h2{
-         font-family: 'Lustria', serif; 
-         font-variant: small-caps;
-         margin-bottom:5px;
-         text-align:left;
-         line-height:30px;
-     }
-     div.legend{
-         width:280px;
-         height:35px;
-         margin-bottom:5px;
-         margin:auto;
-         border:#000000 solid 2px;
-     }    
-     div.legend_container{
-         left:0;
-         margin-top:0px;
-         top:calc(100% + 180px);
-         z-index:110;
-         width:280px;
-     }
-     p.legend_label{
-         font-size:18px;
-         display:inline;
-         text-align:left;
-         position:relative;
-         margin:0;
-         margin-left:5px;
-     }
-     /*div#infoContainer{
-       position:absolute;
-       z-index:10;
-       height:100%;
-       width:300px;
-       border-right:2px solid #666666;
-     }*/
-     div#infoPanel {
-       width:300px;
-       z-index:10;
-       height:70%;
-       position:absolute;
-       top:25px;
-       left:25px;
-       background:rgba(255,255,255,0.3);
-       border:2px solid #666666;
-       padding:25px;
-       overflow:hidden;
-     }
-     div#text{
-         position:relative;
-         height:calc(100% - 120px);
-     }
-     div.topBar{
-         position:absolute;
-         top:40px;
-         left:40px;
-         height:40px;
-         width:300px;
-         background:rgba(255,255,255,0);
-         z-index:100;
-     }
-     img#ng{
-       margin:0 auto;
-       margin-top:3px;
-       display:block;
-       width:170px;
-     }
-     div#projectionButtons{
-         position:absolute;
-         top:25px;
-         right:0px;
-         z-index:15;
-         width:200px;
-         height:50px;
-     }
-     div#projectionButtons button{
-         padding:0;
-         background:white;
-         border:black 2px solid;
- 
-     }
-     div#projectionButtons button:hover{
-         background:#d9d9d9;
-     }
    </style>
  </head>
  
  <body>
    <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
    <div id="infoPanel">
-       <h1>Refugees</h1> 
+       <h1>REFUGEES</h1> 
        <div id="text">
              <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
              <!--<div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
@@ -282,14 +42,14 @@
                </div>
              </div>-->
              <div class="legend_container" id="HDI_legend">
-               <h2># of Refugees</h2> 
-               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #d4eacf 16%, #d4eacf 33%, #aedba6 33%, #aedba6 50%, #87cb7d 50%, #87cb7d 66%, #5bbb55 66%, #5bbb55 83%, #12aa27 83%);"></div>
-               <p class="legend_label" style="margin-left:38px;">0</p>
-               <p class="legend_label" style="margin-left:29px;">0.2</p>
-               <p class="legend_label" style="margin-left:18px;">0.4</p>
-               <p class="legend_label" style="margin-left:18px;">0.6</p>
-               <p class="legend_label" style="margin-left:18px;">0.8</p>
-               <p style="margin-top:25px;">Insert Graph Here</p> 
+               <h2># of Refugees (1000s)</h2>
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e6f3ff 16%, #e6f3ff 33%, #b3daff 33%, #b3daff 50%, #66b5ff 50%, #66b5ff 66%, #1a90ff 66%, #1a90ff 83%, #005cb3 83%);"></div>
+               <p class="legend_label" style="margin-left:42px;">0</p>
+               <p class="legend_label" style="margin-left:34px;">1</p>
+               <p class="legend_label" style="margin-left:28px;">10</p>
+               <p class="legend_label" style="margin-left:22px;">100</p>
+               <p class="legend_label" style="margin-left:16px;">500</p>
+               <canvas id="chartContainer" height="400"></canvas> 
              </div>
        </div>
    </div>
@@ -337,6 +97,8 @@
   <script src="https://d3js.org/topojson.v3.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
   <script src="js/perfect-scrollbar.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
    <script>
     const config = {
       speed: 0.005,
@@ -369,6 +131,8 @@
       refByCountry = {},
       svg = [],
       isFlow = false,
+      chartData = new Array(),
+      chartLabels = new Array(),
       data = 0;
 
     var radius = width / 3;
@@ -448,15 +212,15 @@
 
     var arcWidth = d3.scaleThreshold()
         .domain([100,1000, 2500, 10000, 100000])
-        .range([0.5,1,1.5,2,2.5,3]);
+        .range([1.5,2,2.5,3,3.5,4]);
     
     var point_radius = d3.scaleLinear()
         .domain([0, 1000000])
         .range([2, 15]);
 
     var refColorScale = d3.scaleThreshold()
-        .domain([-10, 1000, 10000, 100000, 500000])
-        .range(["#ffffff","#d4eacf","#aedba6","#87cb7d","#5bbb55","#12aa27"]);
+        .domain([-1, 1000, 10000, 100000, 500000])
+        .range(["#ffffff","#e6f3ff","#b3daff","#66b5ff","#1a90ff","#005cb3"]);
 
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
@@ -468,9 +232,10 @@
       .defer(d3.json, "assets/map_data/global/dispersed.json")
       .defer(d3.csv, "assets/map_data/global/ref_demographics_2018_2.csv")
       .defer(d3.csv, "assets/map_data/global/demographics.csv")
+      .defer(d3.csv, "assets/map_data/global/refugee_flow.csv")
       .await(ready);
 
-    function ready(error, world, hosts, countryNames, flow, camps, settlements, dispersed, ref_test, demographics) {
+    function ready(error, world, hosts, countryNames, flow, camps, settlements, dispersed, ref_test, demographics, flowCsv) {
       
     countries = topojson.feature(world, world.objects.countries).features;
 
@@ -576,6 +341,40 @@
       .style("fill", "url(#globe_shading)");
     svg
       .append("g")
+      .attr("class", "countries")
+      .selectAll("path")
+      .data(countries, function(d){
+          countryCentroids[d.id] = d3.geoCentroid(d);
+      })
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("name",function(d){
+          return countryById[d.id];
+      })
+      .attr("fill", function (d) {
+            return refColorScale(parseFloat(refById[d.id]));
+        })
+      .attr("stroke", function (d) {
+            return 'rgba(0, 53, 102, .5)';
+        })
+      .on("mouseover", function(d) {
+        countryTooltip.text(countryById[d.id] +  refById[d.id])
+        .style("left", (d3.event.pageX ) + "px")
+        .style("top", (d3.event.pageY) + "px")
+        .style("display", "block")
+        .style("opacity", 1);
+        addFlow(d.id);
+        addChart(d.id);
+      })
+      .on("mouseout", function(d) {
+        clearFlow(d.id);
+        removeChart();
+        countryTooltip.style("opacity", 0)
+        .style("display", "none");
+      });
+      svg
+      .append("g")
       .attr("class", "points camps")
       .selectAll(".points")
       .data(camps.features)
@@ -607,64 +406,61 @@
       .attr("fill", "rgba(0,0,0,1)")
       .attr("opacity", "point")
       .attr("d", path);
-    svg
-      .append("g")
-      .attr("class", "countries")
-      .selectAll("path")
-      .data(countries, function(d){
-          countryCentroids[d.id] = d3.geoCentroid(d);
-      })
-      .enter()
-      .append("path")
-      .attr("d", path)
-      .attr("name",function(d){
-          return countryById[d.id];
-      })
-      .attr("fill", function (d) {
-            return refColorScale(parseFloat(refById[d.id]));
-        })
-      .attr("stroke", function (d) {
-            return 'rgba(18, 120, 39, .3)';
-        })
-      .on("mouseover", function(d) {
-        countryTooltip.text(countryById[d.id] +  refById[d.id])
-        .style("left", (d3.event.pageX ) + "px")
-        .style("top", (d3.event.pageY) + "px")
-        .style("display", "block")
-        .style("opacity", 1);
-        addFlow(d.id);
-      })
-      .on("mouseout", function(d) {
-        clearFlow(d.id);
-        countryTooltip.style("opacity", 0)
-        .style("display", "none");
-      });
+    function addFlow(origin){
+      svg.append("g").attr("class", "arcs")
+          .selectAll("path").data(flow.features)
+          .enter().append("path")
+          .filter(function(d){return d.properties.iso_n3 == origin})
+          .attr("class", "arc")
+          .attr("d", path)
+          .attr("opacity", function(d) {
+          return fade_at_edge(d)
+          });
+      svg.append("g").attr("class", "flyers")
+          .selectAll("path").data(flow.features)
+          .enter().append("path")
+          .filter(function(d){return d.properties.iso_n3 == origin})
+          .attr("class", "flyer")
+          .attr("d", function(d) {
+          return swoosh(flying_arc(d))
+          })
+          .attr("opacity", function(d) {
+          return fade_at_edge(d)
+          })
+          .attr("stroke-width", function(d) {
+              return arcWidth(d.properties.Population);
+          });
+    }
 
-      function addFlow(origin){
-        svg.append("g").attr("class", "arcs")
-            .selectAll("path").data(flow.features)
-            .enter().append("path")
-            .filter(function(d){return d.properties.iso_n3 == origin})
-            .attr("class", "arc")
-            .attr("d", path)
-            .attr("opacity", function(d) {
-            return fade_at_edge(d)
-            });
-        svg.append("g").attr("class", "flyers")
-            .selectAll("path").data(flow.features)
-            .enter().append("path")
-            .filter(function(d){return d.properties.iso_n3 == origin})
-            .attr("class", "flyer")
-            .attr("d", function(d) {
-            return swoosh(flying_arc(d))
-            })
-            .attr("opacity", function(d) {
-            return fade_at_edge(d)
-            })
-            .attr("stroke-width", function(d) {
-                return arcWidth(d.properties.Population);
-            });
-      }
+    function addChart(origin){
+      document.getElementById("chartContainer").style.opacity = 1;
+      flowCsv.forEach(function(d) {
+         if (d.iso_n3 == origin){
+            chartData.push(d.Population);
+            chartLabels.push(d.Destinatio);
+         }
+      });
+      var ctx = document.getElementById("chartContainer").getContext('2d');
+        chart = new Chart(ctx, options);
+
+        for (var i = 0; i < chartData.length; i++){
+          chart.data.labels[i] = chartLabels[i];
+          chart.data.datasets[0].data[i] = chartData[i];
+        }
+
+        chart.update();
+    }
+
+    function removeChart(){
+      document.getElementById("chartContainer").style.opacity = 0;
+      chartData.length = 0;
+      chartLabels.length = 0;
+
+      chart.data.labels.length = 0;
+      chart.data.datasets[0].data.length = 0;;
+
+      chart.update();
+    }
 
       function clearFlow (){
         svg
@@ -681,10 +477,11 @@
 
       path = d3
         .geoPath()
-        .projection(projection2);
+        .projection(projection2)
+        .pointRadius(1.5);
 
       projection = projection2;
-      skyProjection = skyProjection2;
+      skyProjection = skyProjection2
 
       svg
           .selectAll("circle").style("fill-opacity", 0);
@@ -708,7 +505,8 @@
 
       path = d3
         .geoPath()
-        .projection(projection1);
+        .projection(projection1)
+        .pointRadius(1.5);
 
       projection = projection1;
       skyProjection = skyProjection1;
@@ -860,6 +658,64 @@
     }
 
     var legends = document.getElementsByClassName("legend_container");
+
+    var options =  {
+          type: 'horizontalBar',
+          data: {
+              labels: [],
+              datasets: [{
+                  backgroundColor: ['#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff'],
+                  data: []
+              }]
+          },
+          options: {
+              title: {
+                  display: true,
+                  text: 'National Origin',
+                  fontFamily:"'Roboto Condensed','sans-serif'",
+                  fontColor:'#ffffff',
+                  fontSize:22,
+              },
+              legend:{
+                  display:false
+              },
+              layout: {
+                  padding: {
+                      left: 10,
+                      right: 10,
+                      top: 10,
+                      bottom: 10
+                  }
+              },
+              tooltips: {
+                  mode: 'index',
+                  intersect: true,
+                  titleFontFamily:"'Roboto Condensed','sans-serif'",
+                  titleFontColor:'#ffffff',
+                  titleFontSize:16,
+                  bodyFontFamily:"'Roboto Condensed','sans-serif'",
+                  bodyFontColor:'#ffffff',
+                  bodyFontSize:16
+              },
+              responsive: true,
+              scales: {
+                    yAxes: [{
+                      ticks: {
+                          fontFamily:"'Roboto Condensed','sans-serif'",
+                          fontColor:'#ffffff',
+                          fontSize:14
+                          }
+                      }],
+                    xAxes: [{
+                      ticks: {
+                          fontFamily:"'Roboto Condensed','sans-serif'",
+                          fontColor:'#ffffff',
+                          fontSize:16
+                          }
+                      }],
+                  },
+              }
+        }
 
     function setRefugee(){
         data = 0;

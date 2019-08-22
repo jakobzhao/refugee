@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Finance</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
     html,
@@ -243,7 +244,7 @@
 </head>
 
 <body>
-  <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+  <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
   <div id="infoPanel">
     <h1>Finance</h1> 
     <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p> 
@@ -371,7 +372,7 @@
   <script src="https://d3js.org/topojson.v3.min.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
   <script src="https://unpkg.com/cartogram-chart"></script>
-  <script src="js/d3-timeline.js"></script>
+  <script src="../js/d3-timeline.js"></script>
   <script>
 
 
@@ -519,9 +520,9 @@
 
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
-      .defer(d3.json, "assets/map_data/global/cities.json")
-      .defer(d3.csv, "assets/map_data/global/country_names.csv")
-      .defer(d3.json, "assets/map_data/global/convention.json")
+      .defer(d3.json, "../assets/map_data/global/cities.json")
+      .defer(d3.csv, "../assets/map_data/global/country_names.csv")
+      .defer(d3.json, "../assets/map_data/global/convention.json")
       .await(ready);
 
     function ready(error, world, places, countryNames, convention) {

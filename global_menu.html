@@ -5,9 +5,24 @@
   <meta charset="utf-8">
   <title>Global</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">        
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
+     html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
+    }
+
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
+    }
+    
     html,
     body,
     svg {
@@ -15,7 +30,8 @@
       width: 100%;
       height: 100vh;
       margin: 0;
-      background-color:#ffffff;
+      background: rgba(82, 87, 96,0.7);
+      color:white;
       overflow: hidden
     }
 
@@ -43,7 +59,7 @@
       font-size: 14px;
       font-family: sans-serif;
       font-size:18px;
-      font-family: 'Lustria', serif;
+      font-family: 'Roboto Condensed', sans-serif;
     }
 
     .graticule {
@@ -54,7 +70,7 @@
     }
 
     .labels {
-      font: 9px 'Hind Siliguri', sans-serif;
+      font: 9px 'Roboto Condensed', sans-serif;
       fill: black;
       opacity: .5;
     }
@@ -95,14 +111,14 @@
         width:200px;
         height:50px;
         font-size:22px;
-        font-family: 'Lustria', serif;
+        font-family: 'Roboto Condensed', sans-serif;
         font-variant: small-caps;
         background:rgba(255,255,255,0);
         border:none;
         margin:auto;
         margin-bottom:15px;
         text-decoration:none;
-        color:black;
+        color:white;
         text-align:center;
     }
 
@@ -128,7 +144,7 @@
     }
 
     h1{
-      font-family: 'Lustria', serif;
+      font-family: 'Roboto Condensed', sans-serif;
         font-variant: small-caps;
         font-weight:bold;
         font-size:64px;
