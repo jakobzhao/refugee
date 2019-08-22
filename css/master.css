@@ -63,6 +63,7 @@
         font-size:50px;
         text-align:center;
         margin-top:50px;
+        font-weight:400;
     }
     p{
       font-family: 'Roboto Condensed', sans-serif;
@@ -101,6 +102,8 @@
       margin:0px;
       border:0px;
       z-index:700;
+      background-color:rgba(82, 87, 96,0.9) !important;
+      color:white !important;
     }
     .label_tooltip{
       width:300px;
