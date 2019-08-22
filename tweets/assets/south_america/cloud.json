@@ -1,26 +1,38 @@
 [
     {
-        "text": "country",
-        "weight": 15
+        "text": "home",
+        "weight": 18
     },
     {
         "text": "people",
-        "weight": 14
+        "weight": 17
+    },
+    {
+        "text": "country",
+        "weight": 16
     },
     {
         "text": "world",
-        "weight": 12
+        "weight": 13
     },
     {
         "text": "t",
-        "weight": 12
+        "weight": 13
     },
     {
         "text": "other",
         "weight": 11
     },
     {
-        "text": "home",
+        "text": "today",
+        "weight": 10
+    },
+    {
+        "text": "women",
+        "weight": 10
+    },
+    {
+        "text": "crisis",
         "weight": 9
     },
     {
@@ -28,11 +40,11 @@
         "weight": 9
     },
     {
-        "text": "women",
-        "weight": 9
+        "text": "know",
+        "weight": 8
     },
     {
-        "text": "know",
+        "text": "after",
         "weight": 8
     },
     {
@@ -44,15 +56,23 @@
         "weight": 8
     },
     {
+        "text": "some",
+        "weight": 8
+    },
+    {
+        "text": "asylum",
+        "weight": 8
+    },
+    {
+        "text": "migrants",
+        "weight": 8
+    },
+    {
+        "text": "take",
+        "weight": 8
+    },
+    {
         "text": "humanitarian",
-        "weight": 7
-    },
-    {
-        "text": "today",
-        "weight": 7
-    },
-    {
-        "text": "crisis",
         "weight": 7
     },
     {
@@ -60,15 +80,43 @@
         "weight": 7
     },
     {
+        "text": "return",
+        "weight": 7
+    },
+    {
+        "text": "trump",
+        "weight": 7
+    },
+    {
+        "text": "which",
+        "weight": 7
+    },
+    {
         "text": "immigrants",
         "weight": 7
     },
     {
-        "text": "after",
+        "text": "countries",
+        "weight": 7
+    },
+    {
+        "text": "doesn",
         "weight": 6
     },
     {
-        "text": "some",
+        "text": "—",
+        "weight": 6
+    },
+    {
+        "text": "former",
+        "weight": 6
+    },
+    {
+        "text": "unhcr",
+        "weight": 6
+    },
+    {
+        "text": "syria",
         "weight": 6
     },
     {
@@ -76,11 +124,11 @@
         "weight": 6
     },
     {
-        "text": "which",
+        "text": "displaced",
         "weight": 6
     },
     {
-        "text": "asylum",
+        "text": "time",
         "weight": 6
     },
     {
@@ -88,7 +136,27 @@
         "weight": 6
     },
     {
-        "text": "countries",
+        "text": "could",
+        "weight": 6
+    },
+    {
+        "text": "well",
+        "weight": 6
+    },
+    {
+        "text": "also",
+        "weight": 6
+    },
+    {
+        "text": "camp",
+        "weight": 6
+    },
+    {
+        "text": "should",
+        "weight": 6
+    },
+    {
+        "text": "muslim",
         "weight": 6
     },
     {

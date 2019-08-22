@@ -1,78 +1,174 @@
 [
     {
-        "text": "today",
-        "weight": 19
-    },
-    {
         "text": "immigrants",
-        "weight": 16
-    },
-    {
-        "text": "camp",
-        "weight": 15
+        "weight": 25
     },
     {
         "text": "people",
-        "weight": 15
+        "weight": 25
+    },
+    {
+        "text": "today",
+        "weight": 21
     },
     {
         "text": "years",
-        "weight": 14
+        "weight": 21
+    },
+    {
+        "text": "camp",
+        "weight": 20
     },
     {
         "text": "work",
-        "weight": 14
+        "weight": 19
+    },
+    {
+        "text": "children",
+        "weight": 18
     },
     {
         "text": "help",
-        "weight": 14
+        "weight": 18
+    },
+    {
+        "text": "world",
+        "weight": 17
+    },
+    {
+        "text": "trump",
+        "weight": 17
+    },
+    {
+        "text": "t",
+        "weight": 17
+    },
+    {
+        "text": "camps",
+        "weight": 16
     },
     {
         "text": "like",
-        "weight": 13
+        "weight": 16
+    },
+    {
+        "text": "some",
+        "weight": 16
+    },
+    {
+        "text": "k",
+        "weight": 16
+    },
+    {
+        "text": "canada",
+        "weight": 16
+    },
+    {
+        "text": "palestinian",
+        "weight": 16
+    },
+    {
+        "text": "legal",
+        "weight": 15
+    },
+    {
+        "text": "students",
+        "weight": 15
     },
     {
         "text": "right",
+        "weight": 15
+    },
+    {
+        "text": "home",
         "weight": 13
+    },
+    {
+        "text": "countries",
+        "weight": 13
+    },
+    {
+        "text": "family",
+        "weight": 13
+    },
+    {
+        "text": "families",
+        "weight": 13
+    },
+    {
+        "text": "government",
+        "weight": 12
+    },
+    {
+        "text": "after",
+        "weight": 12
+    },
+    {
+        "text": "asylum",
+        "weight": 12
+    },
+    {
+        "text": "communities",
+        "weight": 12
+    },
+    {
+        "text": "immigrant",
+        "weight": 12
     },
     {
         "text": "take",
         "weight": 11
     },
     {
-        "text": "home",
+        "text": "hope",
         "weight": 11
     },
     {
-        "text": "legal",
+        "text": "over",
         "weight": 11
     },
     {
-        "text": "after",
+        "text": "place",
         "weight": 11
     },
     {
-        "text": "k",
+        "text": "born",
         "weight": 11
     },
     {
-        "text": "children",
+        "text": "palestine",
         "weight": 11
     },
     {
-        "text": "palestinian",
+        "text": "crisis",
         "weight": 11
     },
     {
-        "text": "government",
+        "text": "women",
+        "weight": 11
+    },
+    {
+        "text": "school",
+        "weight": 11
+    },
+    {
+        "text": "into",
         "weight": 10
     },
     {
-        "text": "family",
+        "text": "things",
         "weight": 10
     },
     {
-        "text": "trump",
+        "text": "share",
+        "weight": 10
+    },
+    {
+        "text": "community",
+        "weight": 10
+    },
+    {
+        "text": "read",
         "weight": 10
     },
     {
@@ -80,67 +176,187 @@
         "weight": 10
     },
     {
-        "text": "born",
+        "text": "w",
         "weight": 10
-    },
-    {
-        "text": "palestine",
-        "weight": 10
-    },
-    {
-        "text": "camps",
-        "weight": 9
-    },
-    {
-        "text": "countries",
-        "weight": 9
-    },
-    {
-        "text": "canada",
-        "weight": 9
-    },
-    {
-        "text": "immigrant",
-        "weight": 9
-    },
-    {
-        "text": "into",
-        "weight": 8
-    },
-    {
-        "text": "world",
-        "weight": 8
-    },
-    {
-        "text": "immigration",
-        "weight": 8
-    },
-    {
-        "text": "some",
-        "weight": 8
-    },
-    {
-        "text": "t",
-        "weight": 8
     },
     {
         "text": "rohingya",
-        "weight": 8
+        "weight": 10
     },
     {
-        "text": "crisis",
-        "weight": 8
+        "text": "jews",
+        "weight": 10
+    },
+    {
+        "text": "know",
+        "weight": 10
+    },
+    {
+        "text": "stories",
+        "weight": 10
+    },
+    {
+        "text": "million",
+        "weight": 9
+    },
+    {
+        "text": "state",
+        "weight": 9
+    },
+    {
+        "text": "american",
+        "weight": 9
+    },
+    {
+        "text": "life",
+        "weight": 9
+    },
+    {
+        "text": "immigration",
+        "weight": 9
+    },
+    {
+        "text": "program",
+        "weight": 9
+    },
+    {
+        "text": "through",
+        "weight": 9
+    },
+    {
+        "text": "going",
+        "weight": 9
+    },
+    {
+        "text": "year",
+        "weight": 9
+    },
+    {
+        "text": "need",
+        "weight": 9
+    },
+    {
+        "text": "country",
+        "weight": 9
     },
     {
         "text": "rights",
-        "weight": 8
+        "weight": 9
     },
     {
-        "text": "families",
+        "text": "welcome",
+        "weight": 9
+    },
+    {
+        "text": "also",
+        "weight": 9
+    },
+    {
+        "text": "human",
+        "weight": 9
+    },
+    {
+        "text": "during",
         "weight": 8
     },
     {
         "text": "think",
+        "weight": 8
+    },
+    {
+        "text": "because",
+        "weight": 8
+    },
+    {
+        "text": "show",
+        "weight": 8
+    },
+    {
+        "text": "supporting",
+        "weight": 8
+    },
+    {
+        "text": "under",
+        "weight": 8
+    },
+    {
+        "text": "kids",
+        "weight": 8
+    },
+    {
+        "text": "living",
+        "weight": 8
+    },
+    {
+        "text": "working",
+        "weight": 8
+    },
+    {
+        "text": "education",
+        "weight": 8
+    },
+    {
+        "text": "america",
+        "weight": 8
+    },
+    {
+        "text": "give",
+        "weight": 8
+    },
+    {
+        "text": "first",
+        "weight": 8
+    },
+    {
+        "text": "both",
+        "weight": 8
+    },
+    {
+        "text": "time",
+        "weight": 8
+    },
+    {
+        "text": "every",
+        "weight": 8
+    },
+    {
+        "text": "group",
+        "weight": 8
+    },
+    {
+        "text": "syrian",
+        "weight": 7
+    },
+    {
+        "text": "find",
+        "weight": 7
+    },
+    {
+        "text": "former",
+        "weight": 7
+    },
+    {
+        "text": "which",
+        "weight": 7
+    },
+    {
+        "text": "border",
+        "weight": 7
+    },
+    {
+        "text": "english",
+        "weight": 7
+    },
+    {
+        "text": "bring",
+        "weight": 7
+    },
+    {
+        "text": "building",
+        "weight": 7
+    },
+    {
+        "text": "jewish",
         "weight": 7
     },
     {
@@ -148,7 +364,31 @@
         "weight": 7
     },
     {
-        "text": "show",
+        "text": "support",
+        "weight": 7
+    },
+    {
+        "text": "issues",
+        "weight": 7
+    },
+    {
+        "text": "parents",
+        "weight": 7
+    },
+    {
+        "text": "seen",
+        "weight": 7
+    },
+    {
+        "text": "back",
+        "weight": 7
+    },
+    {
+        "text": "lebanon",
+        "weight": 7
+    },
+    {
+        "text": "proud",
         "weight": 7
     },
     {
@@ -156,35 +396,43 @@
         "weight": 7
     },
     {
-        "text": "going",
+        "text": "seekers",
         "weight": 7
     },
     {
-        "text": "year",
+        "text": "should",
         "weight": 7
     },
     {
-        "text": "education",
+        "text": "great",
         "weight": 7
     },
     {
-        "text": "jews",
+        "text": "learn",
         "weight": 7
     },
     {
-        "text": "country",
+        "text": "australia",
         "weight": 7
     },
     {
-        "text": "also",
+        "text": "please",
         "weight": 7
     },
     {
-        "text": "human",
+        "text": "safe",
         "weight": 7
     },
     {
-        "text": "state",
+        "text": "lives",
+        "weight": 7
+    },
+    {
+        "text": "concentration",
+        "weight": 6
+    },
+    {
+        "text": "care",
         "weight": 6
     },
     {
@@ -192,11 +440,7 @@
         "weight": 6
     },
     {
-        "text": "things",
-        "weight": 6
-    },
-    {
-        "text": "hope",
+        "text": "other",
         "weight": 6
     },
     {
@@ -204,43 +448,39 @@
         "weight": 6
     },
     {
-        "text": "bring",
-        "weight": 6
-    },
-    {
-        "text": "life",
-        "weight": 6
-    },
-    {
         "text": "funding",
         "weight": 6
     },
     {
-        "text": "over",
+        "text": "love",
         "weight": 6
     },
     {
-        "text": "building",
+        "text": "must",
         "weight": 6
     },
     {
-        "text": "support",
+        "text": "migrants",
         "weight": 6
     },
     {
-        "text": "students",
+        "text": "meet",
         "weight": 6
     },
     {
-        "text": "parents",
+        "text": "august",
         "weight": 6
     },
     {
-        "text": "w",
+        "text": "somali",
         "weight": 6
     },
     {
-        "text": "asylum",
+        "text": "make",
+        "weight": 6
+    },
+    {
+        "text": "cities",
         "weight": 6
     },
     {
@@ -248,19 +488,11 @@
         "weight": 6
     },
     {
+        "text": "week",
+        "weight": 6
+    },
+    {
         "text": "happy",
-        "weight": 6
-    },
-    {
-        "text": "america",
-        "weight": 6
-    },
-    {
-        "text": "communities",
-        "weight": 6
-    },
-    {
-        "text": "give",
         "weight": 6
     },
     {
@@ -268,15 +500,19 @@
         "weight": 6
     },
     {
-        "text": "both",
+        "text": "ice",
         "weight": 6
     },
     {
-        "text": "women",
+        "text": "special",
         "weight": 6
     },
     {
-        "text": "welcome",
+        "text": "ks",
+        "weight": 6
+    },
+    {
+        "text": "services",
         "weight": 6
     },
     {
@@ -284,7 +520,31 @@
         "weight": 6
     },
     {
-        "text": "lives",
+        "text": "keep",
+        "weight": 6
+    },
+    {
+        "text": "come",
+        "weight": 6
+    },
+    {
+        "text": "white",
+        "weight": 6
+    },
+    {
+        "text": "call",
+        "weight": 6
+    },
+    {
+        "text": "while",
+        "weight": 6
+    },
+    {
+        "text": "around",
+        "weight": 6
+    },
+    {
+        "text": "obama",
         "weight": 6
     }
 ]
