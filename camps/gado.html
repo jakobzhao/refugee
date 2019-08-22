@@ -5,8 +5,10 @@
 
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="../assets/img/nglogo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/master.css" />
     <link href="../css/perfect-scrollbar.css" rel="stylesheet">    
     <link rel="stylesheet" href="../css/Control.MiniMap.css" />
@@ -14,6 +16,19 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
 
     <style>
+        html {
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+     font-weight: 400;
+     }
+ 
+     @-moz-document url-prefix() {
+         body {
+             font-weight: lighter !important;
+         }
+     }
+        
         body {
             padding: 0;
             margin: 0;
@@ -34,8 +49,8 @@
 </head>
 <body>
     <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
-    <div id="infoPanel" style="background:rgba(255,255,255,0.5);">
-        <h1>Gado</h1> 
+    <div id="infoPanel">
+        <h1>GADO</h1> 
                 <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
                 <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
                 <button class="dropbtn" id="dataType">Select Map</button>
@@ -280,84 +295,63 @@
 
             document.getElementsByClassName("leaflet-control-attribution")[0].style.visibility = "hidden";
 
-            var miniMap = new L.Control.MiniMap(google_2018, {
-                zoomLevelOffset: -12
-            }).addTo(map);
-
-        var male = [
-                4116,
-                4611,
-                3327,
-                8545,
-                262
-				]
         var female = [
-                -3994,
-                -4482,
-                -3098,
-                -9604,
-                -447
+                3994,
+                4482,
+                3098,
+                9604,
+                447
 				]
 
-		var barChartData = {
-			labels: ['0-4', '5-11', '12-17', '18-59', '60+'],
-			datasets: [{
-				label: 'Female',
-				backgroundColor: ['#000000'],
-				stack: 'Stack 0',
-				data: female
-			}, {
-				label: 'Male',
-				backgroundColor: ['#000000'],
-				stack: 'Stack 0',
-				data: male
-			}]
+        var options =  {
+            type: 'bar',
+            data: {
+                labels: ['Country','Country','Country','Country','Country'],
+                datasets: [{
+                    backgroundColor: ['#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff'],
+                    data: [3994,4482,3098,9604,447]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'National Origin',
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+                    fontColor:'#ffffff',
+                    fontSize:22,
+                },
+                legend:{
+                    display:false
+                },
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                        bottom: 10
+                    }
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: true
+                },
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontFamily:"'Roboto Condensed','sans-serif'",
+                            fontColor:'#ffffff',
+                            fontSize:16
+                            }
+                        }],
+                    },
+                }
+        }
 
-		};
 		window.onload = function() {
 			var ctx = document.getElementById('chart').getContext('2d');
-			window.myBar = new Chart(ctx, {
-				type: 'horizontalBar',
-				data: barChartData,
-				options: {
-					title: {
-						display: true,
-						text: 'Refugees from Burundi - Demographic Breakdownn'
-					},
-                    layout: {
-                        padding: {
-                            left: 10,
-                            right: 10,
-                            top: 10,
-                            bottom: 10
-                        }
-                    },
-					tooltips: {
-						mode: 'index',
-						intersect: true
-					},
-					responsive: true,
-					scales: {
-            xAxes: [
-                {
-                ticks: {
-                                    min: this.min,
-                                    max: this.sum,// Your absolute max value
-                                    callback: function (value) {
-                                    return (value / this.max * 100).toFixed(0) + '%'; // convert it to percentage
-                                    },
-                                    // reverse: true
-                                },
-                                scaleLabel: {
-                                    display: true,
-                                    labelString: 'Percentage',
-                                },
-                                },
-                            ],
-                            },
-                            }
-                        });
-                    };
+			window.myBar = new Chart(ctx, options);
+         };
 
     </script>
 </body>

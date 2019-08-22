@@ -8,25 +8,25 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/master.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />   
+  <link rel="shortcut icon" href="../assets/img/nglogo.png" type="image/x-icon">
   <link href="../css/perfect-scrollbar.css" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="../css/Control.MiniMap.css" />
   <style>
-    /* SVG styling */
-    html {
-     -moz-osx-font-smoothing: grayscale;
-     -webkit-font-smoothing: antialiased;
-     font-smoothing: antialiased;
-     font-weight: 400;
-     }
- 
-     @-moz-document url-prefix() {
-         body {
-             font-weight: lighter !important;
-         }
-     }
+      html {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      font-weight: 400;
+      }
+
+      @-moz-document url-prefix() {
+          body {
+              font-weight: lighter !important;
+          }
+      }
    </style>
 </head>
 
@@ -42,6 +42,7 @@
               <a href="#" id="but2" class="selection">Population</a>
               <a href="#" id="but3" class="selection">Health</a>
               <a href="#" id="but4" class="selection">Sanitation</a>
+              <a href="#" id="but5" class="selection">Safety</a>
             </div>
           </div>
           <div id="text">
@@ -84,6 +85,15 @@
               <p class="legend_label" style="margin-left:50px;">25</p>
               <p class="legend_label" style="margin-left:50px;">35</p>
         </div>
+        <div class="legend_container" id="leg_5" style="display:none;">
+            <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+            <h2>Level of Percieved Safety</h2> 
+            <div class="legend" style="background:linear-gradient(to right, #fee5d9,#a50f15 );"></div>
+            <p class="legend_label" style="margin-left:5px;">Less</p><!---'#fee5d9', 0.4: '#fcae91', 0.6: '#fb6a4a', 0.8: '#de2d26',1: '#a50f15'-->
+            <p class="legend_label" style="margin-left:200px;">More</p>
+            <canvas height="400" id="wSafetyChart"></canvas>
+            <canvas height="400" id="mSafetyChart"></canvas>
+      </div>
     </div>
   </div>
   <div id="map"></div>
@@ -99,8 +109,10 @@
     <script src="../js/chart.js"></script>
     <script src="../js/Chart.PieceLabel.min.js"></script>
     <script src="../js/minimap.js"></script>
-
+    <script src="../js/leaflet-heat.js"></script>
+    <script src="../assets/map_data/camp/kutupalong/safety.js"></script>
   <script>
+
         const ps = new PerfectScrollbar('#text', {
           wheelSpeed: 2,
           wheelPropagation: true,
@@ -187,7 +199,7 @@
         /////////////////////////////population blocks////////////////////////////
         const blocks = new L.TopoJSON(null, {
             onEachFeature: function(feature, featureLayer){ 
-              featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">' + feature.properties.pop_dens + ' People per acre</p><canvas id="chartContainer1" style="margin-left:-5px;"></canvas><img style="width:50px; display:inline; margin-left:65px;" src="../assets/img/shelter.png"><img style="width:50px; display:inline; margin-left:60px;" src="../assets/img/families.png">', {className: 'label_tooltip', direction:'right'});
+              featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">' + feature.properties.pop_dens + ' People per acre</p><canvas id="chartContainer1" style="margin-left:-5px;"></canvas><img style="width:50px; display:inline; margin-left:65px;">', {className: 'label_tooltip', direction:'right'});
               //featureLayer.bindTooltip('<h2 style="display:inline; line-height:20px;">'+ feature.properties.New_Camp_N + '</h2><br/><p style="margin:0; margin-top:5px; display:block;">' + feature.properties.pop_dens + ' People per acre</p><div class="circleChart"><p style="text-align:right; padding-right:5px;"># of Shelters</p></div><div id="circleHolder" style="width:105px; display:inline-block;"><b class="circle" id="sheltCircle" style="position:relative; background:#fed98e;"></b><b class="circle" id="famCircle" style="position:relative; background:#fe9929;"></b></div><div class="circleChart"><br/><p># of Families</p></div>', {className: 'label_tooltip', direction:'right'});
                 }
             });
@@ -264,7 +276,8 @@
                   var chartInstance = this.chart,
                     ctx = chartInstance.ctx;
 
-                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                  ctx.font = Chart.helpers.fontString(14, Chart.defaults.global.defaultFontStyle, "'Roboto Condensed','sans-serif'");
+                  ctx.fillStyle = 'white';
                   ctx.textAlign = 'center';
                   ctx.textBaseline = 'bottom';
 
@@ -277,19 +290,30 @@
                   });
                 }
               },
+              legend: {
+                display:false,
+              },
               responsive: true,
               scales: {
                 yAxes: [{
                   display:false,
                   ticks: {
-                    fontSize:14,
                     max: 15000,
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+									  fontSize:16
+                  }
+                }],
+                xAxes: [{
+                  display:true,
+                  ticks: {
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+                    fontSize:16,
+                    fontWeight:300
                   }
                 }]
-              },
-              legend: {
-                display:false,
               }
           }
         }
@@ -493,7 +517,7 @@
                   stack:1
               },
               {
-                  backgroundColor: ['#ffffff','#ffffff','#ffffff','#ffffff'],
+                  backgroundColor: ['rgba(255,255,255,0)','rgba(255,255,255,0)','rgba(255,255,255,0)','rgba(255,255,255,0)'],
                   borderColor: '#c7dbea',
                   data: [100,100,100,100],
                   stack:1,
@@ -511,7 +535,8 @@
                   var chartInstance = this.chart,
                     ctx = chartInstance.ctx;
 
-                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.font = Chart.helpers.fontString(14, Chart.defaults.global.defaultFontStyle, "'Roboto Condensed','sans-serif'");
+                  ctx.fillStyle = 'white';
                   ctx.textAlign = 'center';
                   ctx.textBaseline = 'bottom';
 
@@ -531,16 +556,26 @@
                 yAxes: [{
                   display:false,
                   stacked: true,
+                  gridLines:{
+                    color:'#ffffff'
+                  },
                   ticks: {
-                    fontSize:14,
                     max: 3000,
                     beginAtZero: true,
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+									  fontSize:16
                   }
                 }],
                 xAxes: [{
                   stacked: true,
+                  gridLines:{
+                    color:'rgba(255,255,255,0.3)'
+                  },
                   ticks: {
-                    fontSize:13,
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+									  fontSize:14
                   }
                 }]
               },
@@ -562,7 +597,7 @@
                   borderWidth: 0
               },
               {
-                  backgroundColor: ['#ffffff','#ffffff','#ffffff'],
+                  backgroundColor: ['rgba(255,255,255,0)','rgba(255,255,255,0)','rgba(255,255,255,0)'],
                   borderColor: '#dde0ee',
                   data: [100,100,100],
                   stack:1,
@@ -579,7 +614,8 @@
                   var chartInstance = this.chart,
                     ctx = chartInstance.ctx;
 
-                  ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.font = Chart.helpers.fontString(14, Chart.defaults.global.defaultFontStyle, "'Roboto Condensed','sans-serif'");
+                  ctx.fillStyle = 'white';
                   ctx.textAlign = 'center';
                   ctx.textBaseline = 'bottom';
 
@@ -599,14 +635,27 @@
                 yAxes: [{
                   display:false,
                   stacked: true,
+                  gridLines:{
+                    color:'rgba(255,255,255,0.3)'
+                  },
                   ticks: {
-                    fontSize:14,
                     max: 2000,
-                    beginAtZero: true
+                    beginAtZero: true,
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+									  fontSize:16
                   }
                 }],
                 xAxes: [{
                   stacked: true,
+                  gridLines:{
+                    color:'rgba(255,255,255,0.3)'
+                  },
+                  ticks: {
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+									  fontColor:'#ffffff',
+									  fontSize:14
+                  }
                 }]
               },
               legend: {
@@ -614,9 +663,94 @@
               }
           }
         }
+    /////////////////////safety////////////////////////  
+      safety = safety.map(function (p) { return [p[0], p[1]]; });
+      var heat = L.heatLayer(safety,{blur:40,gradient:{0.2: '#fee5d9', 0.4: '#fcae91', 0.6: '#fb6a4a', 0.8: '#de2d26',1: '#a50f15'}});
+
+      var wctx = document.getElementById("wSafetyChart").getContext("2d");
+      
+      var wdata = {
+        labels: ["Transportation", "Distribution site", "Latrine", 'Bathing_Washing facility', 'Waterpoints', 'Firewood collection site', 'Market'],
+        datasets: [
+            {
+                label: "Under 18",
+                backgroundColor: 'rgba(255, 77, 77, 0.8)',
+                data: [Math.round(430/19.17), Math.round(336/19.17), Math.round(244/19.17), Math.round(602/19.17), Math.round(77/19.17), Math.round(172/19.17), Math.round(430/56.17)]
+            },
+            {
+                label: "Adult",
+                backgroundColor:'rgba(179, 0, 0, 0.8)',
+                data: [Math.round(50/29.14), Math.round(315/29.14), Math.round(751/29.14), Math.round(753/29.14), Math.round(803/29.14), Math.round(181/29.14), Math.round(61/29.14)]
+            },
+
+        ]
+      };
+
+      var wChart = new Chart(wctx, {
+          type: 'bar',
+          data: wdata,
+          options: {
+              title: {
+                  display: true,
+                  fontSize: 20,
+                  fontFamily:"'Roboto Condensed','sans-serif'",
+									fontColor:'#ffffff',
+                  text: 'Places perceived as not safe by Women'
+              },
+              tooltips: {
+                  callbacks: {
+                      title: function() {},
+                      label: function (tooltipItem, data) {
+                          if (tooltipItem.datasetIndex === 0) {
+                              return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][0]['data'][tooltipItem['index']] + '%'
+                          } else if (tooltipItem.datasetIndex === 1) {
+                              return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][1]['data'][tooltipItem['index']] + '%'
+                          }
+                      }
+                  },
+                  mode: 'index',
+                  intersect: true,
+                  titleFontFamily:"'Roboto Condensed','sans-serif'",
+                  titleFontColor:'#ffffff',
+                  titleFontSize:16,
+                  bodyFontFamily:"'Roboto Condensed','sans-serif'",
+                  bodyFontColor:'#ffffff',
+                  bodyFontSize:16
+              },
+              scales: {
+                  xAxes: [{
+                      display: true, //this will remove all the x-axis grid lines
+                      ticks:{
+                        fontSize: 12,
+                        fontFamily:"'Roboto Condensed','sans-serif'",
+									      fontColor:'#ffffff',
+                      }
+                  }],
+                  yAxes: [{
+                      ticks: {
+                          // Include a dollar sign in the ticks
+                          callback: function(value, index, values) {
+                              return value + '%';
+                          },
+                          fontSize: 16,
+                          fontFamily:"'Roboto Condensed','sans-serif'",
+									        fontColor:'#ffffff',
+                      }
+                  }]
+              },
+                  legend: {
+                      display: true,
+                      labels:{
+                        fontSize: 16,
+                        fontFamily:"'Roboto Condensed','sans-serif'",
+                        fontColor:'#ffffff'
+                      }
+                  },
+          }
+      });
     /////////////////////click function////////////////////////    
         
-    var buttonLabels = ['#but1','#but2','#but3','#but4'];//add button IDs here
+    var buttonLabels = ['#but1','#but2','#but3','#but4','#but5'];//add button IDs here
 
     var buttonFunctions = {
       but1: {button:'but1',//button ID 
@@ -637,11 +771,17 @@
         title:'Health', 
         variable:3
       },
-      but5: {button:'but4', 
+      but4: {button:'but4', 
         newLegend: 'leg_4', 
         newLayers:[washBlocks],
         title:'Sanitation', 
         variable:4
+      },
+      but5: {button:'but5', 
+        newLegend: 'leg_5', 
+        newLayers:[eduBlocks, heat],
+        title:'Safety', 
+        variable:5
       }
     };
 	
