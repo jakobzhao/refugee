@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Destination</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+  <link href="css/globe_master.css" rel="stylesheet"> 
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <style>
+   
+   /* SVG styling */
+   html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
+    }
+
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
+    }
+   </style>
+ </head>
+ 
+ <body>
+   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+   <div id="infoPanel">
+       <h1>DESTINATION</h1> 
+       <div id="text">
+             <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+             <!--<div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+               <button class="dropbtn">Select Map</button>
+               <div class="dropdown-content">
+                 <a href="#"onclick="setRefugee()">Population</a>
+                 <a href="#"onclick="setSettlements()">Settlements</a>
+               </div>
+             </div>-->
+             <div class="legend_container" id="HDI_legend">
+               <h2># of Refugees (1000s) Hosted</h2>
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e6f3ff 16%, #e6f3ff 33%, #b3daff 33%, #b3daff 50%, #66b5ff 50%, #66b5ff 66%, #1a90ff 66%, #1a90ff 83%, #005cb3 83%);"></div>
+               <p class="legend_label" style="margin-left:42px;">0</p>
+               <p class="legend_label" style="margin-left:34px;">1</p>
+               <p class="legend_label" style="margin-left:28px;">10</p>
+               <p class="legend_label" style="margin-left:22px;">100</p>
+               <p class="legend_label" style="margin-left:16px;">500</p>
+               <canvas id="chartContainer" height="400"></canvas> 
+             </div>
+       </div>
+   </div>
+   <div id="projectionButtons">
+     <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+     <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
+   </div>
+   <svg>
+    <defs>
+      <radialGradient cx="75%" cy="25%" id="ocean_fill">
+        <stop offset="5%" stop-color="#ddf" />
+        <stop offset="100%" stop-color="#9ab" />
+      </radialGradient>
+      <radialGradient cx="75%" cy="25%" id="globe_highlight">
+        <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="40%" id="globe_shading">
+        <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="50%" id="drop_shadow">
+        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#000" stop-opacity="0" />
+      </radialGradient>
+      <filter id="glow">
+          <feColorMatrix type="matrix"
+              values=
+              "0.8 0 0 0 0
+               0 0.9 0 0 0
+               0 0 1 0 0
+               0 0 0 1 0"/>
+          <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
+          <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+      </filter>
+    </defs>
+  </svg>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Use d3-fetch instead of d3-request in ES6 -->
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
+   <script>
+    const config = {
+      speed: 0.005,
+      verticalTilt: -30,
+      horizontalTilt: 0
+    };
+
+    var margin = {top: 80, right: 180, bottom: 80, left: 180},
+      chartWidth = 960 - margin.left - margin.right,
+      chartHeight = 500 - margin.top - margin.bottom;
+
+    var width = window.innerWidth,
+      height = window.innerHeight,
+      sensitivity = 0.25,
+      offsetX = width / 1.5,
+      offsetY = height / 2,
+      maxElevation = 45,
+      initRotation = [0, -30],
+      scaleExtent = [1, 8],
+      flyerAltitude = 80,
+      countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
+      countryById = {},
+      demographicsById = {},
+      schoolById = {},
+      povertyById = {},
+      environmentById = {},
+      refById = {},
+      countries,
+      countryCentroids = {},
+      refByCountry = {},
+      svg = [],
+      isFlow = false,
+      chartData = new Array(),
+      chartLabels = new Array(),
+      data = 0;
+
+    var radius = width / 3;
+    if (height < width) {
+      radius = height /2.25;
+    }
+    var projection1 = d3
+      .geoOrthographic()
+      .scale(radius)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var projection2 = d3
+      .geoEquirectangular()
+      .scale(radius)
+      .translate([offsetX, offsetY]);
+    var skyProjection1 = d3
+      .geoOrthographic()
+      .scale(radius + flyerAltitude)
+      .rotate(initRotation)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var skyProjection2 = d3
+      .geoEquirectangular()
+      .scale(radius + flyerAltitude)
+      .translate([offsetX, offsetY])
+      .clipAngle(90);
+    var projection = projection1,
+        skyProjection = skyProjection1;
+    var path = d3
+      .geoPath()
+      .projection(projection)
+      .pointRadius(1.5);
+    var swoosh = d3.line()
+      .x(function(d) {
+        return d[0]
+      })
+      .y(function(d) {
+        return d[1]
+      })
+      .curve(d3.curveBasis);
+    var graticule = d3.geoGraticule();
+
+    var svg = d3
+      .select("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
+      .call(
+        d3
+        .drag()
+        .subject(function() {
+          var r = projection.rotate();
+          return {
+            x: r[0] / sensitivity,
+            y: -r[1] / sensitivity
+          };
+        })
+        .on("drag", dragged)
+      )
+      .call(
+        d3
+        .zoom()
+        .scaleExtent(scaleExtent)
+        .on("zoom", zoomed)
+      )
+      .on("dblclick.zoom", null);
+
+    var chart = d3.select('svg.chart')   
+        .attr("class", "bar-chart")
+        .attr("width", chartWidth + margin.left + margin.right)
+        .attr("height", chartHeight + margin.top + margin.bottom)
+	      .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    var labels;
+
+    var arcWidth = d3.scaleThreshold()
+        .domain([100,1000, 2500, 10000, 100000])
+        .range([1.5,2,2.5,3,3.5,4]);
+    
+    var point_radius = d3.scaleLinear()
+        .domain([0, 1000000])
+        .range([2, 15]);
+
+    var refColorScale = d3.scaleThreshold()
+        .domain([-1, 1000, 10000, 100000, 500000])
+        .range(["#ffffff","#e6f3ff","#b3daff","#66b5ff","#1a90ff","#005cb3"]);
+
+    d3.queue()
+      .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
+      .defer(d3.json, "assets/map_data/global/hosts.json")
+      .defer(d3.csv, "assets/map_data/global/country_names.csv")
+      .defer(d3.json, "assets/map_data/global/flow_total.json")
+      .defer(d3.json, "assets/map_data/global/camps.json")
+      .defer(d3.json, "assets/map_data/global/settlements.json")
+      .defer(d3.json, "assets/map_data/global/dispersed.json")
+      .defer(d3.csv, "assets/map_data/global/ref_demographics_2018_2.csv")
+      .defer(d3.csv, "assets/map_data/global/demographics.csv")
+      .defer(d3.csv, "assets/map_data/global/refugee_flow_in.csv")
+      .await(ready);
+
+    function ready(error, world, hosts, countryNames, flow, camps, settlements, dispersed, ref_test, demographics, flowCsv) {
+      
+    countries = topojson.feature(world, world.objects.countries).features;
+
+    countryNames.forEach(function(d) {
+        countryById[d.iso_n3] = d.name;
+    });
+
+    demographics.forEach(function(d) {
+        refById[d.id] = d.refugees;
+    });
+    
+    var defs = svg.append("defs");
+
+    var filter = svg.append("defs")
+      .append("filter")
+      .attr("id", "drop-shadow")
+      .attr("height", "110%");
+    filter.append("feGaussianBlur")
+      .attr("in", "SourceAlpha")
+      .attr("stdDeviation", 0.5)
+      .attr("result", "blur");
+
+    filter.append("feOffset")
+      .attr("in", "blur")
+      .attr("dx", 1)
+      .attr("dy", 1)
+      .attr("result", "offsetBlur");
+    
+      var feMerge = filter.append("feMerge");
+
+    feMerge.append("feMergeNode")
+        .attr("in", "offsetBlur")
+    feMerge.append("feMergeNode")
+        .attr("in", "SourceGraphic");
+        
+    var gradient = svg.append("svg:defs")
+      .append("svg:linearGradient")
+        .attr("id", "gradient")
+        .attr("x1", "0%")
+        .attr("y1", "0%")
+        .attr("x2", "0%")
+        .attr("y2", "100%")
+        .attr("spreadMethod", "pad");
+
+    gradient.append("svg:stop")
+        .attr("offset", "0%")
+        .attr("stop-color", "#0F3871")
+        .attr("stop-opacity", 1);
+
+    gradient.append("svg:stop")
+        .attr("offset", "100%")
+        .attr("stop-color", "#175BA8")
+        .attr("stop-opacity", 1);
+
+    svg
+      .append("rect")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform-origin", offsetX + "px " + offsetY + "px")
+      .attr("class", "noclicks")
+      .style("fill", "#e3e4e8")
+      .style("fill-opacity", 0);
+
+    svg
+      .append("ellipse")
+      .attr("cx", offsetX - 40)
+      .attr("cy", offsetY + radius - 20)
+      .attr("rx", projection.scale() * 0.9)
+      .attr("ry", projection.scale() * 0.25)
+      .attr("class", "noclicks")
+      .style("fill", "url(#drop_shadow)");
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "#ffffff");
+    svg
+      .append("path")
+      .datum(topojson.feature(world, world.objects.land))
+      .attr("class", "land")
+      .attr("d", path)
+      .style("filter", "url(#drop-shadow)");;
+    svg
+      .append("path")
+      .datum(graticule)
+      .attr("class", "graticule noclicks")
+      .attr("d", path);
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "url(#globe_highlight)");
+    svg
+      .append("circle")
+      .attr("cx", offsetX)
+      .attr("cy", offsetY)
+      .attr("r", projection.scale())
+      .attr("class", "noclicks")
+      .style("fill", "url(#globe_shading)");
+    svg
+      .append("g")
+      .attr("class", "countries")
+      .selectAll("path")
+      .data(countries, function(d){
+          countryCentroids[d.id] = d3.geoCentroid(d);
+      })
+      .enter()
+      .append("path")
+      .attr("d", path)
+      .attr("name",function(d){
+          return countryById[d.id];
+      })
+      .attr("fill", function (d) {
+            return refColorScale(parseFloat(refById[d.id]));
+        })
+      .attr("stroke", function (d) {
+            return 'rgba(0, 53, 102, .5)';
+        })
+      .on("mouseover", function(d) {
+        countryTooltip.text(countryById[d.id] +  refById[d.id])
+        .style("left", (d3.event.pageX ) + "px")
+        .style("top", (d3.event.pageY) + "px")
+        .style("display", "block")
+        .style("opacity", 1);
+        addFlow(d.id);
+        addChart(d.id);
+      })
+      .on("mouseout", function(d) {
+        clearFlow(d.id);
+        removeChart();
+        countryTooltip.style("opacity", 0)
+        .style("display", "none");
+      });
+      svg
+      .append("g")
+      .attr("class", "points camps")
+      .selectAll(".points")
+      .data(camps.features)
+      .enter()
+      .append("path")
+      .attr("class", "point")
+      .attr("opacity", "point")
+      .attr("fill", "rgba(0,0,0,1)")
+      .attr("d", path);
+    svg
+      .append("g")
+      .attr("class", "points settlements")
+      .selectAll(".points")
+      .data(settlements.features)
+      .enter()
+      .append("path")
+      .attr("class", "point")
+      .attr("opacity", "point")
+      .attr("fill", "rgba(0,0,0,1)")
+      .attr("d", path);
+    svg
+      .append("g")
+      .attr("class", "points dispersed")
+      .selectAll(".points")
+      .data(dispersed.features)
+      .enter()
+      .append("path")
+      .attr("class", "point")
+      .attr("fill", "rgba(0,0,0,1)")
+      .attr("opacity", "point")
+      .attr("d", path);
+    function addFlow(origin){
+      svg.append("g").attr("class", "arcs")
+          .selectAll("path").data(flow.features)
+          .enter().append("path")
+          .filter(function(d){console.log(d.properties); return d.properties.iso_n3_d == origin})
+          .attr("class", "arc")
+          .attr("d", path)
+          .attr("opacity", function(d) {
+          return fade_at_edge(d)
+          });
+      svg.append("g").attr("class", "flyers")
+          .selectAll("path").data(flow.features)
+          .enter().append("path")
+          .filter(function(d){return d.properties.iso_n3_d == origin})
+          .attr("class", "flyer")
+          .attr("d", function(d) {
+          return swoosh(flying_arc(d))
+          })
+          .attr("opacity", function(d) {
+          return fade_at_edge(d)
+          })
+          .attr("stroke-width", function(d) {
+              return arcWidth(d.properties.Population);
+          });
+    }
+
+    function addChart(origin){
+      document.getElementById("chartContainer").style.opacity = 1;
+      flowCsv.forEach(function(d) {
+         if (d.iso_n3_d == origin){
+            chartData.push(d.Population);
+            chartLabels.push(d.Origin);
+         }
+      });
+      var ctx = document.getElementById("chartContainer").getContext('2d');
+        chart = new Chart(ctx, options);
+
+        for (var i = 0; i < chartData.length; i++){
+          chart.data.labels[i] = chartLabels[i];
+          chart.data.datasets[0].data[i] = chartData[i];
+        }
+
+        chart.update();
+    }
+
+    function removeChart(){
+      document.getElementById("chartContainer").style.opacity = 0;
+      chartData.length = 0;
+      chartLabels.length = 0;
+
+      chart.data.labels.length = 0;
+      chart.data.datasets[0].data.length = 0;;
+
+      chart.update();
+    }
+
+      function clearFlow (){
+        svg
+            .selectAll(".arcs").remove();
+        svg
+            .selectAll(".flyers").remove();
+      }
+    
+    }
+
+    function toEquirectangular(){      
+      svg.selectAll("path").transition()
+      .attrTween("d", projectionTween(projection, projection2));
+
+      path = d3
+        .geoPath()
+        .projection(projection2)
+        .pointRadius(1.5);
+
+      projection = projection2;
+      skyProjection = skyProjection2
+
+      svg
+          .selectAll("circle").style("fill-opacity", 0);
+      svg
+          .selectAll(".labels").style("fill-opacity", 0);
+      svg
+          .selectAll("ellipse").style("fill-opacity", 0);
+      svg
+          .selectAll("rect").style("fill-opacity", 1);
+
+      //document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
+
+      proj = 1;
+      refresh();
+      position_labels();
+    }
+
+    function toOrthographic(){      
+      svg.selectAll("path").transition()
+      .attrTween("d", projectionTween(projection, projection1));
+
+      path = d3
+        .geoPath()
+        .projection(projection1)
+        .pointRadius(1.5);
+
+      projection = projection1;
+      skyProjection = skyProjection1;
+
+      svg
+          .selectAll("circle").style("fill-opacity", 1);
+      svg
+          .selectAll(".labels").style("fill-opacity", 1);
+      svg
+          .selectAll("ellipse").style("fill-opacity", 1);
+      svg
+          .selectAll("rect").style("fill-opacity", 0);
+
+      //document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
+
+      proj = 1;
+      refresh();
+      position_labels();
+    }
+
+    function projectionTween(projection0, projection1) {
+      return function(d) {
+        var t = 0;
+        var projection = d3.geoProjection(project)
+            .scale(1)
+            .translate([width / 2, height / 2]);
+        var path = d3.geoPath(projection);
+        function project(λ, φ) {
+          λ *= 180 / Math.PI, φ *= 180 / Math.PI;
+          var p0 = projection0([λ, φ]), p1 = projection1([λ, φ]);
+          return [(1 - t) * p0[0] + t * p1[0], (1 - t) * -p0[1] + t * -p1[1]];
+        }
+        return function(_) {
+          t = _;
+          return path(d);
+        };
+      };
+    }
+
+    function enableRotation() {
+      d3.timer(function(elapsed) {
+        projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+        svg.selectAll("path").attr("d", path);
+         position_labels();
+      });
+    }
+
+    function position_labels() {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      svg
+        .selectAll(".label")
+        .attr("text-anchor", function(d) {
+          var x = projection(d.geometry.coordinates)[0];
+          return x < offsetX - 20 ? "end" : x < offsetX + 20 ? "middle" : "start";
+        })
+        .attr("transform", function(d) {
+          var loc = projection(d.geometry.coordinates),
+            x = loc[0],
+            y = loc[1];
+          var offset = x < offsetX ? -5 : 5;
+          return "translate(" + (x + offset) + "," + (y - 2) + ")";
+        })
+        .style("display", function(d) {
+          var d = d3.geoDistance(d.geometry.coordinates, centerPos);
+          return d > 1.57 ? "none" : "inline";
+        });
+    }
+
+    function flying_arc(pts) {
+      var source = pts.geometry.coordinates[0],
+        target = pts.geometry.coordinates[1];
+      var mid1 = location_along_arc(source, target, .333);
+      var mid2 = location_along_arc(source, target, .667);
+      var result = [projection(source),
+        skyProjection(mid1),
+        skyProjection(mid2),
+        projection(target)
+      ]
+      // console.log(result);
+      return result;
+    }
+
+    function fade_at_edge(d) {
+      var centerPos = projection.invert([offsetX, offsetY]);
+      start = d.geometry.coordinates[0];
+      end = d.geometry.coordinates[1];
+      var start_dist = 1.57 - d3.geoDistance(start, centerPos),
+        end_dist = 1.57 - d3.geoDistance(end, centerPos);
+      var fade = d3.scaleLinear().domain([-.1, 0]).range([0, .1])
+      var dist = start_dist < end_dist ? start_dist : end_dist;
+      return fade(dist)
+    }
+
+    function location_along_arc(start, end, loc) {
+      var interpolator = d3.geoInterpolate(start, end);
+      return interpolator(loc)
+    }
+
+    function dragged() {
+      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+      o1[1] =
+        o1[1] > maxElevation ?
+        maxElevation :
+        o1[1] < -maxElevation ?
+        -maxElevation :
+        o1[1];
+      projection.rotate(o1);
+      skyProjection.rotate(o1);
+      refresh();
+    }
+
+    function zoomed() {
+      if (d3.event) {
+        svg.attr("transform", "scale(" + d3.event.transform.k + ")");
+      }
+    }
+
+    function refresh() {
+      svg.selectAll(".land").attr("d", path);
+      svg.selectAll(".countries path").attr("d", path);
+      svg.selectAll(".graticule").attr("d", path);
+      refreshLandmarks();
+      refreshFlyers();
+    }
+
+    function refreshLandmarks() {
+      svg.selectAll(".point").attr("d", path);
+      position_labels();
+    }
+
+    function refreshFlyers() {
+      svg.selectAll(".arc").attr("d", path)
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+      svg.selectAll(".flyer")
+        .attr("d", function(d) {
+          return swoosh(flying_arc(d))
+        })
+        .attr("opacity", function(d) {
+          return fade_at_edge(d)
+        });
+    }
+
+    function decodeHtml(html){
+        var txt = document.createElement("textarea");
+        txt.innerHTML = html;
+        return txt.value;
+    }
+
+    var legends = document.getElementsByClassName("legend_container");
+
+    var options =  {
+          type: 'horizontalBar',
+          data: {
+              labels: [],
+              datasets: [{
+                  backgroundColor: ['#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff'],
+                  data: []
+              }]
+          },
+          options: {
+              title: {
+                  display: true,
+                  text: 'Flow into Country',
+                  fontFamily:"'Roboto Condensed','sans-serif'",
+                  fontColor:'#ffffff',
+                  fontSize:22,
+              },
+              legend:{
+                  display:false
+              },
+              layout: {
+                  padding: {
+                      left: 10,
+                      right: 10,
+                      top: 10,
+                      bottom: 10
+                  }
+              },
+              tooltips: {
+                  mode: 'index',
+                  intersect: true,
+                  titleFontFamily:"'Roboto Condensed','sans-serif'",
+                  titleFontColor:'#ffffff',
+                  titleFontSize:16,
+                  bodyFontFamily:"'Roboto Condensed','sans-serif'",
+                  bodyFontColor:'#ffffff',
+                  bodyFontSize:16
+              },
+              responsive: true,
+              scales: {
+                    yAxes: [{
+                      ticks: {
+                          fontFamily:"'Roboto Condensed','sans-serif'",
+                          fontColor:'#ffffff',
+                          fontSize:14
+                          }
+                      }],
+                    xAxes: [{
+                      ticks: {
+                          fontFamily:"'Roboto Condensed','sans-serif'",
+                          fontColor:'#ffffff',
+                          fontSize:16
+                          }
+                      }],
+                  },
+              }
+        }
+
+    function setRefugee(){
+        data = 0;
+
+        svg
+          .selectAll(".point").style("opacity", 0.6);
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("HDI_legend").style.display = "block";
+    }
+    function setFlow(){
+        data = 1;
+
+        svg
+          .selectAll(".point").style("opacity", 0);
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("school_legend").style.display = "block";
+    }
+    function setSettlement(){
+        data = 2;
+
+        for (var i = 0; i < legends.length; i++) {
+          legends[i].style.display = 'none';
+        }
+        document.getElementById("pov_legend").style.display = "block";
+    }
+
+
+  </script>
+</body>
+
+</html>
