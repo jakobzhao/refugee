@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mtendeli</title>
+    <title>Gambela2</title>
 
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
@@ -45,29 +45,40 @@
         h5 {
             margin: 0;
         }
-
+        .leaflet-tooltip.my-labels {
+            background-color: transparent;
+            color: orange;
+            font-size: 2.1rem;
+            font-variant: small-caps;
+            border: transparent;
+            box-shadow: none;
+            }
     </style>
 </head>
 <body>
 
     <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
     <div id="infoPanel">
-        <h1>MTENDELI</h1> 
+        <h1>GAMBELA 2/2</h1> 
         <h2 style="display: inline-block;">Population: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">65,000</h2><br>
         <h5 style="display: inline-block;">Last updated: </h5>&nbsp;<h5 id="updated" style="display: inline-block;">null</h5>
         <p>
             <div id="text">
                 <div class="legend_container" id="leg_1">
-                    <p><a href="https://reliefweb.int/sites/reliefweb.int/files/resources/65652.pdf" target = "_blank"style="display: inline-block; color: lightblue;">Mtendeli refugee camp </a> was opened on 14th, January 2016, as an emergency response to receive 40,000 Burundian refugees relocated from <a href="nyarugusu.html" style="display: inline-block; color: silver;">Nyarugusu </a> refugee camp to <a href="nduta.html" style="display: inline-block; color: silver;">Nduta </a> and Mtendeli refugee camps. The camp suspended relocation for short time in Feb, 2016 due to land issue and water shortage then resumed in April 2016 and stopped again in May 2016 to receive new arrivals. The camp ceassed to receiving new arrivals from Burundi on 3rd October 2016 when the population reached 50,000 individuals. The camp is now on care and maintenance phase and water shortage remain an issue while 80% of the camp population are still living in
-                        emergency shelters.
-                            
-                    </p>  
-                    <p style="display: inline-block;">Number of Refugees in  &nbsp;<a href="https://data2.unhcr.org/en/situations/burundi/location/2038" target = "_blank"style="display: inline-block; color: lightblue;">Mtendeli</a></p>
+                    <p><a href="https://data2.unhcr.org/en/country/eth" target = "_blank"style="display: inline-block; color: lightblue;">Ethiopia </a> has a long standing history of hosting refugees. The country maintains an open door policy for refugee inflows and allows humanitarian access and protection to those seeking asylum on its territory. The South Sudanese are the largest refugee population in Ethiopia, totalling 422,240 as of 31 August 2018. 
+                    </p> 
+                    <p>
+                      Most of them reside in refugee camps in the Gambella region: <a href="pugnido.html" style="display: inline-block; color: silver;">Pugnido </a>, Nguenyyel, Jewi, Okugo, Kule e Tierkidi. The Nguenyyiel Refugee Camp is the newest and largest camp, hosting (April 2019) 74,095 people. 
+                    </p> 
+                    <!-- <p> 
+                        Most of them reside in refugee camps in the Gambella region: <a href="pugnido.html" target = "_blank"style="display: inline-block; color: silver;">Pugnido </a>, Nguenyyel, Jewi, Okugo, Kule e Tierkidi. Pugnido  is the oldest refugee camp in the Gambella Region of Western Ethiopia. Pugnido hosts South Sudan refugees who arrived in different waves – since 1993, in 2012 and following post-December 2013 conflicts in the country of origin. In May 2019 it was home to 68,176 refugees. 
+                    </p>  -->
+                    <p style="display: inline-block;">Number of Refugees in  &nbsp;<a href="https://data2.unhcr.org/en/situations/southsudan/location/1840" target = "_blank"style="display: inline-block; color: lightblue;">Gambela</a></p>
                     <p>    <div id="mycanvas">
                             <canvas id="canvas" width="900" height="600" ></canvas>
                            </div>
                     </p>
-                    <p style="display: inline-block;">Country of Origin of Refugees in &nbsp;<a href="https://reliefweb.int/report/united-republic-tanzania/united-republic-tanzania-inter-agency-operational-update-june-2019" target="_blank" style="display: inline-block; color: lightblue;">Tanzania</a></p>
+                    <p style="display: inline-block;">Country of Origin of Refugees in &nbsp;<a href="https://data2.unhcr.org/en/country/eth" target="_blank" style="display: inline-block; color: lightblue;">Ethiopia</a></p>
                     <p>    <div id="mycanvas">
                             <canvas id="canvas2" width="900" height="600" ></canvas>
                            </div>
@@ -93,6 +104,7 @@
     <script src="../js/chart.js"></script>
     <script src="../js/Chart.PieceLabel.min.js"></script>
     <script src="../js/minimap.js"></script>
+    <script src="leaflet-ajax.js"></script>
     <script>
         const ps = new PerfectScrollbar('#text', {
             wheelSpeed: .1,
@@ -102,7 +114,7 @@
     </script>
     <script>
             window.onload = function(){
-            $.getJSON("https://data2.unhcr.org/api/population/get?widget_id=55522&geo_id=862&sv_id=13&population_collection=12", function() {
+            $.getJSON("https://data2.unhcr.org/api/population/get?widget_id=120654&geo_id=160&sv_id=5&population_group=4949", function() {
                 
             }).then(function(data) {
     
@@ -116,11 +128,11 @@
         </script>
     <script>
         var map = L.map('map', {
-                minZoom: 13,
-                maxZoom: 14,
+                minZoom: 14,
+                maxZoom: 15,
                 zoomControl:false
             });
-            map.setView([-3.425, 30.885], 14);
+        map.setView([8.30, 34.28], 14);
 
         var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
                     
@@ -128,11 +140,12 @@
 
             data = {"type": "FeatureCollection",
                         "features": [
+
                             {
                                 "type": "Feature",
                                 "properties": {
                                     "title": "12/2015",
-                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/mtendeli_2015/{z}/{x}/{y}"
+                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/nguenyyiel_2015/{z}/{x}/{y}"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -147,7 +160,7 @@
                                 "type": "Feature",
                                 "properties": {
                                     "title": "12/2016",
-                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/mtendeli_2016/{z}/{x}/{y}"
+                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/nguenyyiel_2016/{z}/{x}/{y}"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -162,7 +175,7 @@
                                 "type": "Feature",
                                 "properties": {
                                     "title": "12/2017",
-                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/mtendeli_2017/{z}/{x}/{y}"
+                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/nguenyyiel_2017/{z}/{x}/{y}"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -177,7 +190,7 @@
                                 "type": "Feature",
                                 "properties": {
                                     "title": "12/2018",
-                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/mtendeli_2018/{z}/{x}/{y}"
+                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/nguenyyiel_2018/{z}/{x}/{y}"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -193,7 +206,7 @@
                                 "type": "Feature",
                                 "properties": {
                                     "title": "09/2019",
-                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/mtendeli_2019/{z}/{x}/{y}"
+                                    "base": "https://storage.googleapis.com/geeovanni/nat_geo/nguenyyiel_2019/{z}/{x}/{y}"
                                 },
                                 "geometry": {
                                     "type": "Point",
@@ -250,7 +263,17 @@
             }
 
             addControlPlaceholders(map);
-
+            var pointLayer = L.geoJSON.ajax("labels.geojson", {
+                pointToLayer: function(feature,latlng){
+                    label = String(feature.properties.label_exp) // Must convert to string, .bindTooltip can't use straight 'feature.properties.attribute'
+                    return new L.CircleMarker(latlng, {
+                    radius: 1,
+                    opacity:0,
+                    }).bindTooltip(label, { direction: "center", permanent: true, opacity: 0.7, className: "my-labels"}).openTooltip();
+                    }
+                });
+                
+                map.addLayer(pointLayer);
             var timeline = L.control.timelineSlider({
                 position:"verticalcenterright",
                 timelineItems: ["12/2015", "12/2016", "12/2017",  "12/2018", "09/2019"], 
@@ -261,8 +284,8 @@
     </script>
     <script>
         Chart.defaults.global.defaultFontFamily = "Roboto Condensed";
-        var refugees =[0, 460,50732, 46161, 37213, 33807]
-        var arrDate = ['2014','2015', '2016', '2017', '2018', '2019']
+        var refugees =[68296, 251264,281674, 338388, 421392, 426465, 401594]
+        var arrDate = ['2013','2014','2015', '2016', '2017', '2018', '2019']
         // $.getJSON("https://data2.unhcr.org/api/population/get/timeseries?widget_id=55528&geo_id=856&sv_id=13&population_collection=12&frequency=day&fromDate=2015-04-01", function(data) {
         
         // }).then(function(data) {
@@ -307,15 +330,14 @@
                         },
                         gridLines: {
                             drawTicks: false,
-                            display: true,
+                            display: false,
                             color: "rgba(255,255,255,0.05)",
                         }
                     }],
                     xAxes: [{
                         gridLines: {
                             zeroLineColor: "transparent",
-                            display: true,
-                            color: "rgba(255,255,255,0.25)",
+                            color: "rgba(255,255,255,0.5)",
                         },
                         ticks: {
                             padding: 20,
@@ -336,17 +358,24 @@
 			data: {
 				datasets: [{
 					data: [
-						228384,79463
+						401594, 253840, 112498, 62461, 75438,
 					],
 					backgroundColor: [
 						window.chartColors.blue,
-						window.chartColors.orange,
+                        window.chartColors.orange,
+                        window.chartColors.yellow,
+                        window.chartColors.green,
+                        window.chartColors.red,
 					],
 					label: 'Dataset 1'
 				}],
 				labels: [
-					'Burundi',
-					'DRC',
+					'South Sudan',
+                    'Somalia',
+                    'Eritrea',
+                    'Sudan',
+                    'Others'
+                    
 
 				]
 			},

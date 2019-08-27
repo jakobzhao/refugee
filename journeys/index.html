@@ -16,7 +16,7 @@ html {
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-weight: 400;
-    background-color:rgba(82, 87, 96,1);
+    background-color:rgba(82, 87, 96,0.7);
     }
 
     @-moz-document url-prefix() {
@@ -29,6 +29,7 @@ body {
     margin:0; 
     padding:0; 
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.3rem;
     }
 h1 {
     padding:  25px 10px 0px 0px;
@@ -53,12 +54,14 @@ h3 {
     text-decoration: none;
     text-align: center;
     font-weight:400;
+    font-size: 1.3rem;
 }
 h4 {
     text-align: center;
 }
 h5 {
     text-align: center;
+    font-weight:400;
 }
 img {
     width: 90%;
@@ -81,7 +84,7 @@ img {
     margin-left: 60%;
     font-family: 'Roboto Condensed', sans-serif;
     overflow-y: none;
-    background-color:rgba(82, 87, 96,0.7);
+    /* background-color:rgba(82, 87, 96,0.7); */
     color:white;
     }
 small{
@@ -150,14 +153,20 @@ iframe.mahama {
         .mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
         .mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
             border-top-color: rgb(255, 0, 0, 0);
-            }
+    }
+a {
+    color: silver;
+}
+p{
+    font-size: 1rem;
+}
 </style>
 </head>
 <body> 
 <div id='map'></div>
 <div id='info'></div>
 <div id='features'>
-    <h1>Three Mothers Lead a Daring Escape from Burundi</h1>   
+    <h1>Three Mothers Lead <br>a Daring Escape from Burundi</h1>   
     <h3>Fleeing pre-election violence, three families catch a bus, ride bicycles <br>and finally scramble on foot to reach safety in Rwanda.</h3><h5>
             Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
     </h5><br><br>
@@ -167,7 +176,7 @@ iframe.mahama {
 
 Jeanne and her children are among some 25,000 people who have fled pre-election violence in Burundi and arrived in Rwanda in the last several weeks.</p>
         
-“The Imbonerakure would come and paint our houses,” she says, describing threats by the youth wing of the ruling party. “They painted mine. They painted red on my house at night, and when we opened the door the next morning we saw that the house was painted. I don’t remember the exact date, but I think it was in March, perhaps the 23rd.”</p>
+<p>“The Imbonerakure would come and paint our houses,” she says, describing threats by the youth wing of the ruling party. “They painted mine. They painted red on my house at night, and when we opened the door the next morning we saw that the house was painted. I don’t remember the exact date, but I think it was in March, perhaps the 23rd.”</p>
 
 
 </section>
@@ -225,7 +234,7 @@ As of October 2018, there are some 69,000 Burundian refugees registered in Rwand
 Mahama camp, which consists of two sites. Another 11,000 live in urban areas, mostly in Kigali and Huye. There are
 four reception centres to receive new arrivals who are recognised as refugees on a prima facie basis.</p>
 <img src="assets/img/construction.jpg" width="100%"></img>
-<p><small>Construction of semi-permanent shelters in Mahama Refugee camp [<a href="https://www.unhcr.org/rw/559-559.html" target="_blank">&copy;UNHCR – Shaban Masengesho]</a></small></p>
+<p><small>Construction of semi-permanent shelters in Mahama Refugee camp (<a href="https://www.unhcr.org/rw/559-559.html" target="_blank">&copy;UNHCR – Shaban Masengesho</a>)</small></p>
 
 <h4 style="font-weight:400; font-size:18px;">Mahama camp growth from satellite images</h4>
 <p>
@@ -299,7 +308,7 @@ style: {
     "sources": {
     "raster-tiles": {
     "type": "raster",
-    "tiles": ["https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"],
+    "tiles": ["https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"], //["https://basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"]
     "tileSize": 256,
     "attribution": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }
