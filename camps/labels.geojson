@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "labels",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Yida" }, "geometry": { "type": "Point", "coordinates": [ 30.116195635885909, 10.134750464911063 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Ajuong Thok" }, "geometry": { "type": "Point", "coordinates": [ 30.32006107154675, 10.000527074883644 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Pamir" }, "geometry": { "type": "Point", "coordinates": [ 30.388069220874296, 9.921303336396358 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Dagahaley" }, "geometry": { "type": "Point", "coordinates": [ 40.327793609916831, 0.206103517851676 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Ifo 2" }, "geometry": { "type": "Point", "coordinates": [ 40.351716767662104, 0.148799209764175 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Ifo" }, "geometry": { "type": "Point", "coordinates": [ 40.345179625720071, 0.114166266284108 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Hagadera" }, "geometry": { "type": "Point", "coordinates": [ 40.39970217127906, 0.022924455348669 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Kule" }, "geometry": { "type": "Point", "coordinates": [ 34.265772918812019, 8.30313048292965 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Terkidi" }, "geometry": { "type": "Point", "coordinates": [ 34.291043353466748, 8.285536609359687 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Nguenyyel" }, "geometry": { "type": "Point", "coordinates": [ 34.330183717239777, 8.314492774028508 ] } },
+{ "type": "Feature", "properties": { "id": null, "label_exp": "Pugnido" }, "geometry": { "type": "Point", "coordinates": [ 34.272358048363735, 7.681503468860801 ] } }
+]
+}

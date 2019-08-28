@@ -3,14 +3,14 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Global Refugee Atlas</title>
+  <title>Aid</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">        
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
-     html {
+    html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -166,19 +166,27 @@
         text-align:center;
         line-height:64px;
     }
+    h2{
+      font-family: 'Roboto Condensed', sans-serif;
+        font-variant: small-caps;
+        font-weight:bold;
+        font-size:38px;
+        width:200px;
+        text-align:center;
+        line-height:64px;
+        margin-left:50px;
+    }
 
   </style>
 </head>
 
 <body>
 <div id ="mainMenu">
-    <h1>Global Refugee Atlas</h1>
+    <h1>Aid</h1>
     <div id = "text">
-        <a href="global_menu.html" onmouseover="showGlobal()" onmouseout="hideGlobal()" style="display:block;" id="but">Context</a>
-        <a href="journey_menu.html" onmouseover="showRoutes()" onmouseout="hideRoutes()" id="but" style="display:block;">Journeys</a>
-        <a href="camp_menu.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Settlements</a>
-        <a href="aid_menu.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Aid</a>
-        <a href="tweets/index.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Perception</a>
+        <a href="treaties.html" id="but" style="display:block;">Treaties</a>  
+        <a href="contributions.html" id="but" style="display:block;">Contributions</a>  
+        <a href="budget.html" id="but" style="display:block;">Budget</a>  
     </div>
 </div> 
 <svg>
@@ -234,7 +242,8 @@
       countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
       countryById = {},
       countries,
-      countryCentroids = {},
+      routePaths,
+      routeCentroids = {},
       proj = 0;
 
     var radius = width / 3;
@@ -354,6 +363,7 @@ gradient.append("svg:stop")
     .attr("stop-opacity", 1);
 
   countries = topojson.feature(world, world.objects.countries).features;
+  routePaths = routes.features;
 
   countryNames.forEach(function(d) {
     countryById[d.iso_n3] = d.name;
@@ -404,17 +414,16 @@ gradient.append("svg:stop")
     .attr("class", "countries")
     .selectAll("path")
     .data(countries, function(d){
-            countryCentroids[d.id] = d3.geoCentroid(d);
+            //countryCentroids[d.id] = d3.geoCentroid(d);
         })
     .enter()
     .append("path")
     .attr("d", path)
-    .attr("class", "country")
     .attr("name",function(d){
        return countryById[d.id];
     })
     .attr("fill", function (d) {
-        return "#a6a6a6";
+        return "#999966";
     })
     .attr("box-shadow", 'inset 0 0 10px #000000');
   svg
@@ -438,58 +447,75 @@ gradient.append("svg:stop")
     .text(function(d) {
       return d.properties.NAME;
     });
-  //enableRotation();
 
   position_labels();
   //enableRotation();
 
-    svg
-        .append("g")
-        .attr("class", "points camps")
-        .selectAll(".points")
-        .data(camps.features)
-        .enter()
-        .append("path")
-        .attr("class", "point1")
-        .attr("opacity", 0)
-        .attr("fill", "#806600")
-        .attr("d", path.pointRadius(3));
-      svg
-        .append("g")
-        .attr("class", "points settlements")
-        .selectAll(".points")
-        .data(settlements.features)
-        .enter()
-        .append("path")
-        .attr("class", "point1")
-        .attr("opacity", 0)
-        .attr("fill", "#806600")
-        .attr("d", path.pointRadius(3));
-      svg
-        .append("g")
-        .attr("class", "points dispersed")
-        .selectAll(".points")
-        .data(dispersed.features)
-        .enter()
-        .append("path")
-        .attr("class", "point1")
-        .attr("fill", "#806600")
-        .attr("opacity", 0)
-        .attr("d", path.pointRadius(3));
-
-      svg
-        .append("g")
-        .attr("class", "lines")
-        .selectAll(".lines")
-        .data(routes.features)
-        .enter()
-        .append("path")
-        .attr("d", path)
-        .attr("class", "line")
-        .attr("stroke", "rgba(153, 51, 51, 0)");
+  svg
+    .append("g")
+    .attr("class", "lines")
+    .selectAll(".lines")
+    .data(routePaths)
+    .enter()
+    .append("path")
+    .attr("d", path)
+    .attr("class", "line")
+    .attr("stroke", "rgba(153, 51, 51, 1");
         
 }
     
+    function selectType(id){        
+        var rotate = projection.rotate(),
+            focusedRoute = route(routePaths, id),
+            p = d3.geoCentroid(focusedRoute);
+
+        svg.selectAll(".line")
+          .filter(function(d) {
+          /*countryTooltip.text(countryById[d.id])
+            .style("left", (d3.event.pageX + 7) + "px")
+            .style("top", (d3.event.pageY - 15) + "px")
+            .style("display", "block")
+            .style("opacity", 1);*/
+            if (d.properties.id == id)
+                return true;
+          })
+          .attr("stroke", "rgba(0, 0, 0, 1");
+          
+        svg.selectAll(".line")
+          .filter(function(d) {
+            if (d.properties.id != id)
+                return true;
+          })
+          .attr("stroke", "rgba(153, 51, 51, 0.2");
+          
+      svg.selectAll(".focused").classed("focused", focused = false);
+
+        (function transition() {
+          d3.transition()
+          .duration(2500)
+          .tween("rotate", function() {
+            var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+            return function(t) {
+              projection.rotate(r(t));
+              position_labels();
+              svg.selectAll("path").attr("d", path)
+              .classed("focused", function(d, i) { return d.id == focusedRoute.id ? focused = d : false; });
+            };
+          })
+          })();
+
+        function route(cnt, sel) { 
+          for(var i = 0, l = cnt.length; i < l; i++) {
+            if(cnt[i].properties.id == sel) {return cnt[i];}
+          }
+        };
+    }
+
+    function resetRoutes(){
+      svg.selectAll(".line")
+          .attr("stroke", "rgba(153, 51, 51, 1");
+    }
+
     function enableRotation() {
       d3.timer(function(elapsed) {
         projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
@@ -499,7 +525,7 @@ gradient.append("svg:stop")
     }
 
     function endRotation() {
-      svg.selectAll("path").attr("d", path);
+
     }
 
     function position_labels() {
@@ -582,7 +608,6 @@ gradient.append("svg:stop")
 
     function refreshLandmarks() {
       svg.selectAll(".point").attr("d", path);
-      svg.selectAll(".point1").attr("d", path);
       svg.selectAll(".line").attr("d", path);
       position_labels();
     }
@@ -601,43 +626,14 @@ gradient.append("svg:stop")
         });
     }
 
-    function showGlobal(){
-        svg
-          .selectAll(".country").attr("fill", "#53c653");
-    }
-    function hideGlobal(){
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
-    }
-
     function showRoutes(){
         svg
-          .selectAll(".line")
-          .attr("stroke", "rgba(153, 51, 51, 1)");
-        svg
-          .selectAll(".country").attr("fill", "#999966");
+          .selectAll(".line").attr("stroke", "rgba(153, 51, 51, 1");
     }
     function hideRoutes(){
         svg
-        .selectAll(".line")
-        .attr("stroke", "rgba(153, 51, 51, 0)");
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
+          .selectAll(".line").attr("stroke", "rgba(153, 51, 51, 0");
     }
-
-    function showCamps(){
-        svg
-          .selectAll(".point1").style("opacity", 0.6);
-        svg
-          .selectAll(".country").attr("fill", "#ffe066");
-    }
-    function hideCamps(){
-        svg
-          .selectAll(".point1").style("opacity", 0);
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
-    }
-
   </script>
 </body>
 

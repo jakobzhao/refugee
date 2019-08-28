@@ -6,21 +6,23 @@
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="../assets/img/nglogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../tweets/assets/nglogo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/master.css" />
+    <link rel="stylesheet" href="../css/perfect-scrollbar.css" />
     <link rel="stylesheet" href="../css/Control.MiniMap.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
-    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="../tweets/js/utils.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    
     <style>
         html {
-     -moz-osx-font-smoothing: grayscale;
-     -webkit-font-smoothing: antialiased;
-     font-smoothing: antialiased;
-     font-weight: 400;
-     }
- 
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 400;
+        }
+    
      @-moz-document url-prefix() {
          body {
              font-weight: lighter !important;
@@ -32,6 +34,7 @@
         }
         html, body, #map {
             height: 100%;
+            font-family: 'Roboto Condensed', sans-serif;
         }
         .lorem {
             font-style: italic;
@@ -41,28 +44,227 @@
         .leaflet-marker-shadow {
             opacity: 0;
         }
+        h5 {
+            margin: 0;
+        }
+        #map  {
+      position:relative;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      bottom: 0;
+      /* z-index: 1000 !important; */
+      left: 0;
+      right: 0;
+      margin: 0;
+      background: #fff;
+      font-family: 'Roboto Condensed', sans-serif;
+      overflow: hidden;
+    }
+    .legendx {
+      line-height: 16px;
+      width: 140px;
+      color: white;
+      font-family: 'Roboto Condensed', sans-serif;
+      padding: 6px 8px;
+      border-radius: 5px;
+    }
+
+    .legendx i {
+      width: 16px;
+      height: 16px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.9;
+    }
+
+    .legendx img {
+      width: 16px;
+      height: 16px;
+      margin-right: 3px;
+      float: left;
+    }
+
+    .legendx p {
+      font-size: 12px;
+      line-height: 16px;
+      margin: 0;
+    }
+
+    #mapFunc {
+      font-size: small
+    }
+
+    .control {
+      color: #8c510a;
+      font-size: 10px;
+      position: relative;
+      border: 5px;
+      top: 35%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      opacity: 0.8;
+      text-shadow: 1px 1px 1px black;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 46px;
+      height: 24px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    /* The slider */
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(22px);
+      -ms-transform: translateX(22px);
+      transform: translateX(22px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 16px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .leaflet-control-layers {
+      position: relative;
+      width: 116px;
+    }
+   
+    #info {
+      position: fixed;
+      z-index: 1000;
+      left: 420px;
+      top: 10px;
+      width: 200px;
+      color: white;
+      padding: 6px 8px;
+      background:rgba(82, 87, 96,0.7);
+      border-right:2px solid #666666;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
 
     </style>
 </head>
 <body>
+    <div id="info">
+        <h5>Feature Information</h5>
+        <div class='update'>
+          <h5>Hover over a feature</h5>
+        </div>
+      </div>
     <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
     <div id="infoPanel">
         <h1>ZAATARI</h1> 
-                <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-                <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
-                <button class="dropbtn" id="dataType">Select Map</button>
-                    <div class="dropdown-content">
-                        <a href="#" id="but1" class="selection" style="background:#ddd;" onclick="addTimeline()">Timeline</a>
-                        <a href="#" id="but2" class="selection" onclick="addSlider()">Comparison</a>
-                    </div>
-                </div>
+        <h2 style="display: inline-block;">Population: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">65,000</h2><br>
+        <h5 style="display: inline-block;">Last updated: </h5>&nbsp;<h5 id="updated" style="display: inline-block;">null</h5>
+        <p>
             <div id="text">
                 <div class="legend_container" id="leg_1">
-                    <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
-                    <p>Population: 10,000</p>
-                    <p>National Origin Graph?</p>
+                    <p><a href="https://data2.unhcr.org/en/documents/download/64690" target = "_blank"style="display: inline-block; color: lightblue;"> Zaatari </a> Camp, close to Jordan’s northern border with Syria, has become emblematic of the displacement of Syrians across the Middle East following its establishment in 2012. In that time, the camp’s evolution, from a small collection of tents into an urban settlement of some 80,000 persons reflects both the needs and aspirations of the camp’s residents and a transition to a more predictable, cost effective and participatory platform for the delivery of assistance.</p><p> This includes a household level electricity distribution network powered by a Solar PV plant which has been recently inaugurated. The Camp’s informal market, reflecting the vibrant trade relationship between the peoples of northern Jordan and southern Syria, comprises of approximately 3,000 informal shops and businesses.</p>
+                      
+                      <p>Camp features (<a href="https://benjiantolin.github.io/zaatari/map.html" target="_blank"style="display: inline-block; color: lightblue;">source</a>)</p>
+                    
+                        <div class="row col-md-12">
+                            <div class="col-md-6 align-items-center">
+                              <span>Facility Type</span>
+                              <label id="luSwitcher" class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                            </div>
+                            
+                          </div>
+                          <div class="row col-md-12">
+                            <div class="col-md-6 legendx">
+                              <i style="background: #66c2a5; opacity: 0.8"></i>
+                              <p>Community Space</p>
+                              <i style="background: #b398cf; opacity: 0.8"></i>
+                              <p>Infrastructure</p>
+                              <i style="background: #ff9c67; opacity: 0.8"></i>
+                              <p>Health</p>
+                              <i style="background: #fdd250; opacity: 0.8"></i>
+                              <p>Education</p>
+                              <i style="background: #b3b3b3; opacity: 0.8"></i>
+                              <p>Vacant</p><br>
+                            </div><div class="col-md-6 align-items-center">
+                                <span>Population</span>
+                                <label id="popSwitcher" class="switch">
+                                  <input type="checkbox">
+                                  <span class="slider round"></span>
+                                </label>
+                              </div>
+                            <div class="col-md-6 legendx">
+                              <i style="background:#ffffcc; opacity: 0.8"></i>
+                              <p>
+                                <5000</p> <i style="background: #fed976; opacity: 0.8"></i>
+                                  <p>5001-6000</p>
+                                  <i style="background:#fd8d3c; opacity: 0.8"></i>
+                                  <p>6001-7000</p>
+                                  <i style="background:#e31a1c; opacity: 0.8"></i>
+                                  <p>7001-8000</p>
+                                  <i style="background: #800026; opacity: 0.8"></i>
+                                  <p>>8000</p>
+                            </div>
+                    
+                      </div>
+
+                      
+                    <p style="display: inline-block;">Number of Refugees in  &nbsp;<a href="https://data2.unhcr.org/en/situations/syria/location/53" target = "_blank"style="display: inline-block; color: lightblue;">Zaatari</a></p>
+                    <p>    <div id="mycanvas">
+                            <canvas id="canvas" width="900" height="600" ></canvas>
+                           </div>
+                    </p>
+                    <br><br><br><br>
+                   
                 </div>
             </div>
+        
     </div>
 
     <div id="map"></div>
@@ -71,204 +273,321 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.4/chroma.min.js"></script>
     <script src="../js/perfect-scrollbar.js"></script>
     <script src="../js/L.Control.Sidebar.js"></script>
-    <script src="../js/leaflet-side-by-side.js"></script>
     <script src="../js/leaflet-timeline-slider.js"></script>
     <script src="../js/chart.js"></script>
     <script src="../js/Chart.PieceLabel.min.js"></script>
     <script src="../js/minimap.js"></script>
-
+    <script>
+        const ps = new PerfectScrollbar('#text', {
+            wheelSpeed: .1,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+          });
+    </script>
+    <script>
+            window.onload = function(){
+            $.getJSON("https://data2.unhcr.org/api/population/get?widget_id=125644&geo_id=53&sv_id=4&population_collection=24", function() {
+                
+            }).then(function(data) {
+    
+                var population = (Number(data.data[0].individuals)).toLocaleString()
+                var update = (data.data[0].date)
+               
+            document.getElementById('pop').innerHTML = population;
+            document.getElementById('updated').innerHTML = update;
+             })
+            };
+        </script>
     <script>
         var map = L.map('map', {
-                minZoom: 13,
+                minZoom: 10,
                 maxZoom: 17,
                 zoomControl:false
             });
-        map.setView([32.2945339,36.2970942], 13);
-        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                    attribution: '@Google'
-            }).addTo(map);
+        map.setView([32.292,36.32], 15);
 
-        data = {"type": "FeatureCollection",
-                "features": [
+        // var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
                     
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2014",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_l_2014-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2015",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_s_2015-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2016",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_s_2016-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2017",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_s_2017-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2018",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_s_2018-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": {
-                            "title": "12/2019",
-                            "base": "https://storage.googleapis.com/geeovanni/zaatari/zaatari_s_2019-01-01_-12-30/{z}/{x}/{y}"
-                        },
-                        "geometry": {
-                            "type": "Point",
-                            "coordinates": [
-                                92.15,
-                                21.20,
-                                1
-                            ]
-                        }
-                    },
-                ]
-            }
-            getDataAddMarkers = function( {label, map, base} ) {
-                map.eachLayer(function (layer) {
-                        if (layer instanceof L.Marker) {
-                            map.removeLayer(layer);                            
-                        }
-                });
-                filteredData = data.features.filter(function (i, n) {
-                    return i.properties.title===label;                   
-                    });
-                var markerArray = [];
-                L.geoJson(filteredData, {
-                    onEachFeature: function onEachFeature(feature, layer) { 
-                        var pippo = feature.properties.base
-                        L.tileLayer(pippo).addTo(map);                        
-                        markerArray.push(layer);
-                    }
-                }).addTo(map);
-                
-                var markerGroup = L.featureGroup(markerArray);
-                // map.fitBounds(markerGroup.getBounds()).setZoom(13);
-               
-            };
+        //     }).addTo(map);
 
-            //center timelineslider
-
-            function addControlPlaceholders(map) {
-                var corners = map._controlCorners,
-                    l = 'leaflet-',
-                    container = map._controlContainer;
-
-                function createCorner(vSide, hSide) {
-                    var className = l + vSide + ' ' + l + hSide;
-
-                    corners[vSide + hSide] = L.DomUtil.create('div', className, container);
-                }
-
-                createCorner('verticalcenter', 'left');
-                createCorner('verticalcenter', 'right');
-            }
-
-            addControlPlaceholders(map);
-
-            var timeline = L.control.timelineSlider({
-                position:"verticalcenterright",
-                timelineItems: ["12/2014","12/2015",  "12/2016", "12/2017", "12/2018", "12/2019"], 
-                changeMap: getDataAddMarkers,
-                extraChangeMapParams: {} })
-            .addTo(map);  
-
-            new L.Control.Zoom({ position: 'topright' }).addTo(map);
-
-            var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                attribution: '@Google'
-            });
-            var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-            });
-
-            var slider = L.control.sideBySide(esri_2015, google_2018);
-
-            function addTimeline(){
-                google_2018.remove(map);
-                esri_2015.remove(map);
-                slider.remove(map);
-                timeline.addTo(map);
-
-                $('#dataType').html("Timeline");
-                $('#but1').css("background","#ddd");
-                $('#but2').css("background","white");
-            }
-            function addSlider(){
-                google_2018.addTo(map);
-                esri_2015.addTo(map);
-                slider.addTo(map);
-                timeline.remove(map);
-
-                $('#dataType').html("Comparison");
-
-                $('#but2').css("background","#ddd");
-                $('#but1').css("background","white");
-            }
-
-            document.getElementsByClassName("leaflet-control-attribution")[0].style.visibility = "hidden";
-
+            
     </script>
+    <script>
+        Chart.defaults.global.defaultFontFamily = "Roboto Condensed";
+        var refugees =[124105, 84615,79253, 77733, 78908, 78577, 76753]
+        var arrDate = ['2013','2014','2015', '2016', '2017', '2018', '2019']
+        // $.getJSON("https://data2.unhcr.org/api/population/get/timeseries?widget_id=55528&geo_id=856&sv_id=13&population_collection=12&frequency=day&fromDate=2015-04-01", function(data) {
+        
+        // }).then(function(data) {
+
+        // $.each( data, function(i) {
+        //     refugees.push(data.data.timeseries[0].individuals);
+        //     arrDate.push(data.data.timeseries[0].data_date);
+        //     });
+        var utils = Samples.utils;
+        var presets = window.chartColors;
+      
+        var ctx = document.getElementById('canvas').getContext("2d"); 
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: arrDate,
+                datasets: [{
+                    label: "",
+                    backgroundColor: utils.transparentize(presets.blue),
+					borderColor: presets.blue,
+                    data: refugees
+                }]
+            },
+            options: {
+                title: {
+                    display: false,
+                    text: ''
+                    
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontColor: "rgba(255,255,255,0.9)",
+                            // fontStyle: "bold",
+                            fontFamily: 'Roboto Condensed', 
+                            beginAtZero: true,
+                            maxTicksLimit: 5,
+                            padding: 20
+                        },
+                        gridLines: {
+                            drawTicks: false,
+                            display: false,
+                            color: "rgba(255,255,255,0.05)",
+                        }
+                    }],
+                    xAxes: [{
+                        gridLines: {
+                            zeroLineColor: "transparent",
+                            color: "rgba(255,255,255,0.5)",
+                        },
+                        ticks: {
+                            padding: 20,
+                            fontColor: "rgba(255,255,255,0.9)",
+                            // fontStyle: "bold"
+                        }
+                    }]
+                }
+            }
+        });
+        // });
+    </script>
+    <script>
+		
+        $(".leaflet-control-zoom").hide();
+
+        L.control.scale({
+        // bottom: 50  ;
+        position: 'topright'
+        }).addTo(map);
+
+        var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}').addTo(map);
+
+        var districts_group = L.layerGroup().addTo(map);
+        var facilities_group = L.layerGroup().addTo(map);
+        var facilityColors = chroma.scale('Set2').mode('lch').colors(5);
+
+        $.when($.getJSON("districts.geojson"),
+        $.getJSON("campFacilitiesAll.geojson"),
+        ).done(function(districts,  facilities) {
+
+        
+        var districtsLayer = L.geoJSON(districts, {
+            style: style,
+            onEachFeature: function(feature, layer) {
+            layer.on({
+                mouseover: highlightFeatureDist,
+                click: highlightFeatureDist,
+                mouseout: function(e) {
+                districtsLayer.resetStyle(e.target);
+                $(".update").html("Hover over a feature");
+                }
+            });
+            }
+        }).addTo(districts_group);
+
+        var faciltiesLayer = L.geoJSON(facilities, {
+            style: styleFacility,
+            onEachFeature: function(feature, layer) {
+            layer.on({
+                mouseover: highlightFeatureFac,
+                click: highlightFeatureFac,
+                mouseout: function(e) {
+                faciltiesLayer.resetStyle(e.target);
+                $(".update").html("Hover over a feature");
+                }
+            });
+            },
+        }).addTo(facilities_group);
+
+        function highlightFeatureDist(e) {
+            // e indicates the current event
+            var layer = e.target; //the target capture the object which the event associates with
+            layer.setStyle({
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            fillColor: 'mediumslateblue',
+            fillOpacity: 0.8
+            });
+
+            $('#info').css('left', '420px');
+            $(".update").html('<b>District: </b>' + layer.feature.properties.DISTRICT +
+            '<br><b>Population: </b>' + layer.feature.properties.totpop +
+            '<br><b>Households: </b>' + layer.feature.properties.hhs
+            );
+        }
+
+        function highlightFeatureFac(e) {
+            // e indicates the current event
+            var layer = e.target; //the target capture the object which the event associates with
+            layer.setStyle({
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            fillColor: 'mediumslateblue',
+            fillOpacity: 0.8
+            });
+
+            $(".update").html('<b>Name: </b>' + layer.feature.properties.NAME_EN +
+            '<br><b>Operator: </b>' + layer.feature.properties.OPERATOR +
+            '<br><b>Type: </b>' + layer.feature.properties.TYPE +
+            '<br><b>Health Type: </b>' + layer.feature.properties.HEALTH_TYP
+            );
+        }
+        });
+
+        colors = chroma.scale('YlOrRd').colors(9); //colors = chroma.scale('OrRd').colors(5);
+        function setColor(density) {
+        var id = 0;
+        if (density > 8500) {
+            id = 8;
+        } else if (density > 8000 && density <= 8500) {
+            id = 7;
+        } else if (density > 7500 && density <= 8000) {
+            id = 6;
+        } else if (density > 7000 && density <= 7500) {
+            id = 5;
+        } else if (density > 6500 && density <= 7000) {
+            id = 4;
+        } else if (density > 6000 && density <= 6500) {
+            id = 3;
+        } else if (density > 5500 && density <= 6000) {
+            id = 2;
+        } else if (density > 5000 && density <= 5500) {
+            id = 1;
+        } else {
+            id = 0;
+        }
+        return colors[id];
+        }
+        // 7. Set style function that sets fill color.md property equal to cell tower density
+        function style(feature) {
+        return {
+            fillColor: setColor(feature.properties.totpop),
+            fillOpacity: 0.4,
+            weight: 2,
+            opacity: 1,
+            color: '#b4b4b4',
+            dashArray: '4'
+        };
+        }
+        // facilityColors = chroma.scale('YlOrRd').colors(17);
+
+        function setColorFacility(type) {
+        var id = 0;
+        if (type == "Child Friendly Space") {
+            id = 0;
+        } else if (type == "Community Center") {
+            id = 0;
+        } else if (type == "Community Office") {
+            id = 0;
+        } else if (type == "Distribution Point") {
+            id = 1;
+        } else if (type == "Health") {
+            id = 2;
+        } else if (type == "Kindergarten") {
+            id = 3;
+        } else if (type == "Mosque") {
+            id = 0;
+        } else if (type == "Office") {
+            id = 1;
+        } else if (type == "Playground") {
+            id = 0;
+        } else if (type == "Recreation") {
+            id = 0;
+        } else if (type == "Recycling Facilities") {
+            id = 1;
+        } else if (type == "Registration") {
+            id = 1;
+        } else if (type == "School") {
+            id = 3;
+        } else if (type == "Security") {
+            id = 1;
+        } else if (type == "Youth Center") {
+            id = 0;
+        } else if (type == "Vacant") {
+            id = 4;
+        } else if (type == "Warehouse") {
+            id = 1;
+        } else if (type == "Water Facilities") {
+            id = 1;
+        } else {
+            id = 0;
+        }
+        return facilityColors[id];
+        }
+
+        function styleFacility(feature) {
+        return {
+            fillColor: setColorFacility(feature.properties.TYPE),
+            fillOpacity: 0.8,
+            weight: 0,
+            opacity: 1,
+            color: '#b4b4b4',
+            dashArray: '4',
+        };
+        }
+
+        $(".leaflet-control-attribution").hide()
+
+        $(".leaflet-control-attribution")
+        .css("bottom", "60px")
+        .css("background-color", "transparent")
+        .html("Supported by <a href='http://geoviz.ceoas.oregonstate.edu'> GeoViz Lab @ Oregon State University </a>");
+
+        $("#luSwitcher input").on("click", function() {
+        if ($("#luSwitcher input:checked").val() === "on") {
+            facilities_group.addTo(map);
+        } else {
+            map.removeLayer(facilities_group);
+        }
+        })
+
+        $("#popSwitcher input").on("click", function() {
+        if ($("#popSwitcher input:checked").val() === "on") {
+            districts_group.addTo(map);
+        } else {
+            map.removeLayer(districts_group);
+        }
+        })
+
+        $("#luSwitcher").click();
+        $("#popSwitcher").click();
+
+
+        window.dataLayer = window.dataLayer || [];
+    </script> 
 </body>
 </html>

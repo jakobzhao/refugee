@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gado</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="../assets/img/nglogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/master.css" />
+    <link href="../css/perfect-scrollbar.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../css/Control.MiniMap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
+
+    <style>
+        html {
+     -moz-osx-font-smoothing: grayscale;
+     -webkit-font-smoothing: antialiased;
+     font-smoothing: antialiased;
+     font-weight: 400;
+     }
+ 
+     @-moz-document url-prefix() {
+         body {
+             font-weight: lighter !important;
+         }
+     }
+        
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+        }
+        .lorem {
+            font-style: italic;
+            color: #AAA;
+        }
+        .leaflet-marker-icon,
+        .leaflet-marker-shadow {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
+    <div id="infoPanel">
+        <h1>GADO</h1> 
+                <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+                <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+                <button class="dropbtn" id="dataType">Select Map</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="but1" class="selection" style="background:#ddd;" onclick="addTimeline()">Timeline</a>
+                        <a href="#" id="but2" class="selection" onclick="addSlider()">Comparison</a>
+                    </div>
+                </div>
+            <div id="text">
+                <div class="legend_container" id="leg_1">
+                    <p>The dire crisis in the Central African Republic continues to trigger massive forced displacement, increasing pressure on resources and living conditions in host communities and countries. Intense militia activity and inter-community violence hampers humanitarian access and exposes civilians to serious protection risks. According to OCHA, CAR remains the country with the highest humanitarian needs per capita, with 50 per cent of the population having to rely on humanitarian assistance to survive, while 25 per cent is displaced either internally or in a neighbouring country.</p>  
+                </div>
+                <canvas id="chart" height="400"></canvas>
+            </div>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+    <script src="../js/perfect-scrollbar.js"></script>
+    <script src="../js/L.Control.Sidebar.js"></script>
+    <script src="../js/leaflet-side-by-side.js"></script>
+    <script src="../js/leaflet-timeline-slider.js"></script>
+    <script src="../js/chart.js"></script>
+    <script src="../js/Chart.PieceLabel.min.js"></script>
+    <script src="../js/minimap.js"></script>
+
+    <script>
+        const ps = new PerfectScrollbar('#text', {
+          wheelSpeed: 2,
+          wheelPropagation: true,
+          minScrollbarLength: 20
+        });
+
+        
+        var map = L.map('map', {
+                minZoom: 13,
+                maxZoom: 18,
+                zoomControl:false
+            });
+        map.setView([5.748, 14.44], 14)
+        var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                    attribution: '@Google'
+            }).addTo(map);
+
+            data = {"type": "FeatureCollection",
+                        "features": [
+                            
+                        {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2013",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_l_2013-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2014",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_l_2014-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2015",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_s_2015-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2016",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_s_2016-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2017",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_s_2017-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "12/2018",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_s_2018-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                            {
+                                "type": "Feature",
+                                "properties": {
+                                    "title": "06/2019",
+                                    "base": "https://storage.googleapis.com/geeovanni/gado/gado_s_2019-01-01_-12-30/{z}/{x}/{y}"
+                                },
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        92.15,
+                                        21.20,
+                                        1
+                                    ]
+                                }
+                            },
+                        ]
+                    }
+                    
+            getDataAddMarkers = function( {label, map, base} ) {
+                map.eachLayer(function (layer) {
+                        if (layer instanceof L.Marker) {
+                            map.removeLayer(layer);                            
+                        }
+                });
+                filteredData = data.features.filter(function (i, n) {
+                    return i.properties.title===label;                   
+                    });
+                var markerArray = [];
+                L.geoJson(filteredData, {
+                    onEachFeature: function onEachFeature(feature, layer) { 
+                        var pippo = feature.properties.base
+                        L.tileLayer(pippo).addTo(map);                        
+                        markerArray.push(layer);
+                    }
+                }).addTo(map);
+                
+                var markerGroup = L.featureGroup(markerArray);
+                // map.fitBounds(markerGroup.getBounds()).setZoom(13);
+               
+            };
+
+            //center timelineslider
+
+            function addControlPlaceholders(map) {
+                var corners = map._controlCorners,
+                    l = 'leaflet-',
+                    container = map._controlContainer;
+
+                function createCorner(vSide, hSide) {
+                    var className = l + vSide + ' ' + l + hSide;
+
+                    corners[vSide + hSide] = L.DomUtil.create('div', className, container);
+                }
+
+                createCorner('verticalcenter', 'left');
+                createCorner('verticalcenter', 'right');
+            }
+
+            addControlPlaceholders(map);
+
+            var timeline = L.control.timelineSlider({
+                position:"verticalcenterright",
+                timelineItems: ["12/2013","12/2014", "12/2015", "12/2016", "12/2017","12/2018", "06/2019"],
+                changeMap: getDataAddMarkers,
+                extraChangeMapParams: {} })
+            .addTo(map);  
+
+            new L.Control.Zoom({ position: 'topright' }).addTo(map);
+
+            var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                attribution: '@Google'
+            });
+            var esri_2015 = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
+
+            var slider = L.control.sideBySide(esri_2015, google_2018);
+            
+            function addTimeline(){
+                google_2018.remove(map);
+                esri_2015.remove(map);
+                slider.remove(map);
+                timeline.addTo(map);
+
+                $('#dataType').html("Timeline");
+
+                $('#but1').css("background","#ddd");
+                $('#but2').css("background","white");
+            }
+            function addSlider(){
+                google_2018.addTo(map);
+                esri_2015.addTo(map);
+                slider.addTo(map);
+                timeline.remove(map);
+
+                $('#dataType').html("Comparison");
+
+                $('#but2').css("background","#ddd");
+                $('#but1').css("background","white");
+            }
+
+            document.getElementsByClassName("leaflet-control-attribution")[0].style.visibility = "hidden";
+
+        var female = [
+                3994,
+                4482,
+                3098,
+                9604,
+                447
+				]
+
+        var options =  {
+            type: 'bar',
+            data: {
+                labels: ['Country','Country','Country','Country','Country'],
+                datasets: [{
+                    backgroundColor: ['#1a75ff','#1a75ff','#1a75ff','#1a75ff','#1a75ff'],
+                    data: [3994,4482,3098,9604,447]
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'National Origin',
+                    fontFamily:"'Roboto Condensed','sans-serif'",
+                    fontColor:'#ffffff',
+                    fontSize:22,
+                },
+                legend:{
+                    display:false
+                },
+                layout: {
+                    padding: {
+                        left: 10,
+                        right: 10,
+                        top: 10,
+                        bottom: 10
+                    }
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: true
+                },
+                responsive: true,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            fontFamily:"'Roboto Condensed','sans-serif'",
+                            fontColor:'#ffffff',
+                            fontSize:16
+                            }
+                        }],
+                    },
+                }
+        }
+
+		window.onload = function() {
+			var ctx = document.getElementById('chart').getContext('2d');
+			window.myBar = new Chart(ctx, options);
+         };
+
+    </script>
+</body>
+</html>
