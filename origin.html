@@ -244,10 +244,8 @@
     });
 
     demographics.forEach(function(d) {
-        refById[d.id] = d.flow_out;
+        refById[d.id] = d.refugees;
     });
-
-    console.log(refById);
     
     var defs = svg.append("defs");
 
