@@ -3,14 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Demographics</title>
+  <title>Context</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="css/globe_master.css" rel="stylesheet"> 
   <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
-   
+   a {
+    color: silver;
+}
    /* SVG styling */
    html {
     -moz-osx-font-smoothing: grayscale;
@@ -30,14 +32,14 @@
 <body>
   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
   <div id="infoPanel">
-      <h1 style="font-size:42px;">DEMOGRAPHICS</h1> 
+      <h1 style="font-size:42px;">CONTEXT</h1> 
       <div id="text">
             <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
             <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
               <button class="dropbtn">Select Map</button>
-              <div class="dropdown-content">
+              <div class="dropdown-content">                
+                <a href="#"onclick="setSchool()">Conflict</a>
                 <a href="#"onclick="setHDI()">HDI</a>
-                <a href="#"onclick="setSchool()">Education</a>
                 <a href="#"onclick="setPoverty()">Poverty</a>
                 <a href="#"onclick="setEnvironment()">Environment</a>
               </div>
@@ -50,12 +52,14 @@
               <p class="legend_label" style="margin-left:18px;">0.4</p>
               <p class="legend_label" style="margin-left:18px;">0.6</p>
               <p class="legend_label" style="margin-left:18px;">0.8</p>
-              <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-              <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+              <h2 style="font-size:24px; margin-top:30px;"></h2>
+              <p style="margin-top:10px;">The Human Development Index is based on the concept that people are the real wealth of a nation. The originators of the HDI recognised that there are three essential components required for humans to develop to their maximum ability: health, education and income. There is general agreement that if any one of these elements is absent, individual achievement will be severely limited (<a href="https://journals.sagepub.com/doi/full/10.1177/1757913913491350" target="_blank">more</a>) </p>
+              <p><img src="assets/img/hdi.png" style="width:100%"/></p>
+              <p style="margin-top:10px;">Countries which score low on the Human Development Index are more likely to experience conflict giving rise to internal displacement and refugee movements. Wealthier countries accept the better educated for permanent settlement, while admitting less skilled manual workers and asylum seekers on a temporary basis. (<a href="https://refuge.journals.yorku.ca/index.php/refuge/article/view/26042" target="_blank">more</a>)</p>
               <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
             </div>
             <div class="legend_container" id="school_legend" style="display:none;">
-              <h2>Avg. Years of School</h2> 
+              <h2>Conflict</h2> 
               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #f9cec7 33%, #f9cec7 50%, #f8a298 50%, #f8a298 66%, #ee756b 66%, #ee756b 83%, #e04040 83%);"></div>
               <p class="legend_label" style="margin-left:40px;">0</p>
               <p class="legend_label" style="margin-left:32px;">6</p>
@@ -145,7 +149,7 @@
     };
 
     const ps = new PerfectScrollbar('#text', {
-      wheelSpeed: 2,
+      wheelSpeed: .2,
       wheelPropagation: true,
       minScrollbarLength: 20
     });
