@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Contributions</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+  <link href="css/globe_master.css" rel="stylesheet"> 
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <style>
+   
+   /* SVG styling */
+   html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-weight: 400;
+    }
+
+    @-moz-document url-prefix() {
+        body {
+            font-weight: lighter !important;
+        }
+    }
+
+    div#world{
+      width: calc(100% - 300px);
+      left:200px;
+      position: absolute;
+    }
+
+.cartogram-tooltip {
+    max-width: 500px !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size:14px !important;
+}
+   </style>
+ </head>
+ 
+ <body>
+   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+   <div id="infoPanel">
+       <h1 style="font-size:43px;">CONTRIBUTIONS</h1> 
+       <div id="text">
+             <div class="legend_container" id="HDI_legend">
+               <h2>Ratio of Contributions to GDP</h2>
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffcc 16%, #ffffcc 33%, #c2e699 33%, #c2e699 50%, #78c679 50%, #78c679 66%, #31a354 66%, #31a354 83%, #006837 83%);"></div>
+               <p class="legend_label" style="margin-left:0px;">Lower</p>
+               <p class="legend_label" style="margin-left:185px;">Higher</p>
+               <canvas id="chartContainer" height="400"></canvas> 
+             </div>
+       </div>
+   </div>
+   <!--<div id="projectionButtons">
+     <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+     <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
+   </div>-->
+   <div id="world"></div>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Use d3-fetch instead of d3-request in ES6 -->
+  <script src="https://d3js.org/d3-request.v1.min.js"></script>
+  <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+  <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v0.3.min.js"></script>
+  <script src="https://unpkg.com/cartogram-chart"></script>
+
+   <script>
+    
+        d3.json("assets/map_data/global/contributions2.json", (error, world) => {
+            if (error) throw error;
+            const colorScale = d3.scaleSequential(d3.interpolateGreens)
+                .domain([0, Math.max(...world.objects.countries.geometries.map(ratio))]);
+            Cartogram()
+                .topoJson(world)
+                .topoObjectName('countries')
+                .iterations(100)
+                .value(({ properties }) =>  properties.Contributions)
+                .color(f => colorScale(ratio(f)))
+                .label(({ properties: p }) => `Contributions of ${p.NAME} (${p.ADM0_A3})`)
+                .units('')
+                .valFormatter(d3.format('$,.0f'))
+                    (document.getElementById('world'));
+            //
+            function ratio({ properties: p }) {
+                return  p.Contributions / p.GDP_MD_EST;
+            }
+        });
+  
+
+  </script>
+</body>
+
+</html>

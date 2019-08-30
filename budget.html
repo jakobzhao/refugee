@@ -3,13 +3,15 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Treaties</title>
+  <title>Budget</title>
+  <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
-
   <link href="css/globe_master.css" rel="stylesheet"> 
+  <link href="css/perfect-scrollbar.css" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <style>
+   
    /* SVG styling */
    html {
     -moz-osx-font-smoothing: grayscale;
@@ -23,59 +25,56 @@
             font-weight: lighter !important;
         }
     }
-  </style>
-</head>
-
-<body>
-  <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
-  <div id="infoPanel">
-      <h1 style="font-size:44px;">TREATIES</h1> 
-      <div id="text">
-            <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-            <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
-              <button class="dropbtn">Select Map</button>
-              <div class="dropdown-content">
-                <a href="#"onclick="setConvention()">Convention</a>
-                <a href="#"onclick="setProtocol()">Protocol</a>
-              </div>
-            </div>
-            <div class="legend_container" id="con_legend">
-              <h2>1953 Convention Signees</h2>
-              <div class="legend" style="background:linear-gradient(to right, #a1d99b, #a1d99b 50%, #d2a679 50%);"></div>
-              <p class="legend_label" style="margin-left:60px;">Yes</p>
-              <p class="legend_label" style="margin-left:105px;">No</p>
-              <!--<p style="margin-top:25px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p> -->
-            </div>
-            <div class="legend_container" id="pro_legend" style="display:none;">
-              <h2>1968 Protocol Signees</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #a1d99b, #a1d99b 50%, #d2a679 50%);"></div>
-              <p class="legend_label" style="margin-left:60px;">Yes</p>
-              <p class="legend_label" style="margin-left:105px;">No</p>
-          </div>
-      </div>
-  </div>
-  <div id="projectionButtons">
-    <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
-    <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
-  </div>
-  <svg>
+   </style>
+ </head>
+ 
+ <body>
+   <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+   <div id="infoPanel">
+       <h1>BUDGET</h1> 
+       <div id="text">
+             <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+             <!--<div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
+               <button class="dropbtn">Select Map</button>
+               <div class="dropdown-content">
+                 <a href="#"onclick="setRefugee()">Population</a>
+                 <a href="#"onclick="setSettlements()">Settlements</a>
+               </div>
+             </div>-->
+             <div class="legend_container" id="HDI_legend">
+               <h2>UNHCR Country Budget (in millions of $)</h2>
+               <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #ffffcc 16%, #ffffcc 33%, #c2e699 33%, #c2e699 50%, #78c679 50%, #78c679 66%, #31a354 66%, #31a354 83%, #006837 83%);"></div>
+               <p class="legend_label" style="margin-left:42px;">0</p>
+               <p class="legend_label" style="margin-left:34px;">10</p>
+               <p class="legend_label" style="margin-left:28px;">25</p>
+               <p class="legend_label" style="margin-left:22px;">100</p>
+               <p class="legend_label" style="margin-left:16px;">250</p>
+               <canvas id="chartContainer" height="400"></canvas> 
+             </div>
+       </div>
+   </div>
+   <div id="projectionButtons">
+     <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+     <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
+   </div>
+   <svg>
     <defs>
-        <radialGradient cx="75%" cy="25%" id="ocean_fill">
-          <stop offset="5%" stop-color="#ddf" />
-          <stop offset="100%" stop-color="#9ab" />
-        </radialGradient>
-        <radialGradient cx="75%" cy="25%" id="globe_highlight">
-          <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
-        </radialGradient>
-        <radialGradient cx="50%" cy="40%" id="globe_shading">
-          <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
-          <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
-        </radialGradient>
-        <radialGradient cx="50%" cy="50%" id="drop_shadow">
-          <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#000" stop-opacity="0" />
-        </radialGradient>
+      <radialGradient cx="75%" cy="25%" id="ocean_fill">
+        <stop offset="5%" stop-color="#ddf" />
+        <stop offset="100%" stop-color="#9ab" />
+      </radialGradient>
+      <radialGradient cx="75%" cy="25%" id="globe_highlight">
+        <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="40%" id="globe_shading">
+        <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
+      </radialGradient>
+      <radialGradient cx="50%" cy="50%" id="drop_shadow">
+        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#000" stop-opacity="0" />
+      </radialGradient>
       <filter id="glow">
           <feColorMatrix type="matrix"
               values=
@@ -98,19 +97,19 @@
   <script src="https://d3js.org/topojson.v3.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
   <script src="js/perfect-scrollbar.js"></script>
-  <script>
-
+  <script src="js/chart.js"></script>
+  <script src="js/Chart.PieceLabel.min.js"></script>
+   <script>
+    
     const config = {
       speed: 0.005,
       verticalTilt: -30,
       horizontalTilt: 0
     };
 
-    const ps = new PerfectScrollbar('#text', {
-      wheelSpeed: 2,
-      wheelPropagation: true,
-      minScrollbarLength: 20
-    });
+    var margin = {top: 80, right: 180, bottom: 80, left: 180},
+      chartWidth = 960 - margin.left - margin.right,
+      chartHeight = 500 - margin.top - margin.bottom;
 
     var width = window.innerWidth,
       height = window.innerHeight,
@@ -127,17 +126,20 @@
       schoolById = {},
       povertyById = {},
       environmentById = {},
+      refById = {},
       countries,
       countryCentroids = {},
-      proj = 0,
-      year = 1952;
+      refByCountry = {},
+      svg = [],
+      isFlow = false,
+      chartData = new Array(),
+      chartLabels = new Array(),
+      data = 0;
 
     var radius = width / 3;
     if (height < width) {
       radius = height /2.25;
     }
-
-    
     var projection1 = d3
       .geoOrthographic()
       .scale(radius)
@@ -200,22 +202,49 @@
       )
       .on("dblclick.zoom", null);
 
+    var chart = d3.select('svg.chart')   
+        .attr("class", "bar-chart")
+        .attr("width", chartWidth + margin.left + margin.right)
+        .attr("height", chartHeight + margin.top + margin.bottom)
+	      .append("g")
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
     var labels;
 
-    // Data and color scale
-    var convention_color = d3.scaleOrdinal()
-        .domain(["Yes", "No"])
-        .range(["#a1d99b", "#d2a679"]);
+    var arcWidth = d3.scaleThreshold()
+        .domain([100,1000, 2500, 10000, 100000])
+        .range([1.5,2,2.5,3,3.5,4]);
+    
+    var point_radius = d3.scaleLinear()
+        .domain([0, 1000000])
+        .range([2, 15]);
 
-      d3.queue()
+    var refColorScale = d3.scaleThreshold()
+        .domain([-1, 10000000, 25000000, 100000000, 250000000])
+        .range(["#ffffff","#ffffcc","#c2e699","#78c679","#31a354","#006837"]);
+
+    d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
-      .defer(d3.json, "assets/map_data/global/cities.json")
       .defer(d3.csv, "assets/map_data/global/country_names.csv")
-      .defer(d3.json, "assets/map_data/global/convention.json")
+      .defer(d3.json, "assets/map_data/global/flow_total.json")
+      .defer(d3.json, "assets/map_data/global/camps.json")
+      .defer(d3.json, "assets/map_data/global/settlements.json")
+      .defer(d3.json, "assets/map_data/global/dispersed.json")
+      .defer(d3.csv, "assets/map_data/global/demographics.csv")
+      .defer(d3.json, "assets/map_data/global/cities.json")
+      .defer(d3.json, "assets/map_data/global/UNHCR_Budget.json")
       .await(ready);
 
-    function ready(error, world, places, countryNames, convention) {
+    function ready(error, world, countryNames, flow, camps, settlements, dispersed, demographics, places, budget) {
+      
+    countryNames.forEach(function(d) {
+        countryById[d.iso_n3] = d.name;
+    });
 
+    demographics.forEach(function(d) {
+        refById[d.id] = d.refugees;
+    });
+    
     var defs = svg.append("defs");
 
     var filter = svg.append("defs")
@@ -259,13 +288,7 @@
         .attr("stop-color", "#175BA8")
         .attr("stop-opacity", 1);
 
-      //countries = topojson.feature(world, world.objects.countries).features;
-
-      countryNames.forEach(function(d) {
-        countryById[d.iso_n3] = d.name;
-      });
-      
-      svg
+        svg
         .append("rect")
         .attr("width", width)
         .attr("height", height)
@@ -318,18 +341,18 @@
         .append("g")
         .attr("class", "countries")
         .selectAll("path")
-        .data(topojson.feature(convention, convention.objects.convention).features)
+        .data(topojson.feature(budget, budget.objects.UNHCR_Budget).features)
         .enter()
         .append("path")
-        .attr("stroke", "white")
+        .attr("stroke", "#ffffe6")
         .attr("d", path)
         .attr("class", "country")
         .attr("fill", function(d){
-            return convention_color(d.properties.Signed)
+            return refColorScale(d.properties.UNHCR_Budget)
           })
         .attr("box-shadow", 'inset 0 0 10px #000000')
         .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id])
+          countryTooltip.text(d.properties.Country)
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -362,6 +385,7 @@
           return d.properties.NAME;
         });
       position_labels();
+
     }
 
     function toEquirectangular(){      
@@ -374,7 +398,7 @@
         .pointRadius(1.5);
 
       projection = projection2;
-      skyProjection = skyProjection2;
+      skyProjection = skyProjection2
 
       svg
           .selectAll("circle").style("fill-opacity", 0);
@@ -415,7 +439,7 @@
 
       //document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
 
-      proj = 1;x  
+      proj = 1;
       refresh();
       position_labels();
     }
@@ -550,55 +574,7 @@
         return txt.value;
     }
 
-    var legends = document.getElementsByClassName("legend_container");
 
-    function setConvention(){
-      svg
-        .selectAll(".country")
-        .attr("fill", function(d){
-              return convention_color(d.properties.Signed)
-          })
-        .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id])
-          .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY) + "px")
-          .style("display", "block")
-          .style("opacity", 1);
-        })
-        .on("mouseout", function(d) {
-          countryTooltip.style("opacity", 0)
-          .style("display", "none");
-        });
-
-        for (var i = 0; i < legends.length; i++) {
-          legends[i].style.display = 'none';
-        }
-        document.getElementById("con_legend").style.display = "block";
-      
-    }
-    function setProtocol(){
-      svg
-        .selectAll(".country")
-        .attr("fill", function(d){
-              return convention_color(d.properties.proto_sign)
-          })
-        .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id])
-          .style("left", (d3.event.pageX ) + "px")
-          .style("top", (d3.event.pageY) + "px")
-          .style("display", "block")
-          .style("opacity", 1);
-        })
-        .on("mouseout", function(d) {
-          countryTooltip.style("opacity", 0)
-          .style("display", "none");
-        });
-
-        for (var i = 0; i < legends.length; i++) {
-          legends[i].style.display = 'none';
-        }
-        document.getElementById("pro_legend").style.display = "block";
-    }
   </script>
 </body>
 
