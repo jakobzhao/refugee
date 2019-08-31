@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
     <!-- <link rel="stylesheet" href="assets/css/L.Control.Sidebar.css" /> -->
     <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.ie.css" /><![endif]-->
 
@@ -28,6 +30,28 @@
         .leaflet-marker-icon,
         .leaflet-marker-shadow {
             opacity: 0;
+        }
+        .range-labels li {
+            color: #000000!important;
+            width: 80px;
+            font-size: 14px;
+            font-family: 'Roboto Condensed', sans-serif!important;
+            position: relative;
+            float: left;
+            text-align: center;
+            cursor: pointer;
+        }
+        .range-labels li::before {
+            background: #000000!important;
+            width: 9px;
+            height: 9px;
+            position: absolute;
+            top: -20px;
+            right: 0;
+            left: 0;
+            content: "";
+            margin: 0 auto;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -106,12 +130,13 @@
         var map = L.map('map', {
                 minZoom: 14,
                 maxZoom: 14,
+                zoomControl:false,
                 dragging: false,
             });
         map.setView([-2.31, 30.845], 14);
 
         var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                    attribution: '@Google'
+                    // attribution: '@Google'
             }).addTo(map);
 
         // var sidebar = L.control.sidebar('sidebar', {

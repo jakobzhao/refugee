@@ -5,8 +5,8 @@
 <title>Escaping Burundi</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+<script src='assets/js/mapbox-gl.js'></script>
+<link href='assets/css/mapbox-gl.css' rel='stylesheet' />
 <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
@@ -40,8 +40,19 @@ h1 {
     margin-bottom: 15px;
     text-decoration: none;
     text-align: center;
-    font-weight:400;
-    
+    font-weight:400; 
+}
+h2 {
+    padding:  25px 10px 0px 0px;
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-variant: small-caps;
+    border: none;
+    margin: auto;
+    margin-bottom: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-weight:200; 
 }
 h3 { 
     padding:  1px 20px 0px 20px;
@@ -141,7 +152,7 @@ iframe.mahama {
   .mapboxgl-popup-content {
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(255, 136, 0);
+    color: rgba(255, 255, 255, 0.8);
     box-shadow: 3px 3px 2px rgba(255, 255, 255, 0);
     text-shadow: rgba(0, 0, 0, 0.95) 0px 0px 6px; 
     background-color: rgba(255, 255, 255, 0);
@@ -160,6 +171,12 @@ a {
 p{
     font-size: 1rem;
 }
+.mapboxgl-popup-close-button {
+    opacity:0;
+}
+.mapboxgl-popup-tip {
+  opacity:0;
+}
 </style>
 </head>
 <body> 
@@ -170,7 +187,7 @@ p{
     <h3>Fleeing pre-election violence, three families catch a bus, ride bicycles <br>and finally scramble on foot to reach safety in Rwanda.</h3><h5>
             Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
     </h5><br><br>
-    <img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/05062015_Featured_ThreeMothers21.jpg" width="100%"></img>
+    <img src="assets/img/three_mothers.jpg" width="100%"></img>
 <section id='intro' class='active'>
 <p>“I fled because there is a conflict between the ruling party and the opposition party,” says Jeanne, 34. “The ruling party wants the President to go for a third term. His term is over but he still wants to be a President. I think this will be a war, and that’s why I fled.”</p><p>
 
@@ -186,7 +203,7 @@ Jeanne and her children are among some 25,000 people who have fled pre-election 
 <p>“We knew that on Saturday the President would say if he would run again,” recalls Brigitte, 36. “The Imbonerakure had said that they would rape us if we would not support the party. This is not something that I just say. They had put it in practice and we saw it. They would come and kill people, maybe in the evening. They came to kill my brother, but he was at university. They did not find him.”
 
 One morning at 6 a.m., the three women and their children began their journey to Rwanda. They left Bujumbura by bus, but encountered many problems along the way.</p>
-<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/P26B7879.jpg" width="100%"></img><p><small>Jeanne, Brigitte and Félicité were neighbours back in Bujumbura. UNHCR/Kate Holt</small></p>
+<img src="assets/img/back.jpg" width="100%"></img><p><small>Jeanne, Brigitte and Félicité were neighbours back in Bujumbura. UNHCR/Kate Holt</small></p>
 <br><br><br>
 </section>
 <section id='kirundo'>
@@ -199,20 +216,20 @@ Charles, Jeanne’s 12-year-old son, is the eldest of them all. “When I got ba
 Even now, the memory of their journey to Burundi is fresh in Charles’ mind.</p>   
 <p>
 “We were in the bus and it was very cold,” he says. “I covered myself and I went to sleep. I dreamt that there was a war, that people were killing each other and that there were gunshots. When we reached Kirundo, we stayed there for an hour. We boarded a mini-bus, but we were stopped by the police. They asked for our ID’s [identity cards]. My mum gave them hers. The other women also did. They also asked for money. It was a lot, but we gave the money. There was a young man who saved us. If it was not for him, we would have been killed. He talked to the police and they let us go. He was a man from Kirundo. That young man talked to the police for a long time and gave them money. He then took us to his home for an hour.”</p>
-<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/P26B7853.jpg" width="100%"></img>
+<img src="assets/img/feet.jpg" width="100%"></img>
 </section>
 <section id='bycicle'>
 <h3>“We asked the man to bring us bicycles”</h3>
 
 <p>But the women and children still had to find a way to reach Rwanda.</p><p>
-<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-809B7179.jpg" width="100%"></img></p><br><p>
+<img src="assets/img/bicycle.jpg" width="100%"></img></p><br><p>
 “We asked the man to bring us bicycles,” continues young Charles. “So we rode bicycles, but on the way we were stopped again. We gave them money but they refused it. Then they told my mother to get off her bike, or they would cut us. My mum got off the bike and she ran. The road was full of stones and she cut herself. I was very scared that she would not arrive, but they let us go and we continued the journey. I met my mother on the other side of the border.”</p><br>
 </section>
 <section id='bugesera'>
 <h3>Bugesera</h3>
 <p>Upon reaching the transit centre at Bugesera, where UNHCR is coordinating the emergency response, the three families were given shelter, sleeping mats, blankets, mosquito nets, jerrycans and drinking water.
 Finally, they are safe. But happiness still feels far away. </p>
-<p><img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-P26B7207.jpg" width="100%"></img></p>
+<p><img src="assets/img/check.jpg" width="100%"></img></p>
 <p>
 Jeanne left a husband and two other children behind in Bujumbura, and has had no news of them since. “Two of my children stayed with their dad,” she explains. “They wanted to come with their mother, but I did not have enough money to take them with me.”</p>
 <p>Brigitte also left her husband and brother behind in Bujumbura, and worries because she hasn’t heard anything. “I last talked to my husband on 26 April, and I last talked to my brother when I still was in Burundi,” she says. “It hurts me because I haven’t heard from him. We were orphans. He was like our father and now I don’t know if he is still alive. I am deeply hurt. The kids keep asking where is their dad, and I don’t reply to the question. I don’t know if he is still alive.”</p>
@@ -224,7 +241,7 @@ Jeanne left a husband and two other children behind in Bujumbura, and has had no
 <p class="right">
         Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
 </p><br><br>
-<img src="http://tracks.unhcr.org/wp-content/uploads/2015/05/2015-05-TRACKS-Rwanda-809B7347.jpg" width="100%"></img>
+<img src="assets/img/sleep.jpg" width="100%"></img>
 </section>
 <section id='arrived'>
 <h3>Mahama Refugee Camp</h3>
@@ -308,7 +325,7 @@ style: {
     "sources": {
     "raster-tiles": {
     "type": "raster",
-    "tiles": ["https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"], //["https://basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"]
+    "tiles": ["https://basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"], //["https://basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png"]
     "tileSize": 256,
     "attribution": '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }
@@ -318,7 +335,10 @@ style: {
     "type": "raster",
     "source": "raster-tiles",
     "minzoom": 0,
-    "maxzoom": 22
+    "maxzoom": 22,
+    "worldCopyJump": true,
+      "retina": '@2x',
+      "detectRetina": true
 }]
 },
 center: [29.36, -3.37], // starting position
@@ -332,7 +352,7 @@ var popup = new mapboxgl.Popup({
     map.on('mousemove', 'refugees', function (e) {
         map.getCanvas().style.cursor = 'pointer';
         var feature = e.features[0];
-        var population = '<div style="font-size: 1.3rem; color:orange;text-shadow: 1px 1px #1e1e1e">' + e.features[0].properties.country + ', <br> ' + e.features[0].properties.refugees.toLocaleString() + ' refugees ';
+        var population = '<div style="font-size: 1.3rem; color:silver ;text-shadow: 1px 1px #1e1e1e">' + e.features[0].properties.country + ', <br> ' + e.features[0].properties.refugees.toLocaleString() + ' refugees ';
         popup.setLngLat(e.lngLat)
             .setHTML(population)
             .addTo(map);
@@ -342,6 +362,35 @@ var popup = new mapboxgl.Popup({
         map.getCanvas().style.cursor = '';
         popup.remove();
     });
+
+var drc = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([26.3, -5.3])
+    .setHTML('<h1>DRC</h1>')
+    .addTo(map);
+
+var burundi = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([29.7, -4.5])
+    .setHTML('<h2>Burundi</h2>')
+    .addTo(map);
+
+var rwanda = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([29.5, -2.5])
+    .setHTML('<h2>Rwanda</h2>')
+    .addTo(map);
+
+var tanzania = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([32.5, -7])
+    .setHTML('<h2>Tanzania</h2>')
+    .addTo(map);
+var uganda = new mapboxgl.Popup({closeOnClick: false})
+    .setLngLat([30.7, 0])
+    .setHTML('<h2>Uganda</h2>')
+    .addTo(map);
+
+// var bujumbura = new mapboxgl.Popup({closeOnClick: false})
+//     .setLngLat([29.33, -3.4])
+//     .setHTML('<h3 style="font-size: 1.3rem; color:silver ;text-shadow: 1px 1px #1e1e1e">Bujumbura</h3>')
+//     .addTo(map);
 
 var chapters = {
 'intro': {
@@ -450,6 +499,21 @@ map.on('load', function() {
             'minzoom': 14,
             'maxzoom': 16
         })
+    map.addSource('labels',{
+        'type': 'raster',
+        'tiles': ['https://basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'],
+        'tileSize': 150
+    })
+
+    map.addLayer({
+            'id': 'labels',
+            'type': 'raster',
+            'source': 'labels',
+            'paint': {
+            'raster-opacity': 1},
+            'minzoom': 11,
+            'maxzoom': 13
+        })
 
         map.addSource("burundi", {
             type: "geojson",
@@ -470,42 +534,42 @@ map.on('load', function() {
             'maxzoom': 8.5
         });
 
-        map.addLayer({
-            'id': 'burundi1',
-            'type': 'line',
-            'source': 'burundi',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#0000ff',
-            "line-dasharray": [1, 3],
-            'line-width': 2,
-            'line-opacity': .5},
-            'minzoom': 8,
-            'maxzoom': 10
-        });
+        // map.addLayer({
+        //     'id': 'burundi1',
+        //     'type': 'line',
+        //     'source': 'burundi',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#0000ff',
+        //     "line-dasharray": [1, 3],
+        //     'line-width': 2,
+        //     'line-opacity': .5},
+        //     'minzoom': 8,
+        //     'maxzoom': 10
+        // });
     map.addSource("route1", {
             type: "geojson",
             data: 'assets/data/route1.geojson'
         })
-        map.addLayer({
-            'id': 'route1-shadow',
-            'type': 'line',
-            'source': 'route1',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 10,
-            "line-blur": 20,
-            'line-opacity': .8},
-            'minzoom':8,
-            'maxzoom': 10
-        });
+        // map.addLayer({
+        //     'id': 'route1-shadow',
+        //     'type': 'line',
+        //     'source': 'route1',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 10,
+        //     "line-blur": 20,
+        //     'line-opacity': .8},
+        //     'minzoom':8,
+        //     'maxzoom': 10
+        // });
         map.addLayer({
             'id': 'route',
             'type': 'line',
@@ -515,8 +579,9 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
-            'line-width': 5,
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
+            'line-width': 3,
             'line-opacity': .8},
             'minzoom': 8,
             'maxzoom': 10
@@ -527,22 +592,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route2.geojson'
         })
-        map.addLayer({
-            'id': 'route2-shadow',
-            'type': 'line',
-            'source': 'route2',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 10,
-            "line-blur": 20,
-            'line-opacity': .8},
-            'minzoom':9.2,
-            'maxzoom': 16
-        });
+        // map.addLayer({
+        //     'id': 'route2-shadow',
+        //     'type': 'line',
+        //     'source': 'route2',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 10,
+        //     "line-blur": 20,
+        //     'line-opacity': .8},
+        //     'minzoom':9.2,
+        //     'maxzoom': 16
+        // });
         map.addLayer({
             'id': 'route2',
             'type': 'line',
@@ -552,8 +617,9 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
-            'line-width': 5,
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
+            'line-width': 3,
             'line-opacity': .8},
             'minzoom': 9.2,
             'maxzoom': 16
@@ -564,22 +630,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route3.geojson'
         })
-        map.addLayer({
-            'id': 'route3-shadow',
-            'type': 'line',
-            'source': 'route3',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 15,
-            "line-blur": 30,
-            'line-opacity': .8},
-            'minzoom':9.5,
-            'maxzoom': 10
-        });
+        // map.addLayer({
+        //     'id': 'route3-shadow',
+        //     'type': 'line',
+        //     'source': 'route3',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 15,
+        //     "line-blur": 30,
+        //     'line-opacity': .8},
+        //     'minzoom':9.5,
+        //     'maxzoom': 10
+        // });
         map.addLayer({
             'id': 'route3',
             'type': 'line',
@@ -589,8 +655,9 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
-            'line-width': 5,
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
+            'line-width': 3,
             'line-opacity': .8},
             'minzoom':9.5,
             'maxzoom': 10
@@ -603,18 +670,18 @@ map.on('load', function() {
         map.loadImage('assets/data/unhcr.png', function (error, image) {
             if (error) throw error;
             map.addImage('camps', image);
-            map.addLayer({
-                "id": "camps",
-                "type": "symbol",
-                "source": "camps",
-                "layout": {
-                    "icon-image": "camps",
-                    "icon-allow-overlap": true,
-                    "icon-size": 0.6
-                },
-                'minzoom': 14.8,
-                'maxzoom': 15.2
-            });
+            // map.addLayer({
+            //     "id": "camps",
+            //     "type": "symbol",
+            //     "source": "camps",
+            //     "layout": {
+            //         "icon-image": "camps",
+            //         "icon-allow-overlap": true,
+            //         "icon-size": 0.6
+            //     },
+            //     'minzoom': 14.8,
+            //     'maxzoom': 15.2
+            // });
             map.addLayer({
                 "id": "camps2",
                 "type": "symbol",
@@ -638,7 +705,7 @@ map.on('load', function() {
             'type': 'fill-extrusion',
             'source': 'refugees',
             'paint': {
-                'fill-extrusion-color': 'orange',
+                'fill-extrusion-color': 'gray',
                 'fill-extrusion-height': ["get", "refugees"],
                 'fill-extrusion-base': 0,
                 'fill-extrusion-opacity': 0.5
@@ -646,7 +713,26 @@ map.on('load', function() {
             'minzoom': 5,
             'maxzoom': 5.9
         });
-
+        map.addSource("africa2", {
+            type: "geojson",
+            data: 'assets/data/africa2.geojson'
+        })
+        map.addLayer({
+            'id': 'africa2',
+            'type': 'line',
+            'source': 'africa2',
+            'layout': {
+            'line-cap': 'round',
+            'line-join': 'round'
+            },
+            'paint': {
+            'line-color': '#1f1f1f',
+            "line-dasharray": [1, 1],
+            'line-width': 2,
+            'line-opacity': .2},
+            'minzoom': 4,
+            'maxzoom': 12
+        });
 });
 map.scrollZoom.disable();
 </script> 

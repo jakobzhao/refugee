@@ -5,14 +5,13 @@
 <title>Desperate Journey</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+<script src='assets/js/mapbox-gl.js'></script>
+<link href='assets/css/mapbox-gl.css' rel='stylesheet' />
 <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+<script src="assets/js/jquery-3.4.1.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
 <script src="../tweets/js/utils.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
 <script src="../js/chart.js"></script>
 <script src="../js/Chart.PieceLabel.min.js"></script>
 
@@ -187,7 +186,7 @@ iframe.mahama {
 .mapboxgl-popup-content {
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(255, 136, 0);
+    color: rgba(255, 255, 255, 0.8);
     box-shadow: 3px 3px 2px rgba(255, 255, 255, 0);
     text-shadow: rgba(0, 0, 0, 0.95) 0px 0px 6px; 
     background-color: rgba(255, 255, 255, 0);
@@ -218,11 +217,11 @@ p{
 <div id='map'></div>
 <div id='info'></div>
 <div id='features'>
-    <h1>A desperate journey towards the Mediterranean <br>facing torture, starvation and arbitrary detention</h1>   
+    <h1>A desperate journey <br>towards the Mediterranean </h1>   
     <h3>After 15 months of beatings and abuse in captivity by Libyan traffickers<br> a Somali mother rejoins her teenage sons in Niamey.</h3><div id="written"><h5>
             &nbsp;&nbsp;&nbsp;&nbsp;Written by: Louise Donovan (<a href="https://www.unhcr.org/news/stories/2018/4/5acc80524/somali-torture-survivor-reunited-sons-niger.html#" target="_blank">Read the original article</a>)   
     </h5></div><br><br>
-    <img src="https://www.unhcr.org/thumb4/5acccfaf4.jpg" width="100%"></img><p><small>Amina, Ahmed and Mohamed in Niamey. &copy;UNHCR</small></p>
+    <img src="assets/img/amina.jpg" width="100%"></img><p><small>Amina, Ahmed and Mohamed in Niamey. &copy;UNHCR</small></p>
 <section id='intro' class='active'>
 <p>” When I arrived in Libya, I was walking, nobody had to help me … but look at me now,” she says, holding up her badly broken arms in despair, her legs paralyzed.</p>
 <p>
@@ -234,7 +233,7 @@ p{
 </section>
 <section id='sudan'>
 <h3>Amina, Ahmed and Mohamed</h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/2017_10_15_VBIED-8_%2837666124646%29.jpg/800px-2017_10_15_VBIED-8_%2837666124646%29.jpg" width="100%"></img><p><small>A building bombed by the militant group al Shabaab in  Mogadishu (October 2017, &copy; Wikimedia)</small></p><p>Her ordeal began in 2015 when her home in the capital, Mogadishu, was destroyed by a bomb that killed her husband and brother.</p>
+<img src="assets/img/bombed.jpg" width="100%"></img><p><small>A building bombed by the militant group al Shabaab in  Mogadishu (October 2017, &copy; Wikimedia)</small></p><p>Her ordeal began in 2015 when her home in the capital, Mogadishu, was destroyed by a bomb that killed her husband and brother.</p>
 <p>Without access to education and with limited resources, her sons Ahmed and Mohamed, aged 13 and 14 at the time, were in danger of forced recruitment by the armed group Al-Shabab, like so many boys their age.</p>
 <p>With few options, the brothers set out in secret with a female cousin in 2016 on a quest for safety that would take them to Yemen, Sudan and then Libya.</p>
 <p>
@@ -247,7 +246,7 @@ p{
 <p>After initially negotiating with traffickers, they set off north over the Sahara, with little or no water or food for days, in unyielding heat. Amina grew weak and the traffickers wanted to abandon her in the desert, but her sons refused to leave her.</p>
 
 
-<img src="https://www.nationalgeographic.com/content/dam/magazine/rights-exempt/2019/07/niger/niger-migration-convoy-desert-migrants-libya.jpg" width="100%"></img><p><small>Migrant convoy in the Sahara desert. Photo: <a href="https://www.nationalgeographic.com/content/dam/magazine/rights-exempt/2019/07/niger/niger-migration-convoy-desert-migrants-libya.jpg" target="_blank">&copy;NatGeo</a> </small></p>
+<img src="assets/img/sahara.jpg" width="100%"></img><p><small>Migrant convoy in the Sahara desert. Photo: <a href="https://www.nationalgeographic.com/content/dam/magazine/rights-exempt/2019/07/niger/niger-migration-convoy-desert-migrants-libya.jpg" target="_blank">&copy;NatGeo</a> </small></p>
 <p>When they reached the western Libyan city of Bani Walid, the real horror began. The traffickers demanded US$10,000 for each of the four family members. Amina did not have the means to pay, or family to ask for help.</p>   
 </section>
 <section id='bani_walid'>
@@ -255,7 +254,7 @@ p{
 
 <p>“They tortured me so badly. I begged them not to torture my family,” says Amina, who volunteered to take all the abuse to spare her sons and niece.</p><br>
 <p>
-    <img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/assets/2019/02/UN052682.jpg/image1170x530cropped.jpg" width="100%"></img></p><p><small>A migrant rests his hand on a gate inside a detention centre (Libya, 2017). Photo: <a href="https://www.infomigrants.net/en/post/4513/85-percent-of-migrants-tortured-in-libya-doctors-for-human-rights" target="_blank">&copy;UNICEF/Romenzi</a> </small></p><p>
+    <img src="assets/img/bars.jpg" width="100%"></img></p><p><small>A migrant rests his hand on a gate inside a detention centre (Libya, 2017). Photo: <a href="https://www.infomigrants.net/en/post/4513/85-percent-of-migrants-tortured-in-libya-doctors-for-human-rights" target="_blank">&copy;UNICEF/Romenzi</a> </small></p><p>
 <p>
     After seven months her body began to shut down from the abuse. She could no longer stand and her hands did not function. So the smugglers began torturing the children.</p><br>
 </section>
@@ -263,14 +262,14 @@ p{
 <h3>TO THE COAST</h3>
 <p>After 15 months in captivity, Amina was on the brink of death. The smugglers did not want to deal with a corpse and realized that they would not get the money they demanded, so they finally let them go. </p>
 <p>
-    <img src="https://scd.infomigrants.net/media/resize/my_image_big/2f587720b83c1365c9fe63735306628dc6853aff.jpeg" width="100%"></img></p><p><small>Migrants at a detention centre in northern Libya. Photo: <a href="https://www.infomigrants.net/en/post/4513/85-percent-of-migrants-tortured-in-libya-doctors-for-human-rights" target="_blank">&copy;Zuhair Abusrewil</a> </small></p><p>
+    <img src="assets/img/migrants.jpg" width="100%"></img></p><p><small>Migrants at a detention centre in northern Libya. Photo: <a href="https://www.infomigrants.net/en/post/4513/85-percent-of-migrants-tortured-in-libya-doctors-for-human-rights" target="_blank">&copy;Zuhair Abusrewil</a> </small></p><p>
     “He knew I would die, and he didn’t want that, so he finally let us go,” recalls Amina. Another niece was also held captive in the same location, so the whole family left together. All five were transported to the coast as part of a larger group. They were among the lucky ones.</p>
 </section>
 <section id='sea'>
 <h3> ON THE SEA</h3>
 <p>They were herded on to an inflatable boat bound for Europe. They knew it was overloaded, with more than 100 people, but were powerless and unable to get away. Panic hit several hours later, when the boat began to sink. However a Libyan Coast Guard vessel brought them back to the coast.</p>
 <p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Inflatable_boat_carrying_migrants_approaching_USS_Carney_%28DDG-64%29_in_the_Mediterranean_160729-N-EU999-004.jpg" width="100%"></img></p><p><small>Inflatable boat carrying migrants in the Mediterranean. Photo: <a href="https://commons.wikimedia.org/wiki/File:Inflatable_boat_carrying_migrants_approaching_USS_Carney_(DDG-64)_in_the_Mediterranean_160729-N-EU999-004.jpg" target="_blank">Wikimedia</a> </small></p><p>
+    <img src="assets/img/boat.jpg" width="100%"></img></p><p><small>Inflatable boat carrying migrants in the Mediterranean. Photo: <a href="https://commons.wikimedia.org/wiki/File:Inflatable_boat_carrying_migrants_approaching_USS_Carney_(DDG-64)_in_the_Mediterranean_160729-N-EU999-004.jpg" target="_blank">Wikimedia</a> </small></p><p>
         At the harbour, UNHCR, the UN Refugee Agency, was waiting for them. Amina was in a critical state and was rushed to hospital. Authorities took the boys and their cousins to a detention centre, where UNHCR informed them they would be flown to Niger.</p>
 
 
@@ -280,7 +279,7 @@ p{
 <p> The move was arranged through UNHCR’s Emergency Evacuation Transit Mechanism (ETM), which was established in November 2017. So far, 1,020 of the most vulnerable refugees – like Amina and her family – have been evacuated to Niger on a temporary basis, while long-term solutions are sought for them, including resettlement.</p>
 <p>
     The boys were first to be offered evacuation. “We were very anxious, from the minute we landed in Niger, we kept asking about our mother – whether she was alive, when she would be joining us,” says Mohamed. To their relief, UNHCR succeeded in flying Amina and her niece to Niger the following week.</p>
-<img src="https://www.unhcr.org/thumb1/5accd0083.jpg" width="100%"></img>
+<img src="assets/img/amina2.jpg" width="100%"></img>
 <p><small>Amina sits with her nieces after being evacuated to Niger by UNHCR.  (<a href="https://www.unhcr.org/news/stories/2018/4/5acc80524/somali-torture-survivor-reunited-sons-niger.html" target="_blank">&copy;UNHCR/Louise Donovan</a>)</small></p>
 <p>
     Amina begins to cry again, but this time from happiness. “Everything changed in a minute. I was so happy. Instead of feeling depressed, I felt blessed,” she recalls.
@@ -456,7 +455,7 @@ window.myDoughnut = new Chart(ctx, config); {
  
 var map = new mapboxgl.Map({
 container: 'map', // container id
-interactive: false,
+interactive: true,
 style: {
     "version": 8,
     "sources": {
@@ -490,7 +489,7 @@ var popup = new mapboxgl.Popup({
     map.on('mousemove', 'deaths', function (e) {
         map.getCanvas().style.cursor = 'pointer';
         var feature = e.features[0];
-        var population = '<div style="font-size: 1.3rem; color:orange;text-shadow: 1px 1px #1e1e1e"><b>' + e.features[0].properties.name + ':  </b>' + e.features[0].properties.deaths.toLocaleString() + ' deaths ';
+        var population = '<div style="font-size: 1.3rem; color:#B22222;text-shadow: 1px 1px #000000"><b>' + e.features[0].properties.name + ':  </b>' + e.features[0].properties.deaths.toLocaleString() + ' deaths ';
         popup.setLngLat(e.lngLat)
             .setHTML(population)
             .addTo(map);
@@ -506,17 +505,17 @@ var popupOffsets = {
  
  };
 var mogadishu = new mapboxgl.Popup({closeOnClick: false})
-.setLngLat([45.36, 2.07])
+.setLngLat([45.36, 1.5])
 .setHTML('<h2>MOGADISHU</h2>')
 .addTo(map);
 
 var aden = new mapboxgl.Popup({closeOnClick: false})
-.setLngLat([44.986412598590057, 12.781800124126674])
+.setLngLat([45.67, 13.0])
 .setHTML('<h2>Aden</h2>')
 .addTo(map);
 
 var port_sudan = new mapboxgl.Popup({closeOnClick: false})
-.setLngLat([37.214767384607718, 19.615887653007899])
+.setLngLat([38.1, 19.8])
 .setHTML('<h2>Port Sudan</h2>')
 .addTo(map);
 
@@ -531,7 +530,7 @@ var tripoli = new mapboxgl.Popup({offset: popupOffsets})
 .addTo(map);
 
 var niamey = new mapboxgl.Popup({closeOnClick: false})
-.setLngLat([2.104412070080809, 13.513824568420711])
+.setLngLat([2.104412070080809, 12.513824568420711])
 .setHTML('<h2>NIAMEY</h2>')
 .addTo(map);
 
@@ -587,7 +586,7 @@ speed: 0.5
 },
 'niamey': {
 duration: 5000,
-bearing: 0,
+bearing: 330,
 center: [3.5, 23],
 zoom: 5,
 pitch: 45
@@ -595,7 +594,7 @@ pitch: 45
 'final': {
 duration: 5000,
 bearing: 10,
-center: [15, 38.5],
+center: [15.9, 38.5],
 zoom: 5.8,
 pitch: 80
 }
@@ -690,22 +689,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route4.geojson'
         })
-        map.addLayer({
-            'id': 'route4-shadow',
-            'type': 'line',
-            'source': 'route4',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 10,
-            "line-blur": 20,
-            'line-opacity': .8},
-            'minzoom':5.1,
-            'maxzoom': 9.5
-        });
+        // map.addLayer({
+        //     'id': 'route4-shadow',
+        //     'type': 'line',
+        //     'source': 'route4',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 10,
+        //     "line-blur": 20,
+        //     'line-opacity': .8},
+        //     'minzoom':5.1,
+        //     'maxzoom': 9.5
+        // });
         map.addLayer({
             'id': 'route',
             'type': 'line',
@@ -716,9 +715,10 @@ map.on('load', function() {
                 'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
             'line-width': 3,
-            'line-opacity': .8},
+            'line-opacity': 1},
             'minzoom': 5.1,
             'maxzoom': 9.5
         });
@@ -728,22 +728,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route5.geojson'
         })
-        map.addLayer({
-            'id': 'route5-shadow',
-            'type': 'line',
-            'source': 'route5',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 10,
-            "line-blur": 20,
-            'line-opacity': .8},
-            'minzoom':5.6,
-            'maxzoom':9.5
-        });
+        // map.addLayer({
+        //     'id': 'route5-shadow',
+        //     'type': 'line',
+        //     'source': 'route5',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 10,
+        //     "line-blur": 20,
+        //     'line-opacity': .8},
+        //     'minzoom':5.6,
+        //     'maxzoom':9.5
+        // });
         map.addLayer({
             'id': 'route5',
             'type': 'line',
@@ -753,9 +753,10 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
             'line-width': 3,
-            'line-opacity': .8},
+            'line-opacity': 1},
             'minzoom': 5.6,
             'maxzoom': 9.5
         });
@@ -765,22 +766,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route6.geojson'
         })
-        map.addLayer({
-            'id': 'route6-shadow',
-            'type': 'line',
-            'source': 'route6',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 15,
-            "line-blur": 30,
-            'line-opacity': .8},
-            'minzoom':8.6,
-            'maxzoom': 9.5
-        });
+        // map.addLayer({
+        //     'id': 'route6-shadow',
+        //     'type': 'line',
+        //     'source': 'route6',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 15,
+        //     "line-blur": 30,
+        //     'line-opacity': .8},
+        //     'minzoom':8.6,
+        //     'maxzoom': 9.5
+        // });
         map.addLayer({
             'id': 'route6',
             'type': 'line',
@@ -790,9 +791,10 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#ff0000',
+            'line-color': '#DC143C',
+            "line-dasharray": [1, 1.5],
             'line-width': 3,
-            'line-opacity': .8},
+            'line-opacity': 1},
             'minzoom':8.6,
             'maxzoom': 9.5
         });
@@ -800,22 +802,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route7a.geojson'
         })
-        map.addLayer({
-            'id': 'route7a-shadow',
-            'type': 'line',
-            'source': 'route7a',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 15,
-            "line-blur": 30,
-            'line-opacity': .8},
-            'minzoom':8.7,
-            'maxzoom': 9.5
-        });
+        // map.addLayer({
+        //     'id': 'route7a-shadow',
+        //     'type': 'line',
+        //     'source': 'route7a',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 15,
+        //     "line-blur": 30,
+        //     'line-opacity': .8},
+        //     'minzoom':8.7,
+        //     'maxzoom': 9.5
+        // });
         map.addLayer({
             'id': 'route7a',
             'type': 'line',
@@ -825,9 +827,10 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
+            "line-dasharray": [2, 5],
             'line-color': '#1E90FF',
             'line-width': 3,
-            'line-opacity': .8},
+            'line-opacity': 1},
             'minzoom':8.7,
             'maxzoom': 9.5
         });
@@ -837,22 +840,22 @@ map.on('load', function() {
             type: "geojson",
             data: 'assets/data/route7b.geojson'
         })
-        map.addLayer({
-            'id': 'route7b-shadow',
-            'type': 'line',
-            'source': 'route7b',
-            'layout': {
-            'line-cap': 'round',
-            'line-join': 'round'
-            },
-            'paint': {
-            'line-color': '#404040',
-            'line-width': 15,
-            "line-blur": 30,
-            'line-opacity': .8},
-            'minzoom':8.7,
-            'maxzoom': 9.5
-        });
+        // map.addLayer({
+        //     'id': 'route7b-shadow',
+        //     'type': 'line',
+        //     'source': 'route7b',
+        //     'layout': {
+        //     'line-cap': 'round',
+        //     'line-join': 'round'
+        //     },
+        //     'paint': {
+        //     'line-color': '#404040',
+        //     'line-width': 15,
+        //     "line-blur": 30,
+        //     'line-opacity': .8},
+        //     'minzoom':8.7,
+        //     'maxzoom': 9.5
+        // });
         map.addLayer({
             'id': 'route7b',
             'type': 'line',
@@ -864,7 +867,7 @@ map.on('load', function() {
             'paint': {
             'line-color': '#1E90FF',
             'line-width': 5,
-            "line-dasharray": [1, 3],
+            "line-dasharray": [1, 1.3],
             'line-opacity': .8},
             'minzoom':8.7,
             'maxzoom': 9.5
@@ -898,37 +901,37 @@ map.on('load', function() {
             'line-join': 'round'
             },
             'paint': {
-            'line-color': '#FF4500',
+            'line-color': 'white ',
             'line-width': 5,
-            "line-dasharray": [1, 3],
+            "line-dasharray": [2, 2],
             'line-opacity': .8},
             'minzoom':4.9,
             'maxzoom': 5.1
         });
-        map.addSource("places", {
-            type: "geojson",
-            data: 'assets/data/places.geojson',
+        // map.addSource("places", {
+        //     type: "geojson",
+        //     data: 'assets/data/places.geojson',
             
-            });
-            map.loadImage('assets/data/city.png', function (error, image) {
-            if (error) throw error;
-            map.addImage('city', image);
-            map.addLayer({
-            "id": "poi-labels",
-            "type": "symbol",
-            "source": "places",
-            "layout": {
-            // "text-field": ["get", "name"],
-            // "text-variable-anchor": ["top", "bottom", "left", "right"],
-            // "text-radial-offset": 0.5,
-            // "text-justify": "auto",
-            "icon-image": "city",
-                    "icon-allow-overlap": true,
-                    "icon-size": 0.075,
-                    "icon-offset": [0, -250]
-            }
-            });
-        });
+        //     });
+        //     map.loadImage('assets/data/city.png', function (error, image) {
+        //     if (error) throw error;
+        //     map.addImage('city', image);
+        //     map.addLayer({
+        //     "id": "poi-labels",
+        //     "type": "symbol",
+        //     "source": "places",
+        //     "layout": {
+        //     // "text-field": ["get", "name"],
+        //     // "text-variable-anchor": ["top", "bottom", "left", "right"],
+        //     // "text-radial-offset": 0.5,
+        //     // "text-justify": "auto",
+        //     "icon-image": "city",
+        //             "icon-allow-overlap": true,
+        //             "icon-size": 0.045,
+        //             "icon-offset": [0, -250]
+        //     }
+        //     });
+        // });
         
     map.addSource("bani", {
             type: "geojson",
@@ -1012,7 +1015,7 @@ map.on('load', function() {
             'type': 'fill-extrusion',
             'source': 'deaths',
             'paint': {
-                'fill-extrusion-color': 'red',
+                'fill-extrusion-color': '#8B0000',
                 'fill-extrusion-height': ["get", "extrusion"],
                 'fill-extrusion-base': 0,
                 'fill-extrusion-opacity': 0.7

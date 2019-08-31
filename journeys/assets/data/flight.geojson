@@ -3,6 +3,6 @@
 "name": "flight",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "id": null, "name": "flight" }, "geometry": { "type": "Point", "coordinates": [ 5.220010721232283, 26.422866660450875 ] } }
+{ "type": "Feature", "properties": { "id": null, "name": "flight" }, "geometry": { "type": "Point", "coordinates": [ 2.0835048698896, 18.762554292748558 ] } }
 ]
 }

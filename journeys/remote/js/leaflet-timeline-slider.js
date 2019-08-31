@@ -16,8 +16,8 @@ L.Control.TimeLineSlider = L.Control.extend({
         betweenLabelAndRangeSpace: "20px",
 
         labelFontSize: "14px",
-        activeColor: "#37adbf",
-        inactiveColor: "#8e8e8e",
+        activeColor: "#ffffff",
+        inactiveColor: "#000000",
         
         backgroundOpacity: 0.75,
         backgroundColor: "#ffffff",
