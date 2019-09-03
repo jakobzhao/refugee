@@ -9,8 +9,11 @@
   <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">    
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <style>
-   
+   a{
+     color:silver;
+   }
    /* SVG styling */
    html {
     -moz-osx-font-smoothing: grayscale;
@@ -28,121 +31,125 @@
 </head>
 
 <body>
-  <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
-  <div id="infoPanel">
-      <h1 style="font-size:42px;">CONTEXT</h1> 
-      <div id="text">
-            <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-            <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
-              <button class="dropbtn">Select Map</button>
-              <div class="dropdown-content">
-                <a href="#"onclick="setHDI()">HDI</a>
-                <a href="#"onclick="setSchool()">Education</a>
-                <a href="#"onclick="setPoverty()">Poverty</a>
-                <a href="#"onclick="setEnvironment()">Environment</a>
-                <a href="#"onclick="setConflict()">Conflict</a>
+  <div class="row">
+    <div id="infoPanel" class="col-md-3">
+        <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+        <h1 style="font-size:42px;">CONTEXT</h1> 
+        <div id="text">
+              <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
+              <div class="dropdown" style="padding-bottom:0px;">
+                <button class="dropbtn">Select Map</button>
+                <div class="dropdown-content">
+                  <a href="#"onclick="setHDI()">HDI</a>
+                  <a href="#"onclick="setPoverty()">Poverty</a>
+                  <a href="#"onclick="setEnvironment()">Environment</a>
+                  <a href="#"onclick="setConflict()">Conflict</a>
+                </div>
               </div>
+              <div class="legend_container" id="HDI_legend">
+                <h2>Human Development Index</h2> 
+                <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #cbe9ce 33%, #cbe9ce 50%, #9cd8a5 50%, #9cd8a5 66%, #68c67c 66%, #68c67c 83%, #18b453 83%);"></div>
+                <p class="legend_label" style="margin-left:40px;">0</p>
+                <p class="legend_label" style="margin-left:30px;">0.2</p>
+                <p class="legend_label" style="margin-left:23px;">0.4</p>
+                <p class="legend_label" style="margin-left:18px;">0.6</p>
+                <p class="legend_label" style="margin-left:26px;">0.8</p>
+                <h2 style="font-size:24px; margin-top:30px;"></h2>
+                <p style="margin-top:10px;">The Human Development Index is based on the concept that people are the real wealth of a nation. The originators of the HDI recognised that there are three essential components required for humans to develop to their maximum ability: health, education and income. There is general agreement that if any one of these elements is absent, individual achievement will be severely limited (<a href="https://journals.sagepub.com/doi/full/10.1177/1757913913491350" target="_blank">more</a>) </p>
+                <p><img src="assets/img/hdi.png" style="width:100%"/></p>
+                <p style="margin-top:10px;">Countries which score low on the Human Development Index are more likely to experience conflict giving rise to internal displacement and refugee movements. Wealthier countries accept the better educated for permanent settlement, while admitting less skilled manual workers and asylum seekers on a temporary basis. (<a href="https://refuge.journals.yorku.ca/index.php/refuge/article/view/26042" target="_blank">more</a>)</p>
+              </div>
+              <div class="legend_container" id="school_legend" style="display:none;">
+                <h2>Avg. Years of School</h2> 
+                <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #f9cec7 33%, #f9cec7 50%, #f8a298 50%, #f8a298 66%, #ee756b 66%, #ee756b 83%, #e04040 83%);"></div>
+                <p class="legend_label" style="margin-left:40px;">0</p>
+                <p class="legend_label" style="margin-left:32px;">6</p>
+                <p class="legend_label" style="margin-left:36px;">8</p>
+                <p class="legend_label" style="margin-left:28px;">10</p>
+                <p class="legend_label" style="margin-left:26px;">12</p>
+                <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
+                <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
             </div>
-            <div class="legend_container" id="HDI_legend">
-              <h2>Human Development Index</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #cbe9ce 33%, #cbe9ce 50%, #9cd8a5 50%, #9cd8a5 66%, #68c67c 66%, #68c67c 83%, #18b453 83%);"></div>
-              <p class="legend_label" style="margin-left:38px;">0</p>
-              <p class="legend_label" style="margin-left:29px;">0.2</p>
-              <p class="legend_label" style="margin-left:18px;">0.4</p>
-              <p class="legend_label" style="margin-left:18px;">0.6</p>
-              <p class="legend_label" style="margin-left:18px;">0.8</p>
-              <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-              <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-              <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
-            </div>
-            <div class="legend_container" id="school_legend" style="display:none;">
-              <h2>Avg. Years of School</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #f9cec7 33%, #f9cec7 50%, #f8a298 50%, #f8a298 66%, #ee756b 66%, #ee756b 83%, #e04040 83%);"></div>
-              <p class="legend_label" style="margin-left:40px;">0</p>
-              <p class="legend_label" style="margin-left:32px;">6</p>
-              <p class="legend_label" style="margin-left:36px;">8</p>
-              <p class="legend_label" style="margin-left:28px;">10</p>
-              <p class="legend_label" style="margin-left:26px;">12</p>
-              <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-              <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-              <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
+            <div class="legend_container" id="pov_legend" style="display:none;">
+                <h2>% Population Living Under $5.50 a day</h2> 
+                <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #feedde 16%, #feedde 33%, #fdbe85 33%, #fdbe85 50%, #fd8d3c 50%, #fd8d3c 66%, #e6550d 66%, #e6550d 83%, #a63603 83%);"></div>
+                <p class="legend_label" style="margin-left:40px;">0</p>
+                <p class="legend_label" style="margin-left:30px;">40</p>
+                <p class="legend_label" style="margin-left:25px;">55</p>
+                <p class="legend_label" style="margin-left:25px;">70</p>
+                <p class="legend_label" style="margin-left:23px;">85</p>
+                <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
+                <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
           </div>
-          <div class="legend_container" id="pov_legend" style="display:none;">
-              <h2>% Population Living Under $5.50 a day</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #feedde 16%, #feedde 33%, #fdbe85 33%, #fdbe85 50%, #fd8d3c 50%, #fd8d3c 66%, #e6550d 66%, #e6550d 83%, #a63603 83%);"></div>
-              <p class="legend_label" style="margin-left:40px;">0</p>
-              <p class="legend_label" style="margin-left:30px;">40</p>
-              <p class="legend_label" style="margin-left:25px;">55</p>
-              <p class="legend_label" style="margin-left:25px;">70</p>
-              <p class="legend_label" style="margin-left:23px;">85</p>
-              <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-              <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-              <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
+          <div class="legend_container" id="env_legend" style="display:none;">
+            <h2>% Population at Risk of Natural Disaster</h2> 
+            <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e8e3ce 16%, #e8e3ce 33%, #d6cea3 33%, #d6cea3 50%, #c2ba7a 50%, #c2ba7a 66%, #aea651 66%, #aea651 83%, #989222 83%);"></div>
+            <p class="legend_label" style="margin-left:41px;">0</p>
+            <p class="legend_label" style="margin-left:30px;">20</p>
+            <p class="legend_label" style="margin-left:28px;">40</p>
+            <p class="legend_label" style="margin-left:25px;">60</p>
+            <p class="legend_label" style="margin-left:22px;">80</p>
+            <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
+                <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
+                <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
+          </div>
+          <div class="legend_container" id="con_legend" style="display:none;">
+            <h2>Conflict Types</h2> 
+            <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         
+            <p class="legend_label" style="margin-left:0px;">Battle</p>
+            <p class="legend_label" style="margin-left:47px;">Remote</p>
+            <p class="legend_label" style="margin-left:38px;">Civilian</p>
+            <h2 style="font-size:24px; margin-top:30px;">Battle</h2>
+              <p style="margin-top:10px;">Definition of battles. </p>
+            <h2 style="font-size:24px; margin-top:30px;">Remote Violence</h2>
+              <p style="margin-top:10px;">Definition of remote violence. </p>
+            <h2 style="font-size:24px; margin-top:30px;">Violence Against Civilians</h2>
+              <p style="margin-top:10px;">Definition of violence against civilians.</p>
+          </div>
         </div>
-        <div class="legend_container" id="env_legend" style="display:none;">
-          <h2>% Population at Risk of Natural Disaster</h2> 
-          <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e8e3ce 16%, #e8e3ce 33%, #d6cea3 33%, #d6cea3 50%, #c2ba7a 50%, #c2ba7a 66%, #aea651 66%, #aea651 83%, #989222 83%);"></div>
-          <p class="legend_label" style="margin-left:41px;">0</p>
-          <p class="legend_label" style="margin-left:30px;">20</p>
-          <p class="legend_label" style="margin-left:28px;">40</p>
-          <p class="legend_label" style="margin-left:25px;">60</p>
-          <p class="legend_label" style="margin-left:22px;">80</p>
-          <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-              <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-              <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
-        </div>
-        <div class="legend_container" id="con_legend" style="display:none;">
-          <h2>Conflict Types</h2> 
-          <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         
-          <p class="legend_label" style="margin-left:0px;">Battle</p>
-          <p class="legend_label" style="margin-left:47px;">Remote</p>
-          <p class="legend_label" style="margin-left:38px;">Civilian</p>
-          <h2 style="font-size:24px; margin-top:30px;">Battle</h2>
-            <p style="margin-top:10px;">Definition of battles. </p>
-          <h2 style="font-size:24px; margin-top:30px;">Remote Violence</h2>
-            <p style="margin-top:10px;">Definition of remote violence. </p>
-          <h2 style="font-size:24px; margin-top:30px;">Violence Against Civilians</h2>
-            <p style="margin-top:10px;">Definition of violence against civilians.</p>
-        </div>
-      </div>
+    </div>
+    <div id="projectionButtons">
+      <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
+      <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
+    </div>
+    <div class="col-md-9">
+      <svg>
+        <defs>
+            <radialGradient cx="75%" cy="25%" id="ocean_fill">
+              <stop offset="5%" stop-color="#ddf" />
+              <stop offset="100%" stop-color="#9ab" />
+            </radialGradient>
+            <radialGradient cx="75%" cy="25%" id="globe_highlight">
+              <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+              <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
+            </radialGradient>
+            <radialGradient cx="50%" cy="40%" id="globe_shading">
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+              <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
+            </radialGradient>
+            <radialGradient cx="50%" cy="50%" id="drop_shadow">
+              <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#000" stop-opacity="0" />
+            </radialGradient>
+          <filter id="glow">
+              <feColorMatrix type="matrix"
+                  values=
+                  "0.8 0 0 0 0
+                  0 0.9 0 0 0
+                  0 0 1 0 0
+                  0 0 0 1 0"/>
+              <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
+              <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+          </filter>
+        </defs>
+      </svg>
+     </div> 
   </div>
-  <div id="projectionButtons">
-    <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
-    <button style="display:inline-block; height:64px;" onclick="toOrthographic()"><img style="width:60px; height:60px;" src="assets/img/ortho.png"></img></button>
-  </div>
-  <svg>
-    <defs>
-        <radialGradient cx="75%" cy="25%" id="ocean_fill">
-          <stop offset="5%" stop-color="#ddf" />
-          <stop offset="100%" stop-color="#9ab" />
-        </radialGradient>
-        <radialGradient cx="75%" cy="25%" id="globe_highlight">
-          <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
-          <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
-        </radialGradient>
-        <radialGradient cx="50%" cy="40%" id="globe_shading">
-          <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
-          <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
-        </radialGradient>
-        <radialGradient cx="50%" cy="50%" id="drop_shadow">
-          <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#000" stop-opacity="0" />
-        </radialGradient>
-      <filter id="glow">
-          <feColorMatrix type="matrix"
-              values=
-              "0.8 0 0 0 0
-               0 0.9 0 0 0
-               0 0 1 0 0
-               0 0 0 1 0"/>
-          <feGaussianBlur stdDeviation="5.5" result="coloredBlur"/>
-          <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-      </filter>
-    </defs>
-  </svg>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Use d3-fetch instead of d3-request in ES6 -->
@@ -154,7 +161,8 @@
   <script src="js/d3-marker-cluster.js"></script>
   <script src="https://unpkg.com/supercluster@4.1.1/dist/supercluster.min.js"></script>
   <script src="js/chart.js"></script>
-  <script src="js/Chart.PieceLabel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script>
 
   //d3.select(window).on("load", sizeChange);
@@ -446,12 +454,12 @@
       svg
         .append("g")
         .attr("class", "labels")
-        .selectAll(".label")
+        .selectAll(".map-label")
         .data(places.features)
         .enter()
         .append("text")
         .attr("id", "city-label")
-        .attr("class", "label")
+        .attr("class", "map-label")
         .text(function(d) {
           return d.properties.NAME;
         });
@@ -468,11 +476,11 @@
       svg
         .append("g")
         .attr("class", "labels")
-        .selectAll(".label")
+        .selectAll(".map-label")
         .data(markers.features)
         .enter()
         .append("text")
-        .attr("class", "label")
+        .attr("class", "map-label")
         .attr("id", "case-label")
         .text(function(d) {
           return d.properties.text;
@@ -667,7 +675,7 @@
     function position_labels() {
       var centerPos = projection.invert([offsetX, offsetY]);
       svg
-        .selectAll(".label")
+        .selectAll(".map-label")
         .attr("text-anchor", function(d) {
           var x = projection(d.geometry.coordinates)[0];
           return x < offsetX - 20 ? "end" : x < offsetX + 20 ? "middle" : "start";
@@ -930,7 +938,7 @@
                 position:'left',
                 labels:{
                   fontFamily:"'Roboto Condensed','sans-serif'",
-									fontColor:'#000000',
+									fontColor:'#ffffff',
 									fontSize:16
                 }
               },
@@ -938,7 +946,10 @@
               plugins: {
                 labels: {
                   fontFamily:"'Roboto Condensed','sans-serif'",
-                  fontSize: 12
+                  fontSize: 12,
+                  fontColor:'#000000',
+                  showZero: false,
+                  overlap: false
                 }
               }
           }
@@ -954,7 +965,7 @@
             return '#c1c1d7';
         })
         .on("mouseover", function(d) {
-          countryTooltip.html(countryById[d.id] + '<canvas id="conflictTable"></canvas>')
+          countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL + ' Events<br/><canvas id="conflictTable"></canvas>')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -997,8 +1008,6 @@
       if (height < width) {
         radius = height /2.25;
       }
-    
-    
 
     if (proj == 0){
       projection = d3 
