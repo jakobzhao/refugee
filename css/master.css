@@ -5,6 +5,8 @@
       height:100vh;
       width:100%;
       margin:0;
+      color:white;
+      font-family: 'Roboto Condensed', sans-serif !important;
     }
     
     #map{
@@ -17,7 +19,7 @@
         z-index:0;
     }
     div#infoPanel {
-        width:300px;
+        width:350px;
         z-index:10;
         height:100%;
         position:absolute;
@@ -25,12 +27,13 @@
         left:0;
         background:rgba(82, 87, 96,0.7);
         border-right:2px solid #666666;
-        padding:25px;
+        padding:15px;
         overflow:hidden;
       }
     div#text{
-        position:relative;
-        height:80%;
+      position:relative;
+      height:calc(100% - 120px);
+      left:5%;
     }
     div.topBar{
         position:absolute;
@@ -62,14 +65,17 @@
         margin-bottom:0px;
         font-size:50px;
         text-align:center;
-        margin-top:50px;
         font-weight:400;
+        color:white !important;
+        margin-top: 50px !important;
+        margin-bottom:10px !important;
     }
     p{
       font-family: 'Roboto Condensed', sans-serif;
         margin-top:10px;
         text-align:justify;
         font-weight:300;
+        color:white !important;
     }
     h2{
       font-family: 'Roboto Condensed', sans-serif;
@@ -78,6 +84,8 @@
         line-height:30px;
         font-size:20px;
         font-weight:300;
+
+        color:white !important;
     }
 
     p.legend_label{
@@ -158,8 +166,8 @@
       color: black;
       padding: 2px;
       padding-left:10px;
-      width:300px;
       font-size: 20px;
+      width:90%;
       border: none;
       font-family: 'Roboto Condensed', sans-serif;
       border:black solid 2px;
@@ -169,6 +177,7 @@
 
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
+      width:100%;
       position: relative;
       display: inline-block;
       left:0;
@@ -193,6 +202,12 @@
       font-family: 'Roboto Condensed', sans-serif;
     }
 
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      text-decoration:none;
+      color:black;
+    }
 
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {background-color: #ddd !important;}
@@ -210,7 +225,7 @@
         pointer-events: none;
         top: calc(100% - 75px); /* possible because the placeholder's parent is the map */
         padding-top: 10px;
-        transform: translateX(-60%); /* using the CSS3 Transform technique */
+        transform: translateX(-100%); /* using the CSS3 Transform technique */
     }
     
     .leaflet-verticalcenter .leaflet-control {

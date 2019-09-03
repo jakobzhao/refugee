@@ -8,6 +8,7 @@ html,
       background-color:#878d9b;
       overflow: hidden;
       color:white;
+      font-family: 'Roboto Condensed', sans-serif !important;
     }
 
     body{
@@ -36,7 +37,7 @@ html,
       position: absolute;
       display: none;
       pointer-events: none;
-      background: #fff;
+      background:rgba(82, 87, 96,0.7);
       padding: 5px;
       text-align: left;
       border: solid #ccc 1px;
@@ -45,6 +46,7 @@ html,
       font-family: sans-serif;
       font-size:18px;
       font-family: 'Roboto Condensed', sans-serif;
+      color:white;
     }
 
     .graticule {
@@ -54,9 +56,10 @@ html,
       opacity: .2;
     }
 
-    .labels {
-        font-family: 'Roboto Condensed', sans-serif;
+    .map-label{
+        font-family: 'Roboto Condensed', sans-serif !important;
         fill: black;
+        pointer-events: none !important;
     }
 
     #city-label{
@@ -90,18 +93,21 @@ html,
       opacity: .1;
       stroke: gray;
       stroke-width: 3;
+      pointer-events: none !important;
     }
 
     .flyers {
       stroke-width: 1;
       opacity: .6;
       stroke: #ffff4d;
+      pointer-events: none !important;
+      
     }
 
     .arc,
     .flyer {
       stroke-linejoin: round;
-      fill: none;
+      fill: none
     }
 
     .arc {}
@@ -129,8 +135,8 @@ html,
       color: black;
       padding: 2px;
       padding-left:10px;
-      width:250px;
       font-size: 20px;
+      width:90%;
       border: none;
       font-family: 'Roboto Condensed', sans-serif;
       border:black solid 2px;
@@ -140,6 +146,7 @@ html,
 
     /* The container <div> - needed to position the dropdown content */
     .dropdown {
+      width:100%;
       position: relative;
       display: inline-block;
       left:0;
@@ -165,7 +172,11 @@ html,
     }
 
     /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {background-color: #ddd;}
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      text-decoration:none;
+      color:black;
+    }
 
     /* Show the dropdown menu on hover */
     .dropdown:hover .dropdown-content {display: block;}
@@ -175,18 +186,21 @@ html,
     /* Dropdown styling */
 
     /*HTML styling*/
+  
     h1{
         font-family: 'Roboto Condensed', sans-serif;
         margin-bottom:0px;
-        font-size:50px;
+        font-size:50px !important;
         text-align:center;
-        margin-top: 50px;
+        margin-top: 50px !important;
         font-weight:400;
+        color:white !important;
     }
     p{
         font-family: 'Roboto Condensed', sans-serif;
-        margin-top:10px;
+        margin-top:20px;
         font-weight:300;
+        color:white;
     }
     h2{
         font-family: 'Roboto Condensed', sans-serif;
@@ -195,12 +209,11 @@ html,
         text-align:left;
         line-height:30px;
         font-weight:300;
+        color:white !important;
     }
     div.legend{
-        width:280px;
         height:35px;
         margin-bottom:5px;
-        margin:auto;
         border:#000000 solid 2px;
     }    
     div.legend_container{
@@ -208,7 +221,7 @@ html,
         margin-top:0px;
         top:calc(100% + 180px);
         z-index:110;
-        width:280px;
+        width:90%;
     }
     p.legend_label{
         font-size:18px;
@@ -226,32 +239,30 @@ html,
       border-right:2px solid #666666;
     }*/
     div#infoPanel {
-      width:300px;
       z-index:10;
       height:100%;
+      width:350px;
       position:absolute;
       top:0;
       left:0;
       background:rgba(82, 87, 96,0.7);
       border-right:2px solid #666666;
-      padding:25px;
+      padding:15px;
       overflow:hidden;
     }
     div#text{
         position:relative;
         height:calc(100% - 120px);
+        left:5%;
     }
     div.topBar{
         position:absolute;
-        top:15px;
-        left:40px;
         height:40px;
-        width:300px;
         background:rgba(255,255,255,0);
         z-index:100;
+        left:calc(50% - 85px);
     }
     img#ng{
-        margin-left: 50px;
       margin-top:3px;
       display:block;
       width:170px;
