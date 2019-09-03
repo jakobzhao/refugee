@@ -1,30 +1,62 @@
 [
     {
-        "text": "home",
-        "weight": 18
+        "text": "people",
+        "weight": 24
     },
     {
-        "text": "people",
-        "weight": 17
+        "text": "home",
+        "weight": 19
     },
     {
         "text": "country",
-        "weight": 16
+        "weight": 19
     },
     {
         "text": "world",
-        "weight": 13
+        "weight": 18
     },
     {
         "text": "t",
-        "weight": 13
+        "weight": 18
+    },
+    {
+        "text": "some",
+        "weight": 15
     },
     {
         "text": "other",
+        "weight": 14
+    },
+    {
+        "text": "crisis",
+        "weight": 14
+    },
+    {
+        "text": "know",
         "weight": 11
     },
     {
+        "text": "into",
+        "weight": 11
+    },
+    {
+        "text": "help",
+        "weight": 11
+    },
+    {
+        "text": "countries",
+        "weight": 11
+    },
+    {
+        "text": "after",
+        "weight": 10
+    },
+    {
         "text": "today",
+        "weight": 10
+    },
+    {
+        "text": "please",
         "weight": 10
     },
     {
@@ -32,19 +64,51 @@
         "weight": 10
     },
     {
-        "text": "crisis",
+        "text": "children",
+        "weight": 10
+    },
+    {
+        "text": "asylum",
+        "weight": 10
+    },
+    {
+        "text": "like",
+        "weight": 10
+    },
+    {
+        "text": "camp",
+        "weight": 10
+    },
+    {
+        "text": "support",
         "weight": 9
     },
     {
-        "text": "please",
+        "text": "state",
         "weight": 9
     },
     {
-        "text": "know",
-        "weight": 8
+        "text": "because",
+        "weight": 9
     },
     {
-        "text": "after",
+        "text": "trump",
+        "weight": 9
+    },
+    {
+        "text": "right",
+        "weight": 9
+    },
+    {
+        "text": "should",
+        "weight": 9
+    },
+    {
+        "text": "take",
+        "weight": 9
+    },
+    {
+        "text": "humanitarian",
         "weight": 8
     },
     {
@@ -52,15 +116,35 @@
         "weight": 8
     },
     {
-        "text": "help",
+        "text": "through",
         "weight": 8
     },
     {
-        "text": "some",
+        "text": "displaced",
         "weight": 8
     },
     {
-        "text": "asylum",
+        "text": "over",
+        "weight": 8
+    },
+    {
+        "text": "immigrants",
+        "weight": 8
+    },
+    {
+        "text": "time",
+        "weight": 8
+    },
+    {
+        "text": "could",
+        "weight": 8
+    },
+    {
+        "text": "well",
+        "weight": 8
+    },
+    {
+        "text": "also",
         "weight": 8
     },
     {
@@ -68,15 +152,19 @@
         "weight": 8
     },
     {
-        "text": "take",
-        "weight": 8
-    },
-    {
-        "text": "humanitarian",
+        "text": "border",
         "weight": 7
     },
     {
-        "text": "into",
+        "text": "syria",
+        "weight": 7
+    },
+    {
+        "text": "working",
+        "weight": 7
+    },
+    {
+        "text": "government",
         "weight": 7
     },
     {
@@ -84,7 +172,7 @@
         "weight": 7
     },
     {
-        "text": "trump",
+        "text": "years",
         "weight": 7
     },
     {
@@ -92,11 +180,35 @@
         "weight": 7
     },
     {
-        "text": "immigrants",
+        "text": "year",
         "weight": 7
     },
     {
-        "text": "countries",
+        "text": "much",
+        "weight": 7
+    },
+    {
+        "text": "brazil",
+        "weight": 7
+    },
+    {
+        "text": "while",
+        "weight": 7
+    },
+    {
+        "text": "commissioner",
+        "weight": 7
+    },
+    {
+        "text": "under",
+        "weight": 7
+    },
+    {
+        "text": "south",
+        "weight": 7
+    },
+    {
+        "text": "since",
         "weight": 7
     },
     {
@@ -116,43 +228,59 @@
         "weight": 6
     },
     {
-        "text": "syria",
+        "text": "huge",
         "weight": 6
     },
     {
-        "text": "children",
+        "text": "think",
         "weight": 6
     },
     {
-        "text": "displaced",
+        "text": "need",
         "weight": 6
     },
     {
-        "text": "time",
+        "text": "then",
         "weight": 6
     },
     {
-        "text": "brazil",
+        "text": "always",
         "weight": 6
     },
     {
-        "text": "could",
+        "text": "school",
         "weight": 6
     },
     {
-        "text": "well",
+        "text": "welcome",
         "weight": 6
     },
     {
-        "text": "also",
+        "text": "become",
         "weight": 6
     },
     {
-        "text": "camp",
+        "text": "camps",
         "weight": 6
     },
     {
-        "text": "should",
+        "text": "high",
+        "weight": 6
+    },
+    {
+        "text": "office",
+        "weight": 6
+    },
+    {
+        "text": "climate",
+        "weight": 6
+    },
+    {
+        "text": "health",
+        "weight": 6
+    },
+    {
+        "text": "says",
         "weight": 6
     },
     {
@@ -160,7 +288,19 @@
         "weight": 6
     },
     {
-        "text": "since",
+        "text": "even",
+        "weight": 6
+    },
+    {
+        "text": "different",
+        "weight": 6
+    },
+    {
+        "text": "2018",
+        "weight": 6
+    },
+    {
+        "text": "cameroon",
         "weight": 6
     },
     {
