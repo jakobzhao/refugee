@@ -6,6 +6,7 @@
   <title>Kutupalong</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <link rel="stylesheet" href="../css/master.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />   
   <link rel="shortcut icon" href="../assets/img/nglogo.png" type="image/x-icon">
@@ -14,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="../css/Control.MiniMap.css" />
+
   <style>
       html {
       -moz-osx-font-smoothing: grayscale;
@@ -31,21 +33,22 @@
 </head>
 
 <body>
-  <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
-  <div id="infoPanel">
+<div class="row">
+  <div id="infoPanel" class="col-md-3">
+    <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
     <h1>KUTUPALONG</h1> 
           <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-          <div class="dropdown" style="margin-top:20px; padding-bottom:0px;">
-            <button class="dropbtn" id="dataType">Select Map</button>
-            <div class="dropdown-content">
-              <a href="#" id="but1" class="selection" style="background:#ddd;">Overview</a>
-              <a href="#" id="but2" class="selection">Population</a>
-              <a href="#" id="but3" class="selection">Health</a>
-              <a href="#" id="but4" class="selection">Sanitation</a>
-              <a href="#" id="but5" class="selection">Safety</a>
-            </div>
-          </div>
           <div id="text">
+            <div class="dropdown" style="padding-bottom:0px;">
+                <button class="dropbtn" id="dataType">Select Map</button>
+                <div class="dropdown-content">
+                  <a href="#" id="but1" class="selection" style="background:#ddd;">Overview</a>
+                  <a href="#" id="but2" class="selection">Population</a>
+                  <a href="#" id="but3" class="selection">Health</a>
+                  <a href="#" id="but4" class="selection">Sanitation</a>
+                  <a href="#" id="but5" class="selection">Safety</a>
+                </div>
+              </div>
             <div class="legend_container" id="leg_1">
               <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
               <div style="display:inline-block; width:150px; height:80px;">
@@ -96,7 +99,9 @@
       </div>
     </div>
   </div>
-  <div id="map"></div>
+  <div id="map" class="col-md-9"></div>
+</div>
+
 
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -111,6 +116,8 @@
     <script src="../js/minimap.js"></script>
     <script src="../js/leaflet-heat.js"></script>
     <script src="../assets/map_data/camp/kutupalong/safety.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
   <script>
 
         const ps = new PerfectScrollbar('#text', {

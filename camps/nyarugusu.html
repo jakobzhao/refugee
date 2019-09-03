@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="shortcut icon" href="../tweets/assets/nglogo.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="../css/master.css" />
@@ -49,14 +50,14 @@
     </style>
 </head>
 <body>
-
-    <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
-    <div id="infoPanel">
+<div class="row">
+    <div id="infoPanel" class="col-md-3">
+        <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div>
         <h1>NYARUGUSU</h1> 
-        <h2 style="display: inline-block;">Population: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">65,000</h2><br>
-        <h5 style="display: inline-block;">Last updated: </h5>&nbsp;<h5 id="updated" style="display: inline-block;">null</h5>
         <p>
             <div id="text">
+                <h2 style="display: inline-block;">Population: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">65,000</h2><br>
+                <p style="display: inline-block;">Last updated: </p>&nbsp;<p id="updated" style="display: inline-block;">null</p>
                 <div class="legend_container" id="leg_1">
                     <p><a href="https://reliefweb.int/sites/reliefweb.int/files/resources/65654.pdf" target = "_blank"style="display: inline-block; color: lightblue;">Nyaragosu refugee camp </a> was opened in November 1996 to host Persons of Concern fleeing conflicts in DRC. Prior to April 2015, the camp hosted 65,000 Congolese and 2,400 Burundians. 84,961 Burundians arrived between April and October 2015 were being hosted in Nyarugusu refugee camp before relocation of close to 40,000 Burundian refugees to <a href="nduta.html" style="display: inline-block; color: silver;">Nduta </a> and <a href="mtendeli.html"style="display: inline-block; color: silver;">Mtendeli </a> refugee camps between October 2015 and February 2016 respectively. The camp is currently performing a resettlement process that is mainly targeting Congolese who arrived in Tanzania between 1994 and 2005.
                     </p>  
@@ -79,8 +80,8 @@
         </p>
     </div>
 
-    <div id="map"></div>
-
+    <div id="map" class="col-md-9"></div>
+</div>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/js/bootstrap-select.min.js"></script>
