@@ -4,17 +4,22 @@
 <head>
   <meta charset="utf-8">
   <title>Global Refugee Atlas</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">        
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
   <style>
+     
      html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-weight: 400;
+    font-weight: 300;
     }
 
     @-moz-document url-prefix() {
@@ -24,8 +29,7 @@
     }
     
     html,
-    body,
-    svg {
+    body{
       position: fixed;
       width: 100%;
       height: 100vh;
@@ -35,16 +39,21 @@
       overflow: hidden
     }
 
+    svg{
+      position: fixed;
+    }
+
     .land {
       fill: rgb(255, 255, 255);
       stroke-opacity: 1;
     }
 
     .countries path {
-      stroke: rgba(0, 0, 0, .1);
+      stroke: rgba(0, 0, 0, .2);
       stroke-linejoin: round;
-      stroke-width: .5;
-      fill-opacity: 0.5;
+      stroke-width: 1.5;
+      fill-opacity: 0.1;
+      stroke-dasharray: 4;
     }
 
     .countryTooltip {
@@ -70,9 +79,10 @@
     }
 
     .labels {
-      font: 9px 'Roboto Condensed', sans-serif;
+      font: 14px 'Roboto Condensed', sans-serif;
       fill: black;
       opacity: .5;
+      font-weight:300;
     }
 
     .noclicks {
@@ -118,22 +128,26 @@
         width:100%;
     }
     
-    a#but{
-        width:200px;
-        height:50px;
-        font-size:22px;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-variant: small-caps;
-        border:none;
-        margin:auto;
-        margin-bottom:15px;
-        text-decoration:none;
-        color:white;
-        text-align:center;
+    div#but{
+      width:420px;
+      /*margin:auto;*/
     }
 
-    a#but:hover{
-        background:lightgray;
+    div#but:hover{
+        background: rgba(82, 87, 96,0.9);
+    }
+
+    div#but-text{
+      position:relative;
+      display:inline-block;
+      left:120px;
+      width:320px;
+      margin-bottom:15px;
+    }
+
+    div.title{
+        height:100%;
+        display:block;
     }
 
     div#mainMenu{
@@ -141,67 +155,200 @@
         margin:auto;
         display:inline-block;
         width:500px;
-        left:25px;
+        left:10px;
         top:25px;
         z-index:1000;
+        height:100%;
         /*transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;*/
     }
     
     div#text{
-        height:400px;
-        width:300px;
+        height:95%;
+        width:500px;
         position:relative;
         overflow: hidden;
-        margin-left:50px;
+        margin-left:20px;
     }
 
     h1{
       font-family: 'Roboto Condensed', sans-serif;
         font-variant: small-caps;
         font-weight:bold;
-        font-size:64px;
-        width:400px;
-        text-align:center;
-        line-height:64px;
+        font-size:125px;
+        width:500px;
+        text-align:left;
+        line-height:125px;
+        margin:auto;
+        margin-top:50%;
+        display:block;
+        letter-spacing: 2px;
     }
 
+    h2{
+      font-family: 'Roboto Condensed', sans-serif;
+        font-variant: small-caps;
+        font-weight:bold;
+        font-size:105px;
+        width:500px;
+        text-align:left;
+        line-height:125px;
+    }
+
+    p{
+      margin:0;
+    }
+
+    p#but-a{
+        font-size:34px;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-variant: small-caps;
+        border:none;
+        text-decoration:none;
+        color:white;
+        text-align:left;
+        font-weight:bold;
+    }
+    p#desc{
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight:300 !important;
+      font-size:18px;
+      color:white;
+    }
+
+    p:hover{
+      text-decoration:none;
+    }
+
+    p.intro-text{
+        font-weight:300;
+        font-size:22px;
+        width:400px;
+        line-height:22px;
+    }
+
+    p.about-text{
+        font-weight:300;
+        font-size:18px;
+        width:400px;
+        line-height:22px;
+    }
+
+    p.cont-text{
+      font-size:30px;
+      font-weight:300;
+    }
+
+    img.icon{
+      height:60px;
+      width:60px;
+      filter: invert(100%);
+      display:inline-block;
+      position:absolute;
+      margin-top:20px;
+      margin-left:10px;
+    }
+    a{
+      font-weight:300;
+    }
   </style>
 </head>
 
 <body>
-<div id ="mainMenu">
-    <h1>Global Refugee Atlas</h1>
-    <div id = "text">
-        <a href="context.html" onmouseover="showGlobal()" onmouseout="hideGlobal()" style="display:block;" id="but">Context</a>
-        <a href="journey_menu.html" onmouseover="showRoutes()" onmouseout="hideRoutes()" id="but" style="display:block;">Journeys</a>
-        <a href="camp_menu.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Settlements</a>
-        <a href="aid_menu.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Aid</a>
-        <a href="tweets/index.html" onmouseover="showCamps()" onmouseout="hideCamps()" id="but" style="display:block;">Perception</a>
+<div class="row">
+  <div id ="mainMenu" class="col-md-5">
+      <div id = "text">
+        <div class="title">
+            <h1>Global Refugee Atlas</h1>
+            <p class="intro-text">Brief introduction about the atlas. We can have a more detailed "about" section later on.</p>
+        </div>
+        <div style="margin-bottom:200px;">
+          <h2>Contents</h2>
+          <a href="context.html">
+            <div id="but">
+              <img src="assets/img/sample_icon.png" class="icon">
+              <div id="but-text">
+                <p onmouseover="showGlobal()" onmouseout="hideGlobal()" style="display:block;" id="but-a">Context</p>
+                <p id="desc">Description of Context.</p>
+              </div>
+            </div>
+          </a> 
+          <a href="journey_menu.html" >
+            <div id="but">
+              <img src="assets/img/sample_icon.png" class="icon">
+              <div id="but-text">
+                <p onmouseover="showRoutes()" onmouseout="hideRoutes()" id="but-a" style="display:block;">Journeys</p>
+                <p id="desc">Description of Journeys.</p>
+              </div>
+            </div>
+          </a>  
+          <a href="camp_menu.html" >
+            <div id="but">
+              <img src="assets/img/sample_icon.png" class="icon">
+              <div id="but-text">
+                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Settlements</p>
+                <p id="desc">Description of Settlements.</p>
+              </div>
+            </div>
+          </a>  
+          <a href="aid_menu.html" >
+              <div id="but">
+                <img src="assets/img/sample_icon.png" class="icon">
+                <div id="but-text">
+                  <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Aid</p>
+                  <p id="desc">Description of Aid.</p>
+                </div>
+              </div>
+            </a>  
+          <a href="tweets/index.html" >
+            <div id="but">
+              <img src="assets/img/sample_icon.png" class="icon">
+              <div id="but-text">
+                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Perception</p>
+                <p id="desc">Description of Perception.</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div style="margin-bottom:200px;">
+            <h2>About</h2>
+            <p class="about-text">Lorem ipsum dolor sit amet, ea meis mundi eam. Wisi nostro constituam ex vis, at eam timeam sententiae eloquentiam. Reque perfecto convenire qui ad, has et diam utinam laoreet. Qui mundi oporteat et, sea eu mutat molestie. Altera virtute oporteat usu te, nec viris disputationi delicatissimi ad, et choro sensibus cum. Eos invidunt consulatu efficiendi et. Ut vide nonumy soleat mei.<br/><br/>Lorem ipsum dolor sit amet, ea meis mundi eam. Wisi nostro constituam ex vis, at eam timeam sententiae eloquentiam. Reque perfecto convenire qui ad, has et diam utinam laoreet. Qui mundi oporteat et, sea eu mutat molestie. Altera virtute oporteat usu te, nec viris disputationi delicatissimi ad, et choro sensibus cum. Eos invidunt consulatu efficiendi et. Ut vide nonumy soleat mei.<br/><br/>Lorem ipsum dolor sit amet, ea meis mundi eam. Wisi nostro constituam ex vis, at eam timeam sententiae eloquentiam. Reque perfecto convenire qui ad, has et diam utinam laoreet. Qui mundi oporteat et, sea eu mutat molestie. Altera virtute oporteat usu te, nec viris disputationi delicatissimi ad, et choro sensibus cum. Eos invidunt consulatu efficiendi et. Ut vide nonumy soleat mei.</p>                           
+        </div>
+        <div style="margin-bottom:200px;">
+            <h2>Authors</h2>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+            <p class="cont-text"><b>First Last</b>&nbsp&nbspProject Role</p>
+        </div>
     </div>
-</div> 
-<svg>
-    <defs>
-      <radialGradient cx="75%" cy="25%" id="ocean_fill">
-        <stop offset="5%" stop-color="#ddf" />
-        <stop offset="100%" stop-color="#9ab" />
-      </radialGradient>
-      <radialGradient cx="75%" cy="25%" id="globe_highlight">
-        <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
-        <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="40%" id="globe_shading">
-        <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
-        <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
-      </radialGradient>
-      <radialGradient cx="50%" cy="50%" id="drop_shadow">
-        <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
-        <stop offset="100%" stop-color="#000" stop-opacity="0" />
-      </radialGradient>
-    </defs>
-  </svg>
- 
+  </div> 
+  <div class="col-md-7">
+    <svg>
+        <defs>
+          <radialGradient cx="75%" cy="25%" id="ocean_fill">
+            <stop offset="5%" stop-color="#ddf" />
+            <stop offset="100%" stop-color="#9ab" />
+          </radialGradient>
+          <radialGradient cx="75%" cy="25%" id="globe_highlight">
+            <stop offset="5%" stop-color="#fff" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#808080" stop-opacity="0.2" />
+          </radialGradient>
+          <radialGradient cx="50%" cy="40%" id="globe_shading">
+            <stop offset="50%" stop-color="#ffffff" stop-opacity="0" />
+            <stop offset="100%" stop-color="#808080" stop-opacity="0.3" />
+          </radialGradient>
+          <radialGradient cx="50%" cy="50%" id="drop_shadow">
+            <stop offset="20%" stop-color="#000" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#000" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+      </svg>
+  </div>  
+</div>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Use d3-fetch instead of d3-request in ES6 -->
   <script src="https://d3js.org/d3-request.v1.min.js"></script>
@@ -209,8 +356,12 @@
   <script src="https://d3js.org/topojson.v3.min.js"></script>
   <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
   <script src="js/perfect-scrollbar.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
   <script>
-      const config = {
+     d3.select(window).on("resize", sizeChange);
+
+    const config = {
       speed: 0.005,
       verticalTilt: -30,
       horizontalTilt: 0
@@ -225,7 +376,7 @@
     var width = window.innerWidth,
       height = window.innerHeight,
       sensitivity = 0.25,
-      offsetX = width / 1.3,
+      offsetX = width / 1.2,
       offsetY = height / 2,
       maxElevation = 45,
       initRotation = [0, -30],
@@ -233,9 +384,11 @@
       flyerAltitude = 80,
       countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
       countryById = {},
+      colorById = {},
       countries,
       countryCentroids = {},
-      proj = 0;
+      proj = 0,
+      currentPos = initRotation;
 
     var radius = width / 3;
     if (height < width) {
@@ -295,6 +448,10 @@
 
     var labels;
 
+    var colorRange = d3.scaleOrdinal()
+        .domain([1,2,3,4,5,6,7,8])
+        .range(["#a6cee3", "#1f78b4","#b2df8a", "#33a02c","#fb9a99", "#e31a1c","#fdbf6f", "#ff7f00"]);
+
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
       .defer(d3.json, "assets/map_data/global/cities.json")
@@ -305,9 +462,10 @@
       .defer(d3.json, "assets/map_data/global/settlements.json")
       .defer(d3.json, "assets/map_data/global/dispersed.json")
       .defer(d3.json, "assets/map_data/global/routes.json")
+      .defer(d3.csv, "assets/map_data/global/country_color.csv")
       .await(ready);
 
-function ready(error, world, places, links, countryNames, demographics, camps, settlements, dispersed, routes) {
+function ready(error, world, places, links, countryNames, demographics, camps, settlements, dispersed, routes, color) {
 
       
 var defs = svg.append("defs");
@@ -357,6 +515,10 @@ gradient.append("svg:stop")
 
   countryNames.forEach(function(d) {
     countryById[d.iso_n3] = d.name;
+  });
+
+  color.forEach(function(d) {
+    colorById[d.iso_n3] = d.mapcolor8;
   });
 
   svg
@@ -411,10 +573,10 @@ gradient.append("svg:stop")
     .attr("d", path)
     .attr("class", "country")
     .attr("name",function(d){
-       return countryById[d.id];
+       console.log(d);return countryById[d.id];
     })
     .attr("fill", function (d) {
-        return "#a6a6a6";
+        return colorRange(parseFloat(colorById[d.id]));
     })
     .attr("box-shadow", 'inset 0 0 10px #000000');
   svg
@@ -426,7 +588,7 @@ gradient.append("svg:stop")
     .append("path")
     .attr("class", "point")
     .attr("opacity", 0.6)
-    .attr("d", path.pointRadius(3));
+    .attr("d", path.pointRadius(1.5));
   svg
     .append("g")
     .attr("class", "labels")
@@ -443,7 +605,7 @@ gradient.append("svg:stop")
   position_labels();
   //enableRotation();
 
-    svg
+      svg
         .append("g")
         .attr("class", "points camps")
         .selectAll(".points")
@@ -453,7 +615,7 @@ gradient.append("svg:stop")
         .attr("class", "point1")
         .attr("opacity", 0)
         .attr("fill", "#806600")
-        .attr("d", path.pointRadius(3));
+        .attr("d", path.pointRadius(1.5));
       svg
         .append("g")
         .attr("class", "points settlements")
@@ -464,7 +626,7 @@ gradient.append("svg:stop")
         .attr("class", "point1")
         .attr("opacity", 0)
         .attr("fill", "#806600")
-        .attr("d", path.pointRadius(3));
+        .attr("d", path.pointRadius(1.5));
       svg
         .append("g")
         .attr("class", "points dispersed")
@@ -475,7 +637,7 @@ gradient.append("svg:stop")
         .attr("class", "point1")
         .attr("fill", "#806600")
         .attr("opacity", 0)
-        .attr("d", path.pointRadius(3));
+        .attr("d", path.pointRadius(1.5));
 
       svg
         .append("g")
@@ -561,6 +723,7 @@ gradient.append("svg:stop")
         o1[1] < -maxElevation ?
         -maxElevation :
         o1[1];
+      currentPos = o1;
       projection.rotate(o1);
       skyProjection.rotate(o1);
       refresh();
@@ -602,40 +765,71 @@ gradient.append("svg:stop")
     }
 
     function showGlobal(){
-        svg
-          .selectAll(".country").attr("fill", "#53c653");
+       /* svg
+          .selectAll(".country").attr("fill", "#53c653");*/
     }
     function hideGlobal(){
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
+        /*svg
+          .selectAll(".country").attr("fill", function (d) {
+          return colorRange(parseFloat(colorById[d.id]));
+        })*/
     }
 
     function showRoutes(){
         svg
           .selectAll(".line")
           .attr("stroke", "rgba(153, 51, 51, 1)");
-        svg
-          .selectAll(".country").attr("fill", "#999966");
     }
     function hideRoutes(){
         svg
         .selectAll(".line")
         .attr("stroke", "rgba(153, 51, 51, 0)");
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
     }
 
     function showCamps(){
         svg
           .selectAll(".point1").style("opacity", 0.6);
-        svg
-          .selectAll(".country").attr("fill", "#ffe066");
     }
     function hideCamps(){
         svg
           .selectAll(".point1").style("opacity", 0);
-        svg
-          .selectAll(".country").attr("fill", "#a6a6a6");
+    }
+
+    function sizeChange() {
+      width = window.innerWidth,
+      height = window.innerHeight,
+      offsetX = width / 1.3,
+      offsetY = height / 2;
+
+      radius = width / 3;
+      if (height < width) {
+      radius = height /1.3;
+      }
+
+      projection = d3 
+        .geoOrthographic()
+        .scale(radius)
+        .rotate(currentPos)
+        .translate([offsetX, offsetY])
+        .clipAngle(90);
+
+      d3.selectAll("ellipse")
+        .attr("cx", offsetX - 40)
+        .attr("cy", offsetY + radius - 20)
+        .attr("rx", projection.scale() * 0.9)
+        .attr("ry", projection.scale() * 0.25);
+
+      d3.selectAll("circle")
+        .attr("cx", offsetX)
+        .attr("cy", offsetY)
+        .attr("r", projection.scale());
+
+      path = d3
+        .geoPath()
+        .projection(projection)
+        .pointRadius(1.5);
+
+      refresh();
     }
 
   </script>
