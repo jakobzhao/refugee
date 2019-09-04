@@ -11,7 +11,7 @@ $.getJSON("assets/europe/pics.json", function() {
 
   $('#photocols').photocols({
     colswidth : 180,
-    height : 800,
+    height : 1400,
     bgcolor : '#fff',
     opacity: 0.3,
     gap: 2,

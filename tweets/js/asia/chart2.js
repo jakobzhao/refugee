@@ -7,7 +7,7 @@ $.getJSON("assets/asia/sentiment.json", function() {
   $.each( data, function(i) {
       count.push(data[i]);
     });
-Chart.defaults.global.defaultFontFamily = "Lustria";
+Chart.defaults.global.defaultFontFamily = "Roboto condensed";
 var ctx = document.getElementById('canvas2').getContext("2d");
 
 var myChart = new Chart(ctx, {
@@ -34,7 +34,7 @@ var myChart = new Chart(ctx, {
   ],
     type: 'line',
     data: {
-        labels: ['-1', '-0.8', '-0.6', '-0.4', '-0.2', '0', '+0.2', '+0.4', '+0.6', '+0.8', '+1'],
+        labels: ['Negative', '', '', '', '', 'Neutral', '', '', '', '', 'Positive'],
         datasets: [{
             label: "Tweets",
             data: count
@@ -43,10 +43,11 @@ var myChart = new Chart(ctx, {
     options: {
         title: {
             display: true,
-            text: 'Distribution of Tweets based on Sentiment Polarity (-1 = negative +1 = positive)'
+            text: 'DISTRIBUTION OF TWEETS BASED ON SENTIMENT POLARITY'
             
         },
         legend: {
+            display: false,
             position: "bottom"
         },
         scales: {
