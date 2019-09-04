@@ -128,7 +128,7 @@
       offsetX = width / 1.5,
       offsetY = height / 2,
       maxElevation = 45,
-      initRotation = [0, -30],
+      initRotation = [0, -10],
       scaleExtent = [1, 8],
       flyerAltitude = 80,
       countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
@@ -258,7 +258,7 @@
     });
 
     demographics.forEach(function(d) {
-        refById[d.id] = d.flow_out;
+        refById[d.id] = d.refugees;
     });
     
     var defs = svg.append("defs");
@@ -373,7 +373,7 @@
             return 'rgba(0, 53, 102, .5)';
         })
       .on("mouseover", function(d) {
-        countryTooltip.text(countryById[d.id] + ': ' +refById[d.id])
+        countryTooltip.text(countryById[d.id] +  refById[d.id])
         .style("left", (d3.event.pageX ) + "px")
         .style("top", (d3.event.pageY) + "px")
         .style("display", "block")
@@ -495,12 +495,10 @@
         .pointRadius(1.5);
 
       projection = projection2;
-      skyProjection = skyProjection2
+      skyProjection = skyProjection2;
 
       svg
           .selectAll("circle").style("fill-opacity", 0);
-      svg
-          .selectAll(".labels").style("fill-opacity", 0);
       svg
           .selectAll("ellipse").style("fill-opacity", 0);
       svg
@@ -509,8 +507,7 @@
       //document.getElementById("infoPanel").style.background = "rgba(0,0,0,0.2)";
 
       proj = 1;
-      refresh();
-      position_labels();
+      sizeChange();
     }
 
     function toOrthographic(){      
@@ -528,17 +525,14 @@
       svg
           .selectAll("circle").style("fill-opacity", 1);
       svg
-          .selectAll(".labels").style("fill-opacity", 1);
-      svg
           .selectAll("ellipse").style("fill-opacity", 1);
       svg
           .selectAll("rect").style("fill-opacity", 0);
 
       //document.getElementById("infoPanel").style.background = "rgba(255,255,255,0.3)";
 
-      proj = 1;
-      refresh();
-      position_labels();
+      proj = 0;
+      sizeChange();
     }
 
     function projectionTween(projection0, projection1) {
@@ -546,8 +540,8 @@
         var t = 0;
         var projection = d3.geoProjection(project)
             .scale(1)
-            .rotate(currentPos)
-            .translate([width / 2, height / 2]);
+            .rotate(o1)
+            .translate([width / 1.5, height / 2]);
         var path = d3.geoPath(projection);
         function project(λ, φ) {
           λ *= 180 / Math.PI, φ *= 180 / Math.PI;
@@ -621,7 +615,8 @@
     }
 
     function dragged() {
-      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+      var o1 = [d3.event.x * sensitivity, -10];
+
       o1[1] =
         o1[1] > maxElevation ?
         maxElevation :

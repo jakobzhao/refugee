@@ -186,7 +186,7 @@
       offsetX = width / 1.5,
       offsetY = height / 2,
       maxElevation = 45,
-      initRotation = [0, -30],
+      initRotation = [0, -10],
       scaleExtent = [1, 8],
       flyerAltitude = 80,
       countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
@@ -649,7 +649,7 @@
         var t = 0;
         var projection = d3.geoProjection(project)
             .scale(1)
-            .rotate(currentPos)
+            .rotate(o1)
             .translate([width / 1.5, height / 2]);
         var path = d3.geoPath(projection);
         function project(λ, φ) {
@@ -738,7 +738,8 @@
     }
 
     function dragged() {
-      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
+      var o1 = [d3.event.x * sensitivity, -10];
+      
       o1[1] =
         o1[1] > maxElevation ?
         maxElevation :
