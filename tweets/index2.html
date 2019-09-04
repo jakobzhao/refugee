@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Twitter Analysis</title>
+  <title>Perception</title>
 
   <!-- Custom fonts for this template-->
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
@@ -20,12 +20,14 @@
   <link rel="shortcut icon" href="assets/nglogo.png" type="image/x-icon">
   <script src="vendor/chart/chart.min.js"></script>
   <!-- Custom styles for this template-->
+  <script src="../js/perfect-scrollbar.js"></script>
   <link href="css/jqcloud.min.css" rel="stylesheet">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  
+  <link href="../css/perfect-scrollbar.css" rel="stylesheet"> 
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="js/jqcloud.min.js"></script>
   <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+
 <style>
 
 
@@ -68,6 +70,17 @@
     #canvas{
       font-family: 'Roboto Condensed', sans-serif;
     }
+    .scroll {
+      height:450px;
+      overflow-y: hidden;
+    }
+    .card-header {
+      background: rgba(202, 209, 221, 0.7);
+    }
+    #images{
+      position: relative;
+    }
+
 </style>
 
 </head>
@@ -88,20 +101,20 @@
 
           <!-- Page Heading -->
           <div class="row buffer">
-            <div class="col-4"><a href="index.html"><img src="assets/twitter.png" height="60px" class="right"></a></img></div><div class="col-8"><h1>Tweets with  Hashtag #refugees</h1></div>
-          </div>
+            <div class="col-2"><a href="index.html"><img src="assets/twitter.png" height="60px" class="right"></a></img></div><div class="col-3"><h1>Tweets with  Hashtag #refugees</h1></div>
+         <div class="col-6"><p>This section displays the most recent tweets containing the word 'refugees' and run some simple analyses on them. The most frequently used words are shown both as a wordcloud and as a list. The sentiment analysis uses natural language processing to classify if the content of tweets is negative, neutral or positive. The image wall on the left displays images tagged 'refugees'. You can use the map to select tweets posted from a specific geographic area. </p></div> </div>
 
 
           <!-- Content Row -->
 
           <div class="row">
             <div class="col-lg-4 mb-4">
-              <div class="card shadow mb-4">
+              <div class="card h-100 shadow mb-4">
               <div class="card-header py-3">
                 <h4 class="m-0 text-primary">Latest Images with # refugees</h4>
               </div>
-              <div class="card-body">
-                <div id="photocols"></div>       
+              <div id="images" class="card-body scroll">
+                <div class="scroll" id="photocols"></div>       
                 <script src="js/jquery.photocols.js"></script>
                 <script src="js/main.js"></script>
               </div>
@@ -111,7 +124,7 @@
             <div class="col-lg-8 mb-4">
               <div class="row">
                 <div class="col-lg-6 mb-4">
-              <div class="card shadow mb-4">
+              <div class="card h-100 shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h4 class="m-0 text-primary">Geographic Location</h4>
@@ -123,7 +136,7 @@
               </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-              <div class="card shadow mb-4">
+              <div class="card h-100 shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h4 class="m-0 text-primary">Word Cloud</h4>
@@ -138,10 +151,10 @@
               <div class="row">
 
                   <!-- Content Column -->
-                  <div class="col-lg-5 mb-4">
+                  <div class="col-lg-5 ">
       
                     <!-- Project Card Example -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow ">
                       <div class="card-header py-3">
                         <h4 class="m-0  text-primary">Text Analysis</h4>
                       </div>
@@ -155,10 +168,10 @@
       
                   </div>
       
-                  <div class="col-lg-7 mb-4">
+                  <div class="col-lg-7 ">
       
                     <!-- Illustrations -->
-                    <div class="card shadow mb-4">
+                    <div class="card shadow ">
                       <div class="card-header py-3">
                         <h4 class="m-0  text-primary">Sentiment Analysis</h4>
                       </div>
@@ -208,6 +221,12 @@
   <!-- <script src="js/demo/chart-area-demo.js"></script> -->
  
   <script src="js/map.js"></script>
+  <script>        const ps = new PerfectScrollbar('#images', {
+    wheelSpeed: .2,
+    wheelPropagation: true,
+    minScrollbarLength: 20
+  });
+</script>
 </body>
 
 </html>

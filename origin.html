@@ -258,7 +258,7 @@
     });
 
     demographics.forEach(function(d) {
-        refById[d.id] = d.refugees;
+        refById[d.id] = d.flow_out;
     });
     
     var defs = svg.append("defs");
@@ -373,7 +373,7 @@
             return 'rgba(0, 53, 102, .5)';
         })
       .on("mouseover", function(d) {
-        countryTooltip.text(countryById[d.id] +  refById[d.id])
+        countryTooltip.text(countryById[d.id] + ': ' +refById[d.id])
         .style("left", (d3.event.pageX ) + "px")
         .style("top", (d3.event.pageY) + "px")
         .style("display", "block")

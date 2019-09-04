@@ -15,7 +15,7 @@ Promise.all([worldmap]).then(function(values){
         .attr("class","continent")
         .attr("d", path)
         .on("mouseover", function(d) {
-            d3.select(this).attr("r", 10).style("fill", "rgba(255, 148, 120, .5)");
+            d3.select(this).attr("r", 10).style("fill", "rgba(95, 158, 160, 0.4)");
             })                  
         .on("mouseout", function(d) {
             if (d.properties.CONTINENT != value){
@@ -24,7 +24,7 @@ Promise.all([worldmap]).then(function(values){
         .style("fill", function(d) {        
             if (d.properties.CONTINENT == value) {
             //If value exists…
-            return "rgba(255, 148, 120, .5)";
+            return "rgba(95, 158, 160, 0.4)";
             } else {
             //If value is undefined…
             return "#f0e4dd";
