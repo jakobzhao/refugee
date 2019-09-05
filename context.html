@@ -14,6 +14,9 @@
    a{
      color:silver;
    }
+   h3{
+     color:rgb(255, 255, 255);
+   }
    /* SVG styling */
    html {
     -moz-osx-font-smoothing: grayscale;
@@ -33,33 +36,43 @@
 <body>
   <div class="row">
     <div id="infoPanel" class="col-md-3">
-        <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
+        <div class="topBar"><a href="index.html"><img id="ng" src="assets/img/ng.png"></a></div>
         <h1 style="font-size:42px;">CONTEXT</h1> 
         <div id="text">
-              <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-              <div class="dropdown" style="padding-bottom:0px;">
+              <p style="font-size:18px;font-variant: small-caps;text-align: center;">Factors that influence international crises<br> and cause forced migrations</p>
+              <div class="dropdown" style="padding-bottom:20px;">
                 <button class="dropbtn">Select Map</button>
-                <div class="dropdown-content">
+                <div class="dropdown-content">                  
                   <a href="#"onclick="setHDI()">HDI</a>
+                  <a href="#"onclick="setConflict()">Conflict</a>
                   <a href="#"onclick="setPoverty()">Poverty</a>
                   <a href="#"onclick="setEnvironment()">Environment</a>
-                  <a href="#"onclick="setConflict()">Conflict</a>
                 </div>
               </div>
+              <div class="legend_container" id="con_legend" style="display:none;">
+                  <h2>Conflict Types</h2> 
+                  <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         
+                  <p class="legend_label" style="margin-left:0px;">Battle</p>
+                  <p class="legend_label" style="margin-left:47px;">Remote</p>
+                  <p class="legend_label" style="margin-left:38px;">Civilian</p>
+                  <h2 style="font-size:24px; margin-top:30px;">Violence</h2>
+                  <p style="padding-top: 10px">War and ethnic, tribal and religious violence are leading causes of refugees fleeing their countries. This map shows major violent events that took place in the past five years. Data is retrieved from the Armed Conflict Location & Event Data Project (ACLED). ACLED is a disaggregated conflict collection, analysis and crisis mapping project that collects the dates, actors, types of violence, locations, and fatalities of all reported political violence and protest events.(<a href="https://www.acleddata.com/" target="_blank">link</a>)</p>
+                    <p style="margin-top:10px;"><b>BATTLES </b>are	 violent clashes	between	at least two armed groups. <b>REMOTE</b> violence refers to events where an explosion, bomb or other explosive device was used to engage in conflict. They	include one-sided violent events in which the tool for engaging in conflict creates asymmetry by taking away the ability of the target to engage or defend themselves and their location (for example suicidal attacks or drone strikes). <b>CIVILIAN</b> refers to violent attacks on unarmed civilians.	</p>
+                </div>
               <div class="legend_container" id="HDI_legend">
-                <h2>Human Development Index</h2> 
+                <h3>Human Development Index</h3> 
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #cbe9ce 33%, #cbe9ce 50%, #9cd8a5 50%, #9cd8a5 66%, #68c67c 66%, #68c67c 83%, #18b453 83%);"></div>
                 <p class="legend_label" style="margin-left:40px;">0</p>
                 <p class="legend_label" style="margin-left:30px;">0.2</p>
                 <p class="legend_label" style="margin-left:23px;">0.4</p>
                 <p class="legend_label" style="margin-left:18px;">0.6</p>
                 <p class="legend_label" style="margin-left:26px;">0.8</p>
-                <h2 style="font-size:24px; margin-top:30px;"></h2>
+                <h2 style="font-size:24px; margin-top:30px;">HDI</h2>
                 <p style="margin-top:10px;">The Human Development Index is based on the concept that people are the real wealth of a nation. The originators of the HDI recognised that there are three essential components required for humans to develop to their maximum ability: health, education and income. There is general agreement that if any one of these elements is absent, individual achievement will be severely limited (<a href="https://journals.sagepub.com/doi/full/10.1177/1757913913491350" target="_blank">more</a>) </p>
-                <p><img src="assets/img/hdi.png" style="width:100%"/></p>
+                <!-- <p><img src="assets/img/hdi.png" style="width:100%"/></p> -->
                 <p style="margin-top:10px;">Countries which score low on the Human Development Index are more likely to experience conflict giving rise to internal displacement and refugee movements. Wealthier countries accept the better educated for permanent settlement, while admitting less skilled manual workers and asylum seekers on a temporary basis. (<a href="https://refuge.journals.yorku.ca/index.php/refuge/article/view/26042" target="_blank">more</a>)</p>
               </div>
-              <div class="legend_container" id="school_legend" style="display:none;">
+              <!-- <div class="legend_container" id="school_legend" style="display:none;">
                 <h2>Avg. Years of School</h2> 
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #f9cec7 33%, #f9cec7 50%, #f8a298 50%, #f8a298 66%, #ee756b 66%, #ee756b 83%, #e04040 83%);"></div>
                 <p class="legend_label" style="margin-left:40px;">0</p>
@@ -70,44 +83,33 @@
                 <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
                 <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
                 <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
-            </div>
+            </div> -->
             <div class="legend_container" id="pov_legend" style="display:none;">
-                <h2>% Population Living Under $5.50 a day</h2> 
+                <h3>% Population </h3> 
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #feedde 16%, #feedde 33%, #fdbe85 33%, #fdbe85 50%, #fd8d3c 50%, #fd8d3c 66%, #e6550d 66%, #e6550d 83%, #a63603 83%);"></div>
                 <p class="legend_label" style="margin-left:40px;">0</p>
                 <p class="legend_label" style="margin-left:30px;">40</p>
                 <p class="legend_label" style="margin-left:25px;">55</p>
                 <p class="legend_label" style="margin-left:25px;">70</p>
                 <p class="legend_label" style="margin-left:23px;">85</p>
-                <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-                <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
-          </div>
+                <h2 style="font-size:24px; margin-top:30px;">Poverty</h2>
+                <p style="margin-top:10px;">This map shows the percentage of population whose income falls below the poverty line. Data is derived from the World Development Indicators of the World Bank (<a href="http://wdi.worldbank.org/table/1.2" target="_blank">link</a>) listing the percentage of population living with less than $ 5.50 a day.</p>
+                <p style="margin-top:10px;">Poverty is not per se a cause of forced migration, but can contribute to worsen situations stressed by other factors. Countries hosting the majority of refugees in the world are among the poorest. The presence of camp populations can create tense situations with locals, but sometimes it can bring positive economic benefits to nearby communities and to the host country at large (<a href="https://ideas.repec.org/a/eee/deveco/v130y2018icp66-83.html" target="_blank">more</a>).</p> </div>
           <div class="legend_container" id="env_legend" style="display:none;">
-            <h2>% Population at Risk of Natural Disaster</h2> 
+            <h3>% Population at Risk </h3> 
             <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e8e3ce 16%, #e8e3ce 33%, #d6cea3 33%, #d6cea3 50%, #c2ba7a 50%, #c2ba7a 66%, #aea651 66%, #aea651 83%, #989222 83%);"></div>
             <p class="legend_label" style="margin-left:41px;">0</p>
             <p class="legend_label" style="margin-left:30px;">20</p>
             <p class="legend_label" style="margin-left:28px;">40</p>
             <p class="legend_label" style="margin-left:25px;">60</p>
             <p class="legend_label" style="margin-left:22px;">80</p>
-            <h2 style="font-size:24px; margin-top:30px;">Case Study</h2>
-                <p style="margin-top:10px;">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. </p>
-                <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png">
+            <h2 style="font-size:24px; margin-top:30px;">Environmental risks</h2>
+                <p style="margin-top:10px;">This map shows the percentage of population at risk of droughts, floods and extreme temperatures. Data is derived from the World Development Indicators of the World Bank (<a href="http://wdi.worldbank.org/table/3.11" target="_blank">link</a>)</p>
+                <p style="margin-top:10px;">Environmental refugees are not protected by the 1951 Convention, making it difficult to visualize them due to lack of data. Estimates of the number of environmental refugees in the world vary widely, as do definitions and typologies of such flows (<a href="https://www.unhcr.org/research/working/3ae6a0d00/environmental-refugees-myth-reality-richard-black.html" target="_blank">more</a>)</p>
+                <p style="margin-top:10px;">Nevertheless, there is a strong inter-linkage between conflict and environmental condition. An example is the drought that hit Somalia in 2011, after two years of rainfall interruption, as it occurred in the context of the civil war that has been tearing the country apart since 1991 (<a href="http://labos.ulg.ac.be/hugo/wp-content/uploads/sites/38/2017/11/The-State-of-Environmental-Migration-2011-75-90.pdf" target="_blank">more</a>)</p>
+                <!-- <img style="width:300px; margin-top:20px;" src="assets/img/country_example.png"> -->
           </div>
-          <div class="legend_container" id="con_legend" style="display:none;">
-            <h2>Conflict Types</h2> 
-            <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         
-            <p class="legend_label" style="margin-left:0px;">Battle</p>
-            <p class="legend_label" style="margin-left:47px;">Remote</p>
-            <p class="legend_label" style="margin-left:38px;">Civilian</p>
-            <h2 style="font-size:24px; margin-top:30px;">Battle</h2>
-              <p style="margin-top:10px;">Definition of battles. </p>
-            <h2 style="font-size:24px; margin-top:30px;">Remote Violence</h2>
-              <p style="margin-top:10px;">Definition of remote violence. </p>
-            <h2 style="font-size:24px; margin-top:30px;">Violence Against Civilians</h2>
-              <p style="margin-top:10px;">Definition of violence against civilians.</p>
-          </div>
+
         </div>
     </div>
     <div id="projectionButtons">
@@ -175,7 +177,7 @@
     };
 
     const ps = new PerfectScrollbar('#text', {
-      wheelSpeed: 2,
+      wheelSpeed: .2,
       wheelPropagation: true,
       minScrollbarLength: 20
     });
