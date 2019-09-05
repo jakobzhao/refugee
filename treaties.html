@@ -214,7 +214,14 @@
             y: -r[1] / sensitivity
           };
         })
-        .on("drag", dragged)
+        .on("drag", function(){
+          if (proj == 0){
+            dragged()
+          }
+          else{
+            dragged1()
+          }
+        })
       )
       .call(
         d3
@@ -518,15 +525,25 @@
     }
 
     function dragged() {
-      var o1 = [d3.event.x * sensitivity, -10];
-
+      var o1 = [d3.event.x * sensitivity, -d3.event.y * sensitivity];
       o1[1] =
         o1[1] > maxElevation ?
         maxElevation :
         o1[1] < -maxElevation ?
         -maxElevation :
         o1[1];
-        currentPos = o1;
+      projection.rotate(o1);
+      skyProjection.rotate(o1);
+      refresh();
+    }
+    function dragged1() {
+      var o1 = [d3.event.x * sensitivity];
+      o1[1] =
+        o1[1] > maxElevation ?
+        maxElevation :
+        o1[1] < -maxElevation ?
+        -maxElevation :
+        o1[1];
       projection.rotate(o1);
       skyProjection.rotate(o1);
       refresh();
@@ -644,7 +661,6 @@
       projection = d3 
       .geoEquirectangular()
       .scale(radius)
-      .rotate(currentPos)
       .translate([offsetX, offsetY]);
     }
 
