@@ -177,13 +177,58 @@ p{
 .mapboxgl-popup-tip {
   opacity:0;
 }
+
+div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:fixed;
+      left:0;
+      top:0;
+      z-index:1000;
+      display:block;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      color:white;
+      letter-spacing: 1px;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      left:50%;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
 </style>
 </head>
 <body> 
+<div class="navBar">
+    <a href="../journey_menu.html" class="back">Back</a>
+    <a href="index.html" class="home">Global Refugee Atlas</a>
+</div>
 <div id='map'></div>
 <div id='info'></div>
 <div id='features'>
-    <h1>Three Mothers Lead <br>a Daring Escape from Burundi</h1>   
+    <h1  style="margin-top:35px;">Three Mothers Lead <br>a Daring Escape from Burundi</h1>   
     <h3>Fleeing pre-election violence, three families catch a bus, ride bicycles <br>and finally scramble on foot to reach safety in Rwanda.</h3><h5>
             Written by: Céline Schmitt | Photos by: Kate Holt (<a href="http://tracks.unhcr.org/2015/05/three-mothers-lead-a-daring-escape-from-burundi/" target="_blank">Read the original article</a>)   
     </h5><br><br>
