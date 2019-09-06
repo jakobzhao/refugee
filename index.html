@@ -249,6 +249,28 @@
       margin-left:10px;
     }
     a{
+      color: white;
+      font-weight:300;
+      text-decoration:none;
+    }
+    a:visited {
+      color: white;
+    }
+    a.underlined{
+      text-decoration:underline;
+    }
+    ul.a {
+      list-style-type: circle;
+    }
+    ul.b {
+      list-style-type: square;
+    }
+    li{
+      font-size:24px;
+      font-weight:300;
+    }
+    li.b{
+      font-size:18px;
       font-weight:300;
     }
   </style>
@@ -323,6 +345,78 @@
             <p class="cont-text"><b>Gareth Baldrica Franklin</b>&nbsp&nbspCartographer / Designer</p>
             
         </div>
+        <div style="margin-bottom:200px;">
+            <h2>Sources</h2>
+            <h3>Software and Plugins</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
+                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li>
+                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
+                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
+                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
+                <li>Leaflet Plugins</li>
+                <ul class="b">
+                    <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
+                    <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
+                    <li class="b"><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Heat Map</a></li>
+                </ul>
+              </ul> 
+            </p>
+            <h3>Basemaps</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
+                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
+                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
+              </ul> 
+            </p>
+            <h3>Satellite Imagery</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li>Processing Platform</li>
+                <ul class="b">
+                    <li class="b"><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
+                </ul>
+                <li>Raw Data</li>
+                <ul class="b">
+                    <li class="b"><a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2" target="_blank">ESA - Sentinel 2a</a></li>
+                    <li class="b"><a href="https://www.nasa.gov/mission_pages/landsat/main/index.html" target="_blank">NASA - Landsat 8</a></li>
+                </ul>
+              </ul> 
+            </p>
+            <h3>Data Sources</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li>UNHCR</li>
+                <ul class="b">
+                    <li class="b"><a href="https://data2.unhcr.org/en/situations" target="_blank">Camp Population</a></li>
+                    <li class="b"><a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=24cad2271eaf4219832bf82da5803193" target="_blank">Camp Locations</a></li>
+                    <li class="b"><a href="http://popstats.unhcr.org/en/persons_of_concern" target="_blank">Refugee Flows</a></li>
+                    <li class="b"><a href="https://www.unhcr.org/protection/basic/3b73b0d63/states-parties-1951-convention-its-1967-protocol.html" target="_blank">International Agreements</a></li>
+                    <li class="b"><a href="http://reporting.unhcr.org/sites/default/files/2018%20-%20UNHCR%20Donor%20Ranking%20by%20Country.pdf" target="_blank">Economic Contribution</a></li>
+                </ul>
+                <li>World Bank</li>
+                <ul class="b">
+                    <li class="b"><a href="http://data.un.org/DocumentData.aspx?q=hdi&id=392" target="_blank">HDI</a></li>
+                    <li class="b"><a href="http://wdi.worldbank.org/table/1.2" target="_blank">Poverty</a></li>
+                    <li class="b"><a href="http://wdi.worldbank.org/table/3.11" target="_blank">Environment</a></li>
+                </ul>
+                <li>ACLED</li>
+                <ul class="b">
+                    <li class="b"><a href="https://www.acleddata.com/" target="_blank">Conflict Data</a></li>
+                </ul>
+                <li>Humanitarian Data Exchange</li>
+                <ul class="b">
+                    <li class="b"><a href="https://data.humdata.org/" target="_blank">Camp Features</a></li>
+                </ul>
+              </ul> 
+            </p>
+
+        </div>
     </div>
   </div> 
   <div class="col-md-7">
@@ -367,7 +461,7 @@
     };
 
     const ps = new PerfectScrollbar('#text', {
-      wheelSpeed: 2,
+      wheelSpeed: .5,
       wheelPropagation: true,
       minScrollbarLength: 20
     });

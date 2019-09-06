@@ -27,6 +27,17 @@
             font-weight: lighter !important;
         }
     }
+    a{
+      color: white;
+      font-weight:300;
+      text-decoration:none;
+    }
+    a:visited {
+      color: white;
+    }
+    a.underlined{
+      text-decoration:underline;
+    }
    </style>
  </head>
  
@@ -52,7 +63,9 @@
                <p class="legend_label" style="margin-left:28px;">10</p>
                <p class="legend_label" style="margin-left:22px;">100</p>
                <p class="legend_label" style="margin-left:16px;">500</p>
-               <canvas id="chartContainer" height="400"></canvas> 
+               <p style="margin-top:10px;">The refugee population under UNHCR’s mandate stood at 20.4 million refugees at the end of 2018 and has nearly doubled since 2012. While these refugees are hosted by 127 countries on six continents, the vast majority (80 per cent) remains in neighbouring countries. </p>
+               <p style="margin-top:10px;"> Turkey hosts the vast majority of Syrian, over 88% of Afghan refugees are hosted by neighboring Pakistan and the Islamic Republic of Iran. Altogether, neighboring countries host nearly all refugees from South Sudan, Sudan, DRC and CAR.  (<a href="https://www.unhcr.org/5d08d7ee7.pdf" target="_blank">more</a>) </p>
+               <canvas id="chartContainer" height="400"></canvas>
              </div>
        </div>
    </div>
@@ -379,7 +392,7 @@
             return 'rgba(0, 53, 102, .5)';
         })
       .on("mouseover", function(d) {
-        countryTooltip.text(countryById[d.id] +  refById[d.id])
+        countryTooltip.text(countryById[d.id] +': ' + refById[d.id])
         .style("left", (d3.event.pageX ) + "px")
         .style("top", (d3.event.pageY) + "px")
         .style("display", "block")
@@ -698,7 +711,7 @@
           options: {
               title: {
                   display: true,
-                  text: 'Flow into Country',
+                  text: 'Main Origin Countries',
                   fontFamily:"'Roboto Condensed','sans-serif'",
                   fontColor:'#ffffff',
                   fontSize:22,

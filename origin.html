@@ -27,6 +27,17 @@
             font-weight: lighter !important;
         }
     }
+    a{
+      color: white;
+      font-weight:300;
+      text-decoration:none;
+    }
+    a:visited {
+      color: white;
+    }
+    a.underlined{
+      text-decoration:underline;
+    }
    </style>
  </head>
  
@@ -52,9 +63,12 @@
                 <p class="legend_label" style="margin-left:28px;">10</p>
                 <p class="legend_label" style="margin-left:22px;">100</p>
                 <p class="legend_label" style="margin-left:16px;">500</p>
-                <canvas id="chartContainer" height="400"></canvas> 
+                
               </div>
-        </div>
+              <p style="margin-top:10px;">The refugee population under UNHCR’s mandate stood at 20.4 million refugees at the end of 2018 and has nearly doubled since 2012. Altogether, refugees from the top 10 countries of origin accounted for 82 per cent of refugees (16.6 million) in 2018. Over two thirds of the world’s refugees come from just five countries: Syria, Afghanistan, South Sudan, Myanmar and Somalia.</p>
+                  <p style="margin-top:10px;">  As has been the case since 2014, the main country of origin for refugees in 2018 was Syria, with 6.7 million at the end of the year, an increase over the 6.3 million from a year earlier. (<a href="https://www.unhcr.org/5d08d7ee7.pdf" target="_blank">more</a>) </p>
+                  <canvas id="chartContainer" height="400"></canvas> 
+                </div>
     </div>
     <div id="projectionButtons">
       <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
@@ -380,7 +394,7 @@
             return 'rgba(0, 53, 102, .5)';
         })
       .on("mouseover", function(d) {
-        countryTooltip.text(countryById[d.id] +  refById[d.id])
+        countryTooltip.text(countryById[d.id] +': '+  refById[d.id])
         .style("left", (d3.event.pageX ) + "px")
         .style("top", (d3.event.pageY) + "px")
         .style("display", "block")
@@ -682,7 +696,7 @@
           options: {
               title: {
                   display: true,
-                  text: 'Flow out of Country (top 10)',
+                  text: 'Main Destinations',
                   fontFamily:"'Roboto Condensed','sans-serif'",
                   fontColor:'#ffffff',
                   fontSize:22,
