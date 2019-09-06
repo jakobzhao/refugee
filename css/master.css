@@ -19,6 +19,7 @@
         z-index:0;
     }
     div#infoPanel {
+      margin-top:35px;
         width:350px;
         z-index:10;
         height:100%;
@@ -188,7 +189,7 @@
       display: none;
       position: absolute;
       background-color: #f1f1f1;
-      width: 250px;
+      width: 90%;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
     }
@@ -218,6 +219,11 @@
     /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {background-color: #f2f2f2;}
     /* Dropdown styling */
+
+    div#map{
+      height:calc(100% -  35px);
+      margin-top:35px;
+    }
 
     .leaflet-verticalcenter {
         position: absolute;
@@ -251,4 +257,43 @@
 
     .range-labels .selected::before, .range input::-moz-range-thumb{
         background:white !important;
+    }
+    div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1000;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      color:white;
+      letter-spacing: 1px;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      left:50%;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
     }

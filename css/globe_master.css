@@ -3,12 +3,20 @@ html,
     svg {
       position: fixed;
       width: 100%;
-      height: 100vh;
       margin: 0;
       background-color:#878d9b;
       overflow: hidden;
       color:white;
       font-family: 'Roboto Condensed', sans-serif !important;
+    }
+
+    body, html{
+      height: 100vh;
+    }
+
+    svg{
+      height: calc(100% - 35px);
+      margin-top:35px;
     }
 
     body{
@@ -157,7 +165,7 @@ html,
       display: none;
       position: absolute;
       background-color: #f1f1f1;
-      width: 250px;
+      width: 90%;
       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
       z-index: 1;
     }
@@ -239,6 +247,7 @@ html,
       border-right:2px solid #666666;
     }*/
     div#infoPanel {
+      margin-top:35px;
       z-index:10;
       height:100%;
       width:350px;
@@ -269,7 +278,7 @@ html,
     }
     div#projectionButtons{
         position:absolute;
-        top:25px;
+        top:50px;
         right:0px;
         z-index:15;
         width:200px;
@@ -283,4 +292,43 @@ html,
     }
     div#projectionButtons button:hover{
         background:#d9d9d9;
+    }
+    div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1000;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      color:white;
+      letter-spacing: 1px;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      left:50%;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
     }
