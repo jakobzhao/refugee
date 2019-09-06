@@ -38,37 +38,59 @@
     a.underlined{
       text-decoration:underline;
     }
+
+    a.dropdown-a{
+      color: black;
+    }
+    a.dropdown-a:visited{
+      color: black;
+    }
    </style>
  </head>
  
  <body>
+    <div class="navBar">
+        <a href="journey_menu.html" class="back">Back</a>
+        <a href="index.html" class="home">Global Refugee Atlas</a>
+      </div>
   <div class="row">
     <div id="infoPanel" class="col-md-3">
         <div class="topBar"><img id="ng" src="assets/img/ng.png"></div>
         <h1>ORIGINS</h1> 
         <div id="text">
               <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-              <!--<div class="dropdown" style="padding-bottom:0px;">
+              <div class="dropdown" style="padding-bottom:0px;">
                 <button class="dropbtn">Select Map</button>
                 <div class="dropdown-content">
-                  <a href="#"onclick="setRefugee()">Population</a>
-                  <a href="#"onclick="setSettlements()">Settlements</a>
+                  <a class="dropdown-a" href="#"onclick="setOrigin()">Origins</a>
+                  <a class="dropdown-a" href="#"onclick="setDestination()">Destinations</a>
                 </div>
-              </div>-->
-              <div class="legend_container" id="HDI_legend">
+              </div>
+              <div class="legend_container" id="leg1">
                 <h2># of Refugees (1000s)</h2>
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e6f3ff 16%, #e6f3ff 33%, #b3daff 33%, #b3daff 50%, #66b5ff 50%, #66b5ff 66%, #1a90ff 66%, #1a90ff 83%, #005cb3 83%);"></div>
                 <p class="legend_label" style="margin-left:42px;">0</p>
                 <p class="legend_label" style="margin-left:34px;">1</p>
                 <p class="legend_label" style="margin-left:28px;">10</p>
                 <p class="legend_label" style="margin-left:22px;">100</p>
-                <p class="legend_label" style="margin-left:16px;">500</p>
-                
+                <p class="legend_label" style="margin-left:16px;">500</p>               
+                <p style="margin-top:10px;">The refugee population under UNHCR’s mandate stood at 20.4 million refugees at the end of 2018 and has nearly doubled since 2012. Altogether, refugees from the top 10 countries of origin accounted for 82 per cent of refugees (16.6 million) in 2018. Over two thirds of the world’s refugees come from just five countries: Syria, Afghanistan, South Sudan, Myanmar and Somalia.</p>
+                <p style="margin-top:10px;">  As has been the case since 2014, the main country of origin for refugees in 2018 was Syria, with 6.7 million at the end of the year, an increase over the 6.3 million from a year earlier. (<a href="https://www.unhcr.org/5d08d7ee7.pdf" target="_blank">more</a>) </p>
+                <canvas id="chartContainer" height="400"></canvas> 
               </div>
-              <p style="margin-top:10px;">The refugee population under UNHCR’s mandate stood at 20.4 million refugees at the end of 2018 and has nearly doubled since 2012. Altogether, refugees from the top 10 countries of origin accounted for 82 per cent of refugees (16.6 million) in 2018. Over two thirds of the world’s refugees come from just five countries: Syria, Afghanistan, South Sudan, Myanmar and Somalia.</p>
-                  <p style="margin-top:10px;">  As has been the case since 2014, the main country of origin for refugees in 2018 was Syria, with 6.7 million at the end of the year, an increase over the 6.3 million from a year earlier. (<a href="https://www.unhcr.org/5d08d7ee7.pdf" target="_blank">more</a>) </p>
-                  <canvas id="chartContainer" height="400"></canvas> 
-                </div>
+              <div class="legend_container" id="leg2">
+                <h2># of Refugees (1000s) Hosted</h2>
+                <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e6f3ff 16%, #e6f3ff 33%, #b3daff 33%, #b3daff 50%, #66b5ff 50%, #66b5ff 66%, #1a90ff 66%, #1a90ff 83%, #005cb3 83%);"></div>
+                <p class="legend_label" style="margin-left:42px;">0</p>
+                <p class="legend_label" style="margin-left:34px;">1</p>
+                <p class="legend_label" style="margin-left:28px;">10</p>
+                <p class="legend_label" style="margin-left:22px;">100</p>
+                <p class="legend_label" style="margin-left:16px;">500</p>
+                <p style="margin-top:10px;">The refugee population under UNHCR’s mandate stood at 20.4 million refugees at the end of 2018 and has nearly doubled since 2012. While these refugees are hosted by 127 countries on six continents, the vast majority (80 per cent) remains in neighbouring countries. </p>
+                <p style="margin-top:10px;"> Turkey hosts the vast majority of Syrian, over 88% of Afghan refugees are hosted by neighboring Pakistan and the Islamic Republic of Iran. Altogether, neighboring countries host nearly all refugees from South Sudan, Sudan, DRC and CAR.  (<a href="https://www.unhcr.org/5d08d7ee7.pdf" target="_blank">more</a>) </p>
+                <canvas id="chartContainer1" height="400"></canvas>
+              </div>
+        </div>
     </div>
     <div id="projectionButtons">
       <button style="display:inline-block; height:64px;" onclick="toEquirectangular()"><img style="width:60px; height:60px;" src="assets/img/rect.png"></img></button>
@@ -155,13 +177,17 @@
       countries,
       countryCentroids = {},
       refByCountry = {},
+      refDest = {},
       svg = [],
       isFlow = false,
       chartData = new Array(),
       chartLabels = new Array(),
       data = 0,
       proj = 0,
-      currentPos = initRotation;
+      currentPos = initRotation,
+      flowlines,
+      origFlowCsv,
+      destFlowCsv;
 
     var radius = width / 3;
     if (height < width) {
@@ -256,7 +282,7 @@
     var refColorScale = d3.scaleThreshold()
         .domain([-1, 1000, 10000, 100000, 500000])
         .range(["#ffffff","#e6f3ff","#b3daff","#66b5ff","#1a90ff","#005cb3"]);
-
+    
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-50m.v1.json")
       .defer(d3.json, "assets/map_data/global/hosts.json")
@@ -268,11 +294,16 @@
       .defer(d3.csv, "assets/map_data/global/ref_demographics_2018_2.csv")
       .defer(d3.csv, "assets/map_data/global/demographics.csv")
       .defer(d3.csv, "assets/map_data/global/refugee_flow.csv")
+      .defer(d3.csv, "assets/map_data/global/refugee_flow_in.csv")
       .await(ready);
 
-    function ready(error, world, hosts, countryNames, flow, camps, settlements, dispersed, ref_test, demographics, flowCsv) {
+    function ready(error, world, hosts, countryNames, flow, camps, settlements, dispersed, ref_test, demographics, flowCsv, flowIn) {
       
     countries = topojson.feature(world, world.objects.countries).features;
+
+    flowlines = flow.features;
+    origFlowCsv = flowCsv;
+    destFlowCsv = flowIn;
 
     countryNames.forEach(function(d) {
         countryById[d.iso_n3] = d.name;
@@ -280,6 +311,7 @@
 
     demographics.forEach(function(d) {
         refById[d.id] = d.flow_out;
+        refDest[d.id] = d.refugees;
     });
     
     var defs = svg.append("defs");
@@ -384,6 +416,7 @@
       .enter()
       .append("path")
       .attr("d", path)
+      .attr("class", "country")
       .attr("name",function(d){
           return countryById[d.id];
       })
@@ -441,20 +474,32 @@
       .attr("fill", "rgba(0,0,0,1)")
       .attr("opacity", "point")
       .attr("d", path);
+    }
+
     function addFlow(origin){
       svg.append("g").attr("class", "arcs")
-          .selectAll("path").data(flow.features)
+          .selectAll("path").data(flowlines)
           .enter().append("path")
-          .filter(function(d){return d.properties.iso_n3 == origin})
+          .filter(function(d){
+                if (data == 0)
+                  return d.properties.iso_n3 == origin;
+                if (data == 1)
+                  return d.properties.iso_n3_d == origin;
+            })
           .attr("class", "arc")
           .attr("d", path)
           .attr("opacity", function(d) {
           return fade_at_edge(d)
           });
       svg.append("g").attr("class", "flyers")
-          .selectAll("path").data(flow.features)
+          .selectAll("path").data(flowlines)
           .enter().append("path")
-          .filter(function(d){return d.properties.iso_n3 == origin})
+          .filter(function(d){
+            if (data == 0)
+                return d.properties.iso_n3 == origin;
+            if (data == 1)
+                return d.properties.iso_n3_d == origin;
+          })
           .attr("class", "flyer")
           .attr("d", function(d) {
           return swoosh(flying_arc(d))
@@ -468,14 +513,29 @@
     }
 
     function addChart(origin){
-      document.getElementById("chartContainer").style.opacity = 1;
-      flowCsv.forEach(function(d) {
-         if (d.iso_n3 == origin){
+      if (data == 0)
+      {
+        document.getElementById("chartContainer").style.opacity = 1;
+        var ctx = document.getElementById("chartContainer").getContext('2d');
+
+        origFlowCsv.forEach(function(d) {
+          if (d.iso_n3 == origin){
+              chartData.push(d.Population);
+              chartLabels.push(d.Destinatio);
+          }
+        });
+      }
+      else{
+        document.getElementById("chartContainer1").style.opacity = 1;
+        var ctx = document.getElementById("chartContainer1").getContext('2d');
+
+        destFlowCsv.forEach(function(d) {
+          if (d.iso_n3_d == origin){
             chartData.push(d.Population);
-            chartLabels.push(d.Destinatio);
-         }
-      });
-      var ctx = document.getElementById("chartContainer").getContext('2d');
+            chartLabels.push(d.Origin);
+          }
+        });
+      }
         chart = new Chart(ctx, options);
 
         for (var i = 0; i < chartData.length; i++){
@@ -483,11 +543,20 @@
           chart.data.datasets[0].data[i] = chartData[i];
         }
 
+        if (data == 0)
+        chart.options.title.text = "Main Destinations";
+        else
+        chart.options.title.text = "Main Origins";
+
         chart.update();
     }
 
     function removeChart(){
-      document.getElementById("chartContainer").style.opacity = 0;
+      if (data == 0)
+          document.getElementById("chartContainer").style.opacity = 0;
+      else
+          document.getElementById("chartContainer1").style.opacity = 0;
+
       chartData.length = 0;
       chartLabels.length = 0;
 
@@ -495,16 +564,15 @@
       chart.data.datasets[0].data.length = 0;;
 
       chart.update();
-    }
+      }
+    
 
-      function clearFlow (){
+    function clearFlow (){
         svg
             .selectAll(".arcs").remove();
         svg
             .selectAll(".flyers").remove();
       }
-    
-    }
 
     function toEquirectangular(){      
       svg.selectAll("path").transition()
@@ -741,36 +809,74 @@
                   },
               }
         }
+    
+    var legends = document.getElementsByClassName("legend_container");
 
-    function setRefugee(){
-        data = 0;
-
-        svg
-          .selectAll(".point").style("opacity", 0.6);
+    function setOrigin(){      
+      data = 0;
+      
+      svg
+        .selectAll(".country")
+        .attr("fill", function (d) {
+              return refColorScale(parseFloat(refById[d.id]));
+          })
+        .attr("stroke", function (d) {
+              return 'rgba(0, 53, 102, .5)';
+          })
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] +': '+  refById[d.id])
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+          addFlow(d.id);
+          addChart(d.id);
+        })
+        .on("mouseout", function(d) {
+          clearFlow(d.id);
+          removeChart();
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
 
         for (var i = 0; i < legends.length; i++) {
           legends[i].style.display = 'none';
         }
-        document.getElementById("HDI_legend").style.display = "block";
+
+        document.getElementById("leg1").style.display = "block";
     }
-    function setFlow(){
-        data = 1;
+    function setDestination(){      
+      data  = 1;
 
-        svg
-          .selectAll(".point").style("opacity", 0);
+      svg
+        .selectAll(".country")
+        .attr("fill", function (d) {
+            return refColorScale(parseFloat(refDest[d.id]));
+          })
+        .attr("stroke", function (d) {
+              return 'rgba(0, 53, 102, .5)';
+          })
+        .on("mouseover", function(d) {
+          countryTooltip.text(countryById[d.id] +': ' + refDest[d.id])
+          .style("left", (d3.event.pageX ) + "px")
+          .style("top", (d3.event.pageY) + "px")
+          .style("display", "block")
+          .style("opacity", 1);
+          addFlow(d.id);
+          addChart(d.id);
+        })
+        .on("mouseout", function(d) {
+          clearFlow(d.id);
+          removeChart();
+          countryTooltip.style("opacity", 0)
+          .style("display", "none");
+        });
 
-        for (var i = 0; i < legends.length; i++) {
+      for (var i = 0; i < legends.length; i++) {
           legends[i].style.display = 'none';
         }
-        document.getElementById("school_legend").style.display = "block";
-    }
-    function setSettlement(){
-        data = 2;
 
-        for (var i = 0; i < legends.length; i++) {
-          legends[i].style.display = 'none';
-        }
-        document.getElementById("pov_legend").style.display = "block";
+      document.getElementById("leg2").style.display = "block";
     }
 
     function sizeChange() {

@@ -34,22 +34,26 @@
 </head>
 
 <body>
+    <div class="navBar">
+        <a href="index.html" class="back">Back</a>
+        <a href="index.html" class="home">Global Refugee Atlas</a>
+      </div>
   <div class="row">
     <div id="infoPanel" class="col-md-3">
         <div class="topBar"><a href="index.html"><img id="ng" src="assets/img/ng.png"></a></div>
         <h1 style="font-size:42px;">CONTEXT</h1> 
         <div id="text">
-              <p style="font-size:18px;font-variant: small-caps;text-align: center;">Factors that influence international crises<br> and cause forced migrations</p>
+              <p style="font-size:18px;font-variant: small-caps;text-align: left;">Factors that influence international crises and cause forced migrations</p>
               <div class="dropdown" style="padding-bottom:20px;">
                 <button class="dropbtn">Select Map</button>
                 <div class="dropdown-content">                  
-                  <a href="#"onclick="setHDI()">HDI</a>
                   <a href="#"onclick="setConflict()">Violence</a>
+                  <a href="#"onclick="setHDI()">HDI</a>
                   <a href="#"onclick="setPoverty()">Poverty</a>
                   <a href="#"onclick="setEnvironment()">Environment</a>
                 </div>
               </div>
-              <div class="legend_container" id="con_legend" style="display:none;">
+              <div class="legend_container" id="con_legend">
                   <h2>Conflict Types</h2> 
                   <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         
                   <p class="legend_label" style="margin-left:0px;">Battle</p>
@@ -59,7 +63,7 @@
                   <p style="padding-top: 10px">War and ethnic, tribal and religious violence are leading causes of refugees fleeing their countries. This map shows major violent events that took place in the past five years. Data is retrieved from the Armed Conflict Location & Event Data Project (ACLED). ACLED is a disaggregated conflict collection, analysis and crisis mapping project that collects the dates, actors, types of violence, locations, and fatalities of all reported political violence and protest events.(<a href="https://www.acleddata.com/" target="_blank">link</a>)</p>
                     <p style="margin-top:10px;"><b>BATTLES </b>are	 violent clashes	between	at least two armed groups. <b>REMOTE</b> violence refers to events where an explosion, bomb or other explosive device was used to engage in conflict. They	include one-sided violent events in which the tool for engaging in conflict creates asymmetry by taking away the ability of the target to engage or defend themselves and their location (for example suicidal attacks or drone strikes). <b>CIVILIAN</b> refers to violent attacks on unarmed civilians.	</p>
                 </div>
-              <div class="legend_container" id="HDI_legend">
+              <div class="legend_container" id="HDI_legend" style="display:none;">
                 <h3>Human Development Index</h3> 
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #f9f9f9 16%, #f9f9f9 33%, #cbe9ce 33%, #cbe9ce 50%, #9cd8a5 50%, #9cd8a5 66%, #68c67c 66%, #68c67c 83%, #18b453 83%);"></div>
                 <p class="legend_label" style="margin-left:40px;">0</p>
@@ -430,22 +434,26 @@
         .append("path")
         .attr("d", path)
         .attr("class", "country")
-        .attr("name",function(d){
-          return countryById[d.id];
-        })
         .attr("fill", function (d) {
-            return hdiColorScale(parseFloat(demographicsById[d.id]));
+            return '#c8cad0';
         })
         .attr("stroke", function (d) {
-            return 'rgba(15, 112, 52, .3)';
+            return '#ffffff';
         })
-        .attr("box-shadow", 'inset 0 0 10px #000000')
         .on("mouseover", function(d) {
-          countryTooltip.html(countryById[d.id] + '<br/>' + demographicsById[d.id])
+          countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL + ' Events<br/><canvas id="conflictTable"></canvas>')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
           .style("opacity", 1);
+
+          var ctx = document.getElementById("conflictTable").getContext('2d');
+              chart = new Chart(ctx, options);
+
+              chart.data.datasets[0].data[0] = conflictById[d.id].BATTLES;
+              chart.data.datasets[0].data[1] = conflictById[d.id].REMOTE;
+              chart.data.datasets[0].data[2] = conflictById[d.id].CIVILIAN;
+              chart.update();
         })
         .on("mouseout", function(d) {
           countryTooltip.style("opacity", 0)
@@ -496,29 +504,6 @@
           return d.properties.text;
         });
       
-      clusters = getClusters(conflict.features);
-      
-      const clustered = svg
-            .selectAll("g")
-            .data(clusters)
-            .enter()
-            .append("g")
-            .attr("class", "clusterHolder")
-            .attr("opacity", 0)
-            .attr("transform", d => "translate(" + d.x + " " + d.y + ")")
-            .attr("d", path);
-
-          clustered
-            .append("circle")
-            .attr("class", "cluster")
-            .attr("r", d => d.r)
-            .attr("fill", d => conflict_color(d.properties.type))
-            .attr("d", path);
-
-          /*clustered
-            .append("text")
-            .text(d => d.properties.point_count || 1)
-            .attr("dy", "0.35em");*/
       svg
         .append("g")
         .attr("class", "conflict points")
@@ -533,7 +518,7 @@
         .attr("stroke", function(d){
             return conflict_color(d.properties.type);
         })
-        .attr("opacity", 0)
+        .attr("opacity", 1)
         .attr("d", path.pointRadius(1));
       
       position_labels();
@@ -962,10 +947,10 @@
       svg
         .selectAll(".country")
         .attr("fill", function (d) {
-            return '#e0e0eb';
+            return '#c8cad0';
         })
         .attr("stroke", function (d) {
-            return '#c1c1d7';
+            return '#ffffff';
         })
         .on("mouseover", function(d) {
           countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL + ' Events<br/><canvas id="conflictTable"></canvas>')

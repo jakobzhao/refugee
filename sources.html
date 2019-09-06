@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Journeys</title>
+  <title>Sources</title>
   <link href="https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
   <link href="css/perfect-scrollbar.css" rel="stylesheet">        
@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <style>
-    html {
+   html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -335,44 +335,83 @@
 
 <body>
 <div class="navBar">
-  <a href="index.html" class="back">Back</a>
-  <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="index.html" class="back">Back</a>
+    <a href="index.html" class="home">Global Refugee Atlas</a>
 </div>
 <div class="row">
   <div id ="mainMenu" class="col-md-5">
     <div id = "text">
-      <h1>Journeys</h1>
-      <p id="desc" style="margin-bottom:50px; margin-top:20px;">The Global Refugee Atlas visualizes and narrates core experiences of the millions of refugees under UN mandate using remote sensing data, crowdsourced social media data as well as a host of datasets from UNHCR and other international humanitarian agencies.</p>    
-      <div style="margin-bottom:100px;">
-      <a href="origin.html">
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
-          <div id="but-text">
-            <p style="display:block;" id="but-a">Flow</p>
-            <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
-          </div>
+            <h1>Sources</h1>
+            <h3>Software and Plugins</h3>
+         <div style="margin-bottom:100px;">
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
+                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li>
+                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
+                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
+                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
+                <li>Leaflet Plugins</li>
+                <ul class="b">
+                    <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
+                    <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
+                    <li class="b"><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Heat Map</a></li>
+                </ul>
+              </ul> 
+            </p>
+            <h3>Basemaps</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
+                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
+                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
+              </ul> 
+            </p>
+            <h3>Satellite Imagery</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li>Processing Platform</li>
+                <ul class="b">
+                    <li class="b"><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
+                </ul>
+                <li>Raw Data</li>
+                <ul class="b">
+                    <li class="b"><a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2" target="_blank">ESA - Sentinel 2a</a></li>
+                    <li class="b"><a href="https://www.nasa.gov/mission_pages/landsat/main/index.html" target="_blank">NASA - Landsat 8</a></li>
+                </ul>
+              </ul> 
+            </p>
+            <h3>Data Sources</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li>UNHCR</li>
+                <ul class="b">
+                    <li class="b"><a href="https://data2.unhcr.org/en/situations" target="_blank">Camp Population</a></li>
+                    <li class="b"><a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=24cad2271eaf4219832bf82da5803193" target="_blank">Camp Locations</a></li>
+                    <li class="b"><a href="http://popstats.unhcr.org/en/persons_of_concern" target="_blank">Refugee Flows</a></li>
+                    <li class="b"><a href="https://www.unhcr.org/protection/basic/3b73b0d63/states-parties-1951-convention-its-1967-protocol.html" target="_blank">International Agreements</a></li>
+                    <li class="b"><a href="http://reporting.unhcr.org/sites/default/files/2018%20-%20UNHCR%20Donor%20Ranking%20by%20Country.pdf" target="_blank">Economic Contribution</a></li>
+                </ul>
+                <li>World Bank</li>
+                <ul class="b">
+                    <li class="b"><a href="http://data.un.org/DocumentData.aspx?q=hdi&id=392" target="_blank">HDI</a></li>
+                    <li class="b"><a href="http://wdi.worldbank.org/table/1.2" target="_blank">Poverty</a></li>
+                    <li class="b"><a href="http://wdi.worldbank.org/table/3.11" target="_blank">Environment</a></li>
+                </ul>
+                <li>ACLED</li>
+                <ul class="b">
+                    <li class="b"><a href="https://www.acleddata.com/" target="_blank">Conflict Data</a></li>
+                </ul>
+                <li>Humanitarian Data Exchange</li>
+                <ul class="b">
+                    <li class="b"><a href="https://data.humdata.org/" target="_blank">Camp Features</a></li>
+                </ul>
+              </ul> 
+            </p> 
         </div>
-      </a> 
-      <br/>
-      <a href="journeys/index.html" onmouseover="selectType(100)" onmouseout="resetRoutes()" >
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
-          <div id="but-text">
-            <p id="but-a" style="display:block;">Escaping Burundi</p>
-            <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
-          </div>
-        </div>
-      </a>  
-      <a href="journeys/index2.html" onmouseover="selectType(100)" onmouseout="resetRoutes()" >
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
-          <div id="but-text">
-            <p id="but-a" style="display:block;">Amina</p>
-            <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
-          </div>
-        </div>
-      </a>  
-      </div>
     </div>
   </div> 
   <div class="bottom-arrow"><i class="animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
@@ -410,10 +449,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
   <script>
-      d3.select(window).on("resize", sizeChange);
+    d3.select(window).on("resize", sizeChange);
 
-      
-      const config = {
+    const config = {
       speed: 0.005,
       verticalTilt: -30,
       horizontalTilt: 0
@@ -646,17 +684,6 @@ gradient.append("svg:stop")
 
   position_labels();
   //enableRotation();
-
-  svg
-    .append("g")
-    .attr("class", "lines")
-    .selectAll(".lines")
-    .data(routePaths)
-    .enter()
-    .append("path")
-    .attr("d", path)
-    .attr("class", "line")
-    .attr("stroke", "rgba(153, 51, 51, 1");
         
 }
     

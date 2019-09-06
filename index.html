@@ -11,9 +11,9 @@
   <link href="css/perfect-scrollbar.css" rel="stylesheet">        
   <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <style>
-     
      html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -52,7 +52,7 @@
       stroke: rgba(0, 0, 0, .2);
       stroke-linejoin: round;
       stroke-width: 1.5;
-      fill-opacity: 0.1;
+      fill-opacity: 1;
       stroke-dasharray: 4;
     }
 
@@ -68,7 +68,7 @@
       font-size: 14px;
       font-family: sans-serif;
       font-size:18px;
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif !important;
     }
 
     .graticule {
@@ -79,7 +79,7 @@
     }
 
     .labels {
-      font: 14px 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif !important;
       fill: black;
       opacity: .5;
       font-weight:300;
@@ -159,6 +159,7 @@
         top:25px;
         z-index:1000;
         height:100%;
+        margin-top:40px;
         /*transform: translate(-50%, -50%);
         left: 50%;
         top: 50%;*/
@@ -173,7 +174,7 @@
     }
 
     h1{
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         font-weight:bold;
         font-size:115px;
@@ -183,10 +184,10 @@
         margin:auto;
         display:block;
         letter-spacing: 2px;
-    }
+      }
 
     h2{
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         font-weight:bold;
         font-size:105px;
@@ -197,11 +198,12 @@
 
     p{
       margin:0;
+      font-family: 'Roboto Condensed', sans-serif !important;
     }
 
     p#but-a{
         font-size:34px;
-        font-family: 'Roboto Condensed', sans-serif;
+        font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         border:none;
         text-decoration:none;
@@ -210,7 +212,7 @@
         font-weight:bold;
     }
     p#desc{
-      font-family: 'Roboto Condensed', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif !important;
       font-weight:300 !important;
       font-size:18px;
       color:white;
@@ -252,6 +254,7 @@
       color: white;
       font-weight:300;
       text-decoration:none;
+      font-family: 'Roboto Condensed', sans-serif !important;
     }
     a:visited {
       color: white;
@@ -273,14 +276,69 @@
       font-size:18px;
       font-weight:300;
     }
+    div.bottom-arrow{
+        color: white;
+        background: #61666E;
+        width:500px;
+        height:50px;
+        position:absolute;
+        bottom:0;
+        left:0;
+        z-index:1000;
+    }
+    i{
+      margin-top:10px;
+      font-size: 30px !important;
+      left: 200px;
+      position: absolute;
+    }
+    div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1000;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      letter-spacing: 1px;
+      font-family: 'Roboto Condensed', sans-serif !important;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      font-variant: small-caps;
+      left:50%;
+      font-family: 'Roboto Condensed', sans-serif !important;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
   </style>
 </head>
 
 <body>
-<div class="row">
+  <div class="row">
   <div id ="mainMenu" class="col-md-5">
       <div id = "text">
-        <div class="title">
+        <div style="margin-bottom:200px;">
             <h1>Global Refugee Atlas</h1><br><br>
             <p class="intro-text">The Global Refugee Atlas visualizes and narrates core experiences of the millions of refugees under UN mandate using remote sensing data, crowdsourced social media data as well as a host of datasets from UNHCR and other international humanitarian agencies.<br><br>Exploiting the availability of these datasets, the Atlas is built on an open geo-narrative platform to illuminate the contexts and conditions underlying refugee journeys and camps. </p>
         </div>
@@ -308,7 +366,7 @@
             <div id="but">
               <img src="assets/img/sample_icon.png" class="icon">
               <div id="but-text">
-                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Settlements</p>
+                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Camps</p>
                 <p id="desc">Extension and growth of refugee <br> camps through satellite imagery</p>
               </div>
             </div>
@@ -331,6 +389,16 @@
               </div>
             </div>
           </a>
+          <br/><br/>
+          <a href="tweets/index.html">
+            <div id="but">
+              <img src="assets/img/sample_icon.png" class="icon">
+              <div id="but-text">
+                <p id="but-a" style="display:block;">Sources</p>
+                <p id="desc">Data and software sources.</p>
+              </div>
+            </div>
+          </a>
         </div>
         <div style="margin-bottom:200px;">
             <h2>About</h2>
@@ -342,83 +410,11 @@
             <p class="cont-text"><b>Jamon Van Den Hoek</b>&nbsp&nbspCo-PI</p>
             <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI</p>
             <p class="cont-text"><b>Giovanni Svevo</b>&nbsp&nbspLead Cartographer / Designer</p>
-            <p class="cont-text"><b>Gareth Baldrica Franklin</b>&nbsp&nbspCartographer / Designer</p>
-            
-        </div>
-        <div style="margin-bottom:200px;">
-            <h2>Sources</h2>
-            <h3>Software and Plugins</h3>
-            <p class="about-text">
-              <ul class="a">
-                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
-                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
-                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
-                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
-                <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li>
-                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
-                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
-                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
-                <li>Leaflet Plugins</li>
-                <ul class="b">
-                    <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
-                    <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
-                    <li class="b"><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Heat Map</a></li>
-                </ul>
-              </ul> 
-            </p>
-            <h3>Basemaps</h3>
-            <p class="about-text">
-              <ul class="a">
-                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
-                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
-                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
-              </ul> 
-            </p>
-            <h3>Satellite Imagery</h3>
-            <p class="about-text">
-              <ul class="a">
-                <li>Processing Platform</li>
-                <ul class="b">
-                    <li class="b"><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
-                </ul>
-                <li>Raw Data</li>
-                <ul class="b">
-                    <li class="b"><a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2" target="_blank">ESA - Sentinel 2a</a></li>
-                    <li class="b"><a href="https://www.nasa.gov/mission_pages/landsat/main/index.html" target="_blank">NASA - Landsat 8</a></li>
-                </ul>
-              </ul> 
-            </p>
-            <h3>Data Sources</h3>
-            <p class="about-text">
-              <ul class="a">
-                <li>UNHCR</li>
-                <ul class="b">
-                    <li class="b"><a href="https://data2.unhcr.org/en/situations" target="_blank">Camp Population</a></li>
-                    <li class="b"><a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=24cad2271eaf4219832bf82da5803193" target="_blank">Camp Locations</a></li>
-                    <li class="b"><a href="http://popstats.unhcr.org/en/persons_of_concern" target="_blank">Refugee Flows</a></li>
-                    <li class="b"><a href="https://www.unhcr.org/protection/basic/3b73b0d63/states-parties-1951-convention-its-1967-protocol.html" target="_blank">International Agreements</a></li>
-                    <li class="b"><a href="http://reporting.unhcr.org/sites/default/files/2018%20-%20UNHCR%20Donor%20Ranking%20by%20Country.pdf" target="_blank">Economic Contribution</a></li>
-                </ul>
-                <li>World Bank</li>
-                <ul class="b">
-                    <li class="b"><a href="http://data.un.org/DocumentData.aspx?q=hdi&id=392" target="_blank">HDI</a></li>
-                    <li class="b"><a href="http://wdi.worldbank.org/table/1.2" target="_blank">Poverty</a></li>
-                    <li class="b"><a href="http://wdi.worldbank.org/table/3.11" target="_blank">Environment</a></li>
-                </ul>
-                <li>ACLED</li>
-                <ul class="b">
-                    <li class="b"><a href="https://www.acleddata.com/" target="_blank">Conflict Data</a></li>
-                </ul>
-                <li>Humanitarian Data Exchange</li>
-                <ul class="b">
-                    <li class="b"><a href="https://data.humdata.org/" target="_blank">Camp Features</a></li>
-                </ul>
-              </ul> 
-            </p>
-
+            <p class="cont-text"><b>Gareth Baldrica Franklin</b>&nbsp&nbspCartographer / Designer</p>  
         </div>
     </div>
   </div> 
+  <div class="bottom-arrow"><i class="animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
   <div class="col-md-7">
     <svg>
         <defs>
@@ -442,6 +438,7 @@
       </svg>
   </div>  
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <!-- Use d3-fetch instead of d3-request in ES6 -->
   <script src="https://d3js.org/d3-request.v1.min.js"></script>
@@ -540,10 +537,6 @@
       .on("dblclick.zoom", null);
 
     var labels;
-
-    var colorRange = d3.scaleOrdinal()
-        .domain([1,2,3,4,5,6,7,8])
-        .range(["#a6cee3", "#1f78b4","#b2df8a", "#33a02c","#fb9a99", "#e31a1c","#fdbf6f", "#ff7f00"]);
 
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
@@ -666,10 +659,10 @@ gradient.append("svg:stop")
     .attr("d", path)
     .attr("class", "country")
     .attr("name",function(d){
-       console.log(d);return countryById[d.id];
+       return countryById[d.id];
     })
     .attr("fill", function (d) {
-        return colorRange(parseFloat(colorById[d.id]));
+        return '#c8cad0';
     })
     .attr("box-shadow", 'inset 0 0 10px #000000');
   svg
@@ -693,10 +686,9 @@ gradient.append("svg:stop")
     .text(function(d) {
       return d.properties.NAME;
     });
-  //enableRotation();
+  enableRotation();
 
   position_labels();
-  //enableRotation();
 
       svg
         .append("g")
