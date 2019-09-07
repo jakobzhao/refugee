@@ -244,10 +244,10 @@
     img.icon{
       height:60px;
       width:60px;
-      filter: invert(100%);
+      border-radius: 14px;
       display:inline-block;
       position:absolute;
-      margin-top:20px;
+      margin-top:8px;
       margin-left:10px;
     }
     a{
@@ -331,6 +331,7 @@
       color:lightgray;
       text-decoration:none;
     }
+
   </style>
 </head>
 
@@ -343,96 +344,95 @@
     <div id ="mainMenu" class="col-md-5">
       <div id = "text">
         <h1>Camps</h1>
-        <p id="desc" style="margin-bottom:50px; margin-top:20px;">The Global Refugee Atlas visualizes and narrates core experiences of the millions of refugees under UN mandate using remote sensing data, crowdsourced social media data as well as a host of datasets from UNHCR and other international humanitarian agencies.</p>    
+        <p id="desc" style="margin-bottom:50px; margin-top:20px;">In this chapter layouts and recent growth of major refugee camps are shown using open-access satellite remote sensing imagery. The satellite images refer to the past five years and are retrieved from NASA's Landsat 8 and ESA's Sentinel 2 satellites. More information on the camp's features derived from open access data is provided for two sites (Kutupalong 1 and Zaatari).</p>    
         <div style="margin-bottom:100px;">
         <a href="camps/kutupalong.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" >
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\bd.svg" class="icon">
             <div id="but-text">
-              <p style="display:block;" id="but-a">Kutupalong</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p style="display:block;" id="but-a">Kutupalong 1</p>
+              <p id="desc" > Bangladesh</p>
             </div>
           </div>
         </a> 
-        <br/>
         <a href="camps/kutupalong_satellite.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" >
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\bd.svg" class="icon">
             <div id="but-text">
-              <p id="but-a" style="display:block; line-height:30px; margin-top:10px;">Kutupalong - Satellite</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="but-a" style="display:block">Kutupalong 2</p>
+              <p id="desc" style="margin-top:5px;"> Bangladesh</p>
             </div>
           </div>
         </a>  
         <a href="camps/zaatari.html" onmouseover="selectType('JORs004465')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\jo.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Zaatari</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc"style="margin-top:5px;"> Jordan</p>
             </div>
           </div>
         </a>  
         <a href="camps/pugnido.html" onmouseover="selectType('ETHs028884')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\et.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Gambela 1</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Ethiopia</p>
             </div>
           </div>
         </a>  
         <a href="camps/nguenyyel.html" onmouseover="selectType('ETHs028884')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\et.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Gambela 2</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Ethiopia</p>
             </div>
           </div>
         </a>  
         <a href="camps/yida.html" onmouseover="selectType('SSDs004118')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\ss.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Unity</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> South Sudan</p>
             </div>
           </div>
         </a>  
         <a href="camps/dadaab.html" onmouseover="selectType('KENs001091')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\ke.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Dadaab</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Kenya</p>
             </div>
           </div>
         </a>  
         <a href="camps/nduta.html" onmouseover="selectType('TZAs001529')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Nduta</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Tanzania</p>
             </div>
           </div>
         </a>
         <a href="camps/nyarugusu.html" onmouseover="selectType('TZAs001530')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Nyarugusu</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Tanzania</p>
             </div>
           </div>
         </a>
         <a href="camps/mtendeli.html" onmouseover="selectType('TZAs001526')" onmouseout="resetPoints()">
           <div id="but">
-            <img src="assets/img/sample_icon.png" class="icon">
+            <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Mtendeli</p>
-              <p id="desc">Sample text here. Sample text here.<br>Sample text here. Sample text here.</p>
+              <p id="desc" style="margin-top:5px;"> Tanzania</p>
             </div>
           </div>
         </a>

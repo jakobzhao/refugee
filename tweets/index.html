@@ -48,7 +48,7 @@
             margin-right: 0;
         }
   .buffer { 
-            margin-top:20px; 
+            margin-top:50px; 
             margin-bottom:20px; 
         }
   .padding { 
@@ -78,13 +78,54 @@
     #images{
       position: relative;
     }
+    div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1000;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      color:white;
+      letter-spacing: 1px;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
 
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      left:50%;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
 </style>
 
 </head>
 
 <body id="page-top">
-
+  <div class="navBar">
+    <a href="aid_menu.html" class="back">Back</a>
+    <a href="index.html" class="home">Global Refugee Atlas</a>
+  </div> 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
