@@ -139,10 +139,13 @@
         var map = L.map('map', {
                 minZoom: 14,
                 maxZoom: 15,
-                zoomControl:false
+                zoomControl:false,
+                attributionControl:false
             });
         map.setView([8.30, 34.28], 14);
-
+        L.control.scale({                
+                position: 'bottomright'
+            }).addTo(map);
         var google_2018 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
                     
             }).addTo(map);

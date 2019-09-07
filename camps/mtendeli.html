@@ -128,9 +128,13 @@
         var map = L.map('map', {
                 minZoom: 13,
                 maxZoom: 14,
-                zoomControl:false
+                zoomControl:false,
+                attributionControl:false
             });
             map.setView([-3.425, 30.885], 14);
+            L.control.scale({                
+                position: 'bottomright'
+            }).addTo(map);
             new L.Control.GlobeMiniMap({
                 marker: 'red',
                 position: 'bottomright'
