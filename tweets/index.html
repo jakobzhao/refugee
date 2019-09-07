@@ -25,6 +25,7 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="js/jqcloud.min.js"></script>
   <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 
@@ -110,9 +111,26 @@
       position:absolute;
       color:white;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
+      text-decoration:none;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
@@ -123,8 +141,9 @@
 
 <body id="page-top">
   <div class="navBar">
-    <a href="aid_menu.html" class="back">Back</a>
-    <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="../index.html" class="back"><i class="fa fa-chevron-left"></i></a>
+    <a href="../index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
   </div> 
   <!-- Page Wrapper -->
   <div id="wrapper">

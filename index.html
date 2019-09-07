@@ -225,14 +225,14 @@
         font-weight:300;
         font-size:22px;
         width:400px;
-        line-height:22px;
+        line-height:32px;
     }
 
     p.about-text{
         font-weight:300;
         font-size:18px;
         width:400px;
-        line-height:22px;
+        line-height:24px;
     }
 
     p.cont-text{
@@ -401,16 +401,20 @@
         </div>
         <div style="margin-bottom:200px;">
             <h2>About</h2>
-            <p class="about-text">The Atlas is divided in five chapters that explore different aspects of the refugee experience, from the causes that generate international crises to the perception of social media users throghout the world.<br/><br/>The ‘Context’ and ‘Aid’ sections provide a visual foundation to understand the global scale of refugee movements as well as the context (e.g., refugee flows, human and environmental conditions of hosting countries, spread of wars and civil conflicts) and geographic conditions that underpin refugee journeys. At the same time, they illustrate the response to the refugee crisis highlighting international participation (e.g., countries that are signatories to the 1951 Refugee Convention and the 1968 Protocol, contributions to UNHCR, etc.). <br/><br/>Refugee experiences are highlighted through the use of geo-narratives using as case studies two stories: refugees escaping the brutality of the Burundian civil war and Somali refugees trying to reach the Mediterranean shores ('Journeys' section). Refugee camps are shown in some detail through two case studies (Kutupalong and Zaatari), while the growth of major refugee camps is visualized using remote sensing satellite imagery ('Settlements' section). Finally the perception and the attitude toward refugees is explored running text analyses on crowdsourced data from social media users ('Perception' section). </p>                           
+            <p class="about-text">The Atlas is divided in five chapters that explore different aspects of the refugee experience, from the causes that generate international crises to the perception of social media users throghout the world.<br/><br/>The ‘Context’ and ‘Aid’ sections provide a visual foundation to understand the global scale of refugee movements as well as the context (e.g., refugee flows, human and environmental conditions of hosting countries, spread of wars and civil conflicts) and geographic conditions that underpin refugee journeys. At the same time, they illustrate the response to the refugee crisis highlighting international participation (e.g., countries that are signatories to the 1951 Refugee Convention and the 1968 Protocol, contributions to UNHCR, etc.). <br/><br/>Refugee experiences are highlighted through the use of geo-narratives using as case studies two stories: refugees escaping the brutality of the Burundian civil war and Somali refugees trying to reach the Mediterranean shores ('Journeys' section). Refugee camps are shown in some detail through two case studies (Kutupalong and Zaatari), while the growth of major refugee camps is visualized using remote sensing satellite imagery ('Settlements' section). Finally the perception and the attitude toward refugees is explored running text analyses on crowdsourced data from social media users ('Perception' section). 
+            
+            If you have questions, please contact Bo Zhao at janine.salwasser@zhaobo@uw.edu.</p>                           
         </div>
         <div style="margin-bottom:200px;">
-            <h2>Authors</h2>
-            <p class="cont-text"><b>Bo Zhao</b>&nbsp&nbspPrincipal Investigator</p>
-            <p class="cont-text"><b>Jamon Van Den Hoek</b>&nbsp&nbspCo-PI</p>
-            <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI</p>
-            <p class="cont-text"><b>Giovanni Svevo</b>&nbsp&nbspLead Cartographer / Designer</p>
-            <p class="cont-text"><b>Gareth Baldrica Franklin</b>&nbsp&nbspCartographer / Designer</p>
-            <p class="cont-text"><b>Ginny Katz</b>&nbsp&nbspContributor</p>  
+            <h2>Contributors</h2>
+            <p class="cont-text"><b>Bo Zhao</b>&nbsp&nbspPI, <br>Assistant Professor GIS studies</p><br>
+            <p class="cont-text"><b>Jamon Van Den Hoek</b>&nbsp&nbspCo-PI, <br>Assistant Professor Remote Sensing</p><br>
+            <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI, <br> Assistant Professor Applied Economics</p><br>
+            <p class="cont-text"><b>Giovanni Svevo</b>&nbsp&nbspLead Cartographer, Designer</p><br>
+            <p class="cont-text"><b>Gareth Baldrica Franklin</b>&nbsp&nbspCartographer, Designer</p><br>
+            <p class="cont-text"><b>Ginny Katz</b>&nbsp&nbspContributor</p>  <br><br><br>
+
+            <p class="cont-text"><b>Acknowledgements</b><br>This work has been made possible by a grant from the National Geographic Society's Committee for Research and Exploration. <br>Special thanks to Julia Jones and Erik Steiner for their valuable inputs.</p>
   
         </div>
     </div>
@@ -687,7 +691,7 @@ gradient.append("svg:stop")
     .text(function(d) {
       return d.properties.NAME;
     });
-  enableRotation();
+  // enableRotation();
 
   position_labels();
 

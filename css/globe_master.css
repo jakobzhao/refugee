@@ -325,9 +325,25 @@ html,
       position:absolute;
       color:white;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;

@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <script src="../tweets/js/utils.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         html {
@@ -57,13 +58,69 @@
             h1{
       margin-top: 10px!important;
     }
+    div.navBar{
+      height:35px;
+      width:100%;
+      background:#525760;
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:1000;
+    }
+    a.back{
+      margin-left:10px;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:normal;
+      position:absolute;
+      letter-spacing: 1px;
+      font-family: 'Roboto Condensed', sans-serif !important;
+    }
+    a.back:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+
+    a.home{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      font-variant: small-caps;
+      left:3%;
+      font-family: 'Roboto Condensed', sans-serif !important;
+    }
+    a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
     </style>
 </head>
 <body>
     <div class="navBar">
-        <a href="../camp_menu.html" class="back">Back</a>
-        <a href="index.html" class="home">Global Refugee Atlas</a>
-    </div> 
+        <a href="../camp_menu.html" class="back"><i class="fa fa-chevron-left"></i></a>
+        <a href="../index.html" class="home">Global Refugee Atlas</a>
+        <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
+      </div>
     <div class="row">
     <div id="infoPanel"  class="col-md-3">
         <!-- <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div> -->

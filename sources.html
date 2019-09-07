@@ -285,7 +285,7 @@
         left:0;
         z-index:1000;
     }
-    i{
+    i.arrow{
       margin-top:10px;
       font-size: 30px !important;
       left: 200px;
@@ -322,10 +322,26 @@
       font-weight:bold;
       position:absolute;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
       font-family: 'Roboto Condensed', sans-serif !important;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
@@ -335,43 +351,18 @@
 
 <body>
 <div class="navBar">
-    <a href="index.html" class="back">Back</a>
+    <a href="index.html" class="back"><i class="fa fa-chevron-left"></i></a>
     <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
+
+    
 </div>
 <div class="row">
   <div id ="mainMenu" class="col-md-5">
     <div id = "text">
             <h1>Sources</h1>
-            <h3>Software and Plugins</h3>
-         <div style="margin-bottom:100px;">
-            <p class="about-text">
-              <ul class="a">
-                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
-                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
-                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
-                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
-                <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li>
-                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
-                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
-                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
-                <li><a href="https://github.com/lipis/flag-icon-css" target="_blank">Flag-icons-css</a></li>
-                <li>Leaflet Plugins</li>
-                <ul class="b">
-                    <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
-                    <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
-                    <li class="b"><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Heat Map</a></li>
-                </ul>
-              </ul> 
-            </p>
-            <h3>Basemaps</h3>
-            <p class="about-text">
-              <ul class="a">
-                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
-                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
-                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
-                <li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li>
-              </ul> 
-            </p>
+            <p class="about-text">This is a comprehensive list of data and software sources for the Global Refugee Atlas.</p><br>
+            <h3 style="font-size: 34px">Data</h3>
             <h3>Satellite Imagery</h3>
             <p class="about-text">
               <ul class="a">
@@ -386,7 +377,14 @@
                 </ul>
               </ul> 
             </p>
-            <h3>Data Sources</h3>
+            <h3>Social Media</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li>Twitter</li>
+                <li><i>Your Shot NG (tba)</i></li>
+              </ul> 
+            </p>
+            <h3>Thematic Data</h3>
             <p class="about-text">
               <ul class="a">
                 <li>UNHCR</li>
@@ -417,10 +415,43 @@
                 </ul>
               </ul> 
             </p> 
+            <h3 style="font-size: 34px">Software</h3>
+            <h3>Libraries and Plugins</h3>
+         <div style="margin-bottom:100px;">
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
+                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <!-- <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li> -->
+                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
+                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
+                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
+                <li><a href="https://github.com/lipis/flag-icon-css" target="_blank">Flag-icons-css</a></li>
+                <li>Leaflet Plugins</li>
+                <ul class="b">
+                    <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
+                    <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
+                    <li class="b"><a href="https://github.com/Leaflet/Leaflet.heat" target="_blank">Heat Map</a></li>
+                </ul>
+              </ul> 
+            </p>
+            <h3>Basemaps</h3>
+            <p class="about-text">
+              <ul class="a">
+                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
+                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
+                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
+                <li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li>
+              </ul> 
+            </p>
+
+
         </div>
     </div>
   </div> 
-  <div class="bottom-arrow"><i class="animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
+  <div class="bottom-arrow"><i class="arrow animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
   <div class="col-md-7">
     <svg>
       <defs>

@@ -285,12 +285,12 @@
         left:0;
         z-index:1000;
     }
-    i{
+    /* i.down{
       margin-top:10px;
       font-size: 30px !important;
       left: 200px;
       position: absolute;
-    }
+    } */
     div.navBar{
       height:35px;
       width:100%;
@@ -322,10 +322,26 @@
       font-weight:bold;
       position:absolute;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
       font-family: 'Roboto Condensed', sans-serif !important;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
@@ -335,8 +351,10 @@
 
 <body>
     <div class="navBar">
-        <a href="index.html" class="back">Back</a>
+        <a href="index.html" class="back"><i class="fa fa-chevron-left"></i></a>
         <a href="index.html" class="home">Global Refugee Atlas</a>
+        <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
+
       </div>
   <div class="row">
   <div id ="mainMenu" class="col-md-5">

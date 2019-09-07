@@ -1,0 +1,95 @@
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    }
+
+ @-moz-document url-prefix() {
+     body {
+         font-weight: lighter !important;
+     }
+ }
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    html, body, #map {
+        height: 100%;
+    }
+    .lorem {
+        font-style: italic;
+        color: #AAA;
+    }
+    .leaflet-marker-icon,
+    .leaflet-marker-shadow {
+        opacity: 0;
+    }
+    h5 {
+        margin: 0;
+    }
+    .leaflet-tooltip.my-labels {
+        background-color: transparent;
+        color: white;
+        font-size: 2.1rem;
+        font-variant: small-caps;
+        border: transparent;
+        box-shadow: none;
+        }
+        h1{
+  margin-top: 10px!important;
+}
+div.navBar{
+  height:35px;
+  width:100%;
+  background:#525760;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:1000;
+}
+a.back{
+  margin-left:10px;
+  margin-top:3px;
+  font-size:20px;
+  font-weight:normal;
+  position:absolute;
+  letter-spacing: 1px;
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+a.back:hover{
+  cursor:pointer;
+  color:lightgray;
+  text-decoration:none;
+}
+
+a.home{
+  text-align:center;
+  margin-top:3px;
+  font-size:20px;
+  font-weight:bold;
+  position:absolute;
+  font-variant: small-caps;
+  left:3%;
+  font-family: 'Roboto Condensed', sans-serif !important;
+}
+a.home:hover{
+  cursor:pointer;
+  color:lightgray;
+  text-decoration:none;
+}
+a.github{
+  text-align:center;
+  margin-top:3px;
+  font-size:20px;
+  font-weight:bold;
+  position:absolute;
+  color:white;
+  font-variant: small-caps;
+  right:1%;
+  text-decoration:none;
+}
+a.github:hover{
+  cursor:pointer;
+  color:lightgray;
+  text-decoration:none;
+}

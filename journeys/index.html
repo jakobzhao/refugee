@@ -4,11 +4,12 @@
 <meta charset='utf-8' />
 <title>Escaping Burundi</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon">
+<!-- <link rel="shortcut icon" href="assets/img/nglogo.png" type="image/x-icon"> -->
 <script src='assets/js/mapbox-gl.js'></script>
 <link href='assets/css/mapbox-gl.css' rel='stylesheet' />
 <link href="https://fonts.googleapis.com/css?family=Buenard|Lustria|Vollkorn&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
 html {
@@ -179,18 +180,18 @@ p{
 }
 
 div.navBar{
-      height:35px;
+      height:35px!important;
       width:100%;
       background:#525760;
       position:fixed;
       left:0;
       top:0;
       z-index:1000;
-      display:block;
+     
     }
     a.back{
       margin-left:10px;
-      margin-top:3px;
+      margin-top:5px;
       font-size:20px;
       font-weight:normal;
       position:absolute;
@@ -205,15 +206,32 @@ div.navBar{
 
     a.home{
       text-align:center;
-      margin-top:3px;
+      margin-top:5px;
       font-size:20px;
       font-weight:bold;
       position:absolute;
       color:white;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
+      text-decoration:none!important;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none!important;
+    }
+    a.github{
+      text-align:center;
+      margin-top:5px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
@@ -222,8 +240,9 @@ div.navBar{
 </head>
 <body> 
 <div class="navBar">
-    <a href="../journey_menu.html" class="back">Back</a>
-    <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="../journey_menu.html" class="back"><i class="fa fa-chevron-left"></i></a>
+    <a href="../index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
 </div>
 <div id='map'></div>
 <div id='info'></div>

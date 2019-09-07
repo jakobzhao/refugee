@@ -14,6 +14,8 @@
 <script src="../tweets/js/utils.js"></script>
 <script src="../js/chart.js"></script>
 <script src="../js/Chart.PieceLabel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <style>
 html {
@@ -224,7 +226,7 @@ div.navBar{
     }
     a.back{
       margin-left:10px;
-      margin-top:3px;
+      margin-top:5px;
       font-size:20px;
       font-weight:normal;
       position:absolute;
@@ -239,15 +241,32 @@ div.navBar{
 
     a.home{
       text-align:center;
-      margin-top:3px;
+      margin-top:5px;
       font-size:20px;
       font-weight:bold;
       position:absolute;
       color:white;
       font-variant: small-caps;
-      left:50%;
+      left:3%;
+      text-decoration:none!important;
     }
     a.home:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+    }
+    a.github{
+      text-align:center;
+      margin-top:5px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:1%;
+      text-decoration:none;
+    }
+    a.github:hover{
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
@@ -256,8 +275,9 @@ div.navBar{
 </head>
 <body> 
 <div class="navBar">
-    <a href="../journey_menu.html" class="back">Back</a>
-    <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="../journey_menu.html" class="back"><i class="fa fa-chevron-left"></i></a>
+    <a href="../index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
 </div>
 <div id='map'></div>
 <div id='info'></div>
