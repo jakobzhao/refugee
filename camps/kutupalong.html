@@ -15,13 +15,13 @@
   <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <link href="css/camps.css" rel="stylesheet">   
+  <script src="js/washCharts.js"></script>
+	<script src="js/safetyCharts.js"></script>
   <style>
       html {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
-      font-smoothing: antialiased;
       font-weight: 400;
       }
 
@@ -32,8 +32,31 @@
       }
       h1{
       margin-top: 10px!important;
+      margin-bottom: 5px!important;
+    }
+    h2#pop{
+      margin-top: 0px!important;
+      margin-bottom: 0px!important;
+    }
+    h5#updated{
+      margin-top: 0px!important;
       margin-bottom: 20px!important;
     }
+    img#cont {
+    width: 100%;    
+    /* background-color: #fafafa; */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 2px 0 rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    opacity: .7;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    }
+    div.legend {
+    border: #d9d9d9 solid 1px;
+}
    </style>
 </head>
 
@@ -47,65 +70,98 @@
   <div id="infoPanel" class="col-md-3">
     <!-- <div class="topBar"><img id="ng" src="../assets/img/ng.png"></div> -->
     <h1>KUTUPALONG</h1> 
-          <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
           <div id="text">
+              <h2 style="display: inline-block; margin-top:0%">&nbsp&nbspPopulation: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">913,000</h2>&nbsp;&nbsp;(<h5 id="updated" style="display: inline-block;">null</h5>)<br>
+              <!-- <h5 style="display: inline-block;margin-top:0%">&nbsp&nbsp&nbspLast updated: </h5>&nbsp;<h5 id="updated" style="display: inline-block;">null</h5> -->
             <div class="dropdown" style="padding-bottom:0px;">
                 <button class="dropbtn" id="dataType">Select Map</button>
                 <div class="dropdown-content">
                   <a href="#" id="but1" class="selection" style="background:#ddd;">Overview</a>
                   <a href="#" id="but2" class="selection">Population</a>
                   <a href="#" id="but3" class="selection">Health</a>
-                  <a href="#" id="but4" class="selection">Sanitation</a>
-                  <a href="#" id="but5" class="selection">Safety</a>
+                  <a href="#" id="but4" class="selection" onclick="wc1()">Sanitation</a>
+                  <a href="#" id="but5" class="selection" onclick="sc1()">Safety</a>
                 </div>
               </div>
             <div class="legend_container" id="leg_1">
-              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
+              <p>Residents in Kutupalong face daily challenges to access the most basic services. In this interactive map you can choose a theme (Overview, Population, Health and Safety) and explore the facilities of the camp.</p>  
               <div style="display:inline-block; width:150px; height:80px;">
                 <h2 class="iconLabel" style="margin-bottom:10px;">Medical Facilities</h2> 
-                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="../assets/img/hospital-15.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Primary</p><br/>
-                <img class="icon" style="opacity:0.4; display:inline;" src="../assets/img/hospital-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:0px; margin-bottom:5px;">Other</p>
+                <img class="icon" style="opacity:0.4; display:inline;"  src="../assets/img/hospital-15.svg"><p style="display:inline; position:relative; margin:0; left:10px; ">Primary</p><br/>
+                <img class="icon" style="opacity:0.4; display:inline;" src="../assets/img/hospital-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:0px;">  Other</p>
               </div>
               <div style="display:inline-block; margin-left:5px; width:120px; height:80px;">
                 <h2 class="iconLabel">Schools</h2> 
-                <img class="icon" style="opacity:0.4; height:20px; display:inline;"  src="../assets/img/square-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Permanent</p><br/>
-                <img class="icon" style="opacity:0.4; height:20px; display:inline;" src="../assets/img/square-stroked-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Temporary</p>
+                <img class="icon" style="opacity:0.4; display:inline;"  src="../assets/img/square-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; ">Permanent</p><br/>
+                <img class="icon" style="opacity:0.4; display:inline;" src="../assets/img/square-stroked-11.svg"><p style="display:inline; position:relative; margin:0; left:10px;">Temporary</p>
               </div>
               <h2 class="iconLabel">Water</h2> 
-              <img class="icon" style="opacity:0.4; height:20px; display:inline;" src="../assets/img/water-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; bottom:5px;">Source</p></br>
+              <img class="icon" style="opacity:0.4;  display:inline;" src="../assets/img/water-11.svg"><p style="display:inline; position:relative; margin:0; left:10px; ">Source</p></br>
+              <br><br>
+              <a href="https://www.unhcr.org/ph/12861-bangladesh-rohingya-refugees-moved-from-kutupalong-camp-to-new-site.html"target="_blank">
+              <img id="cont"src="https://www.unhcr.org/ph/wp-content/uploads/sites/28/2017/10/Header-Rohingya-27-Oct-894x504.jpg" ></a>
             </div>
             <div class="legend_container" id="leg_2" style="display:none;">
               <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
-              <h2>Population Density (Ind./Sq. Km)</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #ffffd4, #ffffd4 25%, #fed98e 25%, #fed98e 50%, #fe9929 50%, #fe9929 75%, #cc4c02 75%);"></div>
+              <h2>Population Density (Ind./Acre)</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #ffffd4, #ffffd4 25%, #fed98e 25%, #fed98e 50%, #fe9929 50%, #fe9929 75%, #cc4c02 75%);opacity: .8;"></div>
               <p class="legend_label" style="margin-left:55px;">100</p>
               <p class="legend_label" style="margin-left:35px;">200</p>
               <p class="legend_label" style="margin-left:35px;">300</p>
+              <br><br>
+              <img id="cont"src="http://ecdn.banglatribune.com/contents/cache/images/825x0x1/uploads/media/2019/08/22/aaddd9062d84166c5aa3990ced1215c6-5d5eabb85ebe2.jpg" >
             </div>
             <div class="legend_container" id="leg_3" style="display:none;">
-              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
-              <h2>Individuals Per Medical Facility</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #fee5d9, #fee5d9 25%, #fcae91 25%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 75%, #cb181d 75%);"></div>
+              <p>UNHCR and NGOs provide healthcare services in the camp through health centers and mobile clinics. The highest health risks come from diseases related to sanitation and lack of clean water.</h2> 
+                <h2>Individuals Per Medical Facility</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #fee5d9, #fee5d9 25%, #fcae91 25%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 75%, #cb181d 75%);opacity: .8;"></div>
               <p class="legend_label" style="margin-left:50px;">3000</p>
               <p class="legend_label" style="margin-left:25px;">6000</p>
               <p class="legend_label" style="margin-left:22px;">9000</p>
+              <br><br>
+              <img id="cont"src="https://reliefweb.int/sites/reliefweb.int/files/styles/report-large/public/report-images/bd20170919-1.jpg?itok=Es9t6EHx" >
           </div>
           <div class="legend_container" id="leg_4" style="display:none;">
-              <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
-              <h2>Indivduals Per Latrine</h2> 
-              <div class="legend" style="background:linear-gradient(to right, #edf8fb, #edf8fb 25%, #b3cde3 25%, #b3cde3 50%, #8c96c6 50%, #8c96c6 75%, #88419d 75%);"></div>
+              <p>Access to Water and Sanitation infrastructures is critical, especially for women and children. In this page you can explore some of the main problems faced by the population. Click on a topic below or hover over the map for more datailed information. Data from <a href= "http://www.reachresourcecentre.info/system/files/resource-documents/reach_bgd_key_findings_presentations_presentation_wash_hh_baseline_april2018.pdf" target="_blank" style="color:silver">Reach survey </a>of December 6, 2018.</h2> 
+                <h2>Indivduals Per Latrine</h2> 
+              <div class="legend" style="background:linear-gradient(to right, #edf8fb, #edf8fb 25%, #b3cde3 25%, #b3cde3 50%, #8c96c6 50%, #8c96c6 75%, #88419d 75%);opacity: .8;"></div>
               <p class="legend_label" style="margin-left:62px;">15</p>
               <p class="legend_label" style="margin-left:50px;">25</p>
               <p class="legend_label" style="margin-left:50px;">35</p>
-        </div>
+              
+      <div id="facts_3" >
+        <br/>      
+                <i class="fas fa-tint" style="cursor: pointer; display:inline; position:relative; margin:0; left:17px; bottom:7px;" onclick="wc1()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbsp&nbspWater Sources</span></i><br/>
+            
+                <i class="fas fa-tint-slash" style="cursor: pointer; display:inline; position:relative; margin:0; left:12px; bottom:7px;" onclick="wc2()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbspWater Access</span></i><br/>
+            
+                <i class="fas fa-user-clock" style="cursor: pointer; display:inline; position:relative; margin:0; left:12px; bottom:7px;" onclick="wc3()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbspDistance to Water</span></i><br/>
+           
+                <i class="fas fa-restroom"  style="cursor: pointer; display:inline; position:relative; margin:0; left:11px; bottom:7px;" onclick="wc4()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbspAccess to Latrines</span></i><br/>
+            </div>
+
+        <canvas id="washChart"></canvas>
+      </div>	
+       
         <div class="legend_container" id="leg_5" style="display:none;">
-            <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
-            <h2>Level of Percieved Safety</h2> 
+            <p>Among residents in the camp, single women and women under the age of 18 are particularly vulnerable to safety issues. The map on the right shows areas that are felt more or less secure according to answer given by women under 18 to a <a href="https://data.humdata.org/dataset/iom-bangladesh-needs-and-population-monitoring-npm-round-14-site-assessment" target="_blank" style="color:silver"> IOM questionnaire </a> (February 13, 2019). Click on a topic below to get more details on safety issues.</h2> 
+              <h2>Level of Perceived Safety</h2> 
             <div class="legend" style="background:linear-gradient(to right, #fee5d9,#a50f15 );"></div>
             <p class="legend_label" style="margin-left:5px;">Less</p><!---'#fee5d9', 0.4: '#fcae91', 0.6: '#fb6a4a', 0.8: '#de2d26',1: '#a50f15'-->
             <p class="legend_label" style="margin-left:200px;">More</p>
-            <canvas height="400" id="wSafetyChart"></canvas>
-            <canvas height="400" id="mSafetyChart"></canvas>
+            <div id="facts_2">
+              <br/>                
+                      <i class="fas fa-exclamation-circle" style="cursor: pointer; display:inline; position:relative; margin:0; left:14px; bottom:7px;" onclick="sc1()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'> &nbsp&nbspMain Concerns</span></i><br/>
+                  
+                      <i class="fas fa-exclamation-triangle" style="cursor: pointer; display:inline; position:relative; margin:0; left:12px; bottom:7px;" onclick="sc2()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'> &nbsp&nbspSafety Concerns</span></i><br/>
+                  
+                      <i class="fas fa-female" style="cursor: pointer; display:inline; position:relative; margin:0; left:16px; bottom:7px;" onclick="sc3()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbsp&nbsp&nbspUnsafe Places (Women)</span></i><br/>
+                  
+                      <i class="fas fa-male"  style="cursor: pointer; display:inline; position:relative; margin:0; left:16px; bottom:7px;" onclick="sc4()"> <span style='font-family:Roboto, sans-serif; font-weight: 550;'>&nbsp&nbsp&nbsp&nbspUnsafe Places (Men)</span></i>  <br/>         
+              <canvas id="safetyChart" width="900" height="600" ></canvas>
+            </div>
+      </div>
+
       </div>
     </div>
   </div>
@@ -133,7 +189,7 @@
   <script>
 
         const ps = new PerfectScrollbar('#text', {
-          wheelSpeed: 2,
+          wheelSpeed: .2,
           wheelPropagation: true,
           minScrollbarLength: 20
         });
@@ -157,7 +213,7 @@
             }  
         });  
 
-        var map = L.map('map', {center: [21.18190, 92.13], zoom: 13, minZoom:12, zoomControl:false, zoomControl:false});
+        var map = L.map('map', {center: [21.1870, 92.140], zoom: 14, minZoom:14, zoomControl:false, zoomControl:false});
 
         map.createPane('label');
 	      map.getPane('label').style.zIndex = 600;
@@ -597,7 +653,8 @@
                   ticks: {
                     fontFamily:"'Roboto Condensed','sans-serif'",
 									  fontColor:'#ffffff',
-									  fontSize:14
+									  fontSize:14,
+                    autoSkip: false
                   }
                 }]
               },
@@ -687,9 +744,9 @@
         }
     /////////////////////safety////////////////////////  
       safety = safety.map(function (p) { return [p[0], p[1]]; });
-      var heat = L.heatLayer(safety,{blur:40,gradient:{0.2: '#fee5d9', 0.4: '#fcae91', 0.6: '#fb6a4a', 0.8: '#de2d26',1: '#a50f15'}});
+      var heat = L.heatLayer(safety,{blur:60,gradient:{0.2: '#fee5d9', 0.4: '#fcae91', 0.6: '#fb6a4a', 0.8: '#de2d26',1: '#a50f15'}});
 
-      var wctx = document.getElementById("wSafetyChart").getContext("2d");
+      // var wctx = document.getElementById("wSafetyChart").getContext("2d");
       
       var wdata = {
         labels: ["Transportation", "Distribution site", "Latrine", 'Bathing_Washing facility', 'Waterpoints', 'Firewood collection site', 'Market'],
@@ -708,68 +765,6 @@
         ]
       };
 
-      var wChart = new Chart(wctx, {
-          type: 'bar',
-          data: wdata,
-          options: {
-              title: {
-                  display: true,
-                  fontSize: 20,
-                  fontFamily:"'Roboto Condensed','sans-serif'",
-									fontColor:'#ffffff',
-                  text: 'Places perceived as not safe by Women'
-              },
-              tooltips: {
-                  callbacks: {
-                      title: function() {},
-                      label: function (tooltipItem, data) {
-                          if (tooltipItem.datasetIndex === 0) {
-                              return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][0]['data'][tooltipItem['index']] + '%'
-                          } else if (tooltipItem.datasetIndex === 1) {
-                              return data['labels'][tooltipItem['index']] + ': ' + data['datasets'][1]['data'][tooltipItem['index']] + '%'
-                          }
-                      }
-                  },
-                  mode: 'index',
-                  intersect: true,
-                  titleFontFamily:"'Roboto Condensed','sans-serif'",
-                  titleFontColor:'#ffffff',
-                  titleFontSize:16,
-                  bodyFontFamily:"'Roboto Condensed','sans-serif'",
-                  bodyFontColor:'#ffffff',
-                  bodyFontSize:16
-              },
-              scales: {
-                  xAxes: [{
-                      display: true, //this will remove all the x-axis grid lines
-                      ticks:{
-                        fontSize: 12,
-                        fontFamily:"'Roboto Condensed','sans-serif'",
-									      fontColor:'#ffffff',
-                      }
-                  }],
-                  yAxes: [{
-                      ticks: {
-                          // Include a dollar sign in the ticks
-                          callback: function(value, index, values) {
-                              return value + '%';
-                          },
-                          fontSize: 16,
-                          fontFamily:"'Roboto Condensed','sans-serif'",
-									        fontColor:'#ffffff',
-                      }
-                  }]
-              },
-                  legend: {
-                      display: true,
-                      labels:{
-                        fontSize: 16,
-                        fontFamily:"'Roboto Condensed','sans-serif'",
-                        fontColor:'#ffffff'
-                      }
-                  },
-          }
-      });
     /////////////////////click function////////////////////////    
         
     var buttonLabels = ['#but1','#but2','#but3','#but4','#but5'];//add button IDs here
@@ -796,12 +791,14 @@
       but4: {button:'but4', 
         newLegend: 'leg_4', 
         newLayers:[washBlocks],
+        newElements:['facts_3'],
         title:'Sanitation', 
         variable:4
       },
       but5: {button:'but5', 
         newLegend: 'leg_5', 
         newLayers:[eduBlocks, heat],
+        newElements:['facts_2'],
         title:'Safety', 
         variable:5
       }
@@ -812,9 +809,21 @@
 		buttonLabels: buttonLabels,
 		selected:buttonFunctions.but1 //choose which button is initially selected
   });
-
-
   </script>
+      <script>
+        window.onload = function(){
+        $.getJSON("https://data2.unhcr.org/api/population/get?widget_id=130616&sv_id=34&population_group=4803", function() {
+            
+        }).then(function(data) {
+
+            var population = (Number(data.data[0].individuals)).toLocaleString()
+            var update = (data.data[0].date)
+           
+        document.getElementById('pop').innerHTML = population;
+        document.getElementById('updated').innerHTML = update;
+         })
+        };
+</script>
 </body>
 
 </html>
