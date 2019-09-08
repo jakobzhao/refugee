@@ -17,7 +17,6 @@
      html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     font-weight: 400;
     font-weight: 300;
     }
@@ -94,9 +93,9 @@
     }
     .line {
       stroke-linejoin: round;
-      stroke-width: 4;
+      stroke-width: 2;
       fill-opacity: 0;
-      stroke-dasharray:4 1 2;
+      stroke-dasharray:4;
     }
 
     .arcs {
@@ -117,12 +116,6 @@
       fill: none;
     }
 
-    .arc {}
-
-    .flyer {}
-
-    .flyer:hover {}
-    
     body{
         height:100%;
         width:100%;
@@ -356,7 +349,7 @@
             <div id="but">
               <img src="assets/img/sample_icon.png" class="icon">
               <div id="but-text">
-                <p onmouseover="showRoutes()" onmouseout="hideRoutes()" id="but-a" style="display:block;">Journeys</p>
+                <p id="but-a" style="display:block;">Journeys</p>
                 <p id="desc">Global and local scales <br> of refugee movements</p>
               </div>
             </div>
@@ -365,7 +358,7 @@
             <div id="but">
               <img src="assets/img/sample_icon.png" class="icon">
               <div id="but-text">
-                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Camps</p>
+                <p id="but-a" style="display:block;">Camps</p>
                 <p id="desc">Extension and growth of refugee <br> camps through satellite imagery</p>
               </div>
             </div>
@@ -374,7 +367,7 @@
               <div id="but">
                 <img src="assets/img/sample_icon.png" class="icon">
                 <div id="but-text">
-                  <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Aid</p>
+                  <p id="but-a" style="display:block;">Aid</p>
                   <p id="desc">Participation to international <br>agreements and UNHCR budget</p>
                 </div>
               </div>
@@ -383,7 +376,7 @@
             <div id="but">
               <img src="assets/img/sample_icon.png" class="icon">
               <div id="but-text">
-                <p onmouseover="showCamps()" onmouseout="hideCamps()" id="but-a" style="display:block;">Perception</p>
+                <p id="but-a" style="display:block;">Perception</p>
                 <p id="desc">Perception on refugee issues <br>of social media users</p>
               </div>
             </div>
@@ -457,7 +450,7 @@
      d3.select(window).on("resize", sizeChange);
 
     const config = {
-      speed: 0.005,
+      speed: 0.001,
       verticalTilt: -30,
       horizontalTilt: 0
     };
@@ -505,7 +498,7 @@
     var path = d3
       .geoPath()
       .projection(projection)
-      .pointRadius(0.5);
+      .pointRadius(10.5);
     var swoosh = d3.line()
       .x(function(d) {
         return d[0]
@@ -679,7 +672,7 @@ gradient.append("svg:stop")
     .append("path")
     .attr("class", "point")
     .attr("opacity", 0.6)
-    .attr("d", path.pointRadius(1.5));
+    .attr("d", path.pointRadius(10.5));
   svg
     .append("g")
     .attr("class", "labels")
@@ -691,7 +684,7 @@ gradient.append("svg:stop")
     .text(function(d) {
       return d.properties.NAME;
     });
-  // enableRotation();
+enableRotation();
 
   position_labels();
 
@@ -703,9 +696,9 @@ gradient.append("svg:stop")
         .enter()
         .append("path")
         .attr("class", "point1")
-        .attr("opacity", 0)
-        .attr("fill", "#806600")
-        .attr("d", path.pointRadius(1.5));
+        .attr("opacity", .7)
+        .attr("fill", "#DC143C")
+        .attr("d", path.pointRadius(7));
       svg
         .append("g")
         .attr("class", "points settlements")
@@ -714,9 +707,9 @@ gradient.append("svg:stop")
         .enter()
         .append("path")
         .attr("class", "point1")
-        .attr("opacity", 0)
-        .attr("fill", "#806600")
-        .attr("d", path.pointRadius(1.5));
+        .attr("opacity", .5)
+        .attr("fill", "#D2691E")
+        .attr("d", path.pointRadius(5));
       svg
         .append("g")
         .attr("class", "points dispersed")
@@ -725,9 +718,9 @@ gradient.append("svg:stop")
         .enter()
         .append("path")
         .attr("class", "point1")
-        .attr("fill", "#806600")
-        .attr("opacity", 0)
-        .attr("d", path.pointRadius(1.5));
+        .attr("fill", "	#E9967A")
+        .attr("opacity", .5)
+        .attr("d", path.pointRadius(2));
 
       svg
         .append("g")
@@ -738,13 +731,13 @@ gradient.append("svg:stop")
         .append("path")
         .attr("d", path)
         .attr("class", "line")
-        .attr("stroke", "rgba(153, 51, 51, 0)");
+        .attr("stroke", "rgba(153, 51, 51, 1)");
         
 }
     
     function enableRotation() {
       d3.timer(function(elapsed) {
-        projection.rotate([config.speed * elapsed - 120, config.verticalTilt, config.horizontalTilt]);
+        projection.rotate([config.speed * elapsed - 110, config.verticalTilt, config.horizontalTilt- 30]);
         svg.selectAll("path").attr("d", path);
          position_labels();
       });
