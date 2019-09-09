@@ -346,6 +346,38 @@
       color:lightgray;
       text-decoration:none;
     }
+    a.fb{
+  text-align:center;
+  margin-top:3px;
+  font-size:20px;
+  font-weight:bold;
+  position:absolute;
+  color:white;
+  font-variant: small-caps;
+  right:2.5%;
+  text-decoration:none;
+  }
+a.fb:hover{
+  cursor:pointer;
+  color:lightgray;
+  text-decoration:none;
+  }
+a.tw{
+      text-align:center;
+      margin-top:3px;
+      font-size:20px;
+      font-weight:bold;
+      position:absolute;
+      color:white;
+      font-variant: small-caps;
+      right:3.5%;
+      text-decoration:none;
+      }
+a.tw:hover{
+      cursor:pointer;
+      color:lightgray;
+      text-decoration:none;
+      }
   </style>
 </head>
 
@@ -353,6 +385,8 @@
 <div class="navBar">
     <a href="index.html" class="back"><i class="fa fa-chevron-left"></i></a>
     <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://facebook.com" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank" class="tw"><i class="fa fa-twitter"></i></a>
     <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
 
     
@@ -361,33 +395,34 @@
   <div id ="mainMenu" class="col-md-5">
     <div id = "text">
             <h1>Sources</h1>
-            <p class="about-text">This is a comprehensive list of data and software sources for the Global Refugee Atlas.</p><br>
+            <p class="about-text" style="margin-top:20px;">This is a comprehensive list of data and software sources for the Global Refugee Atlas. Content for the visualizations is retrieved from openly available remote sensing satellite imagery, crowdsourced social media data as well as a host of datasets from UNHCR and other international humanitarian agencies.</p><br>
+            <p class="about-text">The site is built using innovative data-driven geographic research approaches. Software and libraries are all open source and freely available online. Custom scripts are written mainly in JavaScript and, for the back-end, in Python.</p><br>
             <h3 style="font-size: 34px">Data</h3>
-            <h3>Satellite Imagery</h3>
+            <i><h3>Satellite Imagery</h3></i>
             <p class="about-text">
               <ul class="a">
-                <li>Processing Platform</li>
+                <i><li>Processing Platform</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
                 </ul>
-                <li>Raw Data</li>
+                <i><li>Raw Data</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://www.esa.int/Our_Activities/Observing_the_Earth/Copernicus/Sentinel-2" target="_blank">ESA - Sentinel 2a</a></li>
                     <li class="b"><a href="https://www.nasa.gov/mission_pages/landsat/main/index.html" target="_blank">NASA - Landsat 8</a></li>
                 </ul>
               </ul> 
             </p>
-            <h3>Social Media</h3>
+            <i><h3>Social Media</h3></i>
             <p class="about-text">
               <ul class="a">
                 <li>Twitter</li>
                 <li><i>Your Shot NG (tba)</i></li>
               </ul> 
             </p>
-            <h3>Thematic Data</h3>
+            <i><h3>Thematic Data</h3></i>
             <p class="about-text">
               <ul class="a">
-                <li>UNHCR</li>
+                <i><li>UNHCR</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://data2.unhcr.org/en/situations" target="_blank">Camp Population</a></li>
                     <li class="b"><a href="https://www.arcgis.com/home/webmap/viewer.html?webmap=24cad2271eaf4219832bf82da5803193" target="_blank">Camp Locations</a></li>
@@ -395,46 +430,46 @@
                     <li class="b"><a href="https://www.unhcr.org/protection/basic/3b73b0d63/states-parties-1951-convention-its-1967-protocol.html" target="_blank">International Agreements</a></li>
                     <li class="b"><a href="http://reporting.unhcr.org/sites/default/files/2018%20-%20UNHCR%20Donor%20Ranking%20by%20Country.pdf" target="_blank">Economic Contribution</a></li>
                 </ul>
-                <li>World Bank</li>
+                <i><li>World Bank</li></i>
                 <ul class="b">
                     <li class="b"><a href="http://data.un.org/DocumentData.aspx?q=hdi&id=392" target="_blank">HDI</a></li>
                     <li class="b"><a href="http://wdi.worldbank.org/table/1.2" target="_blank">Poverty</a></li>
                     <li class="b"><a href="http://wdi.worldbank.org/table/3.11" target="_blank">Environment</a></li>
                 </ul>
-                <li>ACLED</li>
+                <i><li>ACLED</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://www.acleddata.com/" target="_blank">Conflict Data</a></li>
                 </ul>
-                <li>Humanitarian Data Exchange</li>
+                <i><li>Humanitarian Data Exchange</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://data.humdata.org/" target="_blank">Camp Features</a></li>
                 </ul>
-                <li>REACH</li>
+                <i><li>REACH</li></i>
                 <ul class="b">
                     <li class="b"><a href="http://www.reachresourcecentre.info/system/files/resource-documents/reach_bgd_key_findings_presentations_presentation_wash_hh_baseline_april2018.pdf" target="_blank">Kutupalong - WASH Assessment</a></li>
                 </ul>
-                <li>IOM</li>
+                <i><li>IOM</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://data.humdata.org/dataset/iom-bangladesh-needs-and-population-monitoring-npm-round-14-site-assessment" target="_blank">Kutupalong - Site Assessment</a></li>
                 </ul>
               </ul> 
             </p> 
             <h3 style="font-size: 34px">Software</h3>
-            <h3>Libraries and Plugins</h3>
+            <i><h3>Libraries and Plugins</h3></i>
          <div style="margin-bottom:100px;">
             <p class="about-text">
               <ul class="a">
-                <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
-                <li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li>
-                <li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
-                <li><a href="https://jquery.com/" target="_blank">JQuery</a></li>
+                <i><li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li></i>
+                <i><li><a href="https://github.com/mapbox/mapbox-gl-js" target="_blank">Mapbox GL</a></li></i>
+                <i><li><a href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li></i>
+                <i><li><a href="https://jquery.com/" target="_blank">JQuery</a></li></i>
                 <!-- <li><a href="https://qgis.org/en/site/" target="_blank">QGIS</a></li> -->
-                <li><a href="https://d3js.org/" target="_blank">D3</a></li>
-                <li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li>
-                <li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li>
-                <li><a href="https://github.com/lipis/flag-icon-css" target="_blank">Flag-icons-css</a></li>
-                <li><a href="https://startbootstrap.com/templates/sb-admin/" target="_blank">SB Admin Bootstrap</a></li>
-                <li>Leaflet Plugins</li>
+                <i><li><a href="https://d3js.org/" target="_blank">D3</a></li></i>
+                <i><li><a href="https://www.chartjs.org/" target="_blank">Chart.js</a></li></i>
+                <i><li><a href="https://github.com/mdbootstrap/perfect-scrollbar" target="_blank">Perfect Scrollbar</a></li></i>
+                <i><li><a href="https://github.com/lipis/flag-icon-css" target="_blank">Flag-icons-css</a></li></i>
+                <i><li><a href="https://startbootstrap.com/templates/sb-admin/" target="_blank">SB Admin Bootstrap</a></li></i>
+                <i><li>Leaflet Plugins</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://github.com/skeate/Leaflet.timeline" target="_blank">Timeline</a></li>
                     <li class="b"><a href="https://github.com/chriswhong/leaflet-globeminimap" target="_blank">Globe Minimap</a></li>
@@ -442,13 +477,13 @@
                 </ul>
               </ul> 
             </p>
-            <h3>Basemaps</h3>
+            <i><h3>Basemaps</h3></i>
             <p class="about-text">
               <ul class="a">
-                <li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li>
-                <li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li>
-                <li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li>
-                <li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li>
+                <i><li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li></i>
+                <i><li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li></i>
+                <i><li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li></i>
+                <i><li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li></i>
               </ul> 
             </p>
 

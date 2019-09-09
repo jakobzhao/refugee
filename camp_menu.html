@@ -341,6 +341,38 @@
       color:lightgray;
       text-decoration:none;
     }
+    a.fb{
+    text-align:center;
+    margin-top:3px;
+    font-size:20px;
+    font-weight:bold;
+    position:absolute;
+    color:white;
+    font-variant: small-caps;
+    right:2.5%;
+    text-decoration:none;
+    }
+a.fb:hover{
+    cursor:pointer;
+    color:lightgray;
+    text-decoration:none;
+    }
+a.tw{
+        text-align:center;
+        margin-top:3px;
+        font-size:20px;
+        font-weight:bold;
+        position:absolute;
+        color:white;
+        font-variant: small-caps;
+        right:3.5%;
+        text-decoration:none;
+        }
+a.tw:hover{
+        cursor:pointer;
+        color:lightgray;
+        text-decoration:none;
+        }
   </style>
 </head>
 
@@ -348,6 +380,8 @@
   <div class="navBar">
     <a href="index.html" class="back"><i class="fa fa-chevron-left"></i></a>
     <a href="index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://facebook.com" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank" class="tw"><i class="fa fa-twitter"></i></a>
     <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
   </div>
   <div class="row">
@@ -356,16 +390,16 @@
         <h1>Camps</h1>
         <p id="desc" style="margin-bottom:50px; margin-top:20px;">In this chapter layouts and recent growth of major refugee camps are shown using open-access satellite remote sensing imagery. The satellite images refer to the past five years and are retrieved from NASA's Landsat 8 and ESA's Sentinel 2 satellites. More information on the camp's features derived from open access data is provided for two sites (Kutupalong and Zaatari).</p>    
         <div style="margin-bottom:100px;">
-        <a href="camps/kutupalong.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" >
+       
           <div id="but">
             <img src="journeys\charts\flags\4x3\bd.svg" class="icon">
             <div id="but-text">
-              <p style="display:block;" id="but-a">Kutupalong</p>
+               <a href="camps/kutupalong.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" ><p style="display:block;" id="but-a">Kutupalong <a href="camps/kutupalong_satellite.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()"><span style="font-size:18px">(satellite)</span></a></p>
               <p id="desc" > Bangladesh</p>
             </div>
           </div>
         </a> 
-        <a href="camps/kutupalong_satellite.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" >
+        <!-- <a href="camps/kutupalong_satellite.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" >
           <div id="but">
             <img src="journeys\charts\flags\4x3\bd.svg" class="icon">
             <div id="but-text">
@@ -373,7 +407,7 @@
               <p id="desc" style="margin-top:5px;"> Bangladesh</p>
             </div>
           </div>
-        </a>  
+        </a>   -->
         <a href="camps/zaatari.html" onmouseover="selectType('JORs004465')" onmouseout="resetPoints()">
           <div id="but">
             <img src="journeys\charts\flags\4x3\jo.svg" class="icon">
