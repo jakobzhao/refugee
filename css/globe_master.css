@@ -200,7 +200,7 @@ html,
         margin-bottom:0px;
         font-size:50px !important;
         text-align:center;
-        margin-top: 50px !important;
+        margin-top: 10px !important;
         font-weight:400;
         color:white !important;
     }
@@ -274,7 +274,9 @@ html,
     img#ng{
       margin-top:3px;
       display:block;
-      width:170px;
+      width:50px;
+      margin:auto;
+      filter: invert(100%);
     }
     div#projectionButtons{
         position:absolute;

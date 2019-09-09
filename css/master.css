@@ -68,7 +68,7 @@
         text-align:center;
         font-weight:400;
         color:white !important;
-        margin-top: 50px !important;
+        margin-top: 10px !important;
         margin-bottom:10px !important;
     }
     p{
@@ -98,12 +98,14 @@
         margin-left:5px;
     }
  
-     img#ng{
-      margin-left: 50px;
-      margin-top:3px;
-      display:block;
-      width:170px;
-     }
+      img#ng{
+        margin-top:3px;
+        display:block;
+        width:50px;
+        margin:auto;
+        filter: invert(100%);
+      }
+     
     .label_tooltip, .label_tooltip2{
       font-family: 'Roboto Condensed', sans-serif;
       font-size:14px;
