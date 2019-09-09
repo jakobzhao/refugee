@@ -127,20 +127,16 @@
         width:100%;
     }
     
-    div#but{
+    div.but{
       width:420px;
       /*margin:auto;*/
-    }
-
-    div#but:hover{
-        background: rgba(82, 87, 96,0.9);
     }
 
     div#but-text{
       position:relative;
       display:inline-block;
       left:120px;
-      width:320px;
+      width:350px;
       margin-bottom:15px;
     }
 
@@ -153,7 +149,7 @@
         position:absolute;
         margin:auto;
         display:inline-block;
-        width:500px;
+        width:50%;
         left:10px;
         top:25px;
         z-index:1000;
@@ -166,7 +162,7 @@
     
     div#text{
         height:95%;
-        width:500px;
+        width:70%;
         position:relative;
         overflow: hidden;
         margin-left:20px;
@@ -177,7 +173,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:115px;
-        width:500px;
         text-align:left;
         line-height:125px;
         margin:auto;
@@ -190,7 +185,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:105px;
-        width:500px;
         text-align:left;
         line-height:125px;
     }
@@ -397,18 +391,18 @@ a.tw:hover{
       <p id="desc" style="margin-bottom:50px; margin-top:20px;">The United Nations High Commissioner for Refugees (UNHCR) was created in 1950. The following year was completed the Refugee Convention, the key legal document that protects refugees. This chapter shows the signatory countries of that treaty and of the ensuing Protocol (1968) and the individual contributions of countries to UNHCR budget.</p>    
       <div style="margin-bottom:100px;">
       <a href="treaties.html">
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
+        <div class="but" id="but1">
+          <img src="assets/img/treaty_icons.png" class="icon">
           <div id="but-text">
             <p style="display:block;" id="but-a">Treaties</p>
-            <p id="desc">Signatory countries of the 1951 Convention<br>and of the 1968 Protocol on refugees</p>
+            <p id="desc" style="font-size:17px;">Signatory countries of the 1951 Convention<br/> and the 1968 Protocol on refugees</p>
           </div>
         </div>
       </a> 
       <br/>
       <a href="contributions.html" >
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
+        <div class="but" id="but2">
+          <img src="assets/img/contributions_icons.png" class="icon">
           <div id="but-text">
             <p id="but-a" style="display:block;">Contributions</p>
             <p id="desc">Contribution of individual countries<br>to the 2018 UNHCR budget</p>
@@ -453,6 +447,21 @@ a.tw:hover{
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
   <script>
+    	$(function() {
+  		$('#but1').hover(function() {
+          $('#but1').css('background-image', 'url("assets/img/treaty_background.png")');
+        }, function() {
+          $('#but1').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but2').hover(function() {
+          $('#but2').css('background-image', 'url("assets/img/cont_background.png")');
+        }, function() {
+          $('#but2').css('background-image', 'initial');
+        });
+    });
+    
     d3.select(window).on("resize", sizeChange);
 
     const config = {

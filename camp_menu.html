@@ -121,13 +121,9 @@
         width:100%;
     }
     
-    div#but{
+    div.but{
       width:420px;
       /*margin:auto;*/
-    }
-
-    div#but:hover{
-        background: rgba(82, 87, 96,0.9);
     }
 
     div#but-text{
@@ -147,7 +143,7 @@
         position:absolute;
         margin:auto;
         display:inline-block;
-        width:500px;
+        width:50%;
         left:10px;
         top:25px;
         z-index:1000;
@@ -160,7 +156,7 @@
     
     div#text{
         height:95%;
-        width:500px;
+        width:70%;
         position:relative;
         overflow: hidden;
         margin-left:20px;
@@ -170,8 +166,7 @@
       font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         font-weight:bold;
-        font-size:115px;
-        width:500px;
+        font-size:100px;
         text-align:left;
         line-height:125px;
         margin:auto;
@@ -184,7 +179,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:105px;
-        width:500px;
         text-align:left;
         line-height:125px;
     }
@@ -391,7 +385,7 @@ a.tw:hover{
         <p id="desc" style="margin-bottom:50px; margin-top:20px;">In this chapter layouts and recent growth of major refugee camps are shown using open-access satellite remote sensing imagery. The satellite images refer to the past five years and are retrieved from NASA's Landsat 8 and ESA's Sentinel 2 satellites. More information on the camp's features derived from open access data is provided for two sites (Kutupalong and Zaatari).</p>    
         <div style="margin-bottom:100px;">
        
-          <div id="but">
+          <div class="but" id="but1">
             <img src="journeys\charts\flags\4x3\bd.svg" class="icon">
             <div id="but-text">
                <a href="camps/kutupalong.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()" ><p style="display:block;" id="but-a">Kutupalong <a href="camps/kutupalong_satellite.html" onmouseover="selectType('BGDs000035')" onmouseout="resetPoints()"><span style="font-size:18px">(satellite)</span></a></p>
@@ -409,7 +403,7 @@ a.tw:hover{
           </div>
         </a>   -->
         <a href="camps/zaatari.html" onmouseover="selectType('JORs004465')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but2">
             <img src="journeys\charts\flags\4x3\jo.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Zaatari</p>
@@ -418,7 +412,7 @@ a.tw:hover{
           </div>
         </a>  
         <a href="camps/pugnido.html" onmouseover="selectType('ETHs028884')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but3">
             <img src="journeys\charts\flags\4x3\et.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Pugnido</p>
@@ -427,7 +421,7 @@ a.tw:hover{
           </div>
         </a>  
         <a href="camps/nguenyyel.html" onmouseover="selectType('ETHs028884')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but4">
             <img src="journeys\charts\flags\4x3\et.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Nguenyyel</p>
@@ -436,7 +430,7 @@ a.tw:hover{
           </div>
         </a>  
         <a href="camps/yida.html" onmouseover="selectType('SSDs004118')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but5">
             <img src="journeys\charts\flags\4x3\ss.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Unity</p>
@@ -445,7 +439,7 @@ a.tw:hover{
           </div>
         </a>  
         <a href="camps/dadaab.html" onmouseover="selectType('KENs001091')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but6">
             <img src="journeys\charts\flags\4x3\ke.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Dadaab</p>
@@ -454,7 +448,7 @@ a.tw:hover{
           </div>
         </a>  
         <a href="camps/nduta.html" onmouseover="selectType('TZAs001529')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but7">
             <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Nduta</p>
@@ -463,7 +457,7 @@ a.tw:hover{
           </div>
         </a>
         <a href="camps/nyarugusu.html" onmouseover="selectType('TZAs001530')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but8">
             <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Nyarugusu</p>
@@ -472,7 +466,7 @@ a.tw:hover{
           </div>
         </a>
         <a href="camps/mtendeli.html" onmouseover="selectType('TZAs001526')" onmouseout="resetPoints()">
-          <div id="but">
+          <div class="but" id="but9">
             <img src="journeys\charts\flags\4x3\tz.svg" class="icon">
             <div id="but-text">
               <p id="but-a" style="display:block;">Mtendeli</p>
@@ -519,6 +513,70 @@ a.tw:hover{
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
 <script>
+    	$(function() {
+  		$('#but1').hover(function() {
+          $('#but1').css('background-image', 'url("assets/img/kutu_background.png")');
+        }, function() {
+          $('#but1').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but2').hover(function() {
+          $('#but2').css('background-image', 'url("assets/img/zat_background.png")');
+        }, function() {
+          $('#but2').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but3').hover(function() {
+          $('#but3').css('background-image', 'url("assets/img/pug_background.png")');
+        }, function() {
+          $('#but3').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but4').hover(function() {
+          $('#but4').css('background-image', 'url("assets/img/nye_background.png")');
+        }, function() {
+          $('#but4').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but5').hover(function() {
+          $('#but5').css('background-image', 'url("assets/img/unity_background.png")');
+        }, function() {
+          $('#but5').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but6').hover(function() {
+          $('#but6').css('background-image', 'url("assets/img/dadaab_background.png")');
+        }, function() {
+          $('#but6').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but7').hover(function() {
+          $('#but7').css('background-image', 'url("assets/img/nduta_background.png")');
+        }, function() {
+          $('#but7').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but8').hover(function() {
+          $('#but8').css('background-image', 'url("assets/img/nyar_backgroun.png")');
+        }, function() {
+          $('#but8').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but9').hover(function() {
+          $('#but9').css('background-image', 'url("assets/img/mten_background.png")');
+        }, function() {
+          $('#but9').css('background-image', 'initial');
+        });
+    });
+  
   d3.select(window).on("resize", sizeChange);
   
   const config = {

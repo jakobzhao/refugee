@@ -121,13 +121,9 @@
         width:100%;
     }
     
-    div#but{
+    div.but{
       width:420px;
       /*margin:auto;*/
-    }
-
-    div#but:hover{
-        background: rgba(82, 87, 96,0.9);
     }
 
     div#but-text{
@@ -147,8 +143,8 @@
         position:absolute;
         margin:auto;
         display:inline-block;
-        width:500px;
-        left:10px;
+        width:50%;
+        left:25px;
         top:25px;
         z-index:1000;
         height:100%;
@@ -159,7 +155,7 @@
     
     div#text{
         height:95%;
-        width:500px;
+        width:70%;
         position:relative;
         overflow: hidden;
         margin-left:20px;
@@ -170,7 +166,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:115px;
-        width:500px;
         text-align:left;
         line-height:125px;
         margin:auto;
@@ -183,7 +178,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:105px;
-        width:500px;
         text-align:left;
         line-height:125px;
     }
@@ -217,14 +211,14 @@
     p.intro-text{
         font-weight:300;
         font-size:22px;
-        width:400px;
+        width:100%;
         line-height:32px;
     }
 
     p.about-text{
         font-weight:300;
         font-size:18px;
-        width:400px;
+        width:100%;
         line-height:24px;
     }
 
@@ -341,8 +335,8 @@
         <div style="margin-bottom:200px;">
           <h2>Chapters</h2>
           <a href="context.html">
-            <div id="but">
-              <img src="assets/img/sample_icon.png" class="icon">
+            <div class="but" id="but1">
+              <img src="assets/img/context_icon.png" class="icon">
               <div id="but-text">
                 <p onmouseover="showGlobal()" onmouseout="hideGlobal()" style="display:block;" id="but-a">Context</p>
                 <p id="desc">Factors that influence international <br>crises and cause forced migrations</p>
@@ -350,8 +344,8 @@
             </div>
           </a> 
           <a href="journey_menu.html" >
-            <div id="but">
-              <img src="assets/img/sample_icon.png" class="icon">
+            <div class="but" id="but2">
+              <img src="assets/img/flow_icon.png" class="icon">
               <div id="but-text">
                 <p id="but-a" style="display:block;">Journeys</p>
                 <p id="desc">Global and local scales <br> of refugee movements</p>
@@ -359,8 +353,8 @@
             </div>
           </a>  
           <a href="camp_menu.html" >
-            <div id="but">
-              <img src="assets/img/sample_icon.png" class="icon">
+            <div class="but" id="but3">
+              <img src="assets/img/camp_icon.png" class="icon">
               <div id="but-text">
                 <p id="but-a" style="display:block;">Camps</p>
                 <p id="desc">Extension and growth of refugee <br> camps through satellite imagery</p>
@@ -368,8 +362,8 @@
             </div>
           </a>  
           <a href="aid_menu.html" >
-              <div id="but">
-                <img src="assets/img/sample_icon.png" class="icon">
+              <div class="but" id="but4">
+                <img src="assets/img/aid_icon.png" class="icon">
                 <div id="but-text">
                   <p id="but-a" style="display:block;">Aid</p>
                   <p id="desc">Participation to international <br>agreements and UNHCR budget</p>
@@ -377,8 +371,8 @@
               </div>
             </a>  
           <a href="tweets/index.html" >
-            <div id="but">
-              <img src="assets/img/sample_icon.png" class="icon">
+            <div class="but" id="but5"> 
+              <img src="assets/img/perception_icon.png" class="icon">
               <div id="but-text">
                 <p id="but-a" style="display:block;">Perception</p>
                 <p id="desc">Perception on refugee issues <br>of social media users</p>
@@ -387,8 +381,8 @@
           </a>
           <br/><br/>
           <a href="sources.html">
-            <div id="but">
-              <img src="assets/img/sample_icon.png" class="icon">
+            <div class="but">
+              <img src="assets/img/sources_icon.png" class="icon">
               <div id="but-text">
                 <p id="but-a" style="display:block;">Sources</p>
                 <p id="desc">Data and software sources.</p>
@@ -403,10 +397,10 @@
             If you have questions, please contact Bo Zhao at <a href="mailto:zhaobo@uw.edu">zhaobo@uw.edu</a>.</p>                           
         </div>
         <div style="margin-bottom:200px;">
-            <h2>Contributors</h2>
-            <p class="cont-text"><b>Bo Zhao</b>&nbsp&nbspPI, <br><i>Assistant Professor in GIScience and Cartography</i></p><br>
+            <h2 style="font-size:90px;">Contributors</h2>
+            <p class="cont-text"><b>Bo Zhao</b>&nbsp&nbspPI, <br><i>Assistant Professor in GIS studies</i></p><br>
             <p class="cont-text"><b>Jamon Van Den Hoek</b>&nbsp&nbspCo-PI, <br><i>Assistant Professor in Remote Sensing</i></p><br>
-            <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI, <br> <i>Professor in Applied Economics</i></p><br>
+            <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI, <br> <i>Assistant Professor in Applied Economics</i></p><br>
             <p class="cont-text"><b>Giovanni Svevo</b><i>&nbsp&nbspLead Cartographer, Designer</i></p><br>
             <p class="cont-text"><b>Gareth Baldrica Franklin</b><i>&nbsp&nbspCartographer, Designer</i></p><br>
             <p class="cont-text"><b>Ginny Katz</b><i>&nbsp&nbspContributor</i></p>  <br><br><br>
@@ -451,6 +445,42 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
   <script>
+    	$(function() {
+  		$('#but1').hover(function() {
+          $('#but1').css('background-image', 'url("assets/img/context_background.png")');
+        }, function() {
+          $('#but1').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but2').hover(function() {
+          $('#but2').css('background-image', 'url("assets/img/flow_background.png")');
+        }, function() {
+          $('#but2').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but3').hover(function() {
+          $('#but3').css('background-image', 'url("assets/img/camp_background.png")');
+        }, function() {
+          $('#but3').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but4').hover(function() {
+          $('#but4').css('background-image', 'url("assets/img/treaty_background.png")');
+        }, function() {
+          $('#but4').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but5').hover(function() {
+          $('#but5').css('background-image', 'url("assets/img/perception_background.png")');
+        }, function() {
+          $('#but5').css('background-image', 'initial');
+        });
+    });
+
      d3.select(window).on("resize", sizeChange);
 
     const config = {

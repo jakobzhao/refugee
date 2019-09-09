@@ -127,14 +127,11 @@
         width:100%;
     }
     
-    div#but{
+    div.but{
       width:420px;
       /*margin:auto;*/
     }
 
-    div#but:hover{
-        background: rgba(82, 87, 96,0.9);
-    }
 
     div#but-text{
       position:relative;
@@ -153,7 +150,7 @@
         position:absolute;
         margin:auto;
         display:inline-block;
-        width:500px;
+        width:50%;
         left:10px;
         top:25px;
         z-index:1000;
@@ -166,7 +163,7 @@
     
     div#text{
         height:95%;
-        width:500px;
+        width:70%;
         position:relative;
         overflow: hidden;
         margin-left:20px;
@@ -176,8 +173,7 @@
       font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         font-weight:bold;
-        font-size:115px;
-        width:500px;
+        font-size:90px;
         text-align:left;
         line-height:125px;
         margin:auto;
@@ -190,7 +186,6 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:105px;
-        width:500px;
         text-align:left;
         line-height:125px;
     }
@@ -396,8 +391,8 @@ a.tw:hover{
       <p id="desc" style="margin-bottom:50px; margin-top:20px;">This Chapter describes the journeys of refugees both on a global and local scale. The first section shows refugee flows from origin countries to host countries and viceversa. The other two sections use storymaps to narrate individual journeys of refugees seeking safety away from home. </p>    
       <div style="margin-bottom:100px;">
       <a href="origin.html">
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
+        <div class="but" id="but1">
+          <img src="assets/img/flow_icon.png" class="icon">
           <div id="but-text">
             <p style="display:block;" id="but-a">Flow</p>
             <p id="desc">Origins and Destinations of refugees<br> for every country in the world</p>
@@ -406,8 +401,8 @@ a.tw:hover{
       </a> 
       <br/>
       <a href="journeys/index.html" onmouseover="selectType(100)" onmouseout="resetRoutes()" >
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
+        <div class="but" id="but2">
+          <img src="assets/img/journey1_icon.png" class="icon">
           <div id="but-text">
             <p id="but-a" style="display:block;">Escaping Burundi</p>
             <p id="desc">Fleeing pre-election violence, three <br>families reach safety in Rwanda</p>
@@ -415,8 +410,8 @@ a.tw:hover{
         </div>
       </a>  
       <a href="journeys/index2.html" onmouseover="selectType(100)" onmouseout="resetRoutes()" >
-        <div id="but">
-          <img src="assets/img/sample_icon.png" class="icon">
+        <div class="but" id="but3">
+          <img src="assets/img/journey2_icon.png" class="icon">
           <div id="but-text">
             <p id="but-a" style="display:block;">Amina</p>
             <p id="desc">A Somali mother with her teenage <br>sons on an horrific journey to safety</p>
@@ -461,8 +456,29 @@ a.tw:hover{
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
   <script>
+      	$(function() {
+  		$('#but1').hover(function() {
+          $('#but1').css('background-image', 'url("assets/img/flow_background.png")');
+        }, function() {
+          $('#but1').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but2').hover(function() {
+          $('#but2').css('background-image', 'url("assets/img/journey_background.png")');
+        }, function() {
+          $('#but2').css('background-image', 'initial');
+        });
+    });
+    $(function() {
+        $('#but3').hover(function() {
+          $('#but3').css('background-image', 'url("assets/img/journey1_background.png")');
+        }, function() {
+          $('#but3').css('background-image', 'initial');
+        });
+    });
+      
       d3.select(window).on("resize", sizeChange);
-
       
       const config = {
       speed: 0.005,
