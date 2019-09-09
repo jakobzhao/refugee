@@ -37,6 +37,8 @@
   <div class="navBar">
     <a href="../index.html" class="back"><i class="fa fa-chevron-left"></i></a>
     <a href="../index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://facebook.com" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank" class="tw"><i class="fa fa-twitter"></i></a>
     <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
   </div> 
   <!-- Page Wrapper -->
@@ -52,12 +54,9 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <!-- Page Heading -->
           <div class="row buffer">
-            <div class="col-1"><a href="index.html"><img src="assets/twitter.png" height="50px" class="right"></a></img></div><div class="col-3"><h1>Social Media Analysis</h1></div>
-         <div class="col-8"><p>This section displays recent tweets containing the word 'refugees'. The most frequently used words are shown both as a wordcloud and as a list. Sentiment analysis uses natural language processing to classify if the content of tweets is negative, neutral or positive. The image wall on the left displays images from tweets containing the word 'refugees'. The map allows to narrow the results to a specific geographic location.</p></div> </div>
-
-
+            <div class="col-1"><a href="index.html"><img src="assets/twitter.png" height="50px" class="right"></a></img></div><div class="col-2"><h1>Perception</h1></div>
+         <div class="col-9"><p>This section displays the results of social media analysis on recent tweets containing the word 'refugees'. The most frequently used words are shown both as a wordcloud and as a list. Sentiment analysis uses natural language processing to classify if the content of tweets is negative, neutral or positive. The image wall on the left displays images from tweets containing the word 'refugees'. The map allows to narrow the results to a specific geographic location by clicking on a continent.</p></div> </div>
 
 
           <!-- Content Row -->
@@ -66,7 +65,7 @@
             <div class="col-lg-4 mb-4">
               <div class="card h-100 shadow mb-4">
               <div class="card-header py-3">
-                <h4 class="m-0 text-primary"> View Latest Tweets</h4>
+                <h4 class="m-0 text-primary"> Images from Latest Tweets</h4>
               </div>
               <div id="images" class="card-body scroll">
                 <div class="scroll" id="photocols"></div>       
@@ -82,7 +81,7 @@
               <div class="card h-100 shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h4 class="m-0 text-primary">Select Geographic Location</h4>
+                  <h4 class="m-0 text-primary">Location (select one)</h4>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
