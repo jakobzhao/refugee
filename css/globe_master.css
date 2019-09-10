@@ -185,9 +185,15 @@ html,
 
     /* Change color of dropdown links on hover */
     .dropdown-content a:hover {
-      background-color: #ddd;
-      text-decoration:none;
-      color:black;
+      background-color: #ddd !important;
+      text-decoration:none !important;
+      color:black !important;
+    }
+
+    .dropdown-content a:active {
+      background-color: #ddd !important;
+      text-decoration:none !important;
+      color:black !important;
     }
 
     /* Show the dropdown menu on hover */
@@ -307,6 +313,10 @@ html,
       left:0;
       top:0;
       z-index:1000;
+    }
+    a:active{
+      text-decoration:none;
+      color:black;
     }
     a.back{
       margin-left:10px;
