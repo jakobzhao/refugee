@@ -135,9 +135,9 @@ a.tw:hover{
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #feedde 16%, #feedde 33%, #fdbe85 33%, #fdbe85 50%, #fd8d3c 50%, #fd8d3c 66%, #e6550d 66%, #e6550d 83%, #a63603 83%);"></div>
                 <p class="legend_label" style="margin-left:40px;">0</p>
                 <p class="legend_label" style="margin-left:30px;">40</p>
-                <p class="legend_label" style="margin-left:25px;">55</p>
-                <p class="legend_label" style="margin-left:25px;">70</p>
-                <p class="legend_label" style="margin-left:23px;">85</p>
+                <p class="legend_label" style="margin-left:28px;">55</p>
+                <p class="legend_label" style="margin-left:27px;">70</p>
+                <p class="legend_label" style="margin-left:28px;">85</p>
                 <h2 style="font-size:24px; margin-top:30px;">Poverty</h2>
                 <p style="margin-top:10px;">This map shows the percentage of population whose income falls below the poverty line. Data is derived from the World Development Indicators of the World Bank (<a href="http://wdi.worldbank.org/table/1.2" target="_blank">link</a>) listing the percentage of population living with less than $ 5.50 a day.</p>
                 <p style="margin-top:10px;">Poverty is not per se a cause of forced migration, but can contribute to worsen situations stressed by other factors. Numerous among thr poorest countries host great numbers of refugees. These nations already face severe structural barriers to sustainable development, and usually have the least resources to respond to the needs of people seeking refuge. </p><p style="margin-top:10px;">The presence of camp populations can create tense situations with locals, but sometimes it can bring positive economic benefits to nearby communities and to the host country at large (<a href="https://ideas.repec.org/a/eee/deveco/v130y2018icp66-83.html" target="_blank">more</a>).</p> </div>
@@ -148,7 +148,7 @@ a.tw:hover{
             <p class="legend_label" style="margin-left:30px;">20</p>
             <p class="legend_label" style="margin-left:28px;">40</p>
             <p class="legend_label" style="margin-left:25px;">60</p>
-            <p class="legend_label" style="margin-left:22px;">80</p>
+            <p class="legend_label" style="margin-left:25px;">80</p>
             <h2 style="font-size:24px; margin-top:30px;">Environmental risks</h2>
                 <p style="margin-top:10px;">This map shows the percentage of population at risk of droughts, floods and extreme temperatures. Data is derived from the World Development Indicators of the World Bank (<a href="http://wdi.worldbank.org/table/3.11" target="_blank">link</a>)</p>
                 <p style="margin-top:10px;">Environmental refugees are not protected by the 1951 Convention, making it difficult to visualize them due to lack of data. Estimates of the number of environmental refugees in the world vary widely, as do definitions and typologies of such flows (<a href="https://www.unhcr.org/research/working/3ae6a0d00/environmental-refugees-myth-reality-richard-black.html" target="_blank">more</a>)</p>
@@ -483,7 +483,7 @@ a.tw:hover{
             return '#ffffff';
         })
         .on("mouseover", function(d) {
-          countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL + ' Events<br/><canvas id="conflictTable"></canvas>')
+          countryTooltip.html(countryById[d.id] + '<br/>' + Number(conflictById[d.id].TOTAL).toLocaleString() + ' Events<br/><canvas id="conflictTable"></canvas>')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -870,7 +870,7 @@ a.tw:hover{
             return 'rgba(154, 25, 25, .3)';
         })
         .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id] + ':\n' + schoolById[d.id])
+          countryTooltip.text(countryById[d.id] + ':\n' + schoolById[d.id] + ' Years')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -900,7 +900,7 @@ a.tw:hover{
             return 'rgba(74, 25, 2, .3)';
         })
         .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id] + ':\n' + povertyById[d.id])
+          countryTooltip.text(countryById[d.id] + ':\n' + povertyById[d.id] + '%')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -930,7 +930,7 @@ a.tw:hover{
             return 'rgba(104, 100, 24, .3)';
         })
         .on("mouseover", function(d) {
-          countryTooltip.text(countryById[d.id] + ':\n' + environmentById[d.id])
+          countryTooltip.text(countryById[d.id] + ':\n' + environmentById[d.id] + '%')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
@@ -995,7 +995,7 @@ a.tw:hover{
             return '#ffffff';
         })
         .on("mouseover", function(d) {
-          countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL + ' Events<br/><canvas id="conflictTable"></canvas>')
+          countryTooltip.html(countryById[d.id] + '<br/>' + conflictById[d.id].TOTAL.toLocaleString() + ' Events<br/><canvas id="conflictTable"></canvas>')
           .style("left", (d3.event.pageX ) + "px")
           .style("top", (d3.event.pageY) + "px")
           .style("display", "block")
