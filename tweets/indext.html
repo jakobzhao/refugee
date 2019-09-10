@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Perception</title>
+
+  <!-- Custom fonts for this template-->
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <script src="vendor/chart/chart.min.js"></script>
+  <!-- Custom styles for this template-->
+  <script src="../js/perfect-scrollbar.js"></script>
+  <link href="css/jqcloud.min.css" rel="stylesheet">
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/tweets.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.css" rel="stylesheet">
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="js/jqcloud.min.js"></script>
+  <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+
+  </style>
+
+</head>
+
+<body id="page-top">
+  <div class="navBar">
+    <a href="../index.html" class="back"><i class="fa fa-chevron-left"></i></a>
+    <a href="../index.html" class="home">Global Refugee Atlas</a>
+    <a href="https://facebook.com" target="_blank" class="fb"><i class="fa fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank" class="tw"><i class="fa fa-twitter"></i></a>
+    <a href="https://github.com/jakobzhao/refugee" target="_blank" class="github"><i class="fa fa-github"></i></a>
+  </div>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="row buffer align-items-start">
+            <div class="col-1">
+              <a href="index.html">
+                <img src="../assets/img/perception_icon.png" class="icon" />
+              </a>
+            </div>
+            <div class="col-2">
+              <h1 style="font-size:42px; margin-top:5px">PERCEPTION</h1>
+            </div>
+            <div class="col-9">
+              This section displays the results of social media analysis on recent tweets containing the word 'refugees'. The most frequently used words are shown both as a wordcloud and as a list. Sentiment analysis uses natural language processing to classify if the content of tweets is negative, neutral or positive. The image wall on the left displays images from tweets containing the word 'refugees'. The map allows to narrow the results to a specific geographic location by clicking on a continent.
+            </div>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row align-items-ends">
+
+            <div class="image-panel">
+              <!-- <div class="col-lg-4 mb-4 bottom"> -->
+              <div class="card h-100 shadow mb-4">
+                <div class="card-header py-3">
+                  <h4 class="m-0 text-primary"> Images from Latest Tweets</h4>
+                </div>
+                <div id="images" class="card-body scroll">
+                  <div class="scroll" id="photocols"></div>
+                  <script src="js/jquery.photocols.js"></script>
+                  <script src="js/main.js"></script>
+                </div>
+              </div>
+            </div>
+
+            <div class="container other-panel">
+
+            </div>
+            <!-- Area Chart -->
+            <!-- <div class="col-lg-8 mb-4"> -->
+
+            <div class="container other-panel">
+
+              <div class="row top-panel">
+                <div class="col-6">
+                  <div class="card h-100 shadow mb-6">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h4 class="m-0 text-primary">Location</h4>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                      <div id="container" class="svg-container"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="card h-100 shadow mb-6">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h4 class="m-0 text-primary">Word Cloud</h4>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                      <div id="cloud">
+                        <script src="js/cloud.js"></script>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row to-the-end">
+                <!-- Content Column -->
+                <div class="col-6  to-the-end">
+                  <!-- Project Card Example -->
+                  <div class="card shadow ">
+                    <div class="card-header py-3">
+                      <h4 class="m-0  text-primary">Text Analysis</h4>
+                    </div>
+
+                    <div class="card-body">
+                      <canvas id="canvas">
+                        <script src="js/chart1.js"></script>
+                      </canvas>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-6  to-the-end">
+                  <div class="card shadow ">
+                    <div class="card-header py-3">
+                      <h4 class="m-0  text-primary">Sentiment Analysis</h4>
+                    </div>
+                    <div class="card-body">
+                      <canvas id="canvas2">
+                        <script src="js/chart2.js"></script>
+                      </canvas>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+
+            </div>
+
+            <!-- Pie Chart -->
+
+          </div>
+
+          <!-- Content Row -->
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart/chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <!-- <script src="js/demo/chart-area-demo.js"></script> -->
+
+  <script src="js/map.js"></script>
+  <script>
+    const ps = new PerfectScrollbar('#images', {
+      wheelSpeed: .2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+  </script>
+</body>
+
+</html>

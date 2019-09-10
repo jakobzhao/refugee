@@ -1,145 +1,201 @@
-body { 
-    margin:0; 
-    padding:0; 
-    font-family: 'Roboto Condensed', sans-serif!important;
-    background: rgba(82, 87, 96,0.7);
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  background: rgba(82, 87, 96, 0.7);
 }
+
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img.right {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-}
-.buffer { 
-    margin-top:50px; 
-    margin-bottom:20px; 
-}
-.padding { 
-    padding-left:20px; 
-    padding-right:20px; 
-}
-#cloud {
-width: 100%;
-height: 300px;
-font-family: 'Roboto Condensed', sans-serif;
-}
-#content{
-background: rgba(82, 87, 96,0.7);
-color: white;
-font-family: 'Roboto Condensed', sans-serif;
-}
-#canvas{
-font-family: 'Roboto Condensed', sans-serif;
-}
-.scroll {
-height:450px;
-overflow-y: hidden;
-}
-.card-header {
-background: rgba(202, 209, 221, 0.7)!important;
-}
-#images{
-position: relative;
-}
-div.navBar{
-height:35px;
-width:100%;
-background:#525760;
-position:absolute;
-left:0;
-top:0;
-z-index:1000;
-}
-a.back{
-margin-left:10px;
-margin-top:3px;
-font-size:20px;
-font-weight:normal;
-position:absolute;
-color:white;
-letter-spacing: 1px;
-}
-a.back:hover{
-cursor:pointer;
-color:lightgray;
-text-decoration:none;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-a.home{
-text-align:center;
-margin-top:3px;
-font-size:20px;
-font-weight:bold;
-position:absolute;
-color:white;
-font-variant: small-caps;
-left:3%;
-text-decoration:none;
+.buffer {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
-a.home:hover{
-cursor:pointer;
-color:lightgray;
-text-decoration:none;
+
+.image-panel {
+  position: absolute;
+  /* width: 48%; */
+  bottom: 20px;
+  top: 180px;
 }
-a.github{
-text-align:center;
-margin-top:3px;
-font-size:20px;
-font-weight:bold;
-position:absolute;
-color:white;
-font-variant: small-caps;
-right:1%;
-text-decoration:none;
+
+.other-panel {
+  position: absolute;
+  background: green;
+  width: 48%;
+  left: 51%;
+  bottom: 20px;
+  top: 180px;
 }
-a.github:hover{
-cursor:pointer;
-color:lightgray;
-text-decoration:none;
+
+.to-the-middle {
+  /* position: absolute; */
+  /* top: 650px !important; */
+  /* width: 48%; */
+  height: 300px;
+  /* width: 90%; */
+  /* left: 50%; */
+  /* bottom: 0px; */
 }
-a.fb{
-    text-align:center;
-    margin-top:3px;
-    font-size:20px;
-    font-weight:bold;
-    position:absolute;
-    color:white;
-    font-variant: small-caps;
-    right:2.5%;
-    text-decoration:none;
-    }
-a.fb:hover{
-    cursor:pointer;
-    color:lightgray;
-    text-decoration:none;
-    }
-a.tw{
-        text-align:center;
-        margin-top:3px;
-        font-size:20px;
-        font-weight:bold;
-        position:absolute;
-        color:white;
-        font-variant: small-caps;
-        right:3.5%;
-        text-decoration:none;
-        }
-a.tw:hover{
-        cursor:pointer;
-        color:lightgray;
-        text-decoration:none;
-        }
-img.icon{
-        height:50px;
-        width:50px;
-        filter: invert(100%);
-        display: block;
-        margin-left: auto;
-        margin-right: 0;
-        margin-top:5px;
-        }
+
+.to-the-end {
+  position: relative;
+  /* top: 650px !important; */
+  /* width: 48%; */
+  /* height: 500px; */
+  /* width: 90%; */
+  /* left: 50%; */
+  bottom: 0px;
+}
+
+.padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#cloud {
+  width: 100%;
+  height: 300px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#content {
+  background: rgba(82, 87, 96, 0.7);
+  color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+#canvas {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.scroll {
+  height: 450px;
+  overflow-y: hidden;
+}
+
+.card-header {
+  background: rgba(202, 209, 221, 0.7) !important;
+}
+
+#images {
+  position: relative;
+}
+
+div.navBar {
+  height: 35px;
+  width: 100%;
+  background: #525760;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+a.back {
+  margin-left: 10px;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: normal;
+  position: absolute;
+  color: white;
+  letter-spacing: 1px;
+}
+
+a.back:hover {
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
+}
+
+a.home {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  color: white;
+  font-variant: small-caps;
+  left: 3%;
+  text-decoration: none;
+}
+
+a.home:hover {
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
+}
+
+a.github {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  color: white;
+  font-variant: small-caps;
+  right: 1%;
+  text-decoration: none;
+}
+
+a.github:hover {
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
+}
+
+a.fb {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  color: white;
+  font-variant: small-caps;
+  right: 2.5%;
+  text-decoration: none;
+}
+
+a.fb:hover {
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
+}
+
+a.tw {
+  text-align: center;
+  margin-top: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  color: white;
+  font-variant: small-caps;
+  right: 3.5%;
+  text-decoration: none;
+}
+
+a.tw:hover {
+  cursor: pointer;
+  color: lightgray;
+  text-decoration: none;
+}
+
+img.icon {
+  height: 50px;
+  width: 50px;
+  filter: invert(100%);
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 5px;
+}
