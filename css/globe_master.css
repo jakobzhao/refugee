@@ -89,6 +89,10 @@ html,
       opacity: .6;
     }
 
+    .conflict{
+      pointer-events: none !important;
+    }
+
     .point-study{
         stroke-width: 2;
         stroke: white;
