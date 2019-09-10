@@ -68,10 +68,10 @@
         <div id="text">
               <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
               <div class="dropdown" style="padding-bottom:0px;">
-                <button class="dropbtn">Select Map</button>
+                <button class="dropbtn"  id="drop-text">Select Map</button>
                 <div class="dropdown-content">
-                  <a class="dropdown-a" href="#"onclick="setOrigin()">Origins</a>
-                  <a class="dropdown-a" href="#"onclick="setDestination()">Destinations</a>
+                  <a id="select1" style="background-color:#ddd;" class="dropdown-a" href="#"onclick="setOrigin()">Origins</a>
+                  <a id="select2" class="dropdown-a" href="#"onclick="setDestination()">Destinations</a>
                 </div>
               </div>
               <div class="legend_container" id="leg1">
@@ -860,6 +860,11 @@
         }
 
         document.getElementById("leg1").style.display = "block";
+
+        document.getElementById("select1").style.backgroundColor = "#ddd";
+        document.getElementById("select2").style.backgroundColor = "#f1f1f1";
+
+        document.getElementById("drop-text").innerHTML = "Origins";
     }
     function setDestination(){      
       data  = 1;
@@ -893,6 +898,11 @@
         }
 
       document.getElementById("leg2").style.display = "block";
+
+      document.getElementById("select1").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select2").style.backgroundColor = "#ddd";
+
+        document.getElementById("drop-text").innerHTML = "Destinations";
       }
 
     function sizeChange() {

@@ -87,12 +87,12 @@ a.tw:hover{
         <div id="text">
               <p style="font-size:18px;font-variant: small-caps;text-align: left;">Factors that influence international crises and cause forced migrations</p>
               <div class="dropdown" style="padding-bottom:20px;">
-                <button class="dropbtn">Select Map</button>
+                <button class="dropbtn" id="drop-text">Select Map</button>
                 <div class="dropdown-content">                  
-                  <a href="#"onclick="setConflict()">Violence</a>
-                  <a href="#"onclick="setHDI()">HDI</a>
-                  <a href="#"onclick="setPoverty()">Poverty</a>
-                  <a href="#"onclick="setEnvironment()">Environment</a>
+                  <a id="select1" href="#"onclick="setConflict()" style="background-color:#ddd;">Violence</a>
+                  <a id="select2" href="#"onclick="setHDI()">HDI</a>
+                  <a id="select3" href="#"onclick="setPoverty()">Poverty</a>
+                  <a id="select4" href="#"onclick="setEnvironment()">Environment</a>
                 </div>
               </div>
               <div class="legend_container" id="con_legend">
@@ -859,6 +859,13 @@ a.tw:hover{
           legends[i].style.display = 'none';
         }
         document.getElementById("HDI_legend").style.display = "block";
+
+        document.getElementById("select1").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select2").style.backgroundColor = "#ddd";
+        document.getElementById("select3").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select4").style.backgroundColor = "#f1f1f1";
+
+        document.getElementById("drop-text").innerHTML = "HDI";
     }
     function setSchool(){
       svg
@@ -919,6 +926,13 @@ a.tw:hover{
           legends[i].style.display = 'none';
         }
         document.getElementById("pov_legend").style.display = "block";
+
+        document.getElementById("select1").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select2").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select3").style.backgroundColor = "#ddd";
+        document.getElementById("select4").style.backgroundColor = "#f1f1f1";
+
+        document.getElementById("drop-text").innerHTML = "Poverty";
     }
     function setEnvironment(){
       svg
@@ -949,6 +963,13 @@ a.tw:hover{
           legends[i].style.display = 'none';
         }
         document.getElementById("env_legend").style.display = "block";
+
+        document.getElementById("drop-text").innerHTML = "Environment";
+
+        document.getElementById("select1").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select2").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select3").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select4").style.backgroundColor = "#ddd";
     }
 
 
@@ -1026,6 +1047,13 @@ a.tw:hover{
           legends[i].style.display = 'none';
         }
         document.getElementById("con_legend").style.display = "block";
+
+        document.getElementById("drop-text").innerHTML = "Conflict";
+
+        document.getElementById("select1").style.backgroundColor = "#ddd";
+        document.getElementById("select2").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select3").style.backgroundColor = "#f1f1f1";
+        document.getElementById("select4").style.backgroundColor = "#f1f1f1";
     }
 
     function sizeChange() {
