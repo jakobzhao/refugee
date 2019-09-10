@@ -10,7 +10,7 @@ body {
     margin-right: auto;
 }
 
-.right {
+img.right {
     display: block;
     margin-left: auto;
     margin-right: 0;
@@ -133,4 +133,13 @@ a.tw:hover{
         cursor:pointer;
         color:lightgray;
         text-decoration:none;
+        }
+img.icon{
+        height:50px;
+        width:50px;
+        filter: invert(100%);
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+        margin-top:5px;
         }
