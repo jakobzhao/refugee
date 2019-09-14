@@ -177,7 +177,7 @@
       font-family: 'Roboto Condensed', sans-serif !important;
         font-variant: small-caps;
         font-weight:bold;
-        font-size:6.5vw;
+        font-size:90px;
         text-align:left;
         line-height:125px;
     }
@@ -217,9 +217,9 @@
 
     p.about-text{
         font-weight:300;
-        font-size:18px;
+        font-size:22px;
         width:100%;
-        line-height:24px;
+        line-height:32px;
     }
 
     p.cont-text{
@@ -274,6 +274,17 @@
         bottom:0;
         left:0;
         z-index:1000;
+    }
+    div#globe-legend{
+        background: rgba(82, 87, 96,0.4);
+        width:200px;
+        height:120px;
+        z-index:20000;
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        border-radius: 25px;
+        box-shadow: 3px 3px rgba(0,0,0,0.5);
     }
     i#arrow{
       margin-top:10px;
@@ -397,13 +408,13 @@
             If you have questions, please contact Bo Zhao at <a href="mailto:zhaobo@uw.edu">zhaobo@uw.edu</a>.</p>                           
         </div>
         <div style="margin-bottom:200px;">
-            <h2 style="font-size:5.5vw;">Contributors</h2>
+            <h2 style="font-size:65px;">Contributors</h2>
             <p class="cont-text"><b>Bo Zhao</b>&nbsp&nbspPI, <br><i>Assistant Professor in GIScience</i></p><br>
             <p class="cont-text"><b>Jamon Van Den Hoek</b>&nbsp&nbspCo-PI, <br><i>Assistant Professor in Remote Sensing</i></p><br>
             <p class="cont-text"><b>Jennifer Alix-Garcia</b>&nbsp&nbspCo-PI, <br> <i>Professor in Applied Economics</i></p><br>
-            <p class="cont-text"><b>Giovanni Svevo</b><i>&nbsp&nbspLead Cartographer, Designer</i></p><br>
-            <p class="cont-text"><b>Gareth Baldrica Franklin</b><i>&nbsp&nbspCartographer, Designer</i></p><br>
-            <p class="cont-text"><b>Ginny Katz</b><i>&nbsp&nbspContributor</i></p>  <br><br><br>
+            <p class="cont-text"><b>Giovanni Svevo</b><br/><i>Lead Cartographer, Designer</i></p><br>
+            <p class="cont-text"><b>Gareth Baldrica Franklin</b><br/><i>Cartographer, Designer</i></p><br>
+            <p class="cont-text"><b>Ginny Katz</b><br/><i>Contributor</i></p>  <br><br><br>
 
             <p class="cont-text">This work has been made possible by a grant from the National Geographic Society's Committee for Research and Exploration. <br><br>Special thanks to Julia Jones and Erik Steiner for their valuable inputs.</p>
   
@@ -411,6 +422,12 @@
     </div>
   </div> 
   <div class="bottom-arrow"><i id="arrow" class="animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
+  <div id="globe-legend">
+    <p style="margin:10px 0px 0px 10px; font-weight:bold;">Refugee Settlements</p>
+    <img style="height:15px; position: relative; left:10px" src="assets/img/point_icon.png">
+    <p style="margin:10px 0px 0px 10px; font-weight:bold;">Common Refugee Routes</p>
+    <img style="height:15px; position: relative; left:5px" src="assets/img/routes.png">
+  </div>
   <div class="col-md-7">
     <svg>
         <defs>

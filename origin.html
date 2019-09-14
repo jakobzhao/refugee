@@ -49,6 +49,9 @@
       margin-top: 10px!important;
       margin-bottom: 20px!important;
     }
+    div#text{
+      height:calc(100% - 200px);
+    }
    </style>
  </head>
  
@@ -65,15 +68,15 @@
     <div id="infoPanel" class="col-md-3">
       <img id="ng" src="assets/img/flow_icon.png">
         <h1>FLOW</h1> 
+        <div class="dropdown" style="padding-bottom:20px; position: relative; left:5%;">
+          <button class="dropbtn"  id="drop-text">Select Map</button>
+          <div class="dropdown-content">
+            <a id="select1" style="background-color:#ddd;" class="dropdown-a" href="#"onclick="setOrigin()">Origins</a>
+            <a id="select2" class="dropdown-a" href="#"onclick="setDestination()">Destinations</a>
+          </div>
+        </div>
         <div id="text">
               <!---<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>-->
-              <div class="dropdown" style="padding-bottom:0px;">
-                <button class="dropbtn"  id="drop-text">Select Map</button>
-                <div class="dropdown-content">
-                  <a id="select1" style="background-color:#ddd;" class="dropdown-a" href="#"onclick="setOrigin()">Origins</a>
-                  <a id="select2" class="dropdown-a" href="#"onclick="setDestination()">Destinations</a>
-                </div>
-              </div>
               <div class="legend_container" id="leg1">
                 <h2># of Refugees (1000s)</h2>
                 <div class="legend" style="background:linear-gradient(to right, #ffffff, #ffffff 16%, #e6f3ff 16%, #e6f3ff 33%, #b3daff 33%, #b3daff 50%, #66b5ff 50%, #66b5ff 66%, #1a90ff 66%, #1a90ff 83%, #005cb3 83%);"></div>
@@ -160,6 +163,12 @@
       d3.select(window).on("resize", sizeChange);
 
     
+      const ps = new PerfectScrollbar('#text', {
+      wheelSpeed: .2,
+      wheelPropagation: true,
+      minScrollbarLength: 20
+    });
+
     const config = {
       speed: 0.005,
       verticalTilt: -30,

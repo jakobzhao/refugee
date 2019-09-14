@@ -84,17 +84,19 @@ a.tw:hover{
     <div id="infoPanel" class="col-md-3">
         <img id="ng" src="assets/img/context_icon.png">
         <h1 style="font-size:42px;">CONTEXT</h1> 
+        <div style="left:5%; display:block; position:relative;">
+          <p style="font-size:18px;font-variant: small-caps;text-align: left;">Factors that influence international crises and cause forced migrations</p>
+          <div class="dropdown" style="padding-bottom:20px;">
+            <button class="dropbtn" id="drop-text">Select Map</button>
+            <div class="dropdown-content">                  
+              <a id="select1" href="#"onclick="setConflict()" style="background-color:#ddd;">Violence</a>
+              <a id="select2" href="#"onclick="setHDI()">HDI</a>
+              <a id="select3" href="#"onclick="setPoverty()">Poverty</a>
+              <a id="select4" href="#"onclick="setEnvironment()">Environment</a>
+            </div>
+          </div>
+        </div>  
         <div id="text">
-              <p style="font-size:18px;font-variant: small-caps;text-align: left;">Factors that influence international crises and cause forced migrations</p>
-              <div class="dropdown" style="padding-bottom:20px;">
-                <button class="dropbtn" id="drop-text">Select Map</button>
-                <div class="dropdown-content">                  
-                  <a id="select1" href="#"onclick="setConflict()" style="background-color:#ddd;">Violence</a>
-                  <a id="select2" href="#"onclick="setHDI()">HDI</a>
-                  <a id="select3" href="#"onclick="setPoverty()">Poverty</a>
-                  <a id="select4" href="#"onclick="setEnvironment()">Environment</a>
-                </div>
-              </div>
               <div class="legend_container" id="con_legend">
                   <h2>Conflict Types</h2> 
                   <div class="legend" style="background:linear-gradient(to right, #993333, #993333 33%, #ffff00 33%, #ffff00 66%, #e68a00 66%);"></div>         

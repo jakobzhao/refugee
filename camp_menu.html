@@ -228,6 +228,18 @@
       font-weight:300;
     }
 
+    div#globe-legend{
+        background: rgba(82, 87, 96,0.4);
+        width:150px;
+        height:60px;
+        z-index:20000;
+        position:fixed;
+        right:20px;
+        bottom:20px;
+        border-radius: 25px;
+        box-shadow: 3px 3px rgba(0,0,0,0.5);
+    }
+
     img.icon{
       height:60px;
       width:60px;
@@ -411,7 +423,7 @@ a.tw:hover{
             </div>
           </div>
         </a>  
-        <a href="camps/pugnido.html" onmouseover="selectType('ETHs028884')" onmouseout="resetPoints()">
+        <a href="camps/pugnido.html" onmouseover="selectType('ETHs000162')" onmouseout="resetPoints()">
           <div class="but" id="but3">
             <img src="journeys\charts\flags\4x3\et.svg" class="icon">
             <div id="but-text">
@@ -478,6 +490,10 @@ a.tw:hover{
       </div>
     </div> 
     <div class="bottom-arrow"><i class="down animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div>
+    <div id="globe-legend">
+        <p style="margin:10px 0px 0px 10px; font-weight:bold;">Refugee Settlements</p>
+        <img style="height:15px; position: relative; left:10px" src="assets/img/point_icon.png">
+      </div>
     <div class="col-md-7">
       <svg>
         <defs>
@@ -672,11 +688,12 @@ a.tw:hover{
     .defer(d3.json, "assets/map_data/global/links.json")
     .defer(d3.csv, "assets/map_data/global/country_names.csv")
     .defer(d3.csv, "assets/map_data/global/demographics.csv")
-    .defer(d3.json, "assets/map_data/global/camps_total.json")
-    .defer(d3.json, "assets/map_data/global/routes.json")
+    .defer(d3.json, "assets/map_data/global/camps.json")
+    .defer(d3.json, "assets/map_data/global/settlements.json")
+    .defer(d3.json, "assets/map_data/global/dispersed.json")
     .await(ready);
 
-function ready(error, world, places, links, countryNames, demographics, camps) {
+function ready(error, world, places, links, countryNames, demographics, camps, settlements, dispersed) {
 
     
 var defs = svg.append("defs");
@@ -810,17 +827,45 @@ svg
 
 position_labels();
 //enableRotation();
-  svg
-    .append("g")
-    .attr("class", "points camps")
-    .selectAll(".points")
-    .data(campPoints)
-    .enter()
-    .append("path")
-    .attr("class", "point1")
-    .attr("opacity", 0.7)
-    .attr("fill", "#5e616e")
-    .attr("d", path.pointRadius(3));
+      svg
+        .append("g")
+        .attr("class", "points camps")
+        .selectAll(".points")
+        .data(camps.features)
+        .enter()
+        .append("path")
+        .attr("class", "point1")
+        .attr("opacity", .6)
+        .attr("fill", "#DC143C")
+        .attr("stroke", "#DC143C")
+        .attr("stroke-width", 0)
+        .attr("d", path.pointRadius(3));
+      svg
+        .append("g")
+        .attr("class", "points settlements")
+        .selectAll(".points")
+        .data(settlements.features)
+        .enter()
+        .append("path")
+        .attr("class", "point1")
+        .attr("opacity", .6)
+        .attr("fill", "#D2691E")
+        .attr("stroke", "#D2691E")
+        .attr("stroke-width", 0)
+        .attr("d", path.pointRadius(3));
+      svg
+        .append("g")
+        .attr("class", "points dispersed")
+        .selectAll(".points")
+        .data(dispersed.features)
+        .enter()
+        .append("path")
+        .attr("class", "point1")
+        .attr("fill", "	#E9967A")
+        .attr("opacity", .6)
+        .attr("stroke", "#E9967A")
+        .attr("stroke-width", 0)
+        .attr("d", path.pointRadius(3));
       
 }
   
@@ -834,16 +879,15 @@ position_labels();
           if (d.properties.pcode == id)
               return true;
         })
-        .attr("fill", "#5e616e")
-        .attr("stroke-width", 10)
-        .attr("stroke", "#5e616e");
+        .attr("stroke-width", 10);
         
      svg.selectAll(".point1")
         .filter(function(d) {
           if (d.properties.pcode != id)
               return true;
         })
-        .attr("fill", "rgba(204, 204, 0, 0)");
+        .attr("stroke-width", 0)
+        .attr("opacity", 0);
         
     svg.selectAll(".focused").classed("focused", focused = false);
 
@@ -870,8 +914,8 @@ position_labels();
 
   function resetPoints(){
     svg.selectAll(".point1")
-        .attr("fill", "#5e616e")
-        .attr("stroke-width", 0);
+        .attr("stroke-width", 0)
+        .attr("opacity", 0.6);
   }
 
   function enableRotation() {
