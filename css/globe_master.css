@@ -271,7 +271,7 @@ html,
     }
     div#text{
         position:relative;
-        height:calc(100% - 120px);
+        height:calc(100% - 300px);
         left:5%;
     }
     div.topBar{

@@ -98,6 +98,10 @@
         margin-left:5px;
     }
  
+    p.chart-title{
+        font-weight:bold;
+    }
+
       img#ng{
         margin-top:3px;
         display:block;
@@ -298,4 +302,8 @@
       cursor:pointer;
       color:lightgray;
       text-decoration:none;
+    }
+
+    .leaflet-control-scale-line{
+      font-family: 'Roboto Condensed', sans-serif;
     }
