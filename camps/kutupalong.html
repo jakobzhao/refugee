@@ -72,10 +72,10 @@
   <div id="infoPanel" class="col-md-3">
       <img id="ng" src="../assets/img/camp_icon.png"></a>
     <h1>KUTUPALONG</h1> 
-          <div id="text">
+            <div style="position:relative; left:5%;">
               <h2 style="display: inline-block; margin-top:0%">&nbsp&nbspPopulation: </h2>&nbsp;<h2 id="pop" style="display: inline-block;">913,000</h2>&nbsp;&nbsp;(<h5 id="updated" style="display: inline-block;">null</h5>)<br>
               <!-- <h5 style="display: inline-block;margin-top:0%">&nbsp&nbsp&nbspLast updated: </h5>&nbsp;<h5 id="updated" style="display: inline-block;">null</h5> -->
-            <div class="dropdown" style="padding-bottom:0px;">
+              <div class="dropdown" style="padding-bottom:0px;">
                 <button class="dropbtn" id="dataType">Select Map</button>
                 <div class="dropdown-content">
                   <a href="#" id="but1" class="selection" style="background:#ddd;">Overview</a>
@@ -85,6 +85,8 @@
                   <a href="#" id="but5" class="selection" onclick="sc1()">Safety</a>
                 </div>
               </div>
+            </div>
+          <div id="text"> 
             <div class="legend_container" id="leg_1">
               <p>Residents in Kutupalong face daily challenges to access the most basic services. In this interactive map you can choose a theme (Overview, Population, Health and Safety) and explore the facilities of the camp.</p>  
               <div style="display:inline-block; width:150px; height:80px;">
@@ -103,7 +105,7 @@
               <a href="https://www.unhcr.org/ph/12861-bangladesh-rohingya-refugees-moved-from-kutupalong-camp-to-new-site.html"target="_blank">
               <img id="cont"src="https://www.unhcr.org/ph/wp-content/uploads/sites/28/2017/10/Header-Rohingya-27-Oct-894x504.jpg" ></a>
             </div>
-            <div class="legend_container" id="leg_2" style="display:none;">
+            <div class="legend_container" id="leg_2" style="display:none; margin-bottom:50px;">
               <p>The Kutupalong refugee settlement has grown to become the largest of its kind in the world, with more than 600,000 people finding shelter in an area of just 13 square kilometres, stretching infrastructure and services to their limits.</p>  
               <h2>Population Density (Ind./Acre)</h2> 
               <div class="legend" style="background:linear-gradient(to right, #ffffd4, #ffffd4 25%, #fed98e 25%, #fed98e 50%, #fe9929 50%, #fe9929 75%, #cc4c02 75%);opacity: .8;"></div>
@@ -113,7 +115,7 @@
               <br><br>
               <img id="cont"src="http://ecdn.banglatribune.com/contents/cache/images/825x0x1/uploads/media/2019/08/22/aaddd9062d84166c5aa3990ced1215c6-5d5eabb85ebe2.jpg" >
             </div>
-            <div class="legend_container" id="leg_3" style="display:none;">
+            <div class="legend_container" id="leg_3" style="display:none; margin-bottom:50px;">
               <p>UNHCR and NGOs provide healthcare services in the camp through health centers and mobile clinics. The highest health risks come from diseases related to sanitation and lack of clean water.</h2> 
                 <h2>Individuals Per Medical Facility</h2> 
               <div class="legend" style="background:linear-gradient(to right, #fee5d9, #fee5d9 25%, #fcae91 25%, #fcae91 50%, #fb6a4a 50%, #fb6a4a 75%, #cb181d 75%);opacity: .8;"></div>
@@ -123,7 +125,7 @@
               <br><br>
               <img id="cont"src="https://reliefweb.int/sites/reliefweb.int/files/styles/report-large/public/report-images/bd20170919-1.jpg?itok=Es9t6EHx" >
           </div>
-          <div class="legend_container" id="leg_4" style="display:none;">
+          <div class="legend_container" id="leg_4" style="display:none; margin-bottom:120px;">
               <p>Access to Water and Sanitation infrastructures is critical, especially for women and children. In this page you can explore some of the main problems faced by the population. Click on a topic below or hover over the map for more datailed information. Data from <a href= "http://www.reachresourcecentre.info/system/files/resource-documents/reach_bgd_key_findings_presentations_presentation_wash_hh_baseline_april2018.pdf" target="_blank" style="color:silver">Reach survey </a>of December 6, 2018.</h2> 
                 <h2>Indivduals Per Latrine</h2> 
               <div class="legend" style="background:linear-gradient(to right, #edf8fb, #edf8fb 25%, #b3cde3 25%, #b3cde3 50%, #8c96c6 50%, #8c96c6 75%, #88419d 75%);opacity: .8;"></div>
@@ -143,9 +145,9 @@
             </div>
 
         <canvas id="washChart"></canvas>
-      </div>	<br><br><br><br>
+      </div>	
        
-        <div class="legend_container" id="leg_5" style="display:none;">
+        <div class="legend_container" id="leg_5" style="display:none; margin-bottom:50px;">
             <p>Among residents in the camp, single women and women under the age of 18 are particularly vulnerable to safety issues. The map on the right shows areas that are felt more or less secure according to answer given by women under 18 to a <a href="https://data.humdata.org/dataset/iom-bangladesh-needs-and-population-monitoring-npm-round-14-site-assessment" target="_blank" style="color:silver"> IOM questionnaire </a> (February 13, 2019). Click on a topic below to get more details on safety issues.</h2> 
               <h2>Level of Perceived Safety</h2> 
             <div class="legend" style="background:linear-gradient(to right, #fee5d9,#a50f15 );"></div>
