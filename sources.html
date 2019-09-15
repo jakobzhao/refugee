@@ -153,7 +153,7 @@
         position:absolute;
         margin:auto;
         display:inline-block;
-        width:500px;
+        width:50%;
         left:10px;
         top:25px;
         z-index:1000;
@@ -166,7 +166,7 @@
     
     div#text{
         height:95%;
-        width:500px;
+        width:100%;
         position:relative;
         overflow: hidden;
         margin-left:20px;
@@ -177,7 +177,7 @@
         font-variant: small-caps;
         font-weight:bold;
         font-size:115px;
-        width:500px;
+        width:100%;
         text-align:left;
         line-height:125px;
         margin:auto;
@@ -224,14 +224,14 @@
     p.intro-text{
         font-weight:300;
         font-size:22px;
-        width:400px;
+        width:50%;
         line-height:22px;
     }
 
     p.about-text{
         font-weight:300;
         font-size:18px;
-        width:400px;
+        width:50%;
         line-height:22px;
     }
 
@@ -397,13 +397,18 @@ a.tw:hover{
             <h1>Sources</h1>
             <p class="about-text" style="margin-top:20px;">This is a comprehensive list of data and software sources for the Global Refugee Atlas. Content for the visualizations is retrieved from openly available remote sensing satellite imagery, crowdsourced social media data as well as a host of datasets from UNHCR and other international humanitarian agencies.</p><br>
             <p class="about-text">The site is built using innovative data-driven geographic research approaches. Software and libraries are all open source and freely available online. Custom scripts are written mainly in JavaScript and, for the back-end, in Python.</p><br>
-            <h3 style="font-size: 34px">Data</h3>
+            <h3 style="font-size: 34px">DATA</h3>
             <i><h3>Satellite Imagery</h3></i>
+            <p class="about-text" style="margin-top:20px; margin-bottom:20px;">Satellite remote sensing imagery has been used to map growth of camps throughout the past five years. As processing platform we used Google Earth Engine, which allows to analyze data on the fly, to select images from different satellites and to filter them according to cloud coverage. Raw data comes from NASA's Landsat 8  and the more recent ESA's Sentinel 2a, which has a spatial resolution of 10 meters. Processed images were exported as tiles in the xyz format and saved in the Google Cloud platform, from which they are retrieved into the Atlas.</p>
             <p class="about-text">
               <ul class="a">
                 <i><li>Processing Platform</li></i>
                 <ul class="b">
                     <li class="b"><a href="https://earthengine.google.com/" target="_blank">Google Earth Engine</a></li>
+                </ul>
+                <i><li>Hosting Platform</li></i>
+                <ul class="b">
+                    <li class="b"><a href="https://cloud.google.com/" target="_blank">Google Cloud</a></li>
                 </ul>
                 <i><li>Raw Data</li></i>
                 <ul class="b">
@@ -413,6 +418,7 @@ a.tw:hover{
               </ul> 
             </p>
             <i><h3>Social Media</h3></i>
+            <p class="about-text" style="margin-top:20px; margin-bottom:20px;">The perception chapter of this Atlas is built using posts from Twitter that contain the word 'refugee'. Those tweets are saved in a database hosted on a virtual server where Python scripts extract the most used words and run basic sentiment analyses. The next step will be to include more social media sources, such as the photo hosting platform of National Geographic 'Your Shot'</p>
             <p class="about-text">
               <ul class="a">
                 <li>Twitter</li>
@@ -420,6 +426,7 @@ a.tw:hover{
               </ul> 
             </p>
             <i><h3>Thematic Data</h3></i>
+            <p class="about-text" style="margin-top:20px; margin-bottom:20px;">The content of the Atlas comes from a throve of sources hosted on the web. The most important is data from UNHCR, which makes available tabular and geographic datasets on most of the activities it is involved with. Other agencies and NGOs complement these datasets with detailed reports on refugee camp structures and people's needs. Economic and cultural data aggregated by country are retrieved from the World Bank Database. A detailed list of conflict data was retrieved from the US based NGO ACLED.</p>
             <p class="about-text">
               <ul class="a">
                 <i><li>UNHCR</li></i>
@@ -452,10 +459,21 @@ a.tw:hover{
                 <ul class="b">
                     <li class="b"><a href="https://data.humdata.org/dataset/iom-bangladesh-needs-and-population-monitoring-npm-round-14-site-assessment" target="_blank">Kutupalong - Site Assessment</a></li>
                 </ul>
+              </ul>             
+            <i><h3>Basemaps</h3></i>
+            <p class="about-text" style="margin-top:20px; margin-bottom:20px;">We used a Carto basemap (based on Open Street Map) and satellite imagery from ESRI for the two storymaps in the Journeys chapter. All other maps are made with D3.js using vector data downloaded from the open source platform Digital Earth.</p>
+            <p class="about-text">
+              <ul class="a">
+                <i><li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li></i>
+                <i><li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li></i>
+                <i><li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li></i>
+                <i><li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li></i>
               </ul> 
-            </p> 
-            <h3 style="font-size: 34px">Software</h3>
+            </p>
+            </p> <br>
+            <h3 style="font-size: 34px">SOFTWARE</h3>
             <i><h3>Libraries and Plugins</h3></i>
+            <p class="about-text" style="margin-top:20px; margin-bottom:20px;">All software and applications used to build this Atlas are free and open source. Leaflet is the base for the Camps chapter, while we exploited the bearing and tilt capabilities of the Mapbox-gl.js library for the storymaps. All the other maps are built using the geographic capabilities of the open source library D3.js. The website structure is based on Bootstrap.js (and the SB Admin Bootstrap template), implemented with css and js plugins and managed using JavaScript and JQuery. Graphs are built using the open source library Chart.js.  </p>
          <div style="margin-bottom:100px;">
             <p class="about-text">
               <ul class="a">
@@ -477,15 +495,7 @@ a.tw:hover{
                 </ul>
               </ul> 
             </p>
-            <i><h3>Basemaps</h3></i>
-            <p class="about-text">
-              <ul class="a">
-                <i><li><a href="https://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri.WorldImagery" target="_blank">ESRI World Imagery</a></li></i>
-                <i><li><a href="https://carto.com/attribution/" target="_blank">Carto</a></li></i>
-                <i><li><a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a></li></i>
-                <i><li><a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a></li></i>
-              </ul> 
-            </p>
+
 
 
         </div>
