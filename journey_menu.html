@@ -282,14 +282,13 @@
     }
 
       div#globe-legend{
-        background: rgba(82, 87, 96,0.4);
-        width:200px;
-        height:60px;
+        background: rgba(82, 87, 96,0.5);
+        width:240px;
+        height:40px;
         z-index:20000;
         position:fixed;
-        right:20px;
-        bottom:20px;
-        border-radius: 25px;
+        right:0px;
+        bottom:0px;
         box-shadow: 3px 3px rgba(0,0,0,0.5);
     }
     /* i{
@@ -400,7 +399,7 @@ a.tw:hover{
   <div id ="mainMenu" class="col-md-5">
     <div id = "text">
       <h1>Journeys</h1>
-      <p id="desc" style="margin-bottom:50px; margin-top:20px;">This Chapter describes the journeys of refugees both on a global and local scale. The first section shows refugee flows from origin countries to host countries and viceversa. The other two sections use storymaps to narrate individual journeys of refugees seeking safety away from home. <br/><br/><i>Dashed lines on the globe represent refugee journeys.</i></p>    
+      <p id="desc" style="margin-bottom:50px; margin-top:20px;">This Chapter describes the journeys of refugees both on a global and local scale. The first section shows refugee flows from origin countries to host countries and viceversa. The other two sections use storymaps to narrate individual journeys of refugees seeking safety away from home. </p>    
       <div style="margin-bottom:100px;">
       <a href="origin.html">
         <div class="but" id="but1">
@@ -434,10 +433,12 @@ a.tw:hover{
     </div>
   </div> 
   <!-- <div class="bottom-arrow"><i class="animated zoomIn infinite fa fa-chevron-down arrow-chevron-down"></i></div> -->
-  <!--<div id="globe-legend">
+  <div id="globe-legend">
+    <p style="margin:10px 0px 0px 10px; font-weight:normal;">Dashed lines represent refugee journeys.</i></p>
+    <!--<img style="height:15px; position: relative; left:10px" src="assets/img/point_icon.png">
     <p style="margin:10px 0px 0px 10px; font-weight:bold;">Common Refugee Routes</p>
-    <img style="height:15px; position: relative; left:5px" src="assets/img/routes.png">
-  </div>-->
+    <img style="height:15px; position: relative; left:5px" src="assets/img/routes.png">-->
+  </div>
   <div class="col-md-7">
     <svg>
       <defs>
