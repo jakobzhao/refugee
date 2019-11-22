@@ -1,11 +1,15 @@
 [
     {
         "text": "immigration",
-        "weight": 17
+        "weight": 20
+    },
+    {
+        "text": "knitfor",
+        "weight": 13
     },
     {
         "text": "people",
-        "weight": 11
+        "weight": 12
     },
     {
         "text": "canada",
@@ -16,24 +20,32 @@
         "weight": 10
     },
     {
+        "text": "children",
+        "weight": 10
+    },
+    {
         "text": "sovereignty",
         "weight": 10
     },
     {
-        "text": "knitfor",
-        "weight": 10
+        "text": "asylum",
+        "weight": 9
+    },
+    {
+        "text": "minister",
+        "weight": 9
     },
     {
         "text": "because",
+        "weight": 9
+    },
+    {
+        "text": "help",
         "weight": 8
     },
     {
         "text": "suicide",
         "weight": 8
-    },
-    {
-        "text": "asylum",
-        "weight": 7
     },
     {
         "text": "legal",
@@ -44,7 +56,15 @@
         "weight": 7
     },
     {
-        "text": "children",
+        "text": "story",
+        "weight": 7
+    },
+    {
+        "text": "should",
+        "weight": 7
+    },
+    {
+        "text": "into",
         "weight": 7
     },
     {
@@ -56,11 +76,35 @@
         "weight": 7
     },
     {
-        "text": "help",
+        "text": "like",
+        "weight": 7
+    },
+    {
+        "text": "2019",
+        "weight": 7
+    },
+    {
+        "text": "country",
+        "weight": 6
+    },
+    {
+        "text": "migrants",
         "weight": 6
     },
     {
         "text": "programs",
+        "weight": 6
+    },
+    {
+        "text": "south",
+        "weight": 6
+    },
+    {
+        "text": "syrian",
+        "weight": 6
+    },
+    {
+        "text": "trying",
         "weight": 6
     },
     {
@@ -76,15 +120,19 @@
         "weight": 6
     },
     {
-        "text": "into",
-        "weight": 6
-    },
-    {
         "text": "corruption",
         "weight": 6
     },
     {
         "text": "illegal",
+        "weight": 6
+    },
+    {
+        "text": "—",
+        "weight": 6
+    },
+    {
+        "text": "citizenship",
         "weight": 6
     }
 ]

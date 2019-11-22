@@ -1,31 +1,75 @@
 [
     {
         "text": "australia",
-        "weight": 20
-    },
-    {
-        "text": "asylum",
-        "weight": 18
+        "weight": 29
     },
     {
         "text": "people",
-        "weight": 15
+        "weight": 25
+    },
+    {
+        "text": "asylum",
+        "weight": 21
     },
     {
         "text": "over",
-        "weight": 14
-    },
-    {
-        "text": "rights",
-        "weight": 13
+        "weight": 16
     },
     {
         "text": "helpinindonesia",
+        "weight": 16
+    },
+    {
+        "text": "australian",
+        "weight": 15
+    },
+    {
+        "text": "government",
+        "weight": 15
+    },
+    {
+        "text": "rights",
+        "weight": 14
+    },
+    {
+        "text": "resettlement4single",
+        "weight": 14
+    },
+    {
+        "text": "children",
+        "weight": 14
+    },
+    {
+        "text": "even",
         "weight": 13
     },
     {
+        "text": "like",
+        "weight": 12
+    },
+    {
         "text": "conference",
-        "weight": 10
+        "weight": 11
+    },
+    {
+        "text": "help",
+        "weight": 11
+    },
+    {
+        "text": "seekers",
+        "weight": 11
+    },
+    {
+        "text": "syrian",
+        "weight": 11
+    },
+    {
+        "text": "crisis",
+        "weight": 11
+    },
+    {
+        "text": "policy",
+        "weight": 11
     },
     {
         "text": "home",
@@ -40,23 +84,23 @@
         "weight": 10
     },
     {
-        "text": "australian",
+        "text": "education",
         "weight": 10
     },
     {
-        "text": "even",
+        "text": "human",
         "weight": 10
     },
     {
-        "text": "government",
+        "text": "indonesia",
         "weight": 10
     },
     {
-        "text": "resettlement4single",
+        "text": "t",
         "weight": 10
     },
     {
-        "text": "syrian",
+        "text": "story",
         "weight": 10
     },
     {
@@ -68,8 +112,12 @@
         "weight": 10
     },
     {
-        "text": "children",
+        "text": "w",
         "weight": 10
+    },
+    {
+        "text": "community",
+        "weight": 9
     },
     {
         "text": "manus",
@@ -80,7 +128,7 @@
         "weight": 9
     },
     {
-        "text": "seekers",
+        "text": "because",
         "weight": 9
     },
     {
@@ -88,19 +136,15 @@
         "weight": 9
     },
     {
-        "text": "human",
+        "text": "today",
         "weight": 9
     },
     {
-        "text": "like",
+        "text": "climate",
         "weight": 9
     },
     {
-        "text": "crisis",
-        "weight": 9
-    },
-    {
-        "text": "story",
+        "text": "peter",
         "weight": 9
     },
     {
@@ -108,15 +152,31 @@
         "weight": 9
     },
     {
+        "text": "does",
+        "weight": 8
+    },
+    {
+        "text": "family",
+        "weight": 8
+    },
+    {
         "text": "zealand",
         "weight": 8
     },
     {
-        "text": "education",
+        "text": "better",
         "weight": 8
     },
     {
-        "text": "indonesia",
+        "text": "life",
+        "weight": 8
+    },
+    {
+        "text": "support",
+        "weight": 8
+    },
+    {
+        "text": "years",
         "weight": 8
     },
     {
@@ -124,35 +184,35 @@
         "weight": 8
     },
     {
-        "text": "climate",
+        "text": "country",
         "weight": 8
     },
     {
-        "text": "policy",
+        "text": "students",
         "weight": 8
     },
     {
-        "text": "peter",
+        "text": "work",
         "weight": 8
     },
     {
-        "text": "family",
-        "weight": 7
+        "text": "after",
+        "weight": 8
     },
     {
-        "text": "community",
-        "weight": 7
+        "text": "camp",
+        "weight": 8
     },
     {
-        "text": "better",
-        "weight": 7
+        "text": "news",
+        "weight": 8
     },
     {
-        "text": "help",
-        "weight": 7
+        "text": "well",
+        "weight": 8
     },
     {
-        "text": "because",
+        "text": "island",
         "weight": 7
     },
     {
@@ -160,11 +220,7 @@
         "weight": 7
     },
     {
-        "text": "t",
-        "weight": 7
-    },
-    {
-        "text": "today",
+        "text": "need",
         "weight": 7
     },
     {
@@ -172,11 +228,35 @@
         "weight": 7
     },
     {
+        "text": "full",
+        "weight": 7
+    },
+    {
+        "text": "change",
+        "weight": 7
+    },
+    {
+        "text": "other",
+        "weight": 7
+    },
+    {
+        "text": "minister",
+        "weight": 7
+    },
+    {
+        "text": "african",
+        "weight": 7
+    },
+    {
+        "text": "social",
+        "weight": 7
+    },
+    {
         "text": "alone",
         "weight": 6
     },
     {
-        "text": "island",
+        "text": "indigenous",
         "weight": 6
     },
     {
@@ -184,7 +264,19 @@
         "weight": 6
     },
     {
-        "text": "life",
+        "text": "part",
+        "weight": 6
+    },
+    {
+        "text": "event",
+        "weight": 6
+    },
+    {
+        "text": "november",
+        "weight": 6
+    },
+    {
+        "text": "high",
         "weight": 6
     },
     {
@@ -192,11 +284,7 @@
         "weight": 6
     },
     {
-        "text": "full",
-        "weight": 6
-    },
-    {
-        "text": "change",
+        "text": "since",
         "weight": 6
     },
     {
@@ -204,11 +292,11 @@
         "weight": 6
     },
     {
-        "text": "minister",
+        "text": "insists",
         "weight": 6
     },
     {
-        "text": "insists",
+        "text": "iranian",
         "weight": 6
     },
     {
@@ -224,7 +312,35 @@
         "weight": 6
     },
     {
-        "text": "camp",
+        "text": "look",
+        "weight": 6
+    },
+    {
+        "text": "young",
+        "weight": 6
+    },
+    {
+        "text": "migrant",
+        "weight": 6
+    },
+    {
+        "text": "backgrounds",
+        "weight": 6
+    },
+    {
+        "text": "violence",
+        "weight": 6
+    },
+    {
+        "text": "great",
+        "weight": 6
+    },
+    {
+        "text": "auspol",
+        "weight": 6
+    },
+    {
+        "text": "sydney",
         "weight": 6
     },
     {
@@ -232,7 +348,7 @@
         "weight": 6
     },
     {
-        "text": "well",
+        "text": "media",
         "weight": 6
     },
     {
@@ -248,7 +364,7 @@
         "weight": 6
     },
     {
-        "text": "w",
+        "text": "morrison",
         "weight": 6
     }
 ]
