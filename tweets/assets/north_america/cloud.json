@@ -1,50 +1,70 @@
 [
     {
         "text": "children",
-        "weight": 48
+        "weight": 59
     },
     {
         "text": "people",
-        "weight": 42
+        "weight": 51
     },
     {
         "text": "syrian",
-        "weight": 32
-    },
-    {
-        "text": "immigration",
-        "weight": 30
+        "weight": 38
     },
     {
         "text": "help",
-        "weight": 28
+        "weight": 33
+    },
+    {
+        "text": "immigration",
+        "weight": 32
     },
     {
         "text": "family",
-        "weight": 27
+        "weight": 29
     },
     {
         "text": "sesame",
-        "weight": 26
+        "weight": 29
     },
     {
         "text": "asylum",
-        "weight": 22
+        "weight": 27
     },
     {
-        "text": "world",
-        "weight": 20
+        "text": "canada",
+        "weight": 26
     },
     {
         "text": "immigrants",
-        "weight": 20
+        "weight": 25
+    },
+    {
+        "text": "support",
+        "weight": 23
+    },
+    {
+        "text": "like",
+        "weight": 23
+    },
+    {
+        "text": "world",
+        "weight": 22
+    },
+    {
+        "text": "today",
+        "weight": 22
+    },
+    {
+        "text": "country",
+        "weight": 21
     },
     {
         "text": "climate",
         "weight": 20
     },
     {
-        "text": "support",
+        "text": "human",
         "weight": 19
     },
     {
@@ -52,27 +72,51 @@
         "weight": 19
     },
     {
-        "text": "today",
+        "text": "time",
         "weight": 19
     },
     {
-        "text": "like",
+        "text": "over",
         "weight": 19
+    },
+    {
+        "text": "some",
+        "weight": 19
+    },
+    {
+        "text": "should",
+        "weight": 18
+    },
+    {
+        "text": "trump",
+        "weight": 18
     },
     {
         "text": "million",
         "weight": 18
     },
     {
-        "text": "country",
-        "weight": 17
-    },
-    {
         "text": "border",
+        "weight": 18
+    },
+    {
+        "text": "syria",
+        "weight": 18
+    },
+    {
+        "text": "camp",
+        "weight": 18
+    },
+    {
+        "text": "america",
         "weight": 17
     },
     {
-        "text": "trump",
+        "text": "years",
+        "weight": 17
+    },
+    {
+        "text": "t",
         "weight": 16
     },
     {
@@ -80,55 +124,51 @@
         "weight": 16
     },
     {
-        "text": "canada",
+        "text": "show",
         "weight": 16
     },
     {
-        "text": "over",
+        "text": "crisis",
         "weight": 16
-    },
-    {
-        "text": "camp",
-        "weight": 16
-    },
-    {
-        "text": "should",
-        "weight": 15
-    },
-    {
-        "text": "t",
-        "weight": 15
     },
     {
         "text": "story",
         "weight": 15
     },
     {
-        "text": "time",
+        "text": "migrants",
         "weight": 15
     },
     {
-        "text": "syria",
+        "text": "home",
         "weight": 15
     },
     {
-        "text": "crisis",
-        "weight": 15
-    },
-    {
-        "text": "years",
-        "weight": 15
+        "text": "rights",
+        "weight": 14
     },
     {
         "text": "citizenship",
         "weight": 14
     },
     {
-        "text": "america",
+        "text": "want",
         "weight": 14
     },
     {
-        "text": "human",
+        "text": "first",
+        "weight": 14
+    },
+    {
+        "text": "white",
+        "weight": 13
+    },
+    {
+        "text": "kids",
+        "weight": 13
+    },
+    {
+        "text": "resettlement",
         "weight": 13
     },
     {
@@ -136,15 +176,23 @@
         "weight": 13
     },
     {
+        "text": "work",
+        "weight": 13
+    },
+    {
         "text": "international",
         "weight": 13
     },
     {
-        "text": "show",
+        "text": "good",
         "weight": 13
     },
     {
-        "text": "migrants",
+        "text": "turkey",
+        "weight": 13
+    },
+    {
+        "text": "back",
         "weight": 13
     },
     {
@@ -152,27 +200,35 @@
         "weight": 13
     },
     {
-        "text": "home",
-        "weight": 13
-    },
-    {
-        "text": "some",
-        "weight": 13
-    },
-    {
-        "text": "kids",
-        "weight": 12
-    },
-    {
-        "text": "rights",
-        "weight": 12
-    },
-    {
-        "text": "back",
-        "weight": 12
-    },
-    {
         "text": "education",
+        "weight": 13
+    },
+    {
+        "text": "camps",
+        "weight": 13
+    },
+    {
+        "text": "right",
+        "weight": 12
+    },
+    {
+        "text": "rescue",
+        "weight": 12
+    },
+    {
+        "text": "countries",
+        "weight": 12
+    },
+    {
+        "text": "lives",
+        "weight": 12
+    },
+    {
+        "text": "into",
+        "weight": 12
+    },
+    {
+        "text": "street",
         "weight": 12
     },
     {
@@ -184,15 +240,31 @@
         "weight": 12
     },
     {
-        "text": "rescue",
+        "text": "policy",
         "weight": 11
     },
     {
-        "text": "good",
+        "text": "year",
         "weight": 11
     },
     {
-        "text": "lives",
+        "text": "while",
+        "weight": 11
+    },
+    {
+        "text": "states",
+        "weight": 11
+    },
+    {
+        "text": "after",
+        "weight": 11
+    },
+    {
+        "text": "since",
+        "weight": 11
+    },
+    {
+        "text": "health",
         "weight": 11
     },
     {
@@ -200,19 +272,23 @@
         "weight": 11
     },
     {
-        "text": "camps",
+        "text": "under",
         "weight": 11
     },
     {
-        "text": "into",
+        "text": "school",
         "weight": 11
     },
     {
-        "text": "want",
+        "text": "students",
         "weight": 11
     },
     {
-        "text": "first",
+        "text": "k",
+        "weight": 11
+    },
+    {
+        "text": "w",
         "weight": 11
     },
     {
@@ -220,11 +296,7 @@
         "weight": 10
     },
     {
-        "text": "while",
-        "weight": 10
-    },
-    {
-        "text": "states",
+        "text": "united",
         "weight": 10
     },
     {
@@ -232,15 +304,15 @@
         "weight": 10
     },
     {
-        "text": "right",
+        "text": "political",
+        "weight": 10
+    },
+    {
+        "text": "government",
         "weight": 10
     },
     {
         "text": "know",
-        "weight": 10
-    },
-    {
-        "text": "after",
         "weight": 10
     },
     {
@@ -260,6 +332,18 @@
         "weight": 10
     },
     {
+        "text": "east",
+        "weight": 10
+    },
+    {
+        "text": "become",
+        "weight": 10
+    },
+    {
+        "text": "groups",
+        "weight": 10
+    },
+    {
         "text": "program",
         "weight": 10
     },
@@ -272,7 +356,7 @@
         "weight": 10
     },
     {
-        "text": "under",
+        "text": "every",
         "weight": 10
     },
     {
@@ -280,15 +364,7 @@
         "weight": 10
     },
     {
-        "text": "school",
-        "weight": 10
-    },
-    {
-        "text": "students",
-        "weight": 10
-    },
-    {
-        "text": "w",
+        "text": "violence",
         "weight": 10
     },
     {
@@ -296,11 +372,7 @@
         "weight": 10
     },
     {
-        "text": "policy",
-        "weight": 9
-    },
-    {
-        "text": "year",
+        "text": "still",
         "weight": 9
     },
     {
@@ -312,15 +384,11 @@
         "weight": 9
     },
     {
+        "text": "displaced",
+        "weight": 9
+    },
+    {
         "text": "arrived",
-        "weight": 9
-    },
-    {
-        "text": "resettlement",
-        "weight": 9
-    },
-    {
-        "text": "work",
         "weight": 9
     },
     {
@@ -328,27 +396,31 @@
         "weight": 9
     },
     {
-        "text": "east",
+        "text": "join",
         "weight": 9
     },
     {
-        "text": "become",
+        "text": "iraqi",
         "weight": 9
     },
     {
-        "text": "since",
+        "text": "australia",
         "weight": 9
     },
     {
-        "text": "turkey",
+        "text": "mexico",
         "weight": 9
     },
     {
-        "text": "health",
+        "text": "such",
         "weight": 9
     },
     {
-        "text": "every",
+        "text": "out",
+        "weight": 9
+    },
+    {
+        "text": "”",
         "weight": 9
     },
     {
@@ -356,27 +428,23 @@
         "weight": 9
     },
     {
-        "text": "street",
+        "text": "women",
         "weight": 9
     },
     {
-        "text": "white",
-        "weight": 8
+        "text": "state",
+        "weight": 9
     },
     {
-        "text": "united",
-        "weight": 8
-    },
-    {
-        "text": "political",
-        "weight": 8
-    },
-    {
-        "text": "government",
-        "weight": 8
+        "text": "take",
+        "weight": 9
     },
     {
         "text": "father",
+        "weight": 8
+    },
+    {
+        "text": "history",
         "weight": 8
     },
     {
@@ -392,19 +460,23 @@
         "weight": 8
     },
     {
-        "text": "join",
+        "text": "millions",
         "weight": 8
     },
     {
-        "text": "countries",
+        "text": "yesterday",
+        "weight": 8
+    },
+    {
+        "text": "says",
+        "weight": 8
+    },
+    {
+        "text": "even",
         "weight": 8
     },
     {
         "text": "immigrant",
-        "weight": 8
-    },
-    {
-        "text": "groups",
         "weight": 8
     },
     {
@@ -420,6 +492,18 @@
         "weight": 8
     },
     {
+        "text": "house",
+        "weight": 8
+    },
+    {
+        "text": "learning",
+        "weight": 8
+    },
+    {
+        "text": "provide",
+        "weight": 8
+    },
+    {
         "text": "child",
         "weight": 8
     },
@@ -428,15 +512,7 @@
         "weight": 8
     },
     {
-        "text": "violence",
-        "weight": 8
-    },
-    {
-        "text": "out",
-        "weight": 8
-    },
-    {
-        "text": "”",
+        "text": "send",
         "weight": 8
     },
     {
@@ -444,27 +520,55 @@
         "weight": 8
     },
     {
-        "text": "state",
+        "text": "last",
         "weight": 8
     },
     {
-        "text": "k",
+        "text": "trauma",
         "weight": 8
+    },
+    {
+        "text": "poor",
+        "weight": 8
+    },
+    {
+        "text": "seeking",
+        "weight": 8
+    },
+    {
+        "text": "safe",
+        "weight": 8
+    },
+    {
+        "text": "2019",
+        "weight": 8
+    },
+    {
+        "text": "aims",
+        "weight": 8
+    },
+    {
+        "text": "miller",
+        "weight": 7
+    },
+    {
+        "text": "said",
+        "weight": 7
     },
     {
         "text": "need",
         "weight": 7
     },
     {
-        "text": "still",
+        "text": "community",
         "weight": 7
     },
     {
-        "text": "history",
+        "text": "welcoming",
         "weight": 7
     },
     {
-        "text": "displaced",
+        "text": "foundation",
         "weight": 7
     },
     {
@@ -472,27 +576,15 @@
         "weight": 7
     },
     {
-        "text": "millions",
-        "weight": 7
-    },
-    {
         "text": "system",
         "weight": 7
     },
     {
-        "text": "iraqi",
-        "weight": 7
-    },
-    {
-        "text": "says",
+        "text": "thousands",
         "weight": 7
     },
     {
         "text": "against",
-        "weight": 7
-    },
-    {
-        "text": "australia",
         "weight": 7
     },
     {
@@ -504,27 +596,59 @@
         "weight": 7
     },
     {
-        "text": "learning",
+        "text": "much",
         "weight": 7
     },
     {
-        "text": "mexico",
+        "text": "tell",
         "weight": 7
     },
     {
-        "text": "women",
+        "text": "truth",
         "weight": 7
     },
     {
-        "text": "last",
+        "text": "teach",
         "weight": 7
     },
     {
-        "text": "trauma",
+        "text": "class",
         "weight": 7
     },
     {
-        "text": "poor",
+        "text": "arabic",
+        "weight": 7
+    },
+    {
+        "text": "parents",
+        "weight": 7
+    },
+    {
+        "text": "life",
+        "weight": 7
+    },
+    {
+        "text": "making",
+        "weight": 7
+    },
+    {
+        "text": "europe",
+        "weight": 7
+    },
+    {
+        "text": "three",
+        "weight": 7
+    },
+    {
+        "text": "month",
+        "weight": 7
+    },
+    {
+        "text": "across",
+        "weight": 7
+    },
+    {
+        "text": "administration",
         "weight": 7
     },
     {
@@ -532,15 +656,35 @@
         "weight": 7
     },
     {
+        "text": "staff",
+        "weight": 7
+    },
+    {
         "text": "make",
         "weight": 7
     },
     {
-        "text": "safe",
+        "text": "meet",
         "weight": 7
     },
     {
-        "text": "2019",
+        "text": "order",
+        "weight": 7
+    },
+    {
+        "text": "look",
+        "weight": 7
+    },
+    {
+        "text": "jesus",
+        "weight": 7
+    },
+    {
+        "text": "protection",
+        "weight": 7
+    },
+    {
+        "text": "local",
         "weight": 7
     },
     {
@@ -552,7 +696,11 @@
         "weight": 7
     },
     {
-        "text": "miller",
+        "text": "nationalist",
+        "weight": 6
+    },
+    {
+        "text": "federal",
         "weight": 6
     },
     {
@@ -560,11 +708,7 @@
         "weight": 6
     },
     {
-        "text": "said",
-        "weight": 6
-    },
-    {
-        "text": "community",
+        "text": "again",
         "weight": 6
     },
     {
@@ -572,7 +716,11 @@
         "weight": 6
     },
     {
-        "text": "welcoming",
+        "text": "forced",
+        "weight": 6
+    },
+    {
+        "text": "past",
         "weight": 6
     },
     {
@@ -580,23 +728,19 @@
         "weight": 6
     },
     {
-        "text": "foundation",
+        "text": "grant",
         "weight": 6
     },
     {
-        "text": "yesterday",
+        "text": "power",
         "weight": 6
     },
     {
-        "text": "thousands",
+        "text": "morning",
         "weight": 6
     },
     {
-        "text": "even",
-        "weight": 6
-    },
-    {
-        "text": "much",
+        "text": "faith",
         "weight": 6
     },
     {
@@ -604,15 +748,11 @@
         "weight": 6
     },
     {
-        "text": "tell",
+        "text": "come",
         "weight": 6
     },
     {
-        "text": "truth",
-        "weight": 6
-    },
-    {
-        "text": "teach",
+        "text": "article",
         "weight": 6
     },
     {
@@ -620,19 +760,11 @@
         "weight": 6
     },
     {
-        "text": "house",
+        "text": "families",
         "weight": 6
     },
     {
-        "text": "class",
-        "weight": 6
-    },
-    {
-        "text": "provide",
-        "weight": 6
-    },
-    {
-        "text": "parents",
+        "text": "always",
         "weight": 6
     },
     {
@@ -640,7 +772,11 @@
         "weight": 6
     },
     {
-        "text": "life",
+        "text": "both",
+        "weight": 6
+    },
+    {
+        "text": "project",
         "weight": 6
     },
     {
@@ -652,11 +788,15 @@
         "weight": 6
     },
     {
+        "text": "friend",
+        "weight": 6
+    },
+    {
         "text": "toronto",
         "weight": 6
     },
     {
-        "text": "making",
+        "text": "really",
         "weight": 6
     },
     {
@@ -664,7 +804,11 @@
         "weight": 6
     },
     {
-        "text": "europe",
+        "text": "share",
+        "weight": 6
+    },
+    {
+        "text": "does",
         "weight": 6
     },
     {
@@ -676,11 +820,11 @@
         "weight": 6
     },
     {
-        "text": "three",
+        "text": "away",
         "weight": 6
     },
     {
-        "text": "administration",
+        "text": "another",
         "weight": 6
     },
     {
@@ -688,7 +832,7 @@
         "weight": 6
     },
     {
-        "text": "seeking",
+        "text": "including",
         "weight": 6
     },
     {
@@ -696,15 +840,19 @@
         "weight": 6
     },
     {
-        "text": "staff",
+        "text": "well",
         "weight": 6
     },
     {
-        "text": "meet",
+        "text": "proud",
         "weight": 6
     },
     {
-        "text": "take",
+        "text": "came",
+        "weight": 6
+    },
+    {
+        "text": "happening",
         "weight": 6
     },
     {
@@ -712,11 +860,11 @@
         "weight": 6
     },
     {
-        "text": "protection",
+        "text": "regime",
         "weight": 6
     },
     {
-        "text": "regime",
+        "text": "resettled",
         "weight": 6
     },
     {
