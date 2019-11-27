@@ -5,26 +5,34 @@
     },
     {
         "text": "people",
-        "weight": 20
+        "weight": 21
     },
     {
         "text": "children",
+        "weight": 19
+    },
+    {
+        "text": "canada",
         "weight": 18
+    },
+    {
+        "text": "country",
+        "weight": 16
     },
     {
         "text": "countries",
         "weight": 15
     },
     {
-        "text": "canada",
+        "text": "after",
         "weight": 15
     },
     {
-        "text": "country",
-        "weight": 14
+        "text": "like",
+        "weight": 15
     },
     {
-        "text": "after",
+        "text": "help",
         "weight": 14
     },
     {
@@ -32,15 +40,11 @@
         "weight": 14
     },
     {
-        "text": "help",
-        "weight": 13
-    },
-    {
         "text": "minister",
         "weight": 13
     },
     {
-        "text": "like",
+        "text": "because",
         "weight": 13
     },
     {
@@ -48,19 +52,31 @@
         "weight": 12
     },
     {
-        "text": "because",
+        "text": "over",
         "weight": 12
     },
     {
-        "text": "over",
-        "weight": 12
+        "text": "syrian",
+        "weight": 11
+    },
+    {
+        "text": "nigeria",
+        "weight": 10
     },
     {
         "text": "want",
         "weight": 10
     },
     {
+        "text": "migrants",
+        "weight": 10
+    },
+    {
         "text": "south",
+        "weight": 10
+    },
+    {
+        "text": "tents",
         "weight": 10
     },
     {
@@ -80,23 +96,35 @@
         "weight": 10
     },
     {
-        "text": "nigeria",
-        "weight": 9
+        "text": "know",
+        "weight": 10
     },
     {
-        "text": "migrants",
-        "weight": 9
-    },
-    {
-        "text": "tents",
-        "weight": 9
-    },
-    {
-        "text": "syrian",
-        "weight": 9
+        "text": "camps",
+        "weight": 10
     },
     {
         "text": "trump",
+        "weight": 9
+    },
+    {
+        "text": "america",
+        "weight": 9
+    },
+    {
+        "text": "work",
+        "weight": 9
+    },
+    {
+        "text": "other",
+        "weight": 9
+    },
+    {
+        "text": "httpsegyptianstreets2018femalearchitectinventstentscollectrainwaterstoresolarenergy",
+        "weight": 9
+    },
+    {
+        "text": "making",
         "weight": 9
     },
     {
@@ -108,19 +136,23 @@
         "weight": 9
     },
     {
-        "text": "camps",
+        "text": "book",
         "weight": 9
     },
     {
+        "text": "climate",
+        "weight": 9
+    },
+    {
+        "text": "change",
+        "weight": 9
+    },
+    {
+        "text": "border",
+        "weight": 8
+    },
+    {
         "text": "years",
-        "weight": 8
-    },
-    {
-        "text": "america",
-        "weight": 8
-    },
-    {
-        "text": "work",
         "weight": 8
     },
     {
@@ -128,11 +160,63 @@
         "weight": 8
     },
     {
-        "text": "httpsegyptianstreets2018femalearchitectinventstentscollectrainwaterstoresolarenergy",
+        "text": "story",
+        "weight": 8
+    },
+    {
+        "text": "world",
+        "weight": 8
+    },
+    {
+        "text": "care",
+        "weight": 8
+    },
+    {
+        "text": "inspiring",
+        "weight": 8
+    },
+    {
+        "text": "woman",
+        "weight": 8
+    },
+    {
+        "text": "invents",
+        "weight": 8
+    },
+    {
+        "text": "collect",
+        "weight": 8
+    },
+    {
+        "text": "rainwater",
+        "weight": 8
+    },
+    {
+        "text": "store",
+        "weight": 8
+    },
+    {
+        "text": "solar",
+        "weight": 8
+    },
+    {
+        "text": "energy",
+        "weight": 8
+    },
+    {
+        "text": "egyptian",
+        "weight": 8
+    },
+    {
+        "text": "streets",
         "weight": 8
     },
     {
         "text": "should",
+        "weight": 8
+    },
+    {
+        "text": "take",
         "weight": 8
     },
     {
@@ -144,11 +228,19 @@
         "weight": 8
     },
     {
-        "text": "—",
+        "text": "immigrants",
         "weight": 8
     },
     {
-        "text": "book",
+        "text": "life",
+        "weight": 8
+    },
+    {
+        "text": "also",
+        "weight": 8
+    },
+    {
+        "text": "—",
         "weight": 8
     },
     {
@@ -164,7 +256,7 @@
         "weight": 7
     },
     {
-        "text": "border",
+        "text": "violence",
         "weight": 7
     },
     {
@@ -173,6 +265,14 @@
     },
     {
         "text": "programs",
+        "weight": 7
+    },
+    {
+        "text": "year",
+        "weight": 7
+    },
+    {
+        "text": "home",
         "weight": 7
     },
     {
@@ -192,59 +292,7 @@
         "weight": 7
     },
     {
-        "text": "story",
-        "weight": 7
-    },
-    {
-        "text": "world",
-        "weight": 7
-    },
-    {
-        "text": "care",
-        "weight": 7
-    },
-    {
-        "text": "inspiring",
-        "weight": 7
-    },
-    {
-        "text": "woman",
-        "weight": 7
-    },
-    {
-        "text": "invents",
-        "weight": 7
-    },
-    {
-        "text": "collect",
-        "weight": 7
-    },
-    {
-        "text": "rainwater",
-        "weight": 7
-    },
-    {
-        "text": "store",
-        "weight": 7
-    },
-    {
-        "text": "solar",
-        "weight": 7
-    },
-    {
-        "text": "energy",
-        "weight": 7
-    },
-    {
-        "text": "egyptian",
-        "weight": 7
-    },
-    {
-        "text": "streets",
-        "weight": 7
-    },
-    {
-        "text": "making",
+        "text": "venezuelan",
         "weight": 7
     },
     {
@@ -264,7 +312,7 @@
         "weight": 7
     },
     {
-        "text": "immigrants",
+        "text": "americans",
         "weight": 7
     },
     {
@@ -272,7 +320,11 @@
         "weight": 7
     },
     {
-        "text": "also",
+        "text": "security",
+        "weight": 7
+    },
+    {
+        "text": "family",
         "weight": 7
     },
     {
@@ -284,16 +336,20 @@
         "weight": 7
     },
     {
-        "text": "climate",
-        "weight": 7
-    },
-    {
-        "text": "change",
+        "text": "already",
         "weight": 7
     },
     {
         "text": "global",
         "weight": 7
+    },
+    {
+        "text": "called",
+        "weight": 6
+    },
+    {
+        "text": "‘",
+        "weight": 6
     },
     {
         "text": "says",
@@ -304,11 +360,11 @@
         "weight": 6
     },
     {
-        "text": "problem",
+        "text": "•",
         "weight": 6
     },
     {
-        "text": "home",
+        "text": "problem",
         "weight": 6
     },
     {
@@ -320,19 +376,19 @@
         "weight": 6
     },
     {
+        "text": "come",
+        "weight": 6
+    },
+    {
         "text": "trying",
         "weight": 6
     },
     {
-        "text": "venezuelan",
+        "text": "some",
         "weight": 6
     },
     {
-        "text": "other",
-        "weight": 6
-    },
-    {
-        "text": "take",
+        "text": "young",
         "weight": 6
     },
     {
@@ -344,7 +400,15 @@
         "weight": 6
     },
     {
+        "text": "borders",
+        "weight": 6
+    },
+    {
         "text": "nothing",
+        "weight": 6
+    },
+    {
+        "text": "women",
         "weight": 6
     },
     {
@@ -352,7 +416,19 @@
         "weight": 6
     },
     {
+        "text": "need",
+        "weight": 6
+    },
+    {
         "text": "american",
+        "weight": 6
+    },
+    {
+        "text": "open",
+        "weight": 6
+    },
+    {
+        "text": "very",
         "weight": 6
     },
     {
@@ -360,19 +436,7 @@
         "weight": 6
     },
     {
-        "text": "life",
-        "weight": 6
-    },
-    {
         "text": "white",
-        "weight": 6
-    },
-    {
-        "text": "security",
-        "weight": 6
-    },
-    {
-        "text": "know",
         "weight": 6
     },
     {
@@ -388,7 +452,15 @@
         "weight": 6
     },
     {
+        "text": "which",
+        "weight": 6
+    },
+    {
         "text": "education",
+        "weight": 6
+    },
+    {
+        "text": "administration",
         "weight": 6
     },
     {
