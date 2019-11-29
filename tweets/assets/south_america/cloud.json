@@ -1,50 +1,66 @@
 [
     {
+        "text": "people",
+        "weight": 23
+    },
+    {
         "text": "immigration",
         "weight": 23
     },
     {
-        "text": "people",
-        "weight": 21
+        "text": "children",
+        "weight": 20
     },
     {
-        "text": "children",
+        "text": "nigeria",
         "weight": 19
+    },
+    {
+        "text": "countries",
+        "weight": 18
     },
     {
         "text": "canada",
         "weight": 18
     },
     {
+        "text": "like",
+        "weight": 18
+    },
+    {
+        "text": "help",
+        "weight": 17
+    },
+    {
         "text": "country",
         "weight": 16
     },
     {
-        "text": "countries",
-        "weight": 15
-    },
-    {
         "text": "after",
-        "weight": 15
-    },
-    {
-        "text": "like",
-        "weight": 15
-    },
-    {
-        "text": "help",
-        "weight": 14
+        "weight": 16
     },
     {
         "text": "knitfor",
-        "weight": 14
+        "weight": 16
     },
     {
         "text": "minister",
-        "weight": 13
+        "weight": 14
+    },
+    {
+        "text": "want",
+        "weight": 14
     },
     {
         "text": "because",
+        "weight": 13
+    },
+    {
+        "text": "migrants",
+        "weight": 13
+    },
+    {
+        "text": "unhcr",
         "weight": 13
     },
     {
@@ -52,7 +68,31 @@
         "weight": 12
     },
     {
+        "text": "south",
+        "weight": 12
+    },
+    {
+        "text": "tents",
+        "weight": 12
+    },
+    {
+        "text": "work",
+        "weight": 12
+    },
+    {
         "text": "over",
+        "weight": 12
+    },
+    {
+        "text": "into",
+        "weight": 12
+    },
+    {
+        "text": "2019",
+        "weight": 12
+    },
+    {
+        "text": "camps",
         "weight": 12
     },
     {
@@ -60,31 +100,79 @@
         "weight": 11
     },
     {
-        "text": "nigeria",
-        "weight": 10
-    },
-    {
-        "text": "want",
-        "weight": 10
-    },
-    {
-        "text": "migrants",
-        "weight": 10
-    },
-    {
-        "text": "south",
-        "weight": 10
-    },
-    {
-        "text": "tents",
-        "weight": 10
+        "text": "trump",
+        "weight": 11
     },
     {
         "text": "support",
-        "weight": 10
+        "weight": 11
+    },
+    {
+        "text": "venezuelan",
+        "weight": 11
     },
     {
         "text": "t",
+        "weight": 11
+    },
+    {
+        "text": "httpsegyptianstreets2018femalearchitectinventstentscollectrainwaterstoresolarenergy",
+        "weight": 11
+    },
+    {
+        "text": "know",
+        "weight": 11
+    },
+    {
+        "text": "also",
+        "weight": 11
+    },
+    {
+        "text": "economic",
+        "weight": 10
+    },
+    {
+        "text": "care",
+        "weight": 10
+    },
+    {
+        "text": "other",
+        "weight": 10
+    },
+    {
+        "text": "inspiring",
+        "weight": 10
+    },
+    {
+        "text": "woman",
+        "weight": 10
+    },
+    {
+        "text": "invents",
+        "weight": 10
+    },
+    {
+        "text": "collect",
+        "weight": 10
+    },
+    {
+        "text": "rainwater",
+        "weight": 10
+    },
+    {
+        "text": "store",
+        "weight": 10
+    },
+    {
+        "text": "solar",
+        "weight": 10
+    },
+    {
+        "text": "energy",
+        "weight": 10
+    },
+    {
+        "text": "women",
         "weight": 10
     },
     {
@@ -92,19 +180,27 @@
         "weight": 10
     },
     {
-        "text": "into",
+        "text": "—",
         "weight": 10
     },
     {
-        "text": "know",
+        "text": "book",
         "weight": 10
     },
     {
-        "text": "camps",
+        "text": "something",
         "weight": 10
     },
     {
-        "text": "trump",
+        "text": "climate",
+        "weight": 10
+    },
+    {
+        "text": "violence",
+        "weight": 9
+    },
+    {
+        "text": "home",
         "weight": 9
     },
     {
@@ -112,15 +208,15 @@
         "weight": 9
     },
     {
-        "text": "work",
+        "text": "egyptian",
         "weight": 9
     },
     {
-        "text": "other",
+        "text": "streets",
         "weight": 9
     },
     {
-        "text": "httpsegyptianstreets2018femalearchitectinventstentscollectrainwaterstoresolarenergy",
+        "text": "take",
         "weight": 9
     },
     {
@@ -128,19 +224,15 @@
         "weight": 9
     },
     {
+        "text": "community",
+        "weight": 9
+    },
+    {
         "text": "suicide",
         "weight": 9
     },
     {
-        "text": "2019",
-        "weight": 9
-    },
-    {
-        "text": "book",
-        "weight": 9
-    },
-    {
-        "text": "climate",
+        "text": "time",
         "weight": 9
     },
     {
@@ -148,15 +240,27 @@
         "weight": 9
     },
     {
+        "text": "global",
+        "weight": 9
+    },
+    {
         "text": "border",
         "weight": 8
     },
     {
-        "text": "years",
+        "text": "state",
         "weight": 8
     },
     {
-        "text": "economic",
+        "text": "year",
+        "weight": 8
+    },
+    {
+        "text": "displaced",
+        "weight": 8
+    },
+    {
+        "text": "years",
         "weight": 8
     },
     {
@@ -168,47 +272,7 @@
         "weight": 8
     },
     {
-        "text": "care",
-        "weight": 8
-    },
-    {
-        "text": "inspiring",
-        "weight": 8
-    },
-    {
-        "text": "woman",
-        "weight": 8
-    },
-    {
-        "text": "invents",
-        "weight": 8
-    },
-    {
-        "text": "collect",
-        "weight": 8
-    },
-    {
-        "text": "rainwater",
-        "weight": 8
-    },
-    {
-        "text": "store",
-        "weight": 8
-    },
-    {
-        "text": "solar",
-        "weight": 8
-    },
-    {
-        "text": "energy",
-        "weight": 8
-    },
-    {
-        "text": "egyptian",
-        "weight": 8
-    },
-    {
-        "text": "streets",
+        "text": "young",
         "weight": 8
     },
     {
@@ -216,7 +280,11 @@
         "weight": 8
     },
     {
-        "text": "take",
+        "text": "fraud",
+        "weight": 8
+    },
+    {
+        "text": "open",
         "weight": 8
     },
     {
@@ -236,18 +304,6 @@
         "weight": 8
     },
     {
-        "text": "also",
-        "weight": 8
-    },
-    {
-        "text": "—",
-        "weight": 8
-    },
-    {
-        "text": "time",
-        "weight": 8
-    },
-    {
         "text": "citizenship",
         "weight": 8
     },
@@ -256,7 +312,11 @@
         "weight": 7
     },
     {
-        "text": "violence",
+        "text": "‘",
+        "weight": 7
+    },
+    {
+        "text": "pretoria",
         "weight": 7
     },
     {
@@ -264,19 +324,19 @@
         "weight": 7
     },
     {
+        "text": "needs",
+        "weight": 7
+    },
+    {
         "text": "programs",
         "weight": 7
     },
     {
-        "text": "year",
-        "weight": 7
-    },
-    {
-        "text": "home",
-        "weight": 7
-    },
-    {
         "text": "africa",
+        "weight": 7
+    },
+    {
+        "text": "come",
         "weight": 7
     },
     {
@@ -292,11 +352,23 @@
         "weight": 7
     },
     {
-        "text": "venezuelan",
+        "text": "place",
         "weight": 7
     },
     {
-        "text": "fraud",
+        "text": "some",
+        "weight": 7
+    },
+    {
+        "text": "borders",
+        "weight": 7
+    },
+    {
+        "text": "need",
+        "weight": 7
+    },
+    {
+        "text": "american",
         "weight": 7
     },
     {
@@ -305,6 +377,10 @@
     },
     {
         "text": "complex",
+        "weight": 7
+    },
+    {
+        "text": "very",
         "weight": 7
     },
     {
@@ -332,6 +408,10 @@
         "weight": 7
     },
     {
+        "text": "which",
+        "weight": 7
+    },
+    {
         "text": "since",
         "weight": 7
     },
@@ -340,7 +420,11 @@
         "weight": 7
     },
     {
-        "text": "global",
+        "text": "idps",
+        "weight": 7
+    },
+    {
+        "text": "communities",
         "weight": 7
     },
     {
@@ -348,7 +432,11 @@
         "weight": 6
     },
     {
-        "text": "‘",
+        "text": "great",
+        "weight": 6
+    },
+    {
+        "text": "plan",
         "weight": 6
     },
     {
@@ -356,7 +444,7 @@
         "weight": 6
     },
     {
-        "text": "pretoria",
+        "text": "between",
         "weight": 6
     },
     {
@@ -368,15 +456,7 @@
         "weight": 6
     },
     {
-        "text": "displaced",
-        "weight": 6
-    },
-    {
         "text": "syria",
-        "weight": 6
-    },
-    {
-        "text": "come",
         "weight": 6
     },
     {
@@ -384,11 +464,11 @@
         "weight": 6
     },
     {
-        "text": "some",
+        "text": "israel",
         "weight": 6
     },
     {
-        "text": "young",
+        "text": "right",
         "weight": 6
     },
     {
@@ -400,35 +480,15 @@
         "weight": 6
     },
     {
-        "text": "borders",
-        "weight": 6
-    },
-    {
         "text": "nothing",
         "weight": 6
     },
     {
-        "text": "women",
+        "text": "europe",
         "weight": 6
     },
     {
         "text": "profit",
-        "weight": 6
-    },
-    {
-        "text": "need",
-        "weight": 6
-    },
-    {
-        "text": "american",
-        "weight": 6
-    },
-    {
-        "text": "open",
-        "weight": 6
-    },
-    {
-        "text": "very",
         "weight": 6
     },
     {
@@ -440,19 +500,27 @@
         "weight": 6
     },
     {
+        "text": "food",
+        "weight": 6
+    },
+    {
+        "text": "face",
+        "weight": 6
+    },
+    {
         "text": "camp",
         "weight": 6
     },
     {
+        "text": "thousands",
+        "weight": 6
+    },
+    {
+        "text": "good",
+        "weight": 6
+    },
+    {
         "text": "around",
-        "weight": 6
-    },
-    {
-        "text": "something",
-        "weight": 6
-    },
-    {
-        "text": "which",
         "weight": 6
     },
     {
@@ -464,7 +532,19 @@
         "weight": 6
     },
     {
-        "text": "unhcr",
+        "text": "much",
+        "weight": 6
+    },
+    {
+        "text": "national",
+        "weight": 6
+    },
+    {
+        "text": "safe",
+        "weight": 6
+    },
+    {
+        "text": "states",
         "weight": 6
     }
 ]
