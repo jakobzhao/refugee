@@ -1,18 +1,22 @@
 [
     {
         "text": "people",
-        "weight": 24
+        "weight": 18
     },
     {
-        "text": "help",
-        "weight": 12
+        "text": "support",
+        "weight": 10
     },
     {
         "text": "displaced",
-        "weight": 11
+        "weight": 10
     },
     {
-        "text": "need",
+        "text": "years",
+        "weight": 10
+    },
+    {
+        "text": "camp",
         "weight": 9
     },
     {
@@ -20,103 +24,91 @@
         "weight": 9
     },
     {
-        "text": "medevac",
+        "text": "rohingya",
         "weight": 9
     },
     {
-        "text": "dead",
+        "text": "auspol",
         "weight": 9
     },
     {
-        "text": "over",
-        "weight": 8
+        "text": "help",
+        "weight": 9
     },
     {
-        "text": "t",
-        "weight": 8
-    },
-    {
-        "text": "still",
-        "weight": 8
-    },
-    {
-        "text": "asylum",
+        "text": "other",
         "weight": 8
     },
     {
         "text": "world",
-        "weight": 7
-    },
-    {
-        "text": "support",
-        "weight": 7
-    },
-    {
-        "text": "think",
-        "weight": 7
-    },
-    {
-        "text": "know",
-        "weight": 7
-    },
-    {
-        "text": "auspol",
-        "weight": 7
-    },
-    {
-        "text": "country",
-        "weight": 7
-    },
-    {
-        "text": "rohingya",
-        "weight": 7
-    },
-    {
-        "text": "give",
-        "weight": 7
-    },
-    {
-        "text": "migrants",
-        "weight": 7
-    },
-    {
-        "text": "crisis",
-        "weight": 6
-    },
-    {
-        "text": "other",
-        "weight": 6
+        "weight": 8
     },
     {
         "text": "today",
-        "weight": 6
+        "weight": 8
     },
     {
-        "text": "camp",
-        "weight": 6
+        "text": "dead",
+        "weight": 8
     },
     {
-        "text": "students",
-        "weight": 6
+        "text": "medevac",
+        "weight": 8
+    },
+    {
+        "text": "t",
+        "weight": 7
+    },
+    {
+        "text": "need",
+        "weight": 7
+    },
+    {
+        "text": "syrian",
+        "weight": 7
     },
     {
         "text": "like",
+        "weight": 7
+    },
+    {
+        "text": "ks",
         "weight": 6
     },
     {
-        "text": "years",
+        "text": "place",
         "weight": 6
     },
     {
-        "text": "protection",
+        "text": "migrants",
         "weight": 6
     },
     {
-        "text": "canada",
+        "text": "children",
         "weight": 6
     },
     {
-        "text": "christmas",
+        "text": "read",
+        "weight": 6
+    },
+    {
+        "text": "states",
+        "weight": 6
+    },
+    {
+        "text": "still",
+        "weight": 6
+    },
+    {
+        "text": "know",
+        "weight": 6
+    },
+    {
+        "text": "human",
+        "weight": 6
+    },
+    {
+        "text": "givingtuesday",
         "weight": 6
     }
 ]

@@ -1,86 +1,58 @@
 [
     {
         "text": "australia",
-        "weight": 24
+        "weight": 23
     },
     {
         "text": "medical",
-        "weight": 23
-    },
-    {
-        "text": "medevac",
-        "weight": 23
-    },
-    {
-        "text": "government",
-        "weight": 20
-    },
-    {
-        "text": "auspol",
         "weight": 17
     },
     {
-        "text": "morrison",
-        "weight": 16
+        "text": "people",
+        "weight": 17
     },
     {
         "text": "sick",
         "weight": 15
     },
     {
-        "text": "people",
-        "weight": 14
+        "text": "medevac",
+        "weight": 15
     },
     {
-        "text": "care",
+        "text": "government",
+        "weight": 15
+    },
+    {
+        "text": "auspol",
         "weight": 13
     },
     {
-        "text": "treatment",
-        "weight": 11
+        "text": "care",
+        "weight": 12
     },
     {
-        "text": "country",
-        "weight": 11
+        "text": "dutton",
+        "weight": 10
+    },
+    {
+        "text": "morrison",
+        "weight": 10
     },
     {
         "text": "australian",
         "weight": 10
     },
     {
-        "text": "australians",
-        "weight": 9
-    },
-    {
-        "text": "dutton",
-        "weight": 8
-    },
-    {
-        "text": "today",
+        "text": "country",
         "weight": 8
     },
     {
         "text": "detention",
-        "weight": 8
-    },
-    {
-        "text": "manus",
-        "weight": 8
-    },
-    {
-        "text": "govt",
         "weight": 7
     },
     {
-        "text": "lambie",
-        "weight": 7
-    },
-    {
-        "text": "medivac",
-        "weight": 7
-    },
-    {
-        "text": "protection",
+        "text": "treatment",
         "weight": 7
     },
     {
@@ -88,15 +60,15 @@
         "weight": 7
     },
     {
-        "text": "well",
-        "weight": 7
-    },
-    {
         "text": "deal",
         "weight": 6
     },
     {
-        "text": "ice",
+        "text": "govt",
+        "weight": 6
+    },
+    {
+        "text": "protection",
         "weight": 6
     },
     {
@@ -104,31 +76,15 @@
         "weight": 6
     },
     {
-        "text": "national",
-        "weight": 6
-    },
-    {
-        "text": "after",
-        "weight": 6
-    },
-    {
-        "text": "t",
-        "weight": 6
-    },
-    {
-        "text": "labor",
-        "weight": 6
-    },
-    {
-        "text": "security",
-        "weight": 6
-    },
-    {
         "text": "nauru",
         "weight": 6
     },
     {
-        "text": "repeal",
+        "text": "unhcr",
+        "weight": 6
+    },
+    {
+        "text": "well",
         "weight": 6
     }
 ]

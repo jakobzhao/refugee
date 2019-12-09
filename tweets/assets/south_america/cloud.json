@@ -1,18 +1,26 @@
 [
     {
         "text": "help",
-        "weight": 13
+        "weight": 15
     },
     {
         "text": "people",
         "weight": 12
     },
     {
+        "text": "christian",
+        "weight": 8
+    },
+    {
         "text": "other",
         "weight": 8
     },
     {
-        "text": "christian",
+        "text": "muslim",
+        "weight": 7
+    },
+    {
+        "text": "syrian",
         "weight": 7
     },
     {
@@ -20,27 +28,35 @@
         "weight": 7
     },
     {
+        "text": "over",
+        "weight": 6
+    },
+    {
+        "text": "officials",
+        "weight": 6
+    },
+    {
         "text": "country",
-        "weight": 7
-    },
-    {
-        "text": "nigeria",
         "weight": 6
     },
     {
-        "text": "news",
+        "text": "brazil",
         "weight": 6
     },
     {
-        "text": "says",
+        "text": "today",
         "weight": 6
     },
     {
-        "text": "muslim",
+        "text": "children",
         "weight": 6
     },
     {
         "text": "work",
+        "weight": 6
+    },
+    {
+        "text": "resettlement",
         "weight": 6
     },
     {

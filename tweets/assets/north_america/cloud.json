@@ -1,50 +1,30 @@
 [
     {
-        "text": "trump",
-        "weight": 14
-    },
-    {
         "text": "people",
-        "weight": 14
+        "weight": 13
     },
     {
         "text": "today",
-        "weight": 12
+        "weight": 10
     },
     {
-        "text": "resettlement",
-        "weight": 10
+        "text": "trump",
+        "weight": 8
+    },
+    {
+        "text": "immigrants",
+        "weight": 8
     },
     {
         "text": "welcome",
-        "weight": 10
-    },
-    {
-        "text": "country",
-        "weight": 10
-    },
-    {
-        "text": "like",
         "weight": 8
     },
     {
-        "text": "canada",
-        "weight": 8
-    },
-    {
-        "text": "medevac",
-        "weight": 8
-    },
-    {
-        "text": "asylum",
+        "text": "jesus",
         "weight": 7
     },
     {
-        "text": "need",
-        "weight": 7
-    },
-    {
-        "text": "t",
+        "text": "world",
         "weight": 7
     },
     {
@@ -52,47 +32,15 @@
         "weight": 7
     },
     {
-        "text": "continue",
+        "text": "support",
         "weight": 7
     },
     {
-        "text": "stand",
-        "weight": 6
+        "text": "canada",
+        "weight": 7
     },
     {
-        "text": "every",
-        "weight": 6
-    },
-    {
-        "text": "syrian",
-        "weight": 6
-    },
-    {
-        "text": "world",
-        "weight": 6
-    },
-    {
-        "text": "state",
-        "weight": 6
-    },
-    {
-        "text": "into",
-        "weight": 6
-    },
-    {
-        "text": "right",
-        "weight": 6
-    },
-    {
-        "text": "much",
-        "weight": 6
-    },
-    {
-        "text": "make",
-        "weight": 6
-    },
-    {
-        "text": "medical",
+        "text": "need",
         "weight": 6
     },
     {
@@ -100,11 +48,23 @@
         "weight": 6
     },
     {
-        "text": "know",
+        "text": "best",
         "weight": 6
     },
     {
-        "text": "care",
+        "text": "syrian",
+        "weight": 6
+    },
+    {
+        "text": "every",
+        "weight": 6
+    },
+    {
+        "text": "resettlement",
+        "weight": 6
+    },
+    {
+        "text": "know",
         "weight": 6
     }
 ]
