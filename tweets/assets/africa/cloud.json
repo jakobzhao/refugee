@@ -1,42 +1,30 @@
 [
     {
+        "text": "camp",
+        "weight": 12
+    },
+    {
         "text": "help",
-        "weight": 17
+        "weight": 12
     },
     {
         "text": "world",
-        "weight": 15
-    },
-    {
-        "text": "camp",
-        "weight": 13
-    },
-    {
-        "text": "million",
-        "weight": 10
-    },
-    {
-        "text": "kakuma",
-        "weight": 9
-    },
-    {
-        "text": "africa",
-        "weight": 9
-    },
-    {
-        "text": "nigeria",
-        "weight": 8
+        "weight": 11
     },
     {
         "text": "good",
-        "weight": 7
+        "weight": 10
     },
     {
-        "text": "people",
-        "weight": 7
+        "text": "million",
+        "weight": 9
     },
     {
         "text": "today",
+        "weight": 8
+    },
+    {
+        "text": "president",
         "weight": 7
     },
     {
@@ -44,7 +32,15 @@
         "weight": 7
     },
     {
-        "text": "2019",
+        "text": "health",
+        "weight": 7
+    },
+    {
+        "text": "country",
+        "weight": 7
+    },
+    {
+        "text": "people",
         "weight": 7
     },
     {
@@ -52,15 +48,23 @@
         "weight": 7
     },
     {
-        "text": "uganda",
-        "weight": 7
-    },
-    {
-        "text": "syrian",
+        "text": "human",
         "weight": 6
     },
     {
-        "text": "resettlement",
+        "text": "other",
+        "weight": 6
+    },
+    {
+        "text": "like",
+        "weight": 6
+    },
+    {
+        "text": "international",
+        "weight": 6
+    },
+    {
+        "text": "t",
         "weight": 6
     },
     {
@@ -68,19 +72,11 @@
         "weight": 6
     },
     {
-        "text": "education",
+        "text": "2019",
         "weight": 6
     },
     {
-        "text": "need",
-        "weight": 6
-    },
-    {
-        "text": "news",
-        "weight": 6
-    },
-    {
-        "text": "students",
+        "text": "kakuma",
         "weight": 6
     },
     {
@@ -88,7 +84,11 @@
         "weight": 6
     },
     {
-        "text": "t",
+        "text": "students",
+        "weight": 6
+    },
+    {
+        "text": "uganda",
         "weight": 6
     }
 ]

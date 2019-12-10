@@ -4,51 +4,59 @@
         "weight": 23
     },
     {
-        "text": "medical",
-        "weight": 17
+        "text": "medevac",
+        "weight": 19
     },
     {
         "text": "people",
-        "weight": 17
-    },
-    {
-        "text": "sick",
-        "weight": 15
-    },
-    {
-        "text": "medevac",
-        "weight": 15
+        "weight": 18
     },
     {
         "text": "government",
-        "weight": 15
+        "weight": 16
     },
     {
-        "text": "auspol",
-        "weight": 13
+        "text": "medical",
+        "weight": 14
     },
     {
-        "text": "care",
+        "text": "sick",
         "weight": 12
     },
     {
-        "text": "dutton",
+        "text": "care",
+        "weight": 10
+    },
+    {
+        "text": "auspol",
         "weight": 10
     },
     {
         "text": "morrison",
-        "weight": 10
-    },
-    {
-        "text": "australian",
-        "weight": 10
+        "weight": 8
     },
     {
         "text": "country",
         "weight": 8
     },
     {
+        "text": "australian",
+        "weight": 8
+    },
+    {
+        "text": "dutton",
+        "weight": 7
+    },
+    {
+        "text": "deal",
+        "weight": 7
+    },
+    {
         "text": "detention",
+        "weight": 7
+    },
+    {
+        "text": "today",
         "weight": 7
     },
     {
@@ -56,15 +64,23 @@
         "weight": 7
     },
     {
-        "text": "secret",
+        "text": "labor",
         "weight": 7
     },
     {
-        "text": "deal",
+        "text": "well",
+        "weight": 7
+    },
+    {
+        "text": "same",
         "weight": 6
     },
     {
-        "text": "govt",
+        "text": "after",
+        "weight": 6
+    },
+    {
+        "text": "lambie",
         "weight": 6
     },
     {
@@ -72,19 +88,11 @@
         "weight": 6
     },
     {
-        "text": "cruel",
+        "text": "come",
         "weight": 6
     },
     {
-        "text": "nauru",
-        "weight": 6
-    },
-    {
-        "text": "unhcr",
-        "weight": 6
-    },
-    {
-        "text": "well",
+        "text": "secret",
         "weight": 6
     }
 ]
