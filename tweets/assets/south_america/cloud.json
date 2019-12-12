@@ -1,42 +1,46 @@
 [
     {
-        "text": "people",
-        "weight": 11
+        "text": "country",
+        "weight": 13
     },
     {
         "text": "church",
         "weight": 9
     },
     {
-        "text": "unhcr",
-        "weight": 7
+        "text": "t",
+        "weight": 8
     },
     {
-        "text": "other",
-        "weight": 7
+        "text": "world",
+        "weight": 8
     },
     {
-        "text": "country",
-        "weight": 6
-    },
-    {
-        "text": "nativity",
-        "weight": 6
-    },
-    {
-        "text": "scene",
-        "weight": 6
-    },
-    {
-        "text": "separated",
-        "weight": 6
+        "text": "christian",
+        "weight": 8
     },
     {
         "text": "resettlement",
+        "weight": 8
+    },
+    {
+        "text": "settlement",
+        "weight": 7
+    },
+    {
+        "text": "climate",
         "weight": 6
     },
     {
-        "text": "says",
+        "text": "human",
+        "weight": 6
+    },
+    {
+        "text": "rights",
+        "weight": 6
+    },
+    {
+        "text": "other",
         "weight": 6
     }
 ]
