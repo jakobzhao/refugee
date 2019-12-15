@@ -1,14 +1,22 @@
 [
     {
-        "text": "people",
-        "weight": 14
+        "text": "world",
+        "weight": 16
     },
     {
-        "text": "church",
-        "weight": 14
+        "text": "people",
+        "weight": 15
+    },
+    {
+        "text": "jesus",
+        "weight": 13
     },
     {
         "text": "family",
+        "weight": 12
+    },
+    {
+        "text": "church",
         "weight": 12
     },
     {
@@ -16,99 +24,71 @@
         "weight": 12
     },
     {
-        "text": "jesus",
-        "weight": 12
+        "text": "mary",
+        "weight": 11
+    },
+    {
+        "text": "country",
+        "weight": 10
+    },
+    {
+        "text": "w",
+        "weight": 10
+    },
+    {
+        "text": "joseph",
+        "weight": 10
     },
     {
         "text": "separated",
         "weight": 10
     },
     {
-        "text": "world",
-        "weight": 10
+        "text": "syrian",
+        "weight": 9
     },
     {
         "text": "scene",
-        "weight": 10
-    },
-    {
-        "text": "country",
         "weight": 9
     },
     {
         "text": "india",
-        "weight": 9
-    },
-    {
-        "text": "claremont",
-        "weight": 9
-    },
-    {
-        "text": "mary",
-        "weight": 9
-    },
-    {
-        "text": "joseph",
-        "weight": 9
-    },
-    {
-        "text": "syrian",
         "weight": 8
     },
     {
-        "text": "border",
-        "weight": 8
-    },
-    {
-        "text": "today",
+        "text": "some",
         "weight": 8
     },
     {
         "text": "trump",
-        "weight": 8
+        "weight": 7
+    },
+    {
+        "text": "countries",
+        "weight": 7
+    },
+    {
+        "text": "million",
+        "weight": 7
+    },
+    {
+        "text": "over",
+        "weight": 7
     },
     {
         "text": "cages",
-        "weight": 8
+        "weight": 7
     },
     {
-        "text": "w",
-        "weight": 8
+        "text": "claremont",
+        "weight": 7
     },
     {
         "text": "against",
-        "weight": 7
-    },
-    {
-        "text": "camps",
-        "weight": 7
-    },
-    {
-        "text": "resettlement",
-        "weight": 7
-    },
-    {
-        "text": "methodist",
-        "weight": 7
-    },
-    {
-        "text": "international",
         "weight": 6
     },
     {
-        "text": "immigrants",
-        "weight": 6
-    },
-    {
-        "text": "good",
-        "weight": 6
-    },
-    {
-        "text": "turkey",
-        "weight": 6
-    },
-    {
-        "text": "some",
+        "text": "response",
         "weight": 6
     },
     {
@@ -116,11 +96,19 @@
         "weight": 6
     },
     {
-        "text": "back",
+        "text": "today",
         "weight": 6
     },
     {
-        "text": "children",
+        "text": "border",
+        "weight": 6
+    },
+    {
+        "text": "resettlement",
+        "weight": 6
+    },
+    {
+        "text": "political",
         "weight": 6
     }
 ]

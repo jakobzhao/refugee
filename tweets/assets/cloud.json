@@ -1,22 +1,26 @@
 [
     {
         "text": "people",
+        "weight": 18
+    },
+    {
+        "text": "support",
         "weight": 16
     },
     {
-        "text": "other",
-        "weight": 14
-    },
-    {
-        "text": "country",
-        "weight": 14
-    },
-    {
-        "text": "home",
+        "text": "world",
         "weight": 11
     },
     {
-        "text": "syrian",
+        "text": "help",
+        "weight": 11
+    },
+    {
+        "text": "country",
+        "weight": 11
+    },
+    {
+        "text": "home",
         "weight": 10
     },
     {
@@ -24,35 +28,7 @@
         "weight": 9
     },
     {
-        "text": "help",
-        "weight": 9
-    },
-    {
-        "text": "humanrightsday",
-        "weight": 9
-    },
-    {
-        "text": "discrimination",
-        "weight": 9
-    },
-    {
-        "text": "iranianinturkey",
-        "weight": 9
-    },
-    {
-        "text": "iranian",
-        "weight": 9
-    },
-    {
-        "text": "cases",
-        "weight": 9
-    },
-    {
-        "text": "world",
-        "weight": 8
-    },
-    {
-        "text": "rights",
+        "text": "syrian",
         "weight": 8
     },
     {
@@ -60,67 +36,23 @@
         "weight": 8
     },
     {
-        "text": "human",
+        "text": "work",
         "weight": 8
+    },
+    {
+        "text": "other",
+        "weight": 7
+    },
+    {
+        "text": "community",
+        "weight": 7
     },
     {
         "text": "need",
         "weight": 7
     },
     {
-        "text": "facing",
-        "weight": 7
-    },
-    {
-        "text": "please",
-        "weight": 7
-    },
-    {
-        "text": "support",
-        "weight": 7
-    },
-    {
-        "text": "better",
-        "weight": 7
-    },
-    {
-        "text": "resettlement",
-        "weight": 7
-    },
-    {
-        "text": "countries",
-        "weight": 7
-    },
-    {
-        "text": "asylum",
-        "weight": 7
-    },
-    {
-        "text": "united",
-        "weight": 7
-    },
-    {
-        "text": "very",
-        "weight": 7
-    },
-    {
-        "text": "also",
-        "weight": 6
-    },
-    {
-        "text": "based",
-        "weight": 6
-    },
-    {
-        "text": "place",
-        "weight": 6
-    },
-    {
-        "text": "community",
-        "weight": 6
-    },
-    {
-        "text": "states",
+        "text": "rohingya",
         "weight": 6
     },
     {
@@ -128,15 +60,31 @@
         "weight": 6
     },
     {
-        "text": "suffering",
+        "text": "asylum",
         "weight": 6
     },
     {
-        "text": "turkey",
+        "text": "countries",
         "weight": 6
     },
     {
-        "text": "family",
+        "text": "after",
+        "weight": 6
+    },
+    {
+        "text": "humanitarian",
+        "weight": 6
+    },
+    {
+        "text": "education",
+        "weight": 6
+    },
+    {
+        "text": "rights",
+        "weight": 6
+    },
+    {
+        "text": "w",
         "weight": 6
     }
 ]

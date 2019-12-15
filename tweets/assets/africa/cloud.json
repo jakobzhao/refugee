@@ -1,11 +1,11 @@
 [
     {
-        "text": "people",
-        "weight": 17
+        "text": "camp",
+        "weight": 18
     },
     {
-        "text": "community",
-        "weight": 13
+        "text": "people",
+        "weight": 18
     },
     {
         "text": "country",
@@ -13,46 +13,50 @@
     },
     {
         "text": "displaced",
-        "weight": 13
-    },
-    {
-        "text": "uganda",
-        "weight": 12
-    },
-    {
-        "text": "host",
         "weight": 12
     },
     {
         "text": "million",
+        "weight": 12
+    },
+    {
+        "text": "community",
         "weight": 11
+    },
+    {
+        "text": "host",
+        "weight": 11
+    },
+    {
+        "text": "help",
+        "weight": 11
+    },
+    {
+        "text": "uganda",
+        "weight": 11
+    },
+    {
+        "text": "countries",
+        "weight": 10
     },
     {
         "text": "south",
         "weight": 10
     },
     {
-        "text": "africa",
-        "weight": 9
-    },
-    {
-        "text": "help",
-        "weight": 9
-    },
-    {
         "text": "sudanese",
-        "weight": 9
+        "weight": 10
     },
     {
-        "text": "settlement",
-        "weight": 9
-    },
-    {
-        "text": "children",
+        "text": "like",
         "weight": 8
     },
     {
-        "text": "countries",
+        "text": "education",
+        "weight": 8
+    },
+    {
+        "text": "settlement",
         "weight": 8
     },
     {
@@ -60,15 +64,15 @@
         "weight": 8
     },
     {
-        "text": "also",
-        "weight": 8
-    },
-    {
-        "text": "like",
+        "text": "asylum",
         "weight": 7
     },
     {
-        "text": "killed",
+        "text": "children",
+        "weight": 7
+    },
+    {
+        "text": "visit",
         "weight": 7
     },
     {
@@ -76,23 +80,35 @@
         "weight": 7
     },
     {
-        "text": "w",
+        "text": "injured",
         "weight": 7
-    },
-    {
-        "text": "life",
-        "weight": 7
-    },
-    {
-        "text": "news",
-        "weight": 6
-    },
-    {
-        "text": "asylum",
-        "weight": 6
     },
     {
         "text": "resettlement",
+        "weight": 6
+    },
+    {
+        "text": "lives",
+        "weight": 6
+    },
+    {
+        "text": "standiraqi",
+        "weight": 6
+    },
+    {
+        "text": "bakakhel",
+        "weight": 6
+    },
+    {
+        "text": "rights",
+        "weight": 6
+    },
+    {
+        "text": "world",
+        "weight": 6
+    },
+    {
+        "text": "killed",
         "weight": 6
     },
     {
@@ -100,7 +116,7 @@
         "weight": 6
     },
     {
-        "text": "peace",
+        "text": "today",
         "weight": 6
     },
     {
@@ -108,23 +124,27 @@
         "weight": 6
     },
     {
-        "text": "camp",
+        "text": "president",
         "weight": 6
     },
     {
-        "text": "african",
+        "text": "also",
         "weight": 6
     },
     {
-        "text": "injured",
+        "text": "africa",
+        "weight": 6
+    },
+    {
+        "text": "hosts",
+        "weight": 6
+    },
+    {
+        "text": "w",
         "weight": 6
     },
     {
         "text": "between",
-        "weight": 6
-    },
-    {
-        "text": "nyumanzi",
         "weight": 6
     }
 ]
