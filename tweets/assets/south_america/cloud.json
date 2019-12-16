@@ -1,42 +1,58 @@
 [
     {
-        "text": "rights",
+        "text": "country",
+        "weight": 11
+    },
+    {
+        "text": "morales",
         "weight": 10
     },
     {
         "text": "people",
-        "weight": 10
-    },
-    {
-        "text": "human",
-        "weight": 9
-    },
-    {
-        "text": "country",
-        "weight": 9
-    },
-    {
-        "text": "morales",
         "weight": 9
     },
     {
         "text": "argentina",
-        "weight": 8
+        "weight": 9
+    },
+    {
+        "text": "like",
+        "weight": 7
+    },
+    {
+        "text": "rights",
+        "weight": 7
+    },
+    {
+        "text": "crisis",
+        "weight": 7
+    },
+    {
+        "text": "climate",
+        "weight": 7
     },
     {
         "text": "t",
         "weight": 7
     },
     {
-        "text": "world",
-        "weight": 7
-    },
-    {
-        "text": "crisis",
+        "text": "human",
         "weight": 6
     },
     {
-        "text": "climate",
+        "text": "other",
+        "weight": 6
+    },
+    {
+        "text": "camp",
+        "weight": 6
+    },
+    {
+        "text": "today",
+        "weight": 6
+    },
+    {
+        "text": "world",
         "weight": 6
     }
 ]
