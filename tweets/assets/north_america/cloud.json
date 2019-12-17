@@ -1,22 +1,22 @@
 [
     {
         "text": "people",
-        "weight": 19
+        "weight": 15
     },
     {
-        "text": "trump",
-        "weight": 11
-    },
-    {
-        "text": "world",
-        "weight": 9
-    },
-    {
-        "text": "countries",
-        "weight": 9
+        "text": "india",
+        "weight": 12
     },
     {
         "text": "muslim",
+        "weight": 11
+    },
+    {
+        "text": "countries",
+        "weight": 8
+    },
+    {
+        "text": "trump",
         "weight": 8
     },
     {
@@ -24,19 +24,11 @@
         "weight": 8
     },
     {
-        "text": "india",
-        "weight": 8
-    },
-    {
-        "text": "right",
+        "text": "world",
         "weight": 7
     },
     {
-        "text": "should",
-        "weight": 7
-    },
-    {
-        "text": "over",
+        "text": "resettlement",
         "weight": 7
     },
     {
@@ -44,15 +36,19 @@
         "weight": 6
     },
     {
-        "text": "country",
+        "text": "hindu",
         "weight": 6
     },
     {
-        "text": "state",
+        "text": "homes",
         "weight": 6
     },
     {
-        "text": "united",
+        "text": "help",
+        "weight": 6
+    },
+    {
+        "text": "should",
         "weight": 6
     },
     {
@@ -60,7 +56,19 @@
         "weight": 6
     },
     {
-        "text": "resettlement",
+        "text": "women",
+        "weight": 6
+    },
+    {
+        "text": "continue",
+        "weight": 6
+    },
+    {
+        "text": "support",
+        "weight": 6
+    },
+    {
+        "text": "w",
         "weight": 6
     }
 ]
