@@ -1,30 +1,34 @@
 [
     {
-        "text": "unhcr",
-        "weight": 25
-    },
-    {
         "text": "forum",
-        "weight": 25
+        "weight": 56
     },
     {
-        "text": "people",
-        "weight": 18
+        "text": "global",
+        "weight": 23
+    },
+    {
+        "text": "unhcr",
+        "weight": 19
+    },
+    {
+        "text": "education",
+        "weight": 16
+    },
+    {
+        "text": "communities",
+        "weight": 16
     },
     {
         "text": "support",
-        "weight": 15
-    },
-    {
-        "text": "children",
         "weight": 14
     },
     {
-        "text": "help",
-        "weight": 11
+        "text": "world",
+        "weight": 14
     },
     {
-        "text": "community",
+        "text": "countries",
         "weight": 11
     },
     {
@@ -32,39 +36,59 @@
         "weight": 11
     },
     {
-        "text": "resettlement",
+        "text": "first",
+        "weight": 11
+    },
+    {
+        "text": "children",
+        "weight": 11
+    },
+    {
+        "text": "host",
         "weight": 10
     },
     {
-        "text": "global",
+        "text": "people",
+        "weight": 10
+    },
+    {
+        "text": "help",
+        "weight": 10
+    },
+    {
+        "text": "join",
         "weight": 9
     },
     {
-        "text": "communities",
+        "text": "community",
         "weight": 9
     },
     {
-        "text": "world",
+        "text": "geneva",
         "weight": 8
     },
     {
-        "text": "work",
+        "text": "rights",
         "weight": 8
     },
     {
-        "text": "education",
+        "text": "resettlement",
         "weight": 8
     },
     {
-        "text": "like",
-        "weight": 8
+        "text": "today",
+        "weight": 7
     },
     {
-        "text": "australia",
-        "weight": 8
+        "text": "over",
+        "weight": 7
     },
     {
-        "text": "years",
+        "text": "better",
+        "weight": 7
+    },
+    {
+        "text": "boats",
         "weight": 7
     },
     {
@@ -72,35 +96,27 @@
         "weight": 7
     },
     {
-        "text": "welcome",
-        "weight": 7
+        "text": "australia",
+        "weight": 6
     },
     {
-        "text": "please",
-        "weight": 7
+        "text": "canada",
+        "weight": 6
     },
     {
-        "text": "displaced",
-        "weight": 7
+        "text": "human",
+        "weight": 6
     },
     {
-        "text": "join",
-        "weight": 7
+        "text": "dead",
+        "weight": 6
     },
     {
         "text": "some",
         "weight": 6
     },
     {
-        "text": "agency",
-        "weight": 6
-    },
-    {
-        "text": "action",
-        "weight": 6
-    },
-    {
-        "text": "over",
+        "text": "forced",
         "weight": 6
     },
     {
@@ -108,11 +124,19 @@
         "weight": 6
     },
     {
+        "text": "should",
+        "weight": 6
+    },
+    {
+        "text": "work",
+        "weight": 6
+    },
+    {
         "text": "humanitarian",
         "weight": 6
     },
     {
-        "text": "development",
+        "text": "session",
         "weight": 6
     },
     {
@@ -120,15 +144,11 @@
         "weight": 6
     },
     {
-        "text": "protection",
+        "text": "uganda",
         "weight": 6
     },
     {
-        "text": "rights",
-        "weight": 6
-    },
-    {
-        "text": "canada",
+        "text": "welcome",
         "weight": 6
     }
 ]

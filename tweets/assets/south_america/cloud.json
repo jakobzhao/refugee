@@ -1,34 +1,38 @@
 [
     {
-        "text": "country",
+        "text": "morales",
+        "weight": 14
+    },
+    {
+        "text": "argentina",
         "weight": 13
+    },
+    {
+        "text": "global",
+        "weight": 11
     },
     {
         "text": "world",
         "weight": 9
     },
     {
-        "text": "morales",
+        "text": "forum",
         "weight": 9
     },
     {
         "text": "people",
-        "weight": 8
-    },
-    {
-        "text": "argentina",
-        "weight": 8
-    },
-    {
-        "text": "t",
         "weight": 7
     },
     {
-        "text": "countries",
-        "weight": 6
+        "text": "should",
+        "weight": 7
     },
     {
         "text": "crisis",
+        "weight": 7
+    },
+    {
+        "text": "year",
         "weight": 6
     },
     {
@@ -36,7 +40,15 @@
         "weight": 6
     },
     {
-        "text": "climate",
+        "text": "status",
+        "weight": 6
+    },
+    {
+        "text": "political",
+        "weight": 6
+    },
+    {
+        "text": "t",
         "weight": 6
     }
 ]
