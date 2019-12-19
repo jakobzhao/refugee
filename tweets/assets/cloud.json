@@ -1,90 +1,82 @@
 [
     {
         "text": "forum",
-        "weight": 56
+        "weight": 42
     },
     {
         "text": "global",
-        "weight": 23
-    },
-    {
-        "text": "unhcr",
-        "weight": 19
-    },
-    {
-        "text": "education",
-        "weight": 16
-    },
-    {
-        "text": "communities",
-        "weight": 16
-    },
-    {
-        "text": "support",
-        "weight": 14
+        "weight": 15
     },
     {
         "text": "world",
-        "weight": 14
+        "weight": 13
     },
     {
-        "text": "countries",
-        "weight": 11
-    },
-    {
-        "text": "need",
-        "weight": 11
-    },
-    {
-        "text": "first",
-        "weight": 11
+        "text": "support",
+        "weight": 12
     },
     {
         "text": "children",
         "weight": 11
     },
     {
-        "text": "host",
-        "weight": 10
+        "text": "unhcr",
+        "weight": 11
     },
     {
         "text": "people",
+        "weight": 11
+    },
+    {
+        "text": "first",
         "weight": 10
     },
     {
-        "text": "help",
+        "text": "welcome",
         "weight": 10
     },
     {
-        "text": "join",
+        "text": "communities",
         "weight": 9
+    },
+    {
+        "text": "countries",
+        "weight": 9
+    },
+    {
+        "text": "education",
+        "weight": 8
+    },
+    {
+        "text": "need",
+        "weight": 8
     },
     {
         "text": "community",
-        "weight": 9
-    },
-    {
-        "text": "geneva",
         "weight": 8
-    },
-    {
-        "text": "rights",
-        "weight": 8
-    },
-    {
-        "text": "resettlement",
-        "weight": 8
-    },
-    {
-        "text": "today",
-        "weight": 7
-    },
-    {
-        "text": "over",
-        "weight": 7
     },
     {
         "text": "better",
+        "weight": 8
+    },
+    {
+        "text": "help",
+        "weight": 8
+    },
+    {
+        "text": "host",
+        "weight": 7
+    },
+    {
+        "text": "minister",
+        "weight": 7
+    },
+    {
+        "text": "canada",
+        "weight": 7
+    },
+    {
+        "text": "humanitarian",
         "weight": 7
     },
     {
@@ -92,23 +84,15 @@
         "weight": 7
     },
     {
-        "text": "continue",
+        "text": "over",
         "weight": 7
-    },
-    {
-        "text": "australia",
-        "weight": 6
-    },
-    {
-        "text": "canada",
-        "weight": 6
     },
     {
         "text": "human",
         "weight": 6
     },
     {
-        "text": "dead",
+        "text": "says",
         "weight": 6
     },
     {
@@ -116,39 +100,11 @@
         "weight": 6
     },
     {
-        "text": "forced",
+        "text": "turkey",
         "weight": 6
     },
     {
-        "text": "international",
-        "weight": 6
-    },
-    {
-        "text": "should",
-        "weight": 6
-    },
-    {
-        "text": "work",
-        "weight": 6
-    },
-    {
-        "text": "humanitarian",
-        "weight": 6
-    },
-    {
-        "text": "session",
-        "weight": 6
-    },
-    {
-        "text": "together",
-        "weight": 6
-    },
-    {
-        "text": "uganda",
-        "weight": 6
-    },
-    {
-        "text": "welcome",
+        "text": "asylum",
         "weight": 6
     }
 ]
