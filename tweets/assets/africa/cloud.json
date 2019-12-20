@@ -1,22 +1,46 @@
 [
     {
         "text": "forum",
-        "weight": 28
-    },
-    {
-        "text": "global",
-        "weight": 12
+        "weight": 38
     },
     {
         "text": "host",
+        "weight": 20
+    },
+    {
+        "text": "countries",
+        "weight": 17
+    },
+    {
+        "text": "global",
+        "weight": 15
+    },
+    {
+        "text": "support",
+        "weight": 14
+    },
+    {
+        "text": "unhcr",
+        "weight": 13
+    },
+    {
+        "text": "camp",
         "weight": 11
+    },
+    {
+        "text": "world",
+        "weight": 10
     },
     {
         "text": "people",
         "weight": 10
     },
     {
-        "text": "iraqi",
+        "text": "communities",
+        "weight": 10
+    },
+    {
+        "text": "school",
         "weight": 9
     },
     {
@@ -24,23 +48,35 @@
         "weight": 9
     },
     {
-        "text": "world",
+        "text": "community",
+        "weight": 9
+    },
+    {
+        "text": "asylum",
         "weight": 8
     },
     {
-        "text": "countries",
+        "text": "turkey",
+        "weight": 8
+    },
+    {
+        "text": "help",
         "weight": 8
     },
     {
         "text": "children",
+        "weight": 8
+    },
+    {
+        "text": "need",
         "weight": 7
     },
     {
-        "text": "asylum",
+        "text": "iraqi",
         "weight": 7
     },
     {
-        "text": "turkey",
+        "text": "seekers",
         "weight": 7
     },
     {
@@ -48,39 +84,31 @@
         "weight": 7
     },
     {
-        "text": "unhcr",
-        "weight": 7
-    },
-    {
-        "text": "seekers",
+        "text": "displaced",
         "weight": 6
     },
     {
-        "text": "resettlement",
+        "text": "migrants",
         "weight": 6
     },
     {
-        "text": "standiraqi",
+        "text": "persons",
         "weight": 6
     },
     {
-        "text": "years",
+        "text": "christmas",
         "weight": 6
     },
     {
-        "text": "camp",
+        "text": "agency",
         "weight": 6
     },
     {
-        "text": "home",
+        "text": "sudanese",
         "weight": 6
     },
     {
-        "text": "like",
-        "weight": 6
-    },
-    {
-        "text": "president",
+        "text": "health",
         "weight": 6
     }
 ]

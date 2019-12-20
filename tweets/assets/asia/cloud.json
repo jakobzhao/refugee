@@ -1,66 +1,46 @@
 [
     {
         "text": "india",
-        "weight": 37
+        "weight": 39
     },
     {
         "text": "muslim",
-        "weight": 36
-    },
-    {
-        "text": "pakistan",
-        "weight": 26
-    },
-    {
-        "text": "indian",
-        "weight": 25
-    },
-    {
-        "text": "countries",
-        "weight": 18
-    },
-    {
-        "text": "muslims",
-        "weight": 18
-    },
-    {
-        "text": "forum",
-        "weight": 14
-    },
-    {
-        "text": "hindu",
-        "weight": 13
-    },
-    {
-        "text": "turkey",
-        "weight": 13
-    },
-    {
-        "text": "first",
-        "weight": 12
+        "weight": 33
     },
     {
         "text": "citizenship",
+        "weight": 30
+    },
+    {
+        "text": "pakistan",
+        "weight": 22
+    },
+    {
+        "text": "indian",
+        "weight": 20
+    },
+    {
+        "text": "hindu",
+        "weight": 17
+    },
+    {
+        "text": "muslims",
+        "weight": 16
+    },
+    {
+        "text": "countries",
         "weight": 12
     },
     {
-        "text": "asylum",
+        "text": "people",
         "weight": 11
     },
     {
-        "text": "global",
-        "weight": 11
-    },
-    {
-        "text": "support",
+        "text": "bangladesh",
         "weight": 10
     },
     {
-        "text": "accept",
-        "weight": 10
-    },
-    {
-        "text": "like",
+        "text": "camp",
         "weight": 10
     },
     {
@@ -68,28 +48,24 @@
         "weight": 10
     },
     {
-        "text": "islamic",
+        "text": "against",
+        "weight": 10
+    },
+    {
+        "text": "should",
+        "weight": 10
+    },
+    {
+        "text": "accept",
         "weight": 9
     },
     {
-        "text": "iraqi",
+        "text": "country",
         "weight": 9
     },
     {
-        "text": "because",
+        "text": "forum",
         "weight": 9
-    },
-    {
-        "text": "bangladesh",
-        "weight": 8
-    },
-    {
-        "text": "citizens",
-        "weight": 8
-    },
-    {
-        "text": "years",
-        "weight": 8
     },
     {
         "text": "imran",
@@ -100,39 +76,43 @@
         "weight": 8
     },
     {
-        "text": "geneva",
+        "text": "citizens",
         "weight": 8
     },
     {
-        "text": "people",
+        "text": "support",
+        "weight": 8
+    },
+    {
+        "text": "first",
+        "weight": 8
+    },
+    {
+        "text": "global",
         "weight": 8
     },
     {
         "text": "students",
+        "weight": 8
+    },
+    {
+        "text": "amendment",
         "weight": 7
     },
     {
-        "text": "come",
+        "text": "even",
         "weight": 7
     },
     {
-        "text": "home",
+        "text": "which",
         "weight": 7
     },
     {
-        "text": "country",
+        "text": "persecution",
         "weight": 7
     },
     {
-        "text": "seekers",
-        "weight": 7
-    },
-    {
-        "text": "before",
-        "weight": 7
-    },
-    {
-        "text": "should",
+        "text": "like",
         "weight": 7
     },
     {
@@ -140,43 +120,11 @@
         "weight": 7
     },
     {
-        "text": "process",
-        "weight": 7
-    },
-    {
-        "text": "afghan",
-        "weight": 7
-    },
-    {
-        "text": "persecuted",
-        "weight": 6
-    },
-    {
-        "text": "does",
-        "weight": 6
-    },
-    {
-        "text": "hindus",
-        "weight": 6
-    },
-    {
-        "text": "camp",
-        "weight": 6
-    },
-    {
-        "text": "host",
-        "weight": 6
-    },
-    {
-        "text": "which",
-        "weight": 6
-    },
-    {
-        "text": "minister",
-        "weight": 6
-    },
-    {
         "text": "2014",
+        "weight": 7
+    },
+    {
+        "text": "after",
         "weight": 6
     },
     {
@@ -184,11 +132,39 @@
         "weight": 6
     },
     {
-        "text": "nation",
+        "text": "sikh",
         "weight": 6
     },
     {
-        "text": "live",
+        "text": "islamic",
+        "weight": 6
+    },
+    {
+        "text": "iraqi",
+        "weight": 6
+    },
+    {
+        "text": "around",
+        "weight": 6
+    },
+    {
+        "text": "years",
+        "weight": 6
+    },
+    {
+        "text": "turkey",
+        "weight": 6
+    },
+    {
+        "text": "take",
+        "weight": 6
+    },
+    {
+        "text": "protesting",
+        "weight": 6
+    },
+    {
+        "text": "before",
         "weight": 6
     }
 ]

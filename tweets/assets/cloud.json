@@ -1,102 +1,70 @@
 [
     {
         "text": "forum",
-        "weight": 42
+        "weight": 30
     },
     {
         "text": "global",
-        "weight": 15
-    },
-    {
-        "text": "world",
-        "weight": 13
+        "weight": 16
     },
     {
         "text": "support",
-        "weight": 12
-    },
-    {
-        "text": "children",
-        "weight": 11
+        "weight": 14
     },
     {
         "text": "unhcr",
-        "weight": 11
-    },
-    {
-        "text": "people",
-        "weight": 11
-    },
-    {
-        "text": "first",
         "weight": 10
     },
     {
-        "text": "welcome",
+        "text": "children",
         "weight": 10
     },
     {
         "text": "communities",
-        "weight": 9
-    },
-    {
-        "text": "countries",
-        "weight": 9
-    },
-    {
-        "text": "education",
-        "weight": 8
+        "weight": 10
     },
     {
         "text": "need",
-        "weight": 8
+        "weight": 9
     },
     {
-        "text": "community",
-        "weight": 8
+        "text": "first",
+        "weight": 9
     },
     {
-        "text": "better",
-        "weight": 8
+        "text": "over",
+        "weight": 9
     },
     {
         "text": "help",
         "weight": 8
     },
     {
-        "text": "host",
-        "weight": 7
-    },
-    {
-        "text": "minister",
-        "weight": 7
-    },
-    {
-        "text": "canada",
-        "weight": 7
+        "text": "education",
+        "weight": 8
     },
     {
         "text": "humanitarian",
         "weight": 7
     },
     {
-        "text": "boats",
-        "weight": 7
-    },
-    {
-        "text": "over",
-        "weight": 7
-    },
-    {
         "text": "human",
+        "weight": 7
+    },
+    {
+        "text": "host",
+        "weight": 7
+    },
+    {
+        "text": "world",
         "weight": 6
     },
     {
-        "text": "says",
+        "text": "minister",
         "weight": 6
     },
     {
-        "text": "some",
+        "text": "countries",
         "weight": 6
     },
     {
@@ -104,7 +72,15 @@
         "weight": 6
     },
     {
-        "text": "asylum",
+        "text": "dead",
+        "weight": 6
+    },
+    {
+        "text": "migrants",
+        "weight": 6
+    },
+    {
+        "text": "rights",
         "weight": 6
     }
 ]

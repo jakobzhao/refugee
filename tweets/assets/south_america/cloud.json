@@ -1,50 +1,42 @@
 [
     {
-        "text": "people",
-        "weight": 18
-    },
-    {
         "text": "forum",
-        "weight": 14
+        "weight": 15
     },
     {
-        "text": "world",
-        "weight": 10
-    },
-    {
-        "text": "migrants",
-        "weight": 10
+        "text": "people",
+        "weight": 13
     },
     {
         "text": "global",
-        "weight": 10
+        "weight": 12
+    },
+    {
+        "text": "migrants",
+        "weight": 11
+    },
+    {
+        "text": "world",
+        "weight": 8
     },
     {
         "text": "children",
-        "weight": 10
+        "weight": 8
     },
     {
-        "text": "first",
-        "weight": 8
+        "text": "host",
+        "weight": 7
+    },
+    {
+        "text": "government",
+        "weight": 7
     },
     {
         "text": "morales",
         "weight": 7
     },
     {
-        "text": "argentina",
-        "weight": 7
-    },
-    {
-        "text": "t",
-        "weight": 7
-    },
-    {
-        "text": "climate",
-        "weight": 6
-    },
-    {
-        "text": "year",
+        "text": "countries",
         "weight": 6
     },
     {
@@ -52,7 +44,15 @@
         "weight": 6
     },
     {
-        "text": "government",
+        "text": "argentina",
+        "weight": 6
+    },
+    {
+        "text": "country",
+        "weight": 6
+    },
+    {
+        "text": "camps",
         "weight": 6
     }
 ]
