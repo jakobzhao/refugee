@@ -1,38 +1,26 @@
 [
     {
+        "text": "first",
+        "weight": 23
+    },
+    {
         "text": "people",
-        "weight": 34
+        "weight": 23
     },
     {
         "text": "australia",
-        "weight": 29
-    },
-    {
-        "text": "first",
-        "weight": 25
+        "weight": 20
     },
     {
         "text": "climate",
-        "weight": 18
+        "weight": 16
     },
     {
         "text": "forum",
         "weight": 12
     },
     {
-        "text": "change",
-        "weight": 9
-    },
-    {
-        "text": "country",
-        "weight": 9
-    },
-    {
-        "text": "government",
-        "weight": 9
-    },
-    {
-        "text": "global",
+        "text": "children",
         "weight": 9
     },
     {
@@ -40,39 +28,23 @@
         "weight": 9
     },
     {
-        "text": "leave",
-        "weight": 8
-    },
-    {
-        "text": "children",
-        "weight": 8
-    },
-    {
         "text": "time",
-        "weight": 8
-    },
-    {
-        "text": "auspol",
-        "weight": 8
+        "weight": 9
     },
     {
         "text": "becoming",
         "weight": 8
     },
     {
-        "text": "detention",
-        "weight": 7
+        "text": "government",
+        "weight": 8
     },
     {
-        "text": "human",
-        "weight": 7
+        "text": "change",
+        "weight": 8
     },
     {
-        "text": "lives",
-        "weight": 7
-    },
-    {
-        "text": "over",
+        "text": "rights",
         "weight": 7
     },
     {
@@ -84,27 +56,35 @@
         "weight": 7
     },
     {
-        "text": "asylum",
-        "weight": 6
+        "text": "auspol",
+        "weight": 7
+    },
+    {
+        "text": "global",
+        "weight": 7
     },
     {
         "text": "support",
         "weight": 6
     },
     {
-        "text": "family",
+        "text": "nauru",
         "weight": 6
     },
     {
-        "text": "like",
+        "text": "young",
         "weight": 6
     },
     {
-        "text": "rights",
+        "text": "leave",
         "weight": 6
     },
     {
-        "text": "want",
+        "text": "human",
+        "weight": 6
+    },
+    {
+        "text": "lives",
         "weight": 6
     }
 ]

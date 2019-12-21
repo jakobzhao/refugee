@@ -1,38 +1,22 @@
 [
     {
         "text": "forum",
-        "weight": 30
+        "weight": 33
     },
     {
-        "text": "global",
+        "text": "education",
         "weight": 16
     },
     {
-        "text": "support",
+        "text": "global",
         "weight": 14
     },
     {
-        "text": "unhcr",
-        "weight": 10
-    },
-    {
-        "text": "children",
-        "weight": 10
+        "text": "support",
+        "weight": 9
     },
     {
         "text": "communities",
-        "weight": 10
-    },
-    {
-        "text": "need",
-        "weight": 9
-    },
-    {
-        "text": "first",
-        "weight": 9
-    },
-    {
-        "text": "over",
         "weight": 9
     },
     {
@@ -40,35 +24,27 @@
         "weight": 8
     },
     {
-        "text": "education",
+        "text": "immigrants",
         "weight": 8
     },
     {
-        "text": "humanitarian",
+        "text": "unhcr",
+        "weight": 8
+    },
+    {
+        "text": "first",
         "weight": 7
-    },
-    {
-        "text": "human",
-        "weight": 7
-    },
-    {
-        "text": "host",
-        "weight": 7
-    },
-    {
-        "text": "world",
-        "weight": 6
-    },
-    {
-        "text": "minister",
-        "weight": 6
     },
     {
         "text": "countries",
         "weight": 6
     },
     {
-        "text": "turkey",
+        "text": "like",
+        "weight": 6
+    },
+    {
+        "text": "which",
         "weight": 6
     },
     {
@@ -76,11 +52,35 @@
         "weight": 6
     },
     {
+        "text": "host",
+        "weight": 6
+    },
+    {
+        "text": "world",
+        "weight": 6
+    },
+    {
+        "text": "children",
+        "weight": 6
+    },
+    {
         "text": "migrants",
         "weight": 6
     },
     {
-        "text": "rights",
+        "text": "pledges",
+        "weight": 6
+    },
+    {
+        "text": "people",
+        "weight": 6
+    },
+    {
+        "text": "humanitarian",
+        "weight": 6
+    },
+    {
+        "text": "over",
         "weight": 6
     }
 ]
