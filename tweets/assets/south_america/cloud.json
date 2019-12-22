@@ -1,11 +1,11 @@
 [
     {
         "text": "people",
-        "weight": 16
+        "weight": 14
     },
     {
         "text": "forum",
-        "weight": 11
+        "weight": 10
     },
     {
         "text": "children",
@@ -13,42 +13,34 @@
     },
     {
         "text": "global",
-        "weight": 9
-    },
-    {
-        "text": "countries",
         "weight": 8
     },
     {
-        "text": "camp",
-        "weight": 7
-    },
-    {
-        "text": "world",
-        "weight": 7
-    },
-    {
-        "text": "support",
-        "weight": 7
-    },
-    {
-        "text": "camps",
-        "weight": 7
-    },
-    {
-        "text": "migrants",
-        "weight": 7
-    },
-    {
-        "text": "first",
-        "weight": 7
-    },
-    {
-        "text": "asylum",
+        "text": "money",
         "weight": 6
     },
     {
-        "text": "government",
+        "text": "support",
+        "weight": 6
+    },
+    {
+        "text": "countries",
+        "weight": 6
+    },
+    {
+        "text": "first",
+        "weight": 6
+    },
+    {
+        "text": "like",
+        "weight": 6
+    },
+    {
+        "text": "migrants",
+        "weight": 6
+    },
+    {
+        "text": "camps",
         "weight": 6
     }
 ]

@@ -1,98 +1,70 @@
 [
     {
+        "text": "forum",
+        "weight": 21
+    },
+    {
         "text": "child",
-        "weight": 28
+        "weight": 20
     },
     {
         "text": "children",
-        "weight": 23
-    },
-    {
-        "text": "rights",
-        "weight": 19
-    },
-    {
-        "text": "bill",
         "weight": 17
     },
     {
-        "text": "forum",
+        "text": "rights",
         "weight": 16
     },
     {
-        "text": "protections",
-        "weight": 15
+        "text": "support",
+        "weight": 14
     },
     {
-        "text": "johnson",
+        "text": "bill",
         "weight": 13
     },
     {
-        "text": "boris",
+        "text": "global",
         "weight": 12
-    },
-    {
-        "text": "workers",
-        "weight": 12
-    },
-    {
-        "text": "government",
-        "weight": 12
-    },
-    {
-        "text": "people",
-        "weight": 12
-    },
-    {
-        "text": "brexit",
-        "weight": 11
-    },
-    {
-        "text": "asylum",
-        "weight": 10
-    },
-    {
-        "text": "unaccompanied",
-        "weight": 9
-    },
-    {
-        "text": "country",
-        "weight": 9
     },
     {
         "text": "today",
+        "weight": 11
+    },
+    {
+        "text": "boris",
         "weight": 9
     },
     {
-        "text": "global",
+        "text": "workers",
         "weight": 9
     },
     {
-        "text": "commitment",
+        "text": "protections",
+        "weight": 9
+    },
+    {
+        "text": "johnson",
         "weight": 8
     },
     {
-        "text": "which",
+        "text": "government",
         "weight": 8
     },
     {
-        "text": "take",
+        "text": "asylum",
+        "weight": 8
+    },
+    {
+        "text": "country",
+        "weight": 8
+    },
+    {
+        "text": "brexit",
         "weight": 7
     },
     {
-        "text": "parliament",
-        "weight": 7
-    },
-    {
-        "text": "future",
-        "weight": 7
-    },
-    {
-        "text": "back",
-        "weight": 7
-    },
-    {
-        "text": "over",
+        "text": "people",
         "weight": 7
     },
     {
@@ -104,8 +76,12 @@
         "weight": 7
     },
     {
-        "text": "support",
-        "weight": 7
+        "text": "take",
+        "weight": 6
+    },
+    {
+        "text": "protect",
+        "weight": 6
     },
     {
         "text": "vulnerable",
@@ -116,11 +92,27 @@
         "weight": 6
     },
     {
-        "text": "into",
+        "text": "commitment",
         "weight": 6
     },
     {
-        "text": "communities",
+        "text": "parliament",
+        "weight": 6
+    },
+    {
+        "text": "future",
+        "weight": 6
+    },
+    {
+        "text": "over",
+        "weight": 6
+    },
+    {
+        "text": "protection",
+        "weight": 6
+    },
+    {
+        "text": "through",
         "weight": 6
     }
 ]

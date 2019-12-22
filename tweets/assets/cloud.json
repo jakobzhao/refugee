@@ -1,18 +1,18 @@
 [
     {
         "text": "forum",
-        "weight": 33
+        "weight": 21
     },
     {
         "text": "education",
-        "weight": 16
-    },
-    {
-        "text": "global",
-        "weight": 14
+        "weight": 10
     },
     {
         "text": "support",
+        "weight": 9
+    },
+    {
+        "text": "unhcr",
         "weight": 9
     },
     {
@@ -20,43 +20,23 @@
         "weight": 9
     },
     {
-        "text": "help",
+        "text": "global",
+        "weight": 9
+    },
+    {
+        "text": "over",
         "weight": 8
-    },
-    {
-        "text": "immigrants",
-        "weight": 8
-    },
-    {
-        "text": "unhcr",
-        "weight": 8
-    },
-    {
-        "text": "first",
-        "weight": 7
-    },
-    {
-        "text": "countries",
-        "weight": 6
-    },
-    {
-        "text": "like",
-        "weight": 6
-    },
-    {
-        "text": "which",
-        "weight": 6
-    },
-    {
-        "text": "dead",
-        "weight": 6
     },
     {
         "text": "host",
-        "weight": 6
+        "weight": 7
     },
     {
-        "text": "world",
+        "text": "migrants",
+        "weight": 7
+    },
+    {
+        "text": "which",
         "weight": 6
     },
     {
@@ -64,23 +44,11 @@
         "weight": 6
     },
     {
-        "text": "migrants",
+        "text": "dead",
         "weight": 6
     },
     {
-        "text": "pledges",
-        "weight": 6
-    },
-    {
-        "text": "people",
-        "weight": 6
-    },
-    {
-        "text": "humanitarian",
-        "weight": 6
-    },
-    {
-        "text": "over",
+        "text": "million",
         "weight": 6
     }
 ]
