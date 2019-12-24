@@ -1,54 +1,42 @@
 [
     {
-        "text": "forum",
-        "weight": 16
-    },
-    {
-        "text": "global",
-        "weight": 10
-    },
-    {
         "text": "migrants",
-        "weight": 9
-    },
-    {
-        "text": "human",
-        "weight": 8
-    },
-    {
-        "text": "world",
-        "weight": 8
-    },
-    {
-        "text": "christmas",
-        "weight": 7
+        "weight": 11
     },
     {
         "text": "education",
+        "weight": 11
+    },
+    {
+        "text": "forum",
+        "weight": 10
+    },
+    {
+        "text": "christmas",
+        "weight": 9
+    },
+    {
+        "text": "people",
+        "weight": 8
+    },
+    {
+        "text": "country",
+        "weight": 8
+    },
+    {
+        "text": "dead",
+        "weight": 7
+    },
+    {
+        "text": "make",
+        "weight": 7
+    },
+    {
+        "text": "access",
         "weight": 7
     },
     {
         "text": "family",
-        "weight": 7
-    },
-    {
-        "text": "need",
-        "weight": 7
-    },
-    {
-        "text": "rights",
-        "weight": 7
-    },
-    {
-        "text": "children",
-        "weight": 6
-    },
-    {
-        "text": "first",
-        "weight": 6
-    },
-    {
-        "text": "dead",
         "weight": 6
     },
     {
@@ -56,7 +44,19 @@
         "weight": 6
     },
     {
-        "text": "which",
+        "text": "world",
+        "weight": 6
+    },
+    {
+        "text": "children",
+        "weight": 6
+    },
+    {
+        "text": "minister",
+        "weight": 6
+    },
+    {
+        "text": "global",
         "weight": 6
     }
 ]

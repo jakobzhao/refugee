@@ -1,43 +1,55 @@
 [
     {
         "text": "child",
-        "weight": 26
+        "weight": 31
+    },
+    {
+        "text": "government",
+        "weight": 19
     },
     {
         "text": "rights",
         "weight": 18
     },
     {
-        "text": "government",
-        "weight": 15
-    },
-    {
-        "text": "children",
-        "weight": 15
+        "text": "johnson",
+        "weight": 16
     },
     {
         "text": "welcome",
         "weight": 15
     },
     {
+        "text": "children",
+        "weight": 14
+    },
+    {
+        "text": "people",
+        "weight": 12
+    },
+    {
         "text": "bill",
         "weight": 12
     },
     {
-        "text": "johnson",
-        "weight": 11
-    },
-    {
-        "text": "people",
+        "text": "boris",
         "weight": 10
     },
     {
-        "text": "tories",
-        "weight": 9
+        "text": "protections",
+        "weight": 10
     },
     {
-        "text": "protections",
-        "weight": 9
+        "text": "brexit",
+        "weight": 10
+    },
+    {
+        "text": "vulnerable",
+        "weight": 10
+    },
+    {
+        "text": "help",
+        "weight": 10
     },
     {
         "text": "workers",
@@ -48,15 +60,7 @@
         "weight": 9
     },
     {
-        "text": "forum",
-        "weight": 9
-    },
-    {
-        "text": "brexit",
-        "weight": 8
-    },
-    {
-        "text": "drawal",
+        "text": "support",
         "weight": 8
     },
     {
@@ -64,39 +68,27 @@
         "weight": 8
     },
     {
-        "text": "global",
+        "text": "home",
         "weight": 8
     },
     {
-        "text": "boris",
+        "text": "tories",
         "weight": 7
     },
     {
-        "text": "support",
+        "text": "family",
         "weight": 7
     },
     {
-        "text": "vulnerable",
+        "text": "drawal",
         "weight": 7
     },
     {
-        "text": "over",
+        "text": "human",
         "weight": 7
     },
     {
-        "text": "today",
-        "weight": 7
-    },
-    {
-        "text": "govt",
-        "weight": 6
-    },
-    {
-        "text": "detention",
-        "weight": 6
-    },
-    {
-        "text": "seekers",
+        "text": "unaccompanied",
         "weight": 6
     },
     {
@@ -104,23 +96,15 @@
         "weight": 6
     },
     {
+        "text": "offers",
+        "weight": 6
+    },
+    {
         "text": "country",
         "weight": 6
     },
     {
-        "text": "future",
-        "weight": 6
-    },
-    {
-        "text": "help",
-        "weight": 6
-    },
-    {
-        "text": "made",
-        "weight": 6
-    },
-    {
-        "text": "against",
+        "text": "office",
         "weight": 6
     }
 ]
