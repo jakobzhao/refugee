@@ -1,22 +1,18 @@
 [
     {
+        "text": "jesus",
+        "weight": 18
+    },
+    {
         "text": "trump",
-        "weight": 16
+        "weight": 15
     },
     {
-        "text": "people",
-        "weight": 11
-    },
-    {
-        "text": "administration",
-        "weight": 10
+        "text": "christmas",
+        "weight": 15
     },
     {
         "text": "children",
-        "weight": 10
-    },
-    {
-        "text": "miller",
         "weight": 10
     },
     {
@@ -24,19 +20,35 @@
         "weight": 9
     },
     {
-        "text": "governor",
+        "text": "people",
         "weight": 9
     },
     {
-        "text": "kentucky",
+        "text": "need",
+        "weight": 9
+    },
+    {
+        "text": "miller",
+        "weight": 9
+    },
+    {
+        "text": "christians",
         "weight": 8
     },
     {
-        "text": "accept",
+        "text": "help",
         "weight": 8
     },
     {
-        "text": "countries",
+        "text": "neighbor",
+        "weight": 8
+    },
+    {
+        "text": "family",
+        "weight": 8
+    },
+    {
+        "text": "immigrants",
         "weight": 8
     },
     {
@@ -44,47 +56,55 @@
         "weight": 8
     },
     {
-        "text": "come",
+        "text": "rights",
         "weight": 7
     },
     {
-        "text": "state",
+        "text": "administration",
         "weight": 7
     },
     {
-        "text": "resettlement",
+        "text": "kentucky",
         "weight": 7
-    },
-    {
-        "text": "other",
-        "weight": 7
-    },
-    {
-        "text": "parents",
-        "weight": 7
-    },
-    {
-        "text": "child",
-        "weight": 6
     },
     {
         "text": "today",
+        "weight": 7
+    },
+    {
+        "text": "welcome",
+        "weight": 7
+    },
+    {
+        "text": "republican",
+        "weight": 7
+    },
+    {
+        "text": "muslim",
         "weight": 6
     },
     {
-        "text": "immigrants",
+        "text": "come",
         "weight": 6
     },
     {
-        "text": "turkey",
+        "text": "against",
         "weight": 6
     },
     {
-        "text": "hindus",
+        "text": "into",
         "weight": 6
     },
     {
-        "text": "family",
+        "text": "state",
+        "weight": 6
+    },
+    {
+        "text": "accept",
+        "weight": 6
+    },
+    {
+        "text": "poor",
         "weight": 6
     },
     {
@@ -92,7 +112,15 @@
         "weight": 6
     },
     {
-        "text": "migrant",
+        "text": "agency",
+        "weight": 6
+    },
+    {
+        "text": "time",
+        "weight": 6
+    },
+    {
+        "text": "governor",
         "weight": 6
     }
 ]
