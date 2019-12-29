@@ -1,58 +1,46 @@
 [
     {
         "text": "christmas",
-        "weight": 17
+        "weight": 22
     },
     {
         "text": "people",
-        "weight": 16
+        "weight": 12
+    },
+    {
+        "text": "iraqi",
+        "weight": 12
     },
     {
         "text": "help",
         "weight": 12
     },
     {
-        "text": "country",
+        "text": "asylum",
         "weight": 11
     },
     {
-        "text": "asylum",
+        "text": "syrian",
         "weight": 10
     },
     {
-        "text": "child",
-        "weight": 9
-    },
-    {
-        "text": "syrian",
-        "weight": 9
-    },
-    {
-        "text": "children",
-        "weight": 8
-    },
-    {
         "text": "t",
+        "weight": 10
+    },
+    {
+        "text": "country",
         "weight": 8
     },
     {
-        "text": "migrants",
+        "text": "seekers",
         "weight": 8
-    },
-    {
-        "text": "iraqi",
-        "weight": 8
-    },
-    {
-        "text": "government",
-        "weight": 7
     },
     {
         "text": "world",
         "weight": 7
     },
     {
-        "text": "seekers",
+        "text": "home",
         "weight": 7
     },
     {
@@ -60,11 +48,7 @@
         "weight": 6
     },
     {
-        "text": "back",
-        "weight": 6
-    },
-    {
-        "text": "home",
+        "text": "local",
         "weight": 6
     },
     {
@@ -72,11 +56,11 @@
         "weight": 6
     },
     {
-        "text": "like",
+        "text": "migrants",
         "weight": 6
     },
     {
-        "text": "stop",
+        "text": "standiraqi",
         "weight": 6
     }
 ]
