@@ -1,11 +1,11 @@
 [
     {
         "text": "australia",
-        "weight": 17
+        "weight": 18
     },
     {
-        "text": "christmas",
-        "weight": 14
+        "text": "climate",
+        "weight": 12
     },
     {
         "text": "people",
@@ -13,54 +13,30 @@
     },
     {
         "text": "asylum",
-        "weight": 11
+        "weight": 9
+    },
+    {
+        "text": "over",
+        "weight": 8
+    },
+    {
+        "text": "detention",
+        "weight": 8
     },
     {
         "text": "like",
-        "weight": 10
-    },
-    {
-        "text": "come",
-        "weight": 9
-    },
-    {
-        "text": "climate",
-        "weight": 9
-    },
-    {
-        "text": "seekers",
-        "weight": 9
+        "weight": 8
     },
     {
         "text": "back",
         "weight": 8
     },
     {
-        "text": "million",
-        "weight": 8
-    },
-    {
-        "text": "world",
-        "weight": 8
-    },
-    {
-        "text": "t",
-        "weight": 8
-    },
-    {
-        "text": "country",
-        "weight": 8
-    },
-    {
-        "text": "after",
-        "weight": 8
-    },
-    {
-        "text": "over",
+        "text": "come",
         "weight": 7
     },
     {
-        "text": "detention",
+        "text": "world",
         "weight": 7
     },
     {
@@ -68,7 +44,23 @@
         "weight": 7
     },
     {
-        "text": "give",
+        "text": "support",
+        "weight": 7
+    },
+    {
+        "text": "other",
+        "weight": 7
+    },
+    {
+        "text": "seekers",
+        "weight": 7
+    },
+    {
+        "text": "t",
+        "weight": 7
+    },
+    {
+        "text": "christmas",
         "weight": 7
     },
     {
@@ -76,19 +68,15 @@
         "weight": 7
     },
     {
-        "text": "india",
-        "weight": 6
+        "text": "give",
+        "weight": 7
     },
     {
-        "text": "look",
-        "weight": 6
+        "text": "after",
+        "weight": 7
     },
     {
-        "text": "make",
-        "weight": 6
-    },
-    {
-        "text": "take",
+        "text": "country",
         "weight": 6
     },
     {
@@ -96,15 +84,11 @@
         "weight": 6
     },
     {
-        "text": "support",
+        "text": "because",
         "weight": 6
     },
     {
-        "text": "family",
-        "weight": 6
-    },
-    {
-        "text": "free",
+        "text": "make",
         "weight": 6
     }
 ]
