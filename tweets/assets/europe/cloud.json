@@ -1,43 +1,51 @@
 [
     {
         "text": "people",
-        "weight": 22
-    },
-    {
-        "text": "world",
-        "weight": 12
-    },
-    {
-        "text": "support",
-        "weight": 12
-    },
-    {
-        "text": "help",
-        "weight": 12
-    },
-    {
-        "text": "asylum",
-        "weight": 10
+        "weight": 18
     },
     {
         "text": "year",
-        "weight": 10
+        "weight": 14
+    },
+    {
+        "text": "world",
+        "weight": 13
+    },
+    {
+        "text": "asylum",
+        "weight": 11
     },
     {
         "text": "2020",
+        "weight": 10
+    },
+    {
+        "text": "country",
         "weight": 9
     },
     {
-        "text": "valid",
+        "text": "into",
         "weight": 9
     },
     {
-        "text": "children",
+        "text": "help",
+        "weight": 9
+    },
+    {
+        "text": "support",
+        "weight": 9
+    },
+    {
+        "text": "families",
         "weight": 8
     },
     {
-        "text": "iraqi",
-        "weight": 8
+        "text": "every",
+        "weight": 7
+    },
+    {
+        "text": "happy",
+        "weight": 7
     },
     {
         "text": "seekers",
@@ -52,27 +60,11 @@
         "weight": 7
     },
     {
-        "text": "crisis",
-        "weight": 7
-    },
-    {
-        "text": "country",
-        "weight": 6
-    },
-    {
         "text": "child",
         "weight": 6
     },
     {
-        "text": "every",
-        "weight": 6
-    },
-    {
-        "text": "into",
-        "weight": 6
-    },
-    {
-        "text": "happy",
+        "text": "europe",
         "weight": 6
     },
     {
@@ -80,19 +72,35 @@
         "weight": 6
     },
     {
+        "text": "today",
+        "weight": 6
+    },
+    {
+        "text": "place",
+        "weight": 6
+    },
+    {
+        "text": "children",
+        "weight": 6
+    },
+    {
+        "text": "climate",
+        "weight": 6
+    },
+    {
         "text": "like",
         "weight": 6
     },
     {
-        "text": "libya",
+        "text": "over",
         "weight": 6
     },
     {
-        "text": "vulnerable",
+        "text": "wish",
         "weight": 6
     },
     {
-        "text": "human",
+        "text": "very",
         "weight": 6
     }
 ]
