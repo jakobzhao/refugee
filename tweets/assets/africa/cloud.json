@@ -1,30 +1,46 @@
 [
     {
-        "text": "niger",
+        "text": "country",
+        "weight": 12
+    },
+    {
+        "text": "children",
+        "weight": 12
+    },
+    {
+        "text": "camp",
+        "weight": 12
+    },
+    {
+        "text": "nigeria",
         "weight": 10
     },
     {
-        "text": "agadez",
+        "text": "asylum",
         "weight": 10
     },
     {
         "text": "year",
+        "weight": 9
+    },
+    {
+        "text": "seekers",
+        "weight": 9
+    },
+    {
+        "text": "niger",
+        "weight": 9
+    },
+    {
+        "text": "agadez",
+        "weight": 9
+    },
+    {
+        "text": "back",
         "weight": 8
     },
     {
-        "text": "nigeria",
-        "weight": 8
-    },
-    {
-        "text": "children",
-        "weight": 8
-    },
-    {
-        "text": "sudanese",
-        "weight": 8
-    },
-    {
-        "text": "camp",
+        "text": "group",
         "weight": 8
     },
     {
@@ -32,31 +48,83 @@
         "weight": 8
     },
     {
-        "text": "back",
-        "weight": 7
-    },
-    {
-        "text": "country",
-        "weight": 7
-    },
-    {
-        "text": "cameroonian",
-        "weight": 7
-    },
-    {
-        "text": "child",
-        "weight": 7
-    },
-    {
-        "text": "2020",
-        "weight": 7
-    },
-    {
         "text": "part",
-        "weight": 7
+        "weight": 8
+    },
+    {
+        "text": "unhcr",
+        "weight": 8
     },
     {
         "text": "facebook",
+        "weight": 8
+    },
+    {
+        "text": "cameroonian",
+        "weight": 8
+    },
+    {
+        "text": "education",
+        "weight": 8
+    },
+    {
+        "text": "child",
+        "weight": 8
+    },
+    {
+        "text": "suffering",
+        "weight": 8
+    },
+    {
+        "text": "w",
+        "weight": 7
+    },
+    {
+        "text": "camps",
+        "weight": 7
+    },
+    {
+        "text": "world",
+        "weight": 7
+    },
+    {
+        "text": "women",
+        "weight": 7
+    },
+    {
+        "text": "home",
+        "weight": 7
+    },
+    {
+        "text": "iraqi",
+        "weight": 7
+    },
+    {
+        "text": "under",
+        "weight": 6
+    },
+    {
+        "text": "countries",
+        "weight": 6
+    },
+    {
+        "text": "while",
+        "weight": 6
+    },
+    {
+        "text": "called",
+        "weight": 6
+    },
+    {
+        "text": "europe",
+        "weight": 6
+    },
+    {
+        "text": "people",
+        "weight": 6
+    },
+    {
+        "text": "know",
         "weight": 6
     },
     {
@@ -64,23 +132,23 @@
         "weight": 6
     },
     {
-        "text": "unhcr",
-        "weight": 6
-    },
-    {
-        "text": "desert",
-        "weight": 6
-    },
-    {
         "text": "through",
         "weight": 6
     },
     {
-        "text": "education",
+        "text": "2020",
         "weight": 6
     },
     {
-        "text": "women",
+        "text": "land",
+        "weight": 6
+    },
+    {
+        "text": "standiraqi",
+        "weight": 6
+    },
+    {
+        "text": "every",
         "weight": 6
     }
 ]
