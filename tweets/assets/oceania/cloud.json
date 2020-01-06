@@ -1,78 +1,58 @@
 [
     {
         "text": "climate",
-        "weight": 33
+        "weight": 28
     },
     {
         "text": "people",
-        "weight": 26
+        "weight": 22
     },
     {
         "text": "australia",
-        "weight": 26
-    },
-    {
-        "text": "auspol",
-        "weight": 14
-    },
-    {
-        "text": "boat",
-        "weight": 13
-    },
-    {
-        "text": "australians",
-        "weight": 11
-    },
-    {
-        "text": "first",
-        "weight": 11
-    },
-    {
-        "text": "homes",
-        "weight": 10
-    },
-    {
-        "text": "like",
-        "weight": 10
+        "weight": 18
     },
     {
         "text": "fire",
+        "weight": 15
+    },
+    {
+        "text": "boat",
+        "weight": 12
+    },
+    {
+        "text": "auspol",
+        "weight": 10
+    },
+    {
+        "text": "years",
         "weight": 9
     },
     {
-        "text": "lives",
+        "text": "homes",
         "weight": 9
     },
     {
-        "text": "country",
-        "weight": 9
-    },
-    {
-        "text": "fleeing",
-        "weight": 9
-    },
-    {
-        "text": "australiaburning",
+        "text": "australians",
         "weight": 8
     },
     {
-        "text": "know",
+        "text": "need",
         "weight": 8
-    },
-    {
-        "text": "some",
-        "weight": 7
     },
     {
         "text": "change",
         "weight": 7
     },
     {
-        "text": "years",
+        "text": "country",
         "weight": 7
     },
     {
-        "text": "should",
+        "text": "know",
+        "weight": 7
+    },
+    {
+        "text": "like",
         "weight": 7
     },
     {
@@ -80,31 +60,11 @@
         "weight": 7
     },
     {
-        "text": "t",
-        "weight": 7
-    },
-    {
-        "text": "fires",
+        "text": "first",
         "weight": 6
     },
     {
-        "text": "hope",
-        "weight": 6
-    },
-    {
-        "text": "government",
-        "weight": 6
-    },
-    {
-        "text": "ever",
-        "weight": 6
-    },
-    {
-        "text": "need",
-        "weight": 6
-    },
-    {
-        "text": "help",
+        "text": "year",
         "weight": 6
     },
     {
@@ -112,15 +72,23 @@
         "weight": 6
     },
     {
-        "text": "right",
-        "weight": 6
-    },
-    {
-        "text": "scottmorrisonmp",
-        "weight": 6
-    },
-    {
         "text": "bushfire",
+        "weight": 6
+    },
+    {
+        "text": "t",
+        "weight": 6
+    },
+    {
+        "text": "think",
+        "weight": 6
+    },
+    {
+        "text": "ever",
+        "weight": 6
+    },
+    {
+        "text": "right",
         "weight": 6
     }
 ]
