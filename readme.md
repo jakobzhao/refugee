@@ -1,26 +1,3 @@
 # refugee
 
-## geovisualization
-
-- [3d globe](3dglobe.html), [reference](assets/docs/3d-globe.md)
-- reprojection solution: d3 reprojection, - -- openlayers, leaflet, mapbox
-- satellite image on to 3d Globe
-- label voronoi
-- social madia function
-- cartogram - d3
-- network - d3
-- NatGeo Stylesheet
-
-## content
-
-- 50 years of refugee
-
-- globe refugee report: word cloud
-
-- social media tweets, pictures/videos : Bo
-
-- demographics: Gio
-
-- education
-
-- safety
+This project has built the Global Refugee Atlas -- an open, crowdsourced, and participatory online atlas that visualizes and narrates core experiences of the 65 million refugees under the UN mandate. The Atlas is comprised of interactive story maps that convey the historical context and conditions associated with the global refugee journey. Instead of relying on data from, for example, anthropological fieldwork in refugee camps, this Altas will be innovatively constructed using crowdsourced data from social media (e.g., Twitter), open-access satellite remote sensing imagery on land cover or climatic conditions, as well as a host of readily available datasets from UNHCR and other international humanitarian agencies. In its collection of complementary perspectives, the Global Refugee Atlas will provide a thought-provoking and engaging narration of one of the defining human journeys of the 21st century.
