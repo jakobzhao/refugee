@@ -1,18 +1,18 @@
 [
     {
         "text": "texas",
-        "weight": 12
-    },
-    {
-        "text": "trump",
-        "weight": 9
+        "weight": 10
     },
     {
         "text": "people",
+        "weight": 10
+    },
+    {
+        "text": "education",
         "weight": 9
     },
     {
-        "text": "states",
+        "text": "state",
         "weight": 8
     },
     {
@@ -20,31 +20,19 @@
         "weight": 8
     },
     {
-        "text": "work",
-        "weight": 8
-    },
-    {
-        "text": "state",
+        "text": "states",
         "weight": 7
-    },
-    {
-        "text": "2020",
-        "weight": 7
-    },
-    {
-        "text": "resettlement",
-        "weight": 6
     },
     {
         "text": "years",
+        "weight": 7
+    },
+    {
+        "text": "trump",
         "weight": 6
     },
     {
-        "text": "policy",
-        "weight": 6
-    },
-    {
-        "text": "education",
+        "text": "unhcr",
         "weight": 6
     }
 ]
