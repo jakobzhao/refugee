@@ -1,74 +1,50 @@
 [
     {
         "text": "people",
-        "weight": 32
+        "weight": 29
     },
     {
         "text": "children",
-        "weight": 24
+        "weight": 23
     },
     {
         "text": "child",
-        "weight": 22
+        "weight": 20
     },
     {
         "text": "help",
         "weight": 15
     },
     {
+        "text": "family",
+        "weight": 13
+    },
+    {
         "text": "rights",
-        "weight": 13
-    },
-    {
-        "text": "asylum",
-        "weight": 13
-    },
-    {
-        "text": "government",
-        "weight": 11
+        "weight": 10
     },
     {
         "text": "country",
-        "weight": 11
+        "weight": 10
+    },
+    {
+        "text": "asylum",
+        "weight": 10
     },
     {
         "text": "legal",
-        "weight": 11
+        "weight": 9
     },
     {
-        "text": "family",
-        "weight": 11
-    },
-    {
-        "text": "safe",
-        "weight": 10
-    },
-    {
-        "text": "since",
-        "weight": 10
-    },
-    {
-        "text": "┻┳",
-        "weight": 10
+        "text": "some",
+        "weight": 9
     },
     {
         "text": "home",
-        "weight": 9
+        "weight": 8
     },
     {
-        "text": "human",
-        "weight": 9
-    },
-    {
-        "text": "year",
-        "weight": 9
-    },
-    {
-        "text": "┳┻",
-        "weight": 9
-    },
-    {
-        "text": "after",
+        "text": "government",
         "weight": 8
     },
     {
@@ -76,23 +52,39 @@
         "weight": 8
     },
     {
-        "text": "t",
+        "text": "europe",
         "weight": 8
     },
     {
-        "text": "find",
+        "text": "since",
         "weight": 8
     },
     {
-        "text": "years",
+        "text": "families",
         "weight": 7
     },
     {
-        "text": "unaccompanied",
+        "text": "after",
         "weight": 7
     },
     {
-        "text": "back",
+        "text": "need",
+        "weight": 7
+    },
+    {
+        "text": "like",
+        "weight": 7
+    },
+    {
+        "text": "turkey",
+        "weight": 7
+    },
+    {
+        "text": "world",
+        "weight": 7
+    },
+    {
+        "text": "human",
         "weight": 7
     },
     {
@@ -100,39 +92,19 @@
         "weight": 7
     },
     {
+        "text": "take",
+        "weight": 6
+    },
+    {
+        "text": "please",
+        "weight": 6
+    },
+    {
+        "text": "t",
+        "weight": 6
+    },
+    {
         "text": "humanity",
-        "weight": 7
-    },
-    {
-        "text": "libya",
-        "weight": 7
-    },
-    {
-        "text": "first",
-        "weight": 6
-    },
-    {
-        "text": "countries",
-        "weight": 6
-    },
-    {
-        "text": "support",
-        "weight": 6
-    },
-    {
-        "text": "turkey",
-        "weight": 6
-    },
-    {
-        "text": "europe",
-        "weight": 6
-    },
-    {
-        "text": "work",
-        "weight": 6
-    },
-    {
-        "text": "another",
         "weight": 6
     },
     {
@@ -140,11 +112,19 @@
         "weight": 6
     },
     {
-        "text": "some",
+        "text": "find",
         "weight": 6
     },
     {
-        "text": "over",
+        "text": "safe",
+        "weight": 6
+    },
+    {
+        "text": "together",
+        "weight": 6
+    },
+    {
+        "text": "year",
         "weight": 6
     }
 ]
