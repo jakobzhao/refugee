@@ -1,42 +1,54 @@
 [
     {
         "text": "africa",
-        "weight": 11
+        "weight": 20
     },
     {
         "text": "international",
-        "weight": 10
-    },
-    {
-        "text": "people",
-        "weight": 10
-    },
-    {
-        "text": "education",
-        "weight": 9
-    },
-    {
-        "text": "camp",
-        "weight": 9
+        "weight": 13
     },
     {
         "text": "need",
-        "weight": 9
+        "weight": 11
     },
     {
-        "text": "w",
-        "weight": 9
+        "text": "people",
+        "weight": 11
     },
     {
-        "text": "support",
-        "weight": 8
+        "text": "migration",
+        "weight": 10
+    },
+    {
+        "text": "camp",
+        "weight": 10
     },
     {
         "text": "uganda",
+        "weight": 9
+    },
+    {
+        "text": "young",
+        "weight": 8
+    },
+    {
+        "text": "children",
+        "weight": 8
+    },
+    {
+        "text": "world",
         "weight": 7
     },
     {
-        "text": "development",
+        "text": "conference",
+        "weight": 7
+    },
+    {
+        "text": "nairobi",
+        "weight": 7
+    },
+    {
+        "text": "education",
         "weight": 7
     },
     {
@@ -44,23 +56,15 @@
         "weight": 7
     },
     {
-        "text": "children",
+        "text": "south",
         "weight": 7
-    },
-    {
-        "text": "everyone",
-        "weight": 6
     },
     {
         "text": "unfilteredtruth",
         "weight": 6
     },
     {
-        "text": "world",
-        "weight": 6
-    },
-    {
-        "text": "migration",
+        "text": "know",
         "weight": 6
     },
     {
@@ -68,11 +72,7 @@
         "weight": 6
     },
     {
-        "text": "work",
-        "weight": 6
-    },
-    {
-        "text": "sudan",
+        "text": "issues",
         "weight": 6
     }
 ]
