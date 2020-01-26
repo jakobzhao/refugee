@@ -1,130 +1,78 @@
 [
     {
         "text": "child",
-        "weight": 52
+        "weight": 32
     },
     {
         "text": "rights",
-        "weight": 25
-    },
-    {
-        "text": "government",
-        "weight": 18
-    },
-    {
-        "text": "brexit",
-        "weight": 18
-    },
-    {
-        "text": "lords",
-        "weight": 17
-    },
-    {
-        "text": "children",
-        "weight": 17
-    },
-    {
-        "text": "people",
-        "weight": 17
-    },
-    {
-        "text": "help",
         "weight": 16
     },
     {
-        "text": "voted",
-        "weight": 13
+        "text": "children",
+        "weight": 16
     },
     {
-        "text": "world",
+        "text": "people",
+        "weight": 14
+    },
+    {
+        "text": "lords",
+        "weight": 14
+    },
+    {
+        "text": "help",
         "weight": 12
     },
     {
-        "text": "human",
-        "weight": 12
+        "text": "government",
+        "weight": 11
     },
     {
         "text": "house",
-        "weight": 12
+        "weight": 11
     },
     {
         "text": "country",
-        "weight": 12
-    },
-    {
-        "text": "today",
-        "weight": 12
-    },
-    {
-        "text": "families",
-        "weight": 11
+        "weight": 10
     },
     {
         "text": "johnson",
-        "weight": 11
-    },
-    {
-        "text": "amendment",
-        "weight": 11
-    },
-    {
-        "text": "family",
-        "weight": 11
-    },
-    {
-        "text": "protections",
-        "weight": 10
-    },
-    {
-        "text": "after",
-        "weight": 10
-    },
-    {
-        "text": "good",
         "weight": 9
     },
     {
-        "text": "humanity",
+        "text": "voted",
         "weight": 9
+    },
+    {
+        "text": "today",
+        "weight": 9
+    },
+    {
+        "text": "brexit",
+        "weight": 9
+    },
+    {
+        "text": "world",
+        "weight": 8
     },
     {
         "text": "unaccompanied",
         "weight": 8
     },
     {
-        "text": "support",
+        "text": "family",
         "weight": 8
     },
     {
-        "text": "legal",
+        "text": "after",
         "weight": 8
     },
     {
-        "text": "over",
-        "weight": 8
-    },
-    {
-        "text": "young",
-        "weight": 8
-    },
-    {
-        "text": "since",
-        "weight": 8
-    },
-    {
-        "text": "safe",
-        "weight": 8
-    },
-    {
-        "text": "waiting",
-        "weight": 8
-    },
-    {
-        "text": "bill",
+        "text": "good",
         "weight": 7
     },
     {
-        "text": "tories",
+        "text": "should",
         "weight": 7
     },
     {
@@ -132,71 +80,47 @@
         "weight": 7
     },
     {
-        "text": "find",
+        "text": "amendment",
         "weight": 7
-    },
-    {
-        "text": "iraqi",
-        "weight": 7
-    },
-    {
-        "text": "which",
-        "weight": 6
-    },
-    {
-        "text": "commons",
-        "weight": 6
-    },
-    {
-        "text": "need",
-        "weight": 6
-    },
-    {
-        "text": "boris",
-        "weight": 6
-    },
-    {
-        "text": "citizens",
-        "weight": 6
-    },
-    {
-        "text": "breaking",
-        "weight": 6
-    },
-    {
-        "text": "asylum",
-        "weight": 6
-    },
-    {
-        "text": "seekers",
-        "weight": 6
     },
     {
         "text": "give",
+        "weight": 7
+    },
+    {
+        "text": "citizens",
+        "weight": 7
+    },
+    {
+        "text": "protections",
+        "weight": 7
+    },
+    {
+        "text": "families",
+        "weight": 7
+    },
+    {
+        "text": "humanity",
+        "weight": 7
+    },
+    {
+        "text": "support",
         "weight": 6
     },
     {
-        "text": "right",
+        "text": "legal",
         "weight": 6
     },
     {
-        "text": "reunited",
+        "text": "human",
         "weight": 6
     },
     {
-        "text": "vote",
+        "text": "tories",
         "weight": 6
     },
     {
-        "text": "some",
-        "weight": 6
-    },
-    {
-        "text": "vulnerable",
-        "weight": 6
-    },
-    {
-        "text": "save",
+        "text": "amendments",
         "weight": 6
     },
     {
@@ -204,7 +128,11 @@
         "weight": 6
     },
     {
-        "text": "standiraqi",
+        "text": "find",
+        "weight": 6
+    },
+    {
+        "text": "reunited",
         "weight": 6
     }
 ]
