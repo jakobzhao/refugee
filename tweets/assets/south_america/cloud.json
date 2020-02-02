@@ -1,34 +1,550 @@
 [
     {
         "text": "people",
+        "weight": 23
+    },
+    {
+        "text": "immigration",
+        "weight": 23
+    },
+    {
+        "text": "children",
+        "weight": 20
+    },
+    {
+        "text": "nigeria",
+        "weight": 19
+    },
+    {
+        "text": "countries",
+        "weight": 18
+    },
+    {
+        "text": "canada",
+        "weight": 18
+    },
+    {
+        "text": "like",
+        "weight": 18
+    },
+    {
+        "text": "help",
+        "weight": 17
+    },
+    {
+        "text": "country",
+        "weight": 16
+    },
+    {
+        "text": "after",
+        "weight": 16
+    },
+    {
+        "text": "knitfor",
+        "weight": 16
+    },
+    {
+        "text": "minister",
+        "weight": 14
+    },
+    {
+        "text": "want",
+        "weight": 14
+    },
+    {
+        "text": "because",
+        "weight": 13
+    },
+    {
+        "text": "migrants",
+        "weight": 13
+    },
+    {
+        "text": "unhcr",
+        "weight": 13
+    },
+    {
+        "text": "asylum",
         "weight": 12
+    },
+    {
+        "text": "south",
+        "weight": 12
+    },
+    {
+        "text": "tents",
+        "weight": 12
+    },
+    {
+        "text": "work",
+        "weight": 12
+    },
+    {
+        "text": "over",
+        "weight": 12
+    },
+    {
+        "text": "into",
+        "weight": 12
+    },
+    {
+        "text": "2019",
+        "weight": 12
+    },
+    {
+        "text": "camps",
+        "weight": 12
+    },
+    {
+        "text": "syrian",
+        "weight": 11
+    },
+    {
+        "text": "trump",
+        "weight": 11
+    },
+    {
+        "text": "support",
+        "weight": 11
+    },
+    {
+        "text": "venezuelan",
+        "weight": 11
+    },
+    {
+        "text": "t",
+        "weight": 11
+    },
+    {
+        "text": "httpsegyptianstreets2018femalearchitectinventstentscollectrainwaterstoresolarenergy",
+        "weight": 11
+    },
+    {
+        "text": "know",
+        "weight": 11
+    },
+    {
+        "text": "also",
+        "weight": 11
+    },
+    {
+        "text": "economic",
+        "weight": 10
+    },
+    {
+        "text": "care",
+        "weight": 10
+    },
+    {
+        "text": "other",
+        "weight": 10
+    },
+    {
+        "text": "inspiring",
+        "weight": 10
+    },
+    {
+        "text": "woman",
+        "weight": 10
+    },
+    {
+        "text": "invents",
+        "weight": 10
+    },
+    {
+        "text": "collect",
+        "weight": 10
+    },
+    {
+        "text": "rainwater",
+        "weight": 10
+    },
+    {
+        "text": "store",
+        "weight": 10
+    },
+    {
+        "text": "solar",
+        "weight": 10
+    },
+    {
+        "text": "energy",
+        "weight": 10
+    },
+    {
+        "text": "women",
+        "weight": 10
+    },
+    {
+        "text": "sovereignty",
+        "weight": 10
+    },
+    {
+        "text": "—",
+        "weight": 10
+    },
+    {
+        "text": "book",
+        "weight": 10
+    },
+    {
+        "text": "something",
+        "weight": 10
     },
     {
         "text": "climate",
         "weight": 10
     },
     {
-        "text": "texas",
-        "weight": 7
-    },
-    {
-        "text": "life",
-        "weight": 7
+        "text": "violence",
+        "weight": 9
     },
     {
         "text": "home",
+        "weight": 9
+    },
+    {
+        "text": "america",
+        "weight": 9
+    },
+    {
+        "text": "egyptian",
+        "weight": 9
+    },
+    {
+        "text": "streets",
+        "weight": 9
+    },
+    {
+        "text": "take",
+        "weight": 9
+    },
+    {
+        "text": "making",
+        "weight": 9
+    },
+    {
+        "text": "community",
+        "weight": 9
+    },
+    {
+        "text": "suicide",
+        "weight": 9
+    },
+    {
+        "text": "time",
+        "weight": 9
+    },
+    {
+        "text": "change",
+        "weight": 9
+    },
+    {
+        "text": "global",
+        "weight": 9
+    },
+    {
+        "text": "border",
+        "weight": 8
+    },
+    {
+        "text": "state",
+        "weight": 8
+    },
+    {
+        "text": "year",
+        "weight": 8
+    },
+    {
+        "text": "displaced",
+        "weight": 8
+    },
+    {
+        "text": "years",
+        "weight": 8
+    },
+    {
+        "text": "story",
+        "weight": 8
+    },
+    {
+        "text": "world",
+        "weight": 8
+    },
+    {
+        "text": "young",
+        "weight": 8
+    },
+    {
+        "text": "should",
+        "weight": 8
+    },
+    {
+        "text": "fraud",
+        "weight": 8
+    },
+    {
+        "text": "open",
+        "weight": 8
+    },
+    {
+        "text": "taxpayer",
+        "weight": 8
+    },
+    {
+        "text": "theft",
+        "weight": 8
+    },
+    {
+        "text": "immigrants",
+        "weight": 8
+    },
+    {
+        "text": "life",
+        "weight": 8
+    },
+    {
+        "text": "citizenship",
+        "weight": 8
+    },
+    {
+        "text": "fleeing",
+        "weight": 7
+    },
+    {
+        "text": "‘",
+        "weight": 7
+    },
+    {
+        "text": "pretoria",
+        "weight": 7
+    },
+    {
+        "text": "legal",
+        "weight": 7
+    },
+    {
+        "text": "needs",
+        "weight": 7
+    },
+    {
+        "text": "programs",
+        "weight": 7
+    },
+    {
+        "text": "africa",
+        "weight": 7
+    },
+    {
+        "text": "come",
+        "weight": 7
+    },
+    {
+        "text": "someone",
+        "weight": 7
+    },
+    {
+        "text": "sesame",
+        "weight": 7
+    },
+    {
+        "text": "live",
+        "weight": 7
+    },
+    {
+        "text": "place",
+        "weight": 7
+    },
+    {
+        "text": "some",
+        "weight": 7
+    },
+    {
+        "text": "borders",
+        "weight": 7
+    },
+    {
+        "text": "need",
+        "weight": 7
+    },
+    {
+        "text": "american",
+        "weight": 7
+    },
+    {
+        "text": "industrial",
+        "weight": 7
+    },
+    {
+        "text": "complex",
+        "weight": 7
+    },
+    {
+        "text": "very",
+        "weight": 7
+    },
+    {
+        "text": "illegal",
+        "weight": 7
+    },
+    {
+        "text": "americans",
+        "weight": 7
+    },
+    {
+        "text": "while",
+        "weight": 7
+    },
+    {
+        "text": "security",
+        "weight": 7
+    },
+    {
+        "text": "family",
+        "weight": 7
+    },
+    {
+        "text": "look",
+        "weight": 7
+    },
+    {
+        "text": "which",
+        "weight": 7
+    },
+    {
+        "text": "since",
+        "weight": 7
+    },
+    {
+        "text": "already",
+        "weight": 7
+    },
+    {
+        "text": "idps",
+        "weight": 7
+    },
+    {
+        "text": "communities",
+        "weight": 7
+    },
+    {
+        "text": "called",
         "weight": 6
     },
     {
-        "text": "ilhan",
+        "text": "great",
         "weight": 6
     },
     {
-        "text": "omar",
+        "text": "plan",
         "weight": 6
     },
     {
-        "text": "muslim",
+        "text": "says",
+        "weight": 6
+    },
+    {
+        "text": "between",
+        "weight": 6
+    },
+    {
+        "text": "•",
+        "weight": 6
+    },
+    {
+        "text": "problem",
+        "weight": 6
+    },
+    {
+        "text": "syria",
+        "weight": 6
+    },
+    {
+        "text": "trying",
+        "weight": 6
+    },
+    {
+        "text": "israel",
+        "weight": 6
+    },
+    {
+        "text": "right",
+        "weight": 6
+    },
+    {
+        "text": "must",
+        "weight": 6
+    },
+    {
+        "text": "street",
+        "weight": 6
+    },
+    {
+        "text": "nothing",
+        "weight": 6
+    },
+    {
+        "text": "europe",
+        "weight": 6
+    },
+    {
+        "text": "profit",
+        "weight": 6
+    },
+    {
+        "text": "corruption",
+        "weight": 6
+    },
+    {
+        "text": "white",
+        "weight": 6
+    },
+    {
+        "text": "food",
+        "weight": 6
+    },
+    {
+        "text": "face",
+        "weight": 6
+    },
+    {
+        "text": "camp",
+        "weight": 6
+    },
+    {
+        "text": "thousands",
+        "weight": 6
+    },
+    {
+        "text": "good",
+        "weight": 6
+    },
+    {
+        "text": "around",
+        "weight": 6
+    },
+    {
+        "text": "education",
+        "weight": 6
+    },
+    {
+        "text": "administration",
+        "weight": 6
+    },
+    {
+        "text": "much",
+        "weight": 6
+    },
+    {
+        "text": "national",
+        "weight": 6
+    },
+    {
+        "text": "safe",
+        "weight": 6
+    },
+    {
+        "text": "states",
         "weight": 6
     }
 ]

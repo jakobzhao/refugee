@@ -1,46 +1,1810 @@
 [
     {
-        "text": "child",
-        "weight": 25
+        "text": "people",
+        "weight": 108
     },
     {
-        "text": "rights",
-        "weight": 11
+        "text": "asylum",
+        "weight": 85
     },
     {
-        "text": "brexit",
-        "weight": 11
+        "text": "children",
+        "weight": 69
     },
     {
         "text": "help",
+        "weight": 68
+    },
+    {
+        "text": "syrian",
+        "weight": 64
+    },
+    {
+        "text": "seekers",
+        "weight": 53
+    },
+    {
+        "text": "support",
+        "weight": 49
+    },
+    {
+        "text": "camp",
+        "weight": 48
+    },
+    {
+        "text": "t",
+        "weight": 47
+    },
+    {
+        "text": "migrants",
+        "weight": 46
+    },
+    {
+        "text": "today",
+        "weight": 44
+    },
+    {
+        "text": "work",
+        "weight": 41
+    },
+    {
+        "text": "rights",
+        "weight": 41
+    },
+    {
+        "text": "standiraqi",
+        "weight": 39
+    },
+    {
+        "text": "camps",
+        "weight": 39
+    },
+    {
+        "text": "world",
+        "weight": 38
+    },
+    {
+        "text": "turkey",
+        "weight": 38
+    },
+    {
+        "text": "greece",
+        "weight": 37
+    },
+    {
+        "text": "child",
+        "weight": 36
+    },
+    {
+        "text": "last",
+        "weight": 34
+    },
+    {
+        "text": "home",
+        "weight": 33
+    },
+    {
+        "text": "iraqi",
+        "weight": 33
+    },
+    {
+        "text": "want",
+        "weight": 33
+    },
+    {
+        "text": "country",
+        "weight": 32
+    },
+    {
+        "text": "years",
+        "weight": 31
+    },
+    {
+        "text": "welcome",
+        "weight": 31
+    },
+    {
+        "text": "into",
+        "weight": 30
+    },
+    {
+        "text": "know",
+        "weight": 30
+    },
+    {
+        "text": "need",
+        "weight": 30
+    },
+    {
+        "text": "make",
+        "weight": 29
+    },
+    {
+        "text": "government",
+        "weight": 27
+    },
+    {
+        "text": "other",
+        "weight": 27
+    },
+    {
+        "text": "syria",
+        "weight": 27
+    },
+    {
+        "text": "unhcr",
+        "weight": 27
+    },
+    {
+        "text": "lives",
+        "weight": 26
+    },
+    {
+        "text": "please",
+        "weight": 26
+    },
+    {
+        "text": "safe",
+        "weight": 26
+    },
+    {
+        "text": "after",
+        "weight": 26
+    },
+    {
+        "text": "like",
+        "weight": 26
+    },
+    {
+        "text": "time",
+        "weight": 25
+    },
+    {
+        "text": "over",
+        "weight": 25
+    },
+    {
+        "text": "back",
+        "weight": 24
+    },
+    {
+        "text": "take",
+        "weight": 24
+    },
+    {
+        "text": "human",
+        "weight": 24
+    },
+    {
+        "text": "because",
+        "weight": 24
+    },
+    {
+        "text": "great",
+        "weight": 23
+    },
+    {
+        "text": "w",
+        "weight": 23
+    },
+    {
+        "text": "says",
+        "weight": 23
+    },
+    {
+        "text": "million",
+        "weight": 23
+    },
+    {
+        "text": "very",
+        "weight": 22
+    },
+    {
+        "text": "part",
+        "weight": 22
+    },
+    {
+        "text": "right",
+        "weight": 22
+    },
+    {
+        "text": "life",
+        "weight": 22
+    },
+    {
+        "text": "education",
+        "weight": 22
+    },
+    {
+        "text": "which",
+        "weight": 21
+    },
+    {
+        "text": "come",
+        "weight": 20
+    },
+    {
+        "text": "labour",
+        "weight": 20
+    },
+    {
+        "text": "countries",
+        "weight": 19
+    },
+    {
+        "text": "good",
+        "weight": 19
+    },
+    {
+        "text": "year",
+        "weight": 19
+    },
+    {
+        "text": "crisis",
+        "weight": 19
+    },
+    {
+        "text": "legal",
+        "weight": 19
+    },
+    {
+        "text": "hope",
+        "weight": 19
+    },
+    {
+        "text": "stop",
+        "weight": 19
+    },
+    {
+        "text": "young",
+        "weight": 18
+    },
+    {
+        "text": "change",
+        "weight": 18
+    },
+    {
+        "text": "community",
+        "weight": 18
+    },
+    {
+        "text": "action",
+        "weight": 18
+    },
+    {
+        "text": "family",
+        "weight": 18
+    },
+    {
+        "text": "greek",
+        "weight": 18
+    },
+    {
+        "text": "europe",
+        "weight": 17
+    },
+    {
+        "text": "then",
+        "weight": 17
+    },
+    {
+        "text": "some",
+        "weight": 17
+    },
+    {
+        "text": "seeking",
+        "weight": 17
+    },
+    {
+        "text": "migration",
+        "weight": 17
+    },
+    {
+        "text": "should",
+        "weight": 17
+    },
+    {
+        "text": "place",
+        "weight": 17
+    },
+    {
+        "text": "united",
+        "weight": 17
+    },
+    {
+        "text": "regime",
+        "weight": 17
+    },
+    {
+        "text": "said",
+        "weight": 17
+    },
+    {
+        "text": "care",
+        "weight": 16
+    },
+    {
+        "text": "helping",
+        "weight": 16
+    },
+    {
+        "text": "suffering",
+        "weight": 16
+    },
+    {
+        "text": "against",
+        "weight": 16
+    },
+    {
+        "text": "detention",
+        "weight": 16
+    },
+    {
+        "text": "global",
+        "weight": 16
+    },
+    {
+        "text": "moria",
+        "weight": 16
+    },
+    {
+        "text": "fleeing",
+        "weight": 16
+    },
+    {
+        "text": "including",
+        "weight": 16
+    },
+    {
+        "text": "first",
+        "weight": 15
+    },
+    {
+        "text": "food",
+        "weight": 15
+    },
+    {
+        "text": "night",
+        "weight": 15
+    },
+    {
+        "text": "living",
+        "weight": 15
+    },
+    {
+        "text": "project",
+        "weight": 15
+    },
+    {
+        "text": "working",
+        "weight": 15
+    },
+    {
+        "text": "next",
+        "weight": 15
+    },
+    {
+        "text": "stand",
+        "weight": 15
+    },
+    {
+        "text": "waiting",
+        "weight": 15
+    },
+    {
+        "text": "vulnerable",
+        "weight": 15
+    },
+    {
+        "text": "must",
+        "weight": 15
+    },
+    {
+        "text": "access",
+        "weight": 15
+    },
+    {
+        "text": "risk",
+        "weight": 14
+    },
+    {
+        "text": "families",
+        "weight": 14
+    },
+    {
+        "text": "ge2019",
+        "weight": 14
+    },
+    {
+        "text": "made",
+        "weight": 14
+    },
+    {
+        "text": "local",
+        "weight": 14
+    },
+    {
+        "text": "through",
+        "weight": 14
+    },
+    {
+        "text": "think",
+        "weight": 14
+    },
+    {
+        "text": "island",
+        "weight": 14
+    },
+    {
+        "text": "also",
+        "weight": 14
+    },
+    {
+        "text": "story",
+        "weight": 14
+    },
+    {
+        "text": "supporting",
+        "weight": 14
+    },
+    {
+        "text": "closed",
+        "weight": 14
+    },
+    {
+        "text": "open",
+        "weight": 14
+    },
+    {
+        "text": "become",
+        "weight": 13
+    },
+    {
+        "text": "vote",
+        "weight": 13
+    },
+    {
+        "text": "international",
+        "weight": 13
+    },
+    {
+        "text": "email",
+        "weight": 13
+    },
+    {
+        "text": "women",
+        "weight": 13
+    },
+    {
+        "text": "group",
+        "weight": 13
+    },
+    {
+        "text": "candidates",
+        "weight": 13
+    },
+    {
+        "text": "read",
+        "weight": 13
+    },
+    {
+        "text": "kingdom",
+        "weight": 13
+    },
+    {
+        "text": "protection",
+        "weight": 13
+    },
+    {
+        "text": "immigrants",
+        "weight": 12
+    },
+    {
+        "text": "ks",
+        "weight": 12
+    },
+    {
+        "text": "economic",
+        "weight": 12
+    },
+    {
+        "text": "contact",
+        "weight": 12
+    },
+    {
+        "text": "killing",
+        "weight": 12
+    },
+    {
+        "text": "week",
+        "weight": 12
+    },
+    {
+        "text": "since",
+        "weight": 12
+    },
+    {
+        "text": "water",
+        "weight": 12
+    },
+    {
+        "text": "mother",
+        "weight": 12
+    },
+    {
+        "text": "islands",
+        "weight": 12
+    },
+    {
+        "text": "give",
+        "weight": 12
+    },
+    {
+        "text": "thousands",
+        "weight": 12
+    },
+    {
+        "text": "forced",
+        "weight": 12
+    },
+    {
+        "text": "leave",
+        "weight": 12
+    },
+    {
+        "text": "making",
+        "weight": 12
+    },
+    {
+        "text": "displaced",
+        "weight": 12
+    },
+    {
+        "text": "school",
+        "weight": 12
+    },
+    {
+        "text": "house",
+        "weight": 12
+    },
+    {
+        "text": "free",
+        "weight": 12
+    },
+    {
+        "text": "could",
+        "weight": 12
+    },
+    {
+        "text": "forum",
+        "weight": 12
+    },
+    {
+        "text": "•",
+        "weight": 12
+    },
+    {
+        "text": "same",
+        "weight": 12
+    },
+    {
+        "text": "down",
+        "weight": 12
+    },
+    {
+        "text": "money",
+        "weight": 12
+    },
+    {
+        "text": "facilities",
+        "weight": 12
+    },
+    {
+        "text": "attack",
+        "weight": 12
+    },
+    {
+        "text": "overcrowded",
+        "weight": 12
+    },
+    {
+        "text": "share",
+        "weight": 11
+    },
+    {
+        "text": "immigration",
+        "weight": 11
+    },
+    {
+        "text": "routes",
+        "weight": 11
+    },
+    {
+        "text": "centre",
+        "weight": 11
+    },
+    {
+        "text": "charity",
+        "weight": 11
+    },
+    {
+        "text": "party",
+        "weight": 11
+    },
+    {
+        "text": "climate",
+        "weight": 11
+    },
+    {
+        "text": "such",
+        "weight": 11
+    },
+    {
+        "text": "given",
+        "weight": 11
+    },
+    {
+        "text": "social",
+        "weight": 11
+    },
+    {
+        "text": "council",
+        "weight": 11
+    },
+    {
+        "text": "‘",
+        "weight": 11
+    },
+    {
+        "text": "homes",
+        "weight": 11
+    },
+    {
+        "text": "morning",
+        "weight": 11
+    },
+    {
+        "text": "room",
+        "weight": 11
+    },
+    {
+        "text": "while",
+        "weight": 11
+    },
+    {
+        "text": "during",
+        "weight": 11
+    },
+    {
+        "text": "london",
+        "weight": 11
+    },
+    {
+        "text": "look",
+        "weight": 11
+    },
+    {
+        "text": "around",
+        "weight": 11
+    },
+    {
+        "text": "turkish",
+        "weight": 11
+    },
+    {
+        "text": "idlib",
+        "weight": 11
+    },
+    {
+        "text": "always",
+        "weight": 11
+    },
+    {
+        "text": "system",
+        "weight": 11
+    },
+    {
+        "text": "much",
+        "weight": 11
+    },
+    {
+        "text": "using",
+        "weight": 10
+    },
+    {
+        "text": "experience",
+        "weight": 10
+    },
+    {
+        "text": "really",
+        "weight": 10
+    },
+    {
+        "text": "health",
+        "weight": 10
+    },
+    {
+        "text": "election",
+        "weight": 10
+    },
+    {
+        "text": "photo",
+        "weight": 10
+    },
+    {
+        "text": "fire",
+        "weight": 10
+    },
+    {
+        "text": "solutions",
+        "weight": 10
+    },
+    {
+        "text": "flee",
+        "weight": 10
+    },
+    {
+        "text": "in",
+        "weight": 10
+    },
+    {
+        "text": "number",
+        "weight": 10
+    },
+    {
+        "text": "conditions",
+        "weight": 10
+    },
+    {
+        "text": "political",
+        "weight": 10
+    },
+    {
+        "text": "came",
+        "weight": 10
+    },
+    {
+        "text": "anyone",
+        "weight": 10
+    },
+    {
+        "text": "solution",
+        "weight": 10
+    },
+    {
+        "text": "news",
+        "weight": 10
+    },
+    {
+        "text": "2019",
+        "weight": 10
+    },
+    {
+        "text": "worldchildrensday",
+        "weight": 10
+    },
+    {
+        "text": "across",
+        "weight": 10
+    },
+    {
+        "text": "session",
+        "weight": 10
+    },
+    {
+        "text": "moving",
+        "weight": 10
+    },
+    {
+        "text": "told",
+        "weight": 10
+    },
+    {
+        "text": "assad",
+        "weight": 10
+    },
+    {
+        "text": "together",
+        "weight": 10
+    },
+    {
+        "text": "society",
+        "weight": 10
+    },
+    {
+        "text": "least",
+        "weight": 10
+    },
+    {
+        "text": "another",
+        "weight": 10
+    },
+    {
+        "text": "three",
+        "weight": 10
+    },
+    {
+        "text": "humanity",
+        "weight": 10
+    },
+    {
+        "text": "trying",
+        "weight": 10
+    },
+    {
+        "text": "sudan",
+        "weight": 10
+    },
+    {
+        "text": "african",
+        "weight": 10
+    },
+    {
+        "text": "hard",
+        "weight": 9
+    },
+    {
+        "text": "others",
+        "weight": 9
+    },
+    {
+        "text": "long",
+        "weight": 9
+    },
+    {
+        "text": "jewish",
+        "weight": 9
+    },
+    {
+        "text": "generation",
+        "weight": 9
+    },
+    {
+        "text": "host",
+        "weight": 9
+    },
+    {
+        "text": "leader",
+        "weight": 9
+    },
+    {
+        "text": "migrant",
+        "weight": 9
+    },
+    {
+        "text": "real",
+        "weight": 9
+    },
+    {
+        "text": "door",
+        "weight": 9
+    },
+    {
+        "text": "waited",
+        "weight": 9
+    },
+    {
+        "text": "status",
+        "weight": 9
+    },
+    {
+        "text": "students",
+        "weight": 9
+    },
+    {
+        "text": "best",
+        "weight": 9
+    },
+    {
+        "text": "talk",
+        "weight": 9
+    },
+    {
+        "text": "emailed",
+        "weight": 9
+    },
+    {
+        "text": "clear",
+        "weight": 9
+    },
+    {
+        "text": "resettlement",
+        "weight": 9
+    },
+    {
+        "text": "friend",
+        "weight": 9
+    },
+    {
+        "text": "every",
+        "weight": 9
+    },
+    {
+        "text": "iraq",
+        "weight": 9
+    },
+    {
+        "text": "emergency",
+        "weight": 9
+    },
+    {
+        "text": "northern",
+        "weight": 9
+    },
+    {
+        "text": "feel",
+        "weight": 9
+    },
+    {
+        "text": "live",
+        "weight": 9
+    },
+    {
+        "text": "protect",
+        "weight": 9
+    },
+    {
+        "text": "university",
+        "weight": 9
+    },
+    {
+        "text": "replace",
+        "weight": 9
+    },
+    {
+        "text": "safety",
+        "weight": 9
+    },
+    {
+        "text": "raised",
+        "weight": 9
+    },
+    {
+        "text": "racist",
+        "weight": 9
+    },
+    {
+        "text": "save",
+        "weight": 9
+    },
+    {
+        "text": "france",
+        "weight": 9
+    },
+    {
+        "text": "building",
+        "weight": 9
+    },
+    {
+        "text": "lesbos",
+        "weight": 9
+    },
+    {
+        "text": "saying",
+        "weight": 9
+    },
+    {
+        "text": "going",
+        "weight": 9
+    },
+    {
+        "text": "shut",
+        "weight": 9
+    },
+    {
+        "text": "better",
         "weight": 8
     },
     {
-        "text": "people",
+        "text": "places",
+        "weight": 8
+    },
+    {
+        "text": "continues",
+        "weight": 8
+    },
+    {
+        "text": "workers",
+        "weight": 8
+    },
+    {
+        "text": "candidate",
+        "weight": 8
+    },
+    {
+        "text": "david",
         "weight": 8
     },
     {
         "text": "voted",
+        "weight": 8
+    },
+    {
+        "text": "representative",
+        "weight": 8
+    },
+    {
+        "text": "feraszaman48yahoo",
+        "weight": 8
+    },
+    {
+        "text": "firas",
+        "weight": 8
+    },
+    {
+        "text": "alkhamees",
+        "weight": 8
+    },
+    {
+        "text": "soup",
+        "weight": 8
+    },
+    {
+        "text": "brilliant",
+        "weight": 8
+    },
+    {
+        "text": "standing",
+        "weight": 8
+    },
+    {
+        "text": "happy",
+        "weight": 8
+    },
+    {
+        "text": "poland",
+        "weight": 8
+    },
+    {
+        "text": "found",
+        "weight": 8
+    },
+    {
+        "text": "winter",
+        "weight": 8
+    },
+    {
+        "text": "woman",
+        "weight": 8
+    },
+    {
+        "text": "rohingya",
+        "weight": 8
+    },
+    {
+        "text": "nothing",
+        "weight": 8
+    },
+    {
+        "text": "stay",
+        "weight": 8
+    },
+    {
+        "text": "torture",
+        "weight": 8
+    },
+    {
+        "text": "communities",
+        "weight": 8
+    },
+    {
+        "text": "fled",
+        "weight": 8
+    },
+    {
+        "text": "programme",
+        "weight": 8
+    },
+    {
+        "text": "policy",
+        "weight": 8
+    },
+    {
+        "text": "even",
+        "weight": 8
+    },
+    {
+        "text": "keep",
+        "weight": 8
+    },
+    {
+        "text": "services",
+        "weight": 8
+    },
+    {
+        "text": "show",
+        "weight": 8
+    },
+    {
+        "text": "giving",
+        "weight": 8
+    },
+    {
+        "text": "meeting",
+        "weight": 8
+    },
+    {
+        "text": "little",
+        "weight": 8
+    },
+    {
+        "text": "k",
+        "weight": 8
+    },
+    {
+        "text": "continue",
+        "weight": 8
+    },
+    {
+        "text": "states",
+        "weight": 8
+    },
+    {
+        "text": "christmas",
+        "weight": 8
+    },
+    {
+        "text": "never",
+        "weight": 8
+    },
+    {
+        "text": "higher",
+        "weight": 8
+    },
+    {
+        "text": "universities",
+        "weight": 8
+    },
+    {
+        "text": "team",
+        "weight": 8
+    },
+    {
+        "text": "state",
+        "weight": 8
+    },
+    {
+        "text": "border",
+        "weight": 8
+    },
+    {
+        "text": "citizens",
+        "weight": 8
+    },
+    {
+        "text": "ireland",
+        "weight": 8
+    },
+    {
+        "text": "freedom",
+        "weight": 8
+    },
+    {
+        "text": "still",
+        "weight": 8
+    },
+    {
+        "text": "notorious",
+        "weight": 8
+    },
+    {
+        "text": "assistance",
+        "weight": 8
+    },
+    {
+        "text": "again",
+        "weight": 8
+    },
+    {
+        "text": "appeal",
+        "weight": 8
+    },
+    {
+        "text": "£",
+        "weight": 8
+    },
+    {
+        "text": "homeless",
+        "weight": 8
+    },
+    {
+        "text": "rebuild",
         "weight": 7
     },
     {
-        "text": "johnson",
+        "text": "creating",
+        "weight": 7
+    },
+    {
+        "text": "lost",
+        "weight": 7
+    },
+    {
+        "text": "donate",
+        "weight": 7
+    },
+    {
+        "text": "find",
+        "weight": 7
+    },
+    {
+        "text": "ever",
+        "weight": 7
+    },
+    {
+        "text": "focus",
+        "weight": 7
+    },
+    {
+        "text": "pledge",
+        "weight": 7
+    },
+    {
+        "text": "dozens",
+        "weight": 7
+    },
+    {
+        "text": "rescue",
+        "weight": 7
+    },
+    {
+        "text": "movement",
+        "weight": 7
+    },
+    {
+        "text": "times",
+        "weight": 7
+    },
+    {
+        "text": "kitchen",
+        "weight": 7
+    },
+    {
+        "text": "asking",
+        "weight": 7
+    },
+    {
+        "text": "taking",
+        "weight": 7
+    },
+    {
+        "text": "fight",
+        "weight": 7
+    },
+    {
+        "text": "signing",
+        "weight": 7
+    },
+    {
+        "text": "compact",
+        "weight": 7
+    },
+    {
+        "text": "reaching",
+        "weight": 7
+    },
+    {
+        "text": "forest",
+        "weight": 7
+    },
+    {
+        "text": "passedwhile",
+        "weight": 7
+    },
+    {
+        "text": "join",
+        "weight": 7
+    },
+    {
+        "text": "areas",
+        "weight": 7
+    },
+    {
+        "text": "urgent",
+        "weight": 7
+    },
+    {
+        "text": "incredible",
+        "weight": 7
+    },
+    {
+        "text": "forget",
+        "weight": 7
+    },
+    {
+        "text": "issues",
+        "weight": 7
+    },
+    {
+        "text": "proud",
+        "weight": 7
+    },
+    {
+        "text": "manifesto",
+        "weight": 7
+    },
+    {
+        "text": "history",
+        "weight": 7
+    },
+    {
+        "text": "hidden",
+        "weight": 7
+    },
+    {
+        "text": "father",
+        "weight": 7
+    },
+    {
+        "text": "donation",
+        "weight": 7
+    },
+    {
+        "text": "dubs",
+        "weight": 7
+    },
+    {
+        "text": "chief",
+        "weight": 7
+    },
+    {
+        "text": "visit",
+        "weight": 7
+    },
+    {
+        "text": "love",
+        "weight": 7
+    },
+    {
+        "text": "info",
+        "weight": 7
+    },
+    {
+        "text": "”",
+        "weight": 7
+    },
+    {
+        "text": "britain",
+        "weight": 7
+    },
+    {
+        "text": "thought",
+        "weight": 7
+    },
+    {
+        "text": "december",
+        "weight": 7
+    },
+    {
+        "text": "watch",
+        "weight": 7
+    },
+    {
+        "text": "doors",
+        "weight": 7
+    },
+    {
+        "text": "fear",
+        "weight": 7
+    },
+    {
+        "text": "helped",
+        "weight": 7
+    },
+    {
+        "text": "german",
+        "weight": 7
+    },
+    {
+        "text": "does",
+        "weight": 7
+    },
+    {
+        "text": "killed",
+        "weight": 7
+    },
+    {
+        "text": "spent",
+        "weight": 7
+    },
+    {
+        "text": "provide",
+        "weight": 7
+    },
+    {
+        "text": "heard",
+        "weight": 7
+    },
+    {
+        "text": "media",
+        "weight": 7
+    },
+    {
+        "text": "israeli",
+        "weight": 7
+    },
+    {
+        "text": "hospital",
+        "weight": 7
+    },
+    {
+        "text": "future",
+        "weight": 7
+    },
+    {
+        "text": "music",
+        "weight": 7
+    },
+    {
+        "text": "calais",
+        "weight": 7
+    },
+    {
+        "text": "towards",
+        "weight": 7
+    },
+    {
+        "text": "days",
+        "weight": 7
+    },
+    {
+        "text": "medical",
+        "weight": 7
+    },
+    {
+        "text": "libya",
+        "weight": 7
+    },
+    {
+        "text": "return",
+        "weight": 7
+    },
+    {
+        "text": "full",
+        "weight": 7
+    },
+    {
+        "text": "pakistan",
+        "weight": 7
+    },
+    {
+        "text": "asked",
+        "weight": 7
+    },
+    {
+        "text": "ger",
+        "weight": 7
+    },
+    {
+        "text": "left",
+        "weight": 7
+    },
+    {
+        "text": "amazing",
+        "weight": 7
+    },
+    {
+        "text": "corbyn",
+        "weight": 7
+    },
+    {
+        "text": "believe",
+        "weight": 7
+    },
+    {
+        "text": "hostile",
         "weight": 6
     },
     {
-        "text": "should",
+        "text": "environment",
         "weight": 6
     },
     {
-        "text": "lords",
+        "text": "british",
         "weight": 6
     },
     {
-        "text": "amendment",
+        "text": "empire",
         "weight": 6
     },
     {
-        "text": "house",
+        "text": "often",
+        "weight": 6
+    },
+    {
+        "text": "start",
+        "weight": 6
+    },
+    {
+        "text": "glasgow",
+        "weight": 6
+    },
+    {
+        "text": "needs",
+        "weight": 6
+    },
+    {
+        "text": "transform",
+        "weight": 6
+    },
+    {
+        "text": "west",
+        "weight": 6
+    },
+    {
+        "text": "housing",
+        "weight": 6
+    },
+    {
+        "text": "isis",
+        "weight": 6
+    },
+    {
+        "text": "caught",
+        "weight": 6
+    },
+    {
+        "text": "fake",
+        "weight": 6
+    },
+    {
+        "text": "apply",
+        "weight": 6
+    },
+    {
+        "text": "treated",
+        "weight": 6
+    },
+    {
+        "text": "award",
+        "weight": 6
+    },
+    {
+        "text": "members",
+        "weight": 6
+    },
+    {
+        "text": "took",
+        "weight": 6
+    },
+    {
+        "text": "friends",
+        "weight": 6
+    },
+    {
+        "text": "message",
+        "weight": 6
+    },
+    {
+        "text": "poor",
+        "weight": 6
+    },
+    {
+        "text": "christian",
+        "weight": 6
+    },
+    {
+        "text": "public",
+        "weight": 6
+    },
+    {
+        "text": "inspiring",
+        "weight": 6
+    },
+    {
+        "text": "light",
+        "weight": 6
+    },
+    {
+        "text": "volunteer",
+        "weight": 6
+    },
+    {
+        "text": "event",
+        "weight": 6
+    },
+    {
+        "text": "talking",
+        "weight": 6
+    },
+    {
+        "text": "yesterday",
+        "weight": 6
+    },
+    {
+        "text": "conflict",
+        "weight": 6
+    },
+    {
+        "text": "kidnap",
+        "weight": 6
+    },
+    {
+        "text": "rape",
+        "weight": 6
+    },
+    {
+        "text": "response",
+        "weight": 6
+    },
+    {
+        "text": "whether",
+        "weight": 6
+    },
+    {
+        "text": "comes",
+        "weight": 6
+    },
+    {
+        "text": "campaign",
+        "weight": 6
+    },
+    {
+        "text": "follow",
+        "weight": 6
+    },
+    {
+        "text": "violence",
+        "weight": 6
+    },
+    {
+        "text": "nations",
+        "weight": 6
+    },
+    {
+        "text": "among",
+        "weight": 6
+    },
+    {
+        "text": "measure",
+        "weight": 6
+    },
+    {
+        "text": "away",
+        "weight": 6
+    },
+    {
+        "text": "lord",
+        "weight": 6
+    },
+    {
+        "text": "uganda",
+        "weight": 6
+    },
+    {
+        "text": "kenya",
+        "weight": 6
+    },
+    {
+        "text": "coming",
+        "weight": 6
+    },
+    {
+        "text": "refuge",
+        "weight": 6
+    },
+    {
+        "text": "persecution",
+        "weight": 6
+    },
+    {
+        "text": "south",
+        "weight": 6
+    },
+    {
+        "text": "call",
+        "weight": 6
+    },
+    {
+        "text": "star",
+        "weight": 6
+    },
+    {
+        "text": "maternity",
+        "weight": 6
+    },
+    {
+        "text": "small",
+        "weight": 6
+    },
+    {
+        "text": "fired",
+        "weight": 6
+    },
+    {
+        "text": "president",
+        "weight": 6
+    },
+    {
+        "text": "imagine",
+        "weight": 6
+    },
+    {
+        "text": "girl",
+        "weight": 6
+    },
+    {
+        "text": "ways",
+        "weight": 6
+    },
+    {
+        "text": "charities",
+        "weight": 6
+    },
+    {
+        "text": "missile",
+        "weight": 6
+    },
+    {
+        "text": "evening",
+        "weight": 6
+    },
+    {
+        "text": "street",
+        "weight": 6
+    },
+    {
+        "text": "doesn",
+        "weight": 6
+    },
+    {
+        "text": "ending",
+        "weight": 6
+    },
+    {
+        "text": "inspired",
+        "weight": 6
+    },
+    {
+        "text": "brexit",
+        "weight": 6
+    },
+    {
+        "text": "unaccompanied",
+        "weight": 6
+    },
+    {
+        "text": "past",
+        "weight": 6
+    },
+    {
+        "text": "face",
+        "weight": 6
+    },
+    {
+        "text": "important",
+        "weight": 6
+    },
+    {
+        "text": "jews",
+        "weight": 6
+    },
+    {
+        "text": "rescued",
+        "weight": 6
+    },
+    {
+        "text": "civil",
+        "weight": 6
+    },
+    {
+        "text": "before",
+        "weight": 6
+    },
+    {
+        "text": "army",
+        "weight": 6
+    },
+    {
+        "text": "arrived",
+        "weight": 6
+    },
+    {
+        "text": "houses",
+        "weight": 6
+    },
+    {
+        "text": "land",
         "weight": 6
     }
 ]
